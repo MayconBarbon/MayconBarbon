@@ -1,10 +1,22 @@
-# SIMESPI + Dama Bier: lançamento (v9)
+# SIMESPI × Dama Bier: institucional (v10, sobre a v5)
 
-**Arquivo:** `SIMESPI_DamaBier_lancamento_v9_16x9.mp4` · 1920×1080 · 58 s
+**Arquivo:** `SIMESPI_DamaBier_institucional_v10_16x9.mp4` · 1920×1080 · 1:30 · −16 LUFS
 
-## Correções em relação à v8
-- **0:29:** saiu a foto do grupo sob a escada (IMG_2616). O tríptico seguinte ganhou a batida.
-- **Plano que terminava no chão** (IMG_2636, na grade de 0:26): agora usa o trecho dos barris e da linha (4,6 s), sem piso.
-- **0:35, escala que aumentava e diminuía:** o painel de texto fecha e reabre só quando há pausa real. Entre textos próximos ele fica aberto (0:00–0:10, 0:31–0:38 e 0:42–0:49), sem o efeito de zoom no meio.
+Esta versão parte da **v5** (1:30, locução integral com a voz Gabriel).
 
-O resto (trilha, locução, efeitos, mockup em fundo branco e cartela) é igual à v8.
+## Mudanças
+- **Abertura com o Paulo** (o senhor da visita), só com imagens reais:
+  1. ele sorrindo com a garrafa e as taças (IMG_2598);
+  2. close dele segurando a garrafa;
+  3. a garrafa nas mãos dele (IMG_2599);
+  4. os selos de 35 anos.
+- **Legenda moderna no estilo do vídeo da Silvana Marques:**
+  - frase curta centralizada na parte de baixo, em branco e sem caixa;
+  - uma palavra-chave por frase em serifada itálica grande (Playfair Display Italic), o restante em sans limpa (Montserrat);
+  - sombra suave e entrada com leve subida;
+  - 41 legendas, sincronizadas palavra a palavra pela transcrição da própria locução;
+  - na cartela branca, a legenda fica em marinho para continuar legível.
+- **"Dama Bíer"** com a pronúncia corrigida (tônica no "Bí").
+- Como a legenda já mostra o texto, saíram os grafismos que o repetiam: "CPL Cerva / Projeto do SIMESPI" e "Porque somos a indústria!".
+
+O restante da v5 (imagens, drones, trilha, respiros e cartela) não mudou.
