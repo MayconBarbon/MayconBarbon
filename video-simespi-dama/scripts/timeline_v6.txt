@@ -1,0 +1,82 @@
+00 b  0  0.00- 0.51 vcenter flash IMG_2398
+01 b  1  0.51- 1.00 vcenter whip  IMG_2667
+02 b  2  1.00- 1.49 vcenter punch IMG_2395
+03 b  3  1.49- 2.46 vcenter whip  08DC7867
+04 b  5  2.46- 3.44 vcenter punch B399EA75
+05 b  7  3.44- 4.41 vcenter whip  IMG_2397
+06 b  9  4.41- 5.39 full    punch IMG_2655
+07 b 11  5.39- 6.36 full    whip  IMG_2701
+08 b 13  6.36- 7.34 tri     cut   2699+2702+2607
+09 b 15  7.34- 7.83 full    punch IMG_2606
+10 b 16  7.83- 8.80 full    whip  IMG_2608
+11 b 18  8.80- 9.78 tri     cut   2609+2612+2618
+12 b 20  9.78-10.26 full    punch IMG_2611
+13 b 21 10.26-10.75 full    whip  IMG_2669
+14 b 22 10.75-11.24 full    cut   IMG_2691
+15 b 23 11.24-11.73 tri     cut   2670+2672+2674
+16 b 24 11.73-12.21 full    punch IMG_2694
+17 b 25 12.21-12.70 full    cut   IMG_2671
+18 b 26 12.70-13.19 tri     cut   2689+2690+2692
+19 b 27 13.19-13.68 full    whip  IMG_2677
+20 b 28 13.68-14.16 full    cut   IMG_2675
+21 b 29 14.16-14.65 tri     cut   2678+2679+2680
+22 b 30 14.65-15.14 full    punch IMG_2676
+23 b 31 15.14-15.63 full    cut   IMG_2682
+24 b 32 15.63-16.11 tri     cut   2681+2684+2685
+25 b 33 16.11-16.60 full    whip  IMG_2683
+26 b 34 16.60-17.09 full    cut   IMG_2696
+27 b 35 17.09-17.58 tri     cut   2686+2693+2695
+28 b 36 17.58-18.07 full    punch IMG_2698
+29 b 37 18.07-18.55 tri     cut   2697+2663+2633
+30 b 38 18.55-19.04 full    cut   IMG_2668
+31 b 39 19.04-19.53 full    whip  IMG_2687
+32 b 40 19.53-20.50 quad    cut   2688+2673+2631+2634
+33 b 42 20.50-21.48 full    punch IMG_2617
+34 b 44 21.48-21.97 tri     cut   2619+2620+2624
+35 b 45 21.97-22.94 full    whip  IMG_2622
+36 b 47 22.94-23.43 tri     cut   30_2+32_2+2640
+37 b 48 23.43-24.40 full    punch IMG_2641
+38 b 50 24.40-25.38 quad    cut   2621+2623+2610+2635
+39 b 52 25.38-25.87 tri     cut   2648+2649+1181
+40 b 53 25.87-26.35 full    whip  IMG_2650
+41 b 54 26.35-27.33 quad    cut   2636+2700+2642+2646
+42 b 56 27.33-27.82 full    punch IMG_2653
+43 b 57 27.82-28.31 full    cut   IMG_2654
+44 b 58 28.31-28.79 tri     cut   2643+2644+2658
+45 b 59 28.79-29.28 tri     whip  2613+2614+2615
+46 b 60 29.28-29.77 full    cut   IMG_2616
+47 b 61 29.77-30.26 tri     cut   25_2+2626+2627
+48 b 62 30.26-31.23 vcenter whip  IMG_2592
+49 b 64 31.23-31.72 full    cut   PC_zoom
+50 b 65 31.72-33.18 vcenter flash 08DC7867
+51 b 68 33.18-33.67 vcenter whip  IMG_2664
+52 b 69 33.67-34.16 full    cut   IMG_2656
+53 b 70 34.16-34.64 vcenter whip  IMG_2398
+54 b 71 34.64-35.13 tri     cut   2657+2659+2661
+55 b 72 35.13-35.62 full    punch IMG_2666
+56 b 73 35.62-36.11 full    cut   IMG_2662
+57 b 74 36.11-36.59 full    cut   IMG_2660
+58 b 75 36.59-37.08 full    whip  IMG_2665
+59 b 76 37.08-38.06 vcenter punch IMG_2396
+60 b 78 38.06-39.03 quad    cut   2593+2594+2595+1184
+61 b 80 39.03-40.01 full    whip  IMG_2598
+62 b 82 40.01-40.50 full    cut   IMG_2599
+63 b 83 40.50-40.98 tri     cut   2602+2603+2604
+64 b 84 40.98-41.47 full    punch IMG_2601
+65 b 85 41.47-42.45 full    cut   IMG_2600
+66 b 87 42.45-43.42 full    flash IMG_2652
+67 b 89 43.42-43.91 vcenter whip  IMG_2605
+68 b 90 43.91-44.40 tri     cut   2638+2639+2628
+69 b 91 44.40-44.88 full    punch root_IMG_1185
+70 b 92 44.88-45.37 full    cut   IMG_2651
+71 b 93 45.37-45.86 tri     cut   2629+2637+2397
+72 b 94 45.86-46.83 full    whip  IMG_2701
+73 b 96 46.83-47.81 full    punch IMG_2598
+74 b 98 47.81-48.79 vcenter whip  IMG_2395
+75 b100 48.79-49.76 full    cut   IMG_2666
+76 b102 49.76-50.74 vcenter punch B399EA75
+77 b104 50.74-51.22 tri     cut   2395+2396+2398
+78 b105 51.22-52.20 full    whip  IMG_2655
+79 b107 52.20-53.17 full    punch IMG_2656
+total beats 109 card at 53.17
+faltando [] 116 116
