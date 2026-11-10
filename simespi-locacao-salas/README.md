@@ -38,6 +38,14 @@ Campanha: **"Você tem o conhecimento. Nós temos o espaço."**
 
 Os nomes "Sala 01" e "Sala 02" seguem as pastas do Drive. **Confirmar** se são esses os nomes comerciais e se as duas salas têm a lousa interativa: as duas fotos mostram o mesmo tipo de tela.
 
+## Locução — revisão 3
+
+- **Pedido:** "mais humana, animada, divertida e convidativa, com autoridade", com a mesma voz da Importway.
+- **Voz da Importway:** é a "Gabriel — Friendly Brazilian Ad Voice", do ElevenLabs (flow "Importway Brand Film 60s"). Tentei duas vezes, com direção de interpretação (`[confident]`, `[upbeat]`, `[inviting]`…), mas a conta tem **83 créditos** e esta versão precisa de cerca de **1.210**. Não houve cobrança.
+- **Voz entregue:** a voz neural masculina brasileira **Microsoft "Antonio"**, um pouco mais rápida e aguda para soar mais animada, com frases exclamativas e leve tratamento de áudio. É bem mais natural que a voz provisória anterior (Piper, guardada em `projeto/vo_piper_antiga/`). O script `projeto/tts_locucao.py` regenera as falas.
+- **Atenção à licença:** essa voz vem do serviço gratuito de leitura do Microsoft Edge. Para veiculação paga (anúncio), o mais seguro é usar a voz do ElevenLabs, que tem licença comercial clara: com os créditos recarregados, basta trocar `projeto/vo/v1–v12.flac` e rodar `build.sh`.
+- **Pronúncia:** escrito como "Simêspi" para a voz falar **si-MÊS-pi**. A transcrição automática (Whisper) ouve "CIMESP", que é a forma indicada pelo cliente.
+
 ## Decisões criativas
 
 - **Identidade.** Paleta tirada do manual de marca (2017) e conferida no site simespi.com.br, onde as cores mais usadas são #276E85 e #083642. O azul-petróleo #083642 é a base (painéis, gradientes, transições), o azul #276E85 é o institucional e o azul-claro #5BC2D6 (CMYK 65/5/15/0 do manual) é o único destaque. O amarelo #FFD400 também aparece no tema do site, mas não está no manual, então ficou de fora.
