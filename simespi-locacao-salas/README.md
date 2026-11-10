@@ -12,6 +12,20 @@ Campanha: **"Você tem o conhecimento. Nós temos o espaço."**
 | D | `D_legenda_instagram.txt` | Legenda comercial com CTA e hashtags |
 | E | `E_SIMESPI_Tour_Salas_29s_1080x1920.mp4` | **3º vídeo — Tour pelas salas** · 28,8 s · mesmo padrão técnico (H.264, 30 fps, −14 LUFS) |
 
+## Peças de feed (F e G) — 1080×1350 (4:5)
+
+- **F — Post estático** (`entregas/F_post_estatico/`): o enquadramento mais amplo e profundo da Sala 01 (IMG_9837), com uma cota em estilo de planta ("ESPAÇO AMPLO E CLIMATIZADO") atravessando o ambiente para dar escala, sem medida numérica. Destaques: "SALAS PARA LOCAÇÃO" grande, usos, cidade e telefone.
+- **G — Carrossel de 6 cards** (`entregas/G_carrossel_lousa/`), com a lousa em todos:
+  1. Capa: close da lousa (8151) + "LOUSA INTERATIVA E CONECTADA";
+  2. Sala 01 com a lousa ao fundo;
+  3. Sala 02 com a lousa;
+  4. Tela grande (9825) + "Tecnologia que transforma apresentações";
+  5. Close da lousa + usos e "Associados ou não";
+  6. Chamada com a lousa no topo, telefone e logotipo.
+- **Elementos comuns:** cantoneiras azul-claras na tela real, numeração 01/06 e indicação "ARRASTE".
+- **Gerado por** `projeto/feed.py`.
+- **Medidas reais:** se o cliente informar m² ou capacidade, a cota do post pode trazer o número.
+
 ## Montagem do Reels (A)
 
 | Tempo | Bloco | Imagens (fotos reais) | Texto na tela | Locução |
