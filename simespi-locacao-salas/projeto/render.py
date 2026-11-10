@@ -237,9 +237,9 @@ def logo(kind, width):
     return im.resize((width, int(im.height * width / im.width)), Image.LANCZOS)
 
 # ---------------------------------------------------------------- telas (coord. normalizadas na foto original)
-SCREEN_9837 = (0.400, 0.405, 0.545, 0.535)
-SCREEN_8151 = (0.443, 0.190, 0.640, 0.333)
-TV37 = (0.4725, 0.47); TV51 = (0.5415, 0.2615); TV25 = (0.92, 0.29)
+SCREEN_9837 = (0.398, 0.411, 0.542, 0.539)
+SCREEN_8151 = (0.470, 0.191, 0.652, 0.340)
+TV37 = (0.470, 0.475); TV51 = (0.561, 0.2655); TV25 = (0.92, 0.29)
 
 def scene_end(t0, t1, phone_t=None):
     """Assinatura final: logotipo original (versão colorida positiva) sobre fundo branco."""
@@ -326,11 +326,11 @@ def build(mode):
         shots += [Shot('S1_9837', 30.0, 36.0, z=(1.55, 1.15), f=TV37, p=(0.5, 0.24), p1=(0.5, 0.27))]
         fx.append(('panel', 30.0, 36.0))
         els += [
-            Text('SEU PRÓXIMO EVENTO', 800, 74, WHITE, 72, 1010, 30.35, 36.0),
-            Text('COMEÇA AQUI.', 800, 74, CYAN, 72, 1092, 30.5, 36.0),
-            Text('Salas para locação no SIMESPI', 500, 40, WHITE, 72, 1196, 30.8, 36.0),
-            Chip('CONSULTE A DISPONIBILIDADE', 72, 1278, 32.4, 36.0, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20)),
-            Text('(19) 3417-8600', 800, 72, WHITE, 72, 1392, 32.8, 36.0),
+            Text('SEU PRÓXIMO EVENTO', 800, 74, WHITE, 0, 1090, 30.35, 36.0, align='center'),
+            Text('COMEÇA AQUI.', 800, 74, CYAN, 0, 1172, 30.5, 36.0, align='center'),
+            Text('Salas para locação no SIMESPI', 500, 40, WHITE, 0, 1278, 30.8, 36.0, align='center'),
+            Chip('CONSULTE A DISPONIBILIDADE', 0, 1362, 32.4, 36.0, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20), align='center'),
+            Text('(19) 3417-8600', 800, 72, WHITE, 0, 1476, 32.8, 36.0, align='center'),
         ]
         # 6) ASSINATURA 36.0–39.0
         shots += [Plain(WHITE, 36.0, T + 1)]
@@ -378,10 +378,10 @@ def build(mode):
         shots += [Shot('S2_8151', 22.2, 25.8, z=(1.6, 1.2), f=TV51, p=(0.5, 0.24), p1=(0.5, 0.27))]
         fx.append(('panel', 22.2, 25.8))
         els += [
-            Text('ESTRUTURA PRONTA', 800, 74, WHITE, 72, 1010, 22.45, 25.8),
-            Text('PARA O SEU EVENTO.', 800, 74, CYAN, 72, 1092, 22.6, 25.8),
-            Chip('CONSULTE A DISPONIBILIDADE', 72, 1210, 22.9, 25.8, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20)),
-            Text('(19) 3417-8600', 800, 72, WHITE, 72, 1330, 23.4, 25.8),
+            Text('ESTRUTURA PRONTA', 800, 74, WHITE, 0, 1110, 22.45, 25.8, align='center'),
+            Text('PARA O SEU EVENTO.', 800, 74, CYAN, 0, 1192, 22.6, 25.8, align='center'),
+            Chip('CONSULTE A DISPONIBILIDADE', 0, 1310, 22.9, 25.8, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20), align='center'),
+            Text('(19) 3417-8600', 800, 72, WHITE, 0, 1430, 23.4, 25.8, align='center'),
         ]
         shots += [Plain(WHITE, 25.8, T + 1)]
         els += scene_end(25.8, T)
@@ -417,10 +417,10 @@ def build(mode):
         shots += [Shot('S2_8151', 9.0, 12.0, z=(1.6, 1.2), f=TV51, p=(0.5, 0.24), p1=(0.5, 0.27))]
         fx.append(('panel', 9.0, 12.0))
         els += [
-            Text('SEU PRÓXIMO EVENTO', 800, 74, WHITE, 72, 1010, 9.15, 12.0),
-            Text('COMEÇA AQUI.', 800, 74, CYAN, 72, 1092, 9.27, 12.0),
-            Chip('CONSULTE A DISPONIBILIDADE', 72, 1210, 9.6, 12.0, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20)),
-            Text('(19) 3417-8600', 800, 72, WHITE, 72, 1330, 9.8, 12.0),
+            Text('SEU PRÓXIMO EVENTO', 800, 74, WHITE, 0, 1110, 9.15, 12.0, align='center'),
+            Text('COMEÇA AQUI.', 800, 74, CYAN, 0, 1192, 9.27, 12.0, align='center'),
+            Chip('CONSULTE A DISPONIBILIDADE', 0, 1310, 9.6, 12.0, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20), align='center'),
+            Text('(19) 3417-8600', 800, 72, WHITE, 0, 1430, 9.8, 12.0, align='center'),
         ]
         shots += [Plain(WHITE, 12.0, T + 1)]
         els += scene_end(12.0, T)

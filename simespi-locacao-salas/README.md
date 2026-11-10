@@ -58,7 +58,7 @@ Os nomes "Sala 01" e "Sala 02" seguem as pastas do Drive. **Confirmar** se são 
 - **Voz da Importway:** é a "Gabriel — Friendly Brazilian Ad Voice", do ElevenLabs (flow "Importway Brand Film 60s"). Tentei duas vezes, com direção de interpretação (`[confident]`, `[upbeat]`, `[inviting]`…), mas a conta tem **83 créditos** e esta versão precisa de cerca de **1.210**. Não houve cobrança.
 - **Voz entregue:** a voz neural masculina brasileira **Microsoft "Antonio"**, um pouco mais rápida e aguda para soar mais animada, com frases exclamativas e leve tratamento de áudio. É bem mais natural que a voz provisória anterior (Piper, guardada em `projeto/vo_piper_antiga/`). O script `projeto/tts_locucao.py` regenera as falas.
 - **Atenção à licença:** essa voz vem do serviço gratuito de leitura do Microsoft Edge. Para veiculação paga (anúncio), o mais seguro é usar a voz do ElevenLabs, que tem licença comercial clara: com os créditos recarregados, basta trocar `projeto/vo/v1–v12.flac` e rodar `build.sh`.
-- **Pronúncia (revisão 4):** a voz fala **"CIMESP"** (si-MÉSP, sem o "i" final), como o cliente pediu. No texto da locução o nome aparece escrito "Si-mésp" (e "SIMESP" na última fala do anúncio), porque foram as grafias com que a voz pronunciou o "p" final com mais clareza. A transcrição automática confere "CIMESP/CMESP" nas quatro menções.
+- **Pronúncia (revisão 5):** a voz fala **"Si-MÉS-pi"**, com o "é" aberto, a sílaba tônica em "MÉS" e o "pi" final, a pedido do cliente. No texto da locução o nome aparece escrito "Siméspi". **Moldura da TV:** as coordenadas da tela foram medidas de novo nas fotos e a moldura agora fica centrada na tela em todas as peças. **Painel da chamada final:** textos centralizados nos três vídeos.
 
 ## Decisões criativas
 
