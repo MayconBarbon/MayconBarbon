@@ -153,15 +153,15 @@ def carousel(outdir):
     f6 = Frame('S2_8151', z=1.35, f=R.TV51, p=(0.5, 0.22))
     fr = f6.render(); fr.alpha_composite(R.grad(0, 300, 0.75, 0.0))
     d = ImageDraw.Draw(fr); d.rectangle((0, 660, W, H), fill=NAVY); d.rectangle((0, 660, W, 666), fill=CYAN)
-    wm(fr); tv(fr, f6, R.SCREEN_8151)
+    tv(fr, f6, R.SCREEN_8151)
     L = R.logo('neg', 300)
     draw_all(fr, [
-        R.Text('SEU PRÓXIMO EVENTO', 800, 72, WHITE, 72, 720, -1, 99),
-        R.Text('COMEÇA AQUI.', 800, 72, CYAN, 72, 800, -1, 99),
-        R.Chip('CONSULTE A DISPONIBILIDADE', 72, 922, -1, 99, fg=NAVY, bg=CYAN, border=None, s=32, w=800, pad=(34, 20)),
-        R.Text('(19) 3417-8600', 800, 76, WHITE, 72, 1030, -1, 99),
+        R.Text('SEU PRÓXIMO EVENTO', 800, 72, WHITE, 0, 710, -1, 99, align='center'),
+        R.Text('COMEÇA AQUI.', 800, 72, CYAN, 0, 790, -1, 99, align='center'),
+        R.Chip('CONSULTE A DISPONIBILIDADE', 0, 910, -1, 99, fg=NAVY, bg=CYAN, border=None, s=32, w=800, pad=(34, 20), align='center'),
+        R.Text('(19) 3417-8600', 800, 76, WHITE, 0, 1016, -1, 99, align='center'),
     ])
-    fr.alpha_composite(L, (72, 1170))
+    fr.alpha_composite(L, ((W - L.width) // 2, 1150))
     footer(fr, 6, N, swipe=False); fr.convert('RGB').save(f'{outdir}/carrossel_06.jpg', quality=95)
 
 if __name__ == '__main__':

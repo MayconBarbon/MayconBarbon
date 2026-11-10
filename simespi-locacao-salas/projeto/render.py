@@ -258,6 +258,7 @@ def build(mode):
     init_grads()
     shots, els, fx = [], [], []
     WM = logo('neg', 230)          # assinatura discreta no topo
+    PL = logo('neg', 340)          # logo no painel da chamada final
     if mode == 'main':
         T = 39.0
         # 1) IMPACTO 0–5.4
@@ -331,13 +332,14 @@ def build(mode):
             Text('Salas para locação no SIMESPI', 500, 40, WHITE, 0, 1278, 30.8, 36.0, align='center'),
             Chip('CONSULTE A DISPONIBILIDADE', 0, 1362, 32.4, 36.0, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20), align='center'),
             Text('(19) 3417-8600', 800, 72, WHITE, 0, 1476, 32.8, 36.0, align='center'),
+            Img(PL, (W - PL.width) // 2, 1610, 33.2, 36.0, rise=12, fade=0.7),
         ]
         # 6) ASSINATURA 36.0–39.0
         shots += [Plain(WHITE, 36.0, T + 1)]
         els += scene_end(36.0, T)
         fx += [('wipe', 12.0), ('wipe', 21.0), ('wipe', 30.0), ('wipe', 36.0)]
         fx.append(('lgrad', 21.0, 30.0))
-        wm_spans = [(0, 7.8), (12.0, 36.0)]
+        wm_spans = [(0, 7.8), (12.0, 30.0)]
     elif mode == 'tour':   # TOUR PELAS SALAS ~29 s
         T = 28.8
         shots += [Shot('S1_9837', 0, 4.2, z=(1.0, 1.5), f=TV37, p=(0.5, 0.47), p1=(0.5, 0.36))]
@@ -382,11 +384,12 @@ def build(mode):
             Text('PARA O SEU EVENTO.', 800, 74, CYAN, 0, 1192, 22.6, 25.8, align='center'),
             Chip('CONSULTE A DISPONIBILIDADE', 0, 1310, 22.9, 25.8, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20), align='center'),
             Text('(19) 3417-8600', 800, 72, WHITE, 0, 1430, 23.4, 25.8, align='center'),
+            Img(PL, (W - PL.width) // 2, 1580, 23.8, 25.8, rise=12, fade=0.7),
         ]
         shots += [Plain(WHITE, 25.8, T + 1)]
         els += scene_end(25.8, T)
         fx += [('wipe', 4.2), ('wipe', 10.8), ('wipe', 17.4), ('wipe', 22.2), ('wipe', 25.8)]
-        wm_spans = [(0, 17.4), (22.2, 25.8)]
+        wm_spans = [(0, 17.4)]
     else:   # AD 15 s
         T = 15.0
         s1 = Shot('S2_8151', 0, 3.0, z=(1.3, 1.7), f=TV51, p=(0.5, 0.33), p1=(0.5, 0.33))
@@ -421,11 +424,12 @@ def build(mode):
             Text('COMEÇA AQUI.', 800, 74, CYAN, 0, 1192, 9.27, 12.0, align='center'),
             Chip('CONSULTE A DISPONIBILIDADE', 0, 1310, 9.6, 12.0, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20), align='center'),
             Text('(19) 3417-8600', 800, 72, WHITE, 0, 1430, 9.8, 12.0, align='center'),
+            Img(PL, (W - PL.width) // 2, 1580, 10.1, 12.0, rise=12, fade=0.6),
         ]
         shots += [Plain(WHITE, 12.0, T + 1)]
         els += scene_end(12.0, T)
         fx += [('wipe', 9.0), ('wipe', 12.0)]
-        wm_spans = [(0, 12.0)]
+        wm_spans = [(0, 9.0)]
     return T, shots, els, fx, WM, wm_spans
 
 def frame_at(t, T, shots, els, fx, WM, wm_spans):
