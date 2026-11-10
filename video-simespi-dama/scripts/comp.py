@@ -124,8 +124,7 @@ def L_panels(specs, n, rows=1):
         c = np.zeros((HH, W, 3), np.uint8); c[:] = NAVY
         for j, ((x, y, w, h), cl) in enumerate(zip(cells, clips)):
             # entrada escalonada: painel desliza de baixo nos 5 primeiros quadros
-            d = i - j; off = 0 if d >= 4 else int((1 - ease(max(0, d) / 4)) * (h * 0.35))
-            if d < 0: continue
+            d = i; off = 0 if d >= 3 else int((1 - ease(d / 3)) * (h * 0.12))
             f = cl[i]
             if off: c[y + off:y + h, x:x + w] = f[:h - off]
             else: c[y:y + h, x:x + w] = f
@@ -154,11 +153,12 @@ def L_hero(spec, n):
         rays = (0.5 + 0.5 * np.cos(ang * 14 + t * 1.2)) ** 6 * np.clip(1 - r * 1.2, 0, 1) * 0.35
         bg = np.zeros((HH, W, 3), np.float32)
         for c in range(3):
-            bg[:, :, c] = NAVY[c] * 0.55 + (BLUE[c] * 1.1 - NAVY[c] * 0.55) * g + CYAN[c] * rays
+            if variant == 2: bg[:, :, c] = 226 + 29 * g + (CYAN[c] - 255) * rays * 0.15
+            else: bg[:, :, c] = NAVY[c] * 0.55 + (BLUE[c] * 1.1 - NAVY[c] * 0.55) * g + CYAN[c] * rays
         # partículas (bolhas) subindo
         for px, ph, sp, sz in _PART:
             x = int((px * 0.9 + 0.05) * W); y = int(HH * (1.05 - ((ph + t * (0.15 + sp * 0.35)) % 1.1)))
-            rr = int(2 + sz * 6); cv2.circle(bg, (x, y), rr, (200, 235, 245), -1, cv2.LINE_AA)
+            rr = int(2 + sz * 6); cv2.circle(bg, (x, y), rr, (150, 205, 225) if variant == 2 else (200, 235, 245), -1, cv2.LINE_AA)
         bg = cv2.GaussianBlur(bg, (0, 0), 0.8)
         # garrafa: entrada de baixo com escala e leve rotação; flutuação suave
         sc = 1.18 - 0.18 * e; rot = (-6 + 6 * e) + 0.8 * math.sin(t * 2.2)
@@ -174,7 +174,7 @@ def L_hero(spec, n):
         # sombra suave
         sh = np.zeros((HH, W), np.float32)
         cv2.ellipse(sh, (int(W * cx), int(HH * 0.5 + bh * sc / 2 + dy - 4)), (int(bw * 0.55), 18), 0, 0, 360, 1, -1)
-        sh = cv2.GaussianBlur(sh, (0, 0), 14) * 0.55 * e
+        sh = cv2.GaussianBlur(sh, (0, 0), 14) * (0.30 if variant == 2 else 0.55) * e
         bg *= (1 - sh[:, :, None])
         X0, Y0 = max(0, x0), max(0, y0); X1, Y1 = min(W, x0 + ww_), min(HH, y0 + hh_)
         if X1 > X0 and Y1 > Y0:
@@ -302,14 +302,14 @@ def panel_text(img, tx, t, p):
         for j,ln in enumerate(sl):
             d.text((x0+2,y0+lh*len(lines)+14+j*int(size*0.52))," ".join(w for w,_ in ln),font=sf_,fill=WHITE+(int(230*a),))
     return np.array(Image.alpha_composite(pil,lay).convert("RGB"))
-def compose_panel(fr, TX, t):
+def compose_panel(fr, TX, t, alt=None):
     act=[tx for tx in TX if tx.t0-0.22<=t<tx.t1+0.22]
     if not act: return fr
     tx=act[0]
     p=ease(min(1,max(0,(t-(tx.t0-0.22))/0.22)))*ease(min(1,max(0,((tx.t1+0.22)-t)/0.22)))
     x0=int(PW*p)
     out=np.zeros_like(fr); out[:]=NAVY
-    if W-x0>0: out[:,x0:]=cover(fr,W-x0,HH,(0.6,0.5))
+    if W-x0>0: out[:,x0:]=cover(alt,W-x0,HH,(0.5,0.5)) if alt is not None else cover(fr,W-x0,HH,(0.6,0.5))
     out[:,max(0,x0-6):x0]=CYAN
     if tx.t0<=t<tx.t1: out=panel_text(out,tx,t,p)
     return out
@@ -391,15 +391,14 @@ SEQ = [
     ("quad", 2, [F_("IMG_2636", 6.0), F_("IMG_2700", 1.0), F_("IMG_2642", 0.4), F_("IMG_2646", 0.0)], "cut"),
     ("full", 1, F_("IMG_2653", 0.4), "punch"),
     ("full", 1, F_("IMG_2654", 0.6), "cut"),
-    ("tri", 1, [F_("IMG_2643", 3.0), F_("IMG_2644", 2.0), F_("IMG_2658", 1.0)], "cut"),
-    ("tri", 1, [F_("IMG_2613", 0), F_("IMG_2614", 0), F_("IMG_2615", 0)], "whip"),
+    ("tri", 2, [F_("IMG_2643", 3.0), F_("IMG_2644", 2.0), F_("IMG_2658", 1.0)], "cut"),
     ("full", 1, F_("IMG_2616", 0), "cut"),
     ("tri", 1, [F_("IMG_2625_2", 0), F_("IMG_2626", 0), F_("IMG_2627", 0)], "cut"),
     # ---- TENSÃO (silêncio da trilha): a construção do rótulo
     ("tri", 2, [F_("IMG_2592", 2.0), F_("IMG_2592", 14.0, zoom=(1.0, 1.15)), F_("IMG_2592", 19.0)], "whip"),
     ("full", 1, F_("PC_zoom", 1.6), "cut"),
     # ---- DROP (31,7 s): momento heroico da cerveja
-    ("hero", 4, ("MOCKUP", 0, {"cx": 0.5}), "flash"),
+    ("tri", 4, [F_("IMG_2396", 4.0), F_("08DC7867", 12.0, zoom=(1.02, 1.12)), F_("IMG_2398", 3.5)], "flash"),
     ("tri", 1, [F_("IMG_2667", 0.5), F_("IMG_2664", 3.0, speed=0.7), F_("IMG_2664", 8.5)], "whip"),
     ("full", 1, F_("IMG_2656", 1.6), "cut"),
     ("tri", 1, [F_("08DC7867", 20.0), F_("IMG_2398", 3.5), F_("IMG_2396", 6.5)], "whip"),
@@ -424,7 +423,7 @@ SEQ = [
     ("full", 1, F_("IMG_2651", 0.5), "cut"),
     ("tri", 1, [F_("IMG_2629", 0), F_("IMG_2637", 0), F_("IMG_2397", 20.0)], "cut"),
     # ---- 7: Porquê, somos a indústria!
-    ("hero", 3, ("MOCKUP", 0, {"cx": 0.62}), "whip"),
+    ("hero", 3, ("MOCKUP", 0, {"cx": 0.5, "v": 2}), "whip"),
     ("full", 1, F_("IMG_2598", 28.0), "punch"),
     ("tri", 2, [F_("IMG_2397", 20.0), F_("IMG_2395", 4.0), F_("IMG_2604", 15.0)], "whip"),
     # ---- 8: SIMESPI 35 anos — preenche até a cartela
@@ -435,6 +434,25 @@ SEQ = [
     ("full", 2, F_("IMG_2656", 3.0), "punch"),
 ]
 CARD_BEAT = None  # calculado
+
+def render(kind, content, n, trans, nxt_whip, width):
+    global W
+    oldW = W; W = width
+    try:
+        if kind == "full": frs = L_full(content, n)
+        elif kind == "vcenter": frs = L_vcenter(content, n)
+        elif kind == "tri":
+            c = content if width >= 1700 else content[1:]   # área estreita: só os dois últimos, inteiros
+            frs = L_panels(c, n, 1)
+        elif kind == "quad": frs = L_panels(content, n, 2)
+        elif kind == "hero": frs = L_hero(content, n)
+        if trans == "punch": frs = punch(frs)
+        elif trans == "flash": frs = flash(punch(frs, 5, 1.08))
+        elif trans == "whip": frs = whip(frs, "in", 1)
+        if nxt_whip: frs = whip(frs, "out", 1, 3)
+    finally:
+        W = oldW
+    return frs
 
 def build_timeline():
     t = 0.0; k = 0; out = []
@@ -465,19 +483,13 @@ def main():
     fidx = 0; total = int(END * FPS)
     for idx, (t0, t1, kind, nb, content, trans) in enumerate(tl):
         f0, f1 = int(round(t0 * FPS)), int(round(t1 * FPS)); n = f1 - f0
-        if kind == "full": frs = L_full(content, n)
-        elif kind == "vcenter": frs = L_vcenter(content, n)
-        elif kind == "tri": frs = L_panels(content, n, 1)
-        elif kind == "quad": frs = L_panels(content, n, 2)
-        elif kind == "hero": frs = L_hero(content, n)
-        if trans == "punch": frs = punch(frs)
-        elif trans == "flash": frs = flash(punch(frs, 5, 1.08))
-        elif trans == "whip": frs = whip(frs, "in", 1)
-        # saída em chicote se o próximo entra em chicote
-        if idx + 1 < len(tl) and tl[idx + 1][5] == "whip": frs = whip(frs, "out", 1, 3)
+        nxt = idx + 1 < len(tl) and tl[idx + 1][5] == "whip"
+        frs = render(kind, content, n, trans, nxt, W)
+        overl = any(tx.t0 - 0.22 < t1 and tx.t1 + 0.22 > t0 for tx in TX)
+        alt = render(kind, content, n, trans, nxt, W - PW) if overl else None
         for i, fr in enumerate(frs):
             tt = (f0 + i) / FPS
-            fr = compose_panel(fr, TX, tt)
+            fr = compose_panel(fr, TX, tt, alt[i] if alt is not None else None)
             enc.stdin.write(np.ascontiguousarray(fr).tobytes()); fidx += 1
         print(f"  {idx:02d} {t0:5.2f}-{t1:5.2f} {kind:7s} {trans}", flush=True)
     # cartela
