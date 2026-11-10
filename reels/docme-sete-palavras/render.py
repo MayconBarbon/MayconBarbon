@@ -25,7 +25,7 @@ def ease(x):  # easeOutCubic, clamped
 # ---------- assets ----------
 def seq(name):
     return [p for p in sorted(glob.glob(f"{S}/work/seg/{name}/*.jpg"))]
-SEQ = {n: seq(n) for n in ["hook1", "hook2", "prep", "cap1", "cap2", "cap3", "cap4", "cap5"]}
+SEQ = {n: seq(n) for n in ["hook1", "hook2", "prep", "cap1", "cap2", "cap3", "cap4", "cap5"] + [f"v{i}" for i in range(1, 7)]}
 _cache = {}
 def frame(name, i):
     fs = SEQ[name]; p = fs[min(i, len(fs) - 1)]
@@ -51,10 +51,6 @@ def page(i, width, sharp):
 PG1 = page(1, 1400, [(0, 125, 1075, 512)])
 PG2 = page(2, 1900, [(60, 112, 1075, 168), (60, 405, 1000, 650)])
 
-ARTES = []
-for n in ["Arte_7", "Arte_4", "Arte_2", "Arte_6"]:
-    a = ImageOps.exif_transpose(Image.open(f"{S}/src/{n}_-_1080x1350.jpg")).convert("RGB")
-    ARTES.append(a.resize((840, round(a.height * 840 / a.width)), Image.LANCZOS))  # keep original aspect, no crop
 
 # ---------- drawing helpers ----------
 def grad(img, top=True, h=900, a=190):
@@ -197,21 +193,17 @@ def s_edit(t):  # 13–17  graphic timeline built from the real footage above
 
 def s_result(t):  # 17–22
     img = Image.new("RGB", (W, H), DARK); d = ImageDraw.Draw(img)
-    if t < 2.4:
-        k = min(3, int(t / 0.6)); lt = t - k * 0.6
-        a = ARTES[k]; z = 1.06 - 0.06 * ease(lt / 0.35)
-        aw, ah = int(a.width * z), int(a.height * z)
-        ar = a.resize((aw, ah), Image.BICUBIC)
-        x, y = (W - aw) // 2, 330 + (1050 - ah) // 2
-        sh = Image.new("RGBA", (aw + 80, ah + 80), (0, 0, 0, 0)); ImageDraw.Draw(sh).rectangle([40, 50, aw + 40, ah + 50], fill=(0, 0, 0, 150))
-        sh = sh.filter(ImageFilter.GaussianBlur(22)); img.paste(sh, (x - 40, y - 40), sh)
-        img.paste(ar, (x, y))
-        d.text((90, 210), "Conteúdo pronto.", font=FS, fill=LIGHT)
-        for j in range(4):  # little progress dots
-            d.ellipse([90 + j * 34, 1440, 108 + j * 34, 1458], fill=ORANGE if j <= k else (85, 85, 90))
+    if t < 2.7:  # finished vertical videos from the Drive, full-bleed, 0.45 s each
+        k = min(5, int(t / 0.45)); lt = t - k * 0.45
+        img = vid(f"v{k + 1}", lt, zoom=(1.04, 1.0))
+        grad(img, True, 520, 170)
+        d = ImageDraw.Draw(img)
+        label(img, [("Conteúdo pronto.", "box")], 90, 250, t + 1, size=70)
+        for j in range(6):  # progress dots
+            d.ellipse([92 + j * 30, 385, 108 + j * 30, 401], fill=ORANGE if j <= k else (200, 200, 205))
         return img
-    q = t - 2.4
-    if q < 1.6:
+    q = t - 2.7
+    if q < 1.4:
         font = F("ExtraBold", 82); y = 430
         rows = [[("Qual parte mais", WHITE)], [("trava você:", WHITE)],
                 [("ideia", ORANGE), (", ", WHITE), ("gravação", ORANGE)], [("ou ", WHITE), ("edição", ORANGE), ("?", WHITE)]]
@@ -224,7 +216,7 @@ def s_result(t):  # 17–22
                 d.text((x, yy), txt, font=font, fill=colp); x += d.textlength(txt, font=font)
         img.paste(LOGO_S, (90, 1290), LOGO_S)
         return img
-    e = q - 1.6
+    e = q - 1.4
     label(img, [("Comenta aqui.", "box")], 90, 700, e + 0.1, size=104)
     a = ease(e / 0.3)
     ay = int(960 + 20 * math.sin(e * 9))

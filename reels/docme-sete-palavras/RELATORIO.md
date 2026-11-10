@@ -10,27 +10,27 @@
 ## Montagem
 | Tempo | Conteúdo | Texto |
 |---|---|---|
-| 0–2 s | IMG_8397 → IMG_8396 (câmera apontada para a lente) | Um pedido de **sete palavras** virou esse vídeo. |
+| 0–2 s | IMG_8402 (controle do drone) → IMG_8398 (close da lente) | Um pedido de **sete palavras** virou esse vídeo. |
 | 2–4 s | Tela tipográfica (cinza + aspas laranja), com selo "exemplo ilustrativo" | "Preciso divulgar meu negócio." |
 | 4–8 s | PDF de planejamento (capa + "Ritmo diário sugerido") → IMG_7378 (preparação do set) | Primeiro, **a estratégia.** |
-| 8–13 s | IMG_8400, IMG_8402, IMG_8398, IMG_7381, IMG_8406 | Depois, **a captação.** |
+| 8–13 s | IMG_8400, IMG_7379, IMG_8390, IMG_7381, IMG_8406 | Depois, **a captação.** |
 | 13–17 s | Gráfico de timeline animado com frames reais das gravações acima | Edição para dar **forma à ideia.** |
-| 17–19,4 s | Artes 7, 4, 2 e 6 (Anúncios DocMe) | Conteúdo pronto. |
-| 19,4–21 s | Tela de pergunta + logo | Qual parte mais trava você: ideia, gravação ou edição? |
-| 21–22 s | Cartão final + logo | **Comenta aqui.** |
+| 17–19,7 s | Vídeos verticais finalizados, 0,45 s cada: Assaí, Unimed, Vertical AP1, Casa Detoni (abril reels 6), Stories Fundiart, Casa Detoni (abril reels 1) | Conteúdo pronto. |
+| 19,7–21,1 s | Tela de pergunta + logo | Qual parte mais trava você: ideia, gravação ou edição? |
+| 21,1–22 s | Cartão final + logo | **Comenta aqui.** |
 
 ## Arquivos do Drive usados
 - Logo: `DocMe nova versão-4.pdf.png` (branco + laranja, sem alterações). Cor tirada do logo: #E9570D.
-- Bastidores (`07 - Doc.me/A DOCME/BASTIDORES`): IMG_7378.MOV, IMG_8396.MOV, IMG_8397.MOV, IMG_8398.MOV, IMG_8400.MOV, IMG_8402.MOV, IMG_7381.MOV, IMG_8406.MOV
+- Bastidores (`07 - Doc.me/A DOCME/BASTIDORES`): IMG_7378, IMG_7379, IMG_7381, IMG_8390, IMG_8398, IMG_8400, IMG_8402, IMG_8406 (.MOV)
 - Planejamento: `Planejamento_Conteudos_20_Dias_Delegada_Olivia_DOCME.pdf` (págs. 1–2)
-- Finalizados (`#1. Anúncios Docme/Artes`): Arte 7, Arte 4, Arte 2, Arte 6 (1080×1350)
+- Finalizados verticais: Assaí vertical v4 com trilha 4k.mp4 (id 1GE5cfHE…), Unimed Novo equipamento - vertical.mp4, Vertical AP1.mp4, abril reels - 1.mp4, abril reels - 6.mp4, Stories Fundiart.mp4
+- **Compartilhamento:** esses 6 vídeos foram abertos com "qualquer pessoa com o link" para o download. Desativar manualmente no Drive (Compartilhar → Acesso geral → Restrito).
 - Revisados e não usados: IMG_7379, IMG_7381 (parcial), IMG_8390, fotos de bastidores/equipe, capturas de tela (não eram de edição)
 
 ## Adaptações por falta de material
 1. **Edição (13–17 s):** os vídeos de edição/timeline do Drive ("TELA TIMELINE – PRÉVIA", "Processo de Edição 2", "Edição Institucional…") têm de 58 a 290 MB, acima do limite de download do conector (~4 MB por arquivo). Por isso, usei uma tela gráfica com uma timeline estilizada feita com frames reais das gravações. Não é uma captura do software de edição. Se preferir, troque por 3–4 s de "TELA TIMELINE – PRÉVIA SEM GC.mp4".
-2. **Material finalizado (17–22 s):** pelo mesmo limite de tamanho, os vídeos finalizados (institucionais, Gifs dos anúncios, AGUIA.ME etc.) não puderam ser baixados. Usei as Artes estáticas finalizadas.
 3. **Planejamento:** o PDF é de um cliente (campanha política). O nome do cliente e os textos da campanha estão fortemente desfocados. Ficam legíveis só o logo DocMe, o título, a estrutura geral e a tabela genérica de rotina. Confirme se a exibição está liberada.
-4. **Artes 2 e 6** contêm ofertas ("Concorra a até R$2.000", "Agende já"). Confirme se ainda valem ou troque por Arte 7/4/5.
+4. **Marcas de clientes** (Assaí, Unimed, Casa Detoni, Fundiart) aparecem no final. Confirme a autorização para uso em portfólio.
 5. **Trilha:** não há trilha aprovada no Drive, então o vídeo vai sem música. Recomendação: na publicação, escolher uma faixa da biblioteca licenciada do Instagram/Meta Sound Collection, ou de um serviço licenciado já assinado pela DocMe (Artlist, Epidemic Sound…). Estilo: pop/eletrônico corporativo energético, ~120 BPM, com batida forte nos cortes de 2 s, 4 s, 8 s, 13 s e 17 s.
 6. Sem locução.
 
