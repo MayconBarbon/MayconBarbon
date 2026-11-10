@@ -127,39 +127,35 @@ def photo(name):
     return _src[name]
 
 class Shot:
-    """Recorte 9:16 de uma fotografia real. Sem alteração de conteúdo: apenas recorte e
-    escala muito sutil (máx. 2,5 %) para não congelar o quadro."""
-    def __init__(self, name, t0, t1, cx=0.5, cy=0.5, zoom=1.0, s0=1.0, s1=1.025, marks=None):
-        im = photo(name); sw, sh = im.size
-        ch = sh / zoom; cw = ch * 9 / 16
-        x0 = min(max(cx * sw - cw / 2, 0), sw - cw); y0 = min(max(cy * sh - ch / 2, 0), sh - ch)
-        self.box = (x0, y0, cw, ch)
-        M = 1.04
-        self.base = im.resize((int(W * M), int(H * M)), Image.LANCZOS, box=(x0, y0, x0 + cw, y0 + ch))
-        self.M = M
-        self.t0, self.t1, self.s0, self.s1 = t0, t1, s0, s1
-        self.marks = marks or []      # [(x0,y0,x1,y1) normalizados na foto original, t_in]
-        self.name = name
-    def scale_at(self, t):
-        p = ease_io((t - self.t0) / max(self.t1 - self.t0, 1e-6))
-        return self.s0 + (self.s1 - self.s0) * p
+    """Recorte 9:16 de uma fotografia real com movimento de câmera (push-in / pan).
+    Keyframes: zoom z0->z1; ponto focal f0->f1 (normalizado na foto) posicionado em p0->p1 (normalizado no quadro).
+    Nada é acrescentado à imagem: só enquadramento e movimento."""
+    def __init__(self, name, t0, t1, cx=0.5, cy=0.5, zoom=1.0, s0=1.0, s1=1.025, marks=None,
+                 z=None, f=None, f1=None, p=(0.5, 0.5), p1=None):
+        if z is None:
+            z = (zoom * s0, zoom * s1); f = (cx, cy); p = (0.5, 0.5)
+        self.z0, self.z1 = z
+        self.f0 = f; self.f1 = f1 or f; self.p0 = p; self.p1 = p1 or p
+        self.t0, self.t1, self.name = t0, t1, name
+        self.marks = marks or []
+        self.src = photo(name)
+    def box_at(self, t):
+        q = ease_io((t - self.t0) / max(self.t1 - self.t0, 1e-6))
+        L = lambda a, b: a + (b - a) * q
+        z = self.z0 * (self.z1 / self.z0) ** q
+        fx, fy = L(self.f0[0], self.f1[0]), L(self.f0[1], self.f1[1])
+        px, py = L(self.p0[0], self.p1[0]), L(self.p0[1], self.p1[1])
+        sw, sh = self.src.size
+        ch = sh / z; cw = ch * 9 / 16
+        if cw > sw: cw = sw; ch = cw * 16 / 9
+        x0 = min(max(fx * sw - px * cw, 0), sw - cw); y0 = min(max(fy * sh - py * ch, 0), sh - ch)
+        return x0, y0, cw, ch
     def render(self, t):
-        s = self.scale_at(t)
-        bw, bh = self.base.size
-        vw, vh = bw / s / self.M * 1.0, bh / s / self.M
-        # janela visível na imagem-base (centrada)
-        cx, cy = bw / 2, bh / 2
-        win = (cx - vw / 2, cy - vh / 2, cx + vw / 2, cy + vh / 2)
-        fr = self.base.resize((W, H), Image.BILINEAR, box=win).convert('RGBA')
-        self.win = win
-        return fr
+        x0, y0, cw, ch = self.box = self.box_at(t)
+        return self.src.resize((W, H), Image.BILINEAR, box=(x0, y0, x0 + cw, y0 + ch)).convert('RGBA')
     def map_pt(self, nx, ny):
-        """Coordenada normalizada da foto original -> pixel no quadro."""
-        im = photo(self.name); sw, sh = im.size
-        x0, y0, cw, ch = self.box
-        bx = (nx * sw - x0) / cw * self.base.size[0]; by = (ny * sh - y0) / ch * self.base.size[1]
-        wx0, wy0, wx1, wy1 = self.win
-        return ((bx - wx0) / (wx1 - wx0) * W, (by - wy0) / (wy1 - wy0) * H)
+        sw, sh = self.src.size; x0, y0, cw, ch = self.box
+        return ((nx * sw - x0) / cw * W, (ny * sh - y0) / ch * H)
 
 class Stack:
     """Duas fotografias inteiras (sem recorte agressivo) empilhadas sobre fundo azul institucional."""
@@ -243,6 +239,7 @@ def logo(kind, width):
 # ---------------------------------------------------------------- telas (coord. normalizadas na foto original)
 SCREEN_9837 = (0.400, 0.405, 0.545, 0.535)
 SCREEN_8151 = (0.443, 0.190, 0.640, 0.333)
+TV37 = (0.4725, 0.47); TV51 = (0.5415, 0.2615); TV25 = (0.92, 0.29)
 
 def scene_end(t0, t1, phone_t=None):
     """Assinatura final: logotipo original (versão colorida positiva) sobre fundo branco."""
@@ -264,7 +261,7 @@ def build(mode):
     if mode == 'main':
         T = 39.0
         # 1) IMPACTO 0–5.4
-        shots += [Shot('S1_9837', 0, 5.4, cx=0.49)]
+        shots += [Shot('S1_9837', 0, 5.4, z=(1.0, 1.6), f=TV37, p=(0.5, 0.47), p1=(0.5, 0.36))]
         els += [
             Bar(72, 1088, 120, 8, CYAN, 0.3, 5.2),
             Text('VOCÊ TEM O', 800, 92, WHITE, 72, 1120, 0.45, 5.2),
@@ -273,7 +270,7 @@ def build(mode):
             Text('O ESPAÇO.', 800, 92, CYAN, 72, 1454, 2.25, 5.2),
         ]
         # 2) APRESENTAÇÃO 5.4–12.0
-        shots += [Shot('S2_8138', 5.4, 7.8, cx=0.5), Stack('S1_9832', 'S2_8149', 7.8, 12.0)]
+        shots += [Shot('S2_8138', 5.4, 7.8, z=(1.06, 1.12), f=(0.44, 0.5), f1=(0.56, 0.5)), Stack('S1_9832', 'S2_8149', 7.8, 12.0)]
         els += [
             Chip('SIMESPI · PIRACICABA-SP', 72, 1110, 5.55, 7.8, bg=BLUE, border=None, s=28, w=700),
             Text('SALAS PARA', 800, 96, WHITE, 72, 1200, 5.6, 7.8),
@@ -284,9 +281,9 @@ def build(mode):
             Text('ESTRUTURA PARA ACONTECER.', 800, 56, CYAN, 72, 186, 8.12, 12.0),
         ]
         # 3) TECNOLOGIA 12.0–21.0
-        s3a = Shot('S2_8151', 12.0, 14.4, cx=0.55, s0=1.0, s1=1.02)
-        s3b = Shot('S1_9825', 14.4, 17.4, cx=0.80)
-        s3c = Shot('S1_9837', 17.4, 21.0, cx=0.472, cy=0.55, zoom=1.75, s0=1.0, s1=1.02)
+        s3a = Shot('S2_8151', 12.0, 14.4, z=(1.05, 1.75), f=TV51, p=(0.5, 0.32), p1=(0.5, 0.34))
+        s3b = Shot('S1_9825', 14.4, 17.4, z=(1.1, 1.35), f=TV25, p=(0.62, 0.42), p1=(0.72, 0.36))
+        s3c = Shot('S1_9837', 17.4, 21.0, z=(1.9, 2.35), f=TV37, p=(0.5, 0.36), p1=(0.5, 0.34))
         s3a.marks = [(SCREEN_8151, 12.35)]; s3c.marks = [(SCREEN_9837, 17.6)]
         shots += [s3a, s3b, s3c]
         els += [
@@ -303,10 +300,15 @@ def build(mode):
             Chip('ESTRUTURA PRONTA', 72, 1070, 17.9, 21.0),
         ]
         # 4) POSSIBILIDADES 21.0–30.0  (cortes no tempo da trilha: 1 palavra por compasso/2)
-        seq = [('S2_8149', 0.55), ('S1_9832', 0.5), ('S2_8141', 0.40), ('S1_9829', 0.74), ('S2_8138', 0.5), ('S1_9837', 0.49)]
         cuts = [21.0, 22.8, 24.0, 25.2, 26.4, 27.6, 30.0]
-        for (n, c), a, b in zip(seq, cuts[:-1], cuts[1:]):
-            shots.append(Shot(n, a, b, cx=c, s0=1.0, s1=1.015))
+        mk = [lambda a, b: Shot('S2_8151', a, b, z=(1.25, 1.45), f=TV51, p=(0.62, 0.30), p1=(0.66, 0.30)),
+              lambda a, b: Shot('S1_9832', a, b, z=(1.04, 1.1), f=(0.42, 0.5), f1=(0.56, 0.5)),
+              lambda a, b: Shot('S1_9837', a, b, z=(1.3, 1.5), f=TV37, p=(0.64, 0.30), p1=(0.68, 0.30)),
+              lambda a, b: Shot('S2_8149', a, b, z=(1.04, 1.1), f=(0.5, 0.5), f1=(0.62, 0.5)),
+              lambda a, b: Shot('S1_9825', a, b, z=(1.15, 1.35), f=TV25, p=(0.72, 0.30), p1=(0.78, 0.30)),
+              lambda a, b: Shot('S2_8138', a, b, z=(1.06, 1.12), f=(0.44, 0.5), f1=(0.56, 0.5))]
+        for m, a, b in zip(mk, cuts[:-1], cuts[1:]):
+            shots.append(m(a, b))
         words = ['CURSOS', 'PALESTRAS', 'WORKSHOPS', 'TREINAMENTOS', 'ENCONTROS', 'PROFISSIONAIS']
         wt = [21.6, 22.8, 24.0, 25.2, 26.4, 26.55]
         y = 640
@@ -321,7 +323,7 @@ def build(mode):
             Chip('ASSOCIADOS OU NÃO', 72, 1430, 27.9, 30.0, bg=BLUE, border=None, s=32, w=700),
         ]
         # 5) CONVERSÃO 30.0–36.0
-        shots += [Shot('S1_9832', 30.0, 36.0, cx=0.5, cy=0.5, s0=1.0, s1=1.02)]
+        shots += [Shot('S1_9837', 30.0, 36.0, z=(1.55, 1.15), f=TV37, p=(0.5, 0.24), p1=(0.5, 0.27))]
         fx.append(('panel', 30.0, 36.0))
         els += [
             Text('SEU PRÓXIMO EVENTO', 800, 74, WHITE, 72, 1010, 30.35, 36.0),
@@ -338,7 +340,7 @@ def build(mode):
         wm_spans = [(0, 7.8), (12.0, 36.0)]
     elif mode == 'tour':   # TOUR PELAS SALAS ~29 s
         T = 28.8
-        shots += [Shot('S1_9837', 0, 4.2, cx=0.49)]
+        shots += [Shot('S1_9837', 0, 4.2, z=(1.0, 1.5), f=TV37, p=(0.5, 0.47), p1=(0.5, 0.36))]
         els += [
             Chip('SIMESPI · PIRACICABA-SP', 72, 1110, 0.3, 4.2, bg=BLUE, border=None, s=28, w=700),
             Text('CONHEÇA AS', 800, 96, WHITE, 72, 1200, 0.4, 4.2),
@@ -346,8 +348,8 @@ def build(mode):
             Text('LOCAÇÃO', 800, 96, CYAN, 72, 1412, 0.64, 4.2),
         ]
         # SALA 1
-        d1 = Shot('S1_9837', 8.7, 10.8, cx=0.472, cy=0.55, zoom=1.75, s0=1.0, s1=1.02); d1.marks = [(SCREEN_9837, 8.85)]
-        shots += [Shot('S1_9832', 4.2, 6.6, cx=0.5), Shot('S1_9825', 6.6, 8.7, cx=0.80), d1]
+        d1 = Shot('S1_9837', 8.7, 10.8, z=(1.9, 2.3), f=TV37, p=(0.5, 0.3), p1=(0.5, 0.3)); d1.marks = [(SCREEN_9837, 8.85)]
+        shots += [Shot('S1_9832', 4.2, 6.6, z=(1.04, 1.1), f=(0.42, 0.5), f1=(0.58, 0.5)), Shot('S1_9825', 6.6, 8.7, z=(1.1, 1.35), f=TV25, p=(0.62, 0.30), p1=(0.72, 0.26)), d1]
         els += [
             Text('SALA', 700, 44, WHITE, 72, 1004, 4.35, 10.8, track=0.3),
             Text('01', 800, 150, WHITE, 66, 1050, 4.4, 10.8),
@@ -356,8 +358,8 @@ def build(mode):
             Chip('LOUSA INTERATIVA', 72, 1410, 8.8, 10.8),
         ]
         # SALA 2
-        d2 = Shot('S2_8151', 15.3, 17.4, cx=0.55, s0=1.0, s1=1.02); d2.marks = [(SCREEN_8151, 15.45)]
-        shots += [Shot('S2_8138', 10.8, 13.2, cx=0.5), Shot('S2_8141', 13.2, 15.3, cx=0.40), d2]
+        d2 = Shot('S2_8151', 15.3, 17.4, z=(1.2, 1.8), f=TV51, p=(0.5, 0.26), p1=(0.5, 0.26)); d2.marks = [(SCREEN_8151, 15.45)]
+        shots += [Shot('S2_8138', 10.8, 13.2, z=(1.06, 1.12), f=(0.44, 0.5), f1=(0.56, 0.5)), Shot('S2_8141', 13.2, 15.3, z=(1.05, 1.12), f=(0.33, 0.5), f1=(0.45, 0.5)), d2]
         els += [
             Text('SALA', 700, 44, WHITE, 72, 1004, 10.95, 17.4, track=0.3),
             Text('02', 800, 150, WHITE, 66, 1050, 11.0, 17.4),
@@ -373,7 +375,7 @@ def build(mode):
             Chip('ASSOCIADOS OU NÃO', 72, 1700, 20.0, 22.2, bg=BLUE, border=None, s=34, w=700, pad=(34, 20)),
         ]
         # CONVERSÃO
-        shots += [Shot('S2_8138', 22.2, 25.8, cx=0.5, s0=1.0, s1=1.02)]
+        shots += [Shot('S2_8151', 22.2, 25.8, z=(1.6, 1.2), f=TV51, p=(0.5, 0.24), p1=(0.5, 0.27))]
         fx.append(('panel', 22.2, 25.8))
         els += [
             Text('ESTRUTURA PRONTA', 800, 74, WHITE, 72, 1010, 22.45, 25.8),
@@ -387,7 +389,7 @@ def build(mode):
         wm_spans = [(0, 17.4), (22.2, 25.8)]
     else:   # AD 15 s
         T = 15.0
-        s1 = Shot('S2_8151', 0, 3.0, cx=0.55, s0=1.0, s1=1.02)
+        s1 = Shot('S2_8151', 0, 3.0, z=(1.3, 1.7), f=TV51, p=(0.5, 0.33), p1=(0.5, 0.33))
         s1.marks = [(SCREEN_8151, 0.6)]
         shots += [s1]
         els += [
@@ -397,14 +399,14 @@ def build(mode):
             Text('NÓS TEMOS', 800, 92, WHITE, 72, 1352, 1.75, 3.0),
             Text('O ESPAÇO.', 800, 92, CYAN, 72, 1454, 1.87, 3.0),
         ]
-        shots += [Shot('S1_9837', 3.0, 5.4, cx=0.49), Shot('S2_8149', 5.4, 6.6, cx=0.55)]
+        shots += [Shot('S1_9837', 3.0, 5.4, z=(1.05, 1.4), f=TV37, p=(0.5, 0.45), p1=(0.5, 0.38)), Shot('S2_8149', 5.4, 6.6, z=(1.04, 1.1), f=(0.5, 0.5), f1=(0.6, 0.5))]
         els += [
             Text('SALAS PARA', 800, 96, WHITE, 72, 1200, 3.1, 6.6),
             Text('LOCAÇÃO', 800, 96, WHITE, 72, 1306, 3.22, 6.6),
             Text('EM PIRACICABA', 800, 96, CYAN, 72, 1412, 3.34, 6.6),
             Chip('MODERNAS E CLIMATIZADAS', 72, 1110 - 20, 3.6, 6.6),
         ]
-        s3 = Shot('S1_9837', 6.6, 9.0, cx=0.472, cy=0.55, zoom=1.75, s0=1.0, s1=1.02)
+        s3 = Shot('S1_9837', 6.6, 9.0, z=(1.9, 2.35), f=TV37, p=(0.5, 0.36), p1=(0.5, 0.34))
         s3.marks = [(SCREEN_9837, 6.75)]
         shots += [s3]
         els += [
@@ -412,7 +414,7 @@ def build(mode):
             Text('LOUSA INTERATIVA', 800, 84, WHITE, 72, 1180, 6.7, 9.0),
             Text('E CONECTADA', 800, 84, CYAN, 72, 1274, 6.82, 9.0),
         ]
-        shots += [Shot('S1_9832', 9.0, 12.0, cx=0.5, s0=1.0, s1=1.02)]
+        shots += [Shot('S2_8151', 9.0, 12.0, z=(1.6, 1.2), f=TV51, p=(0.5, 0.24), p1=(0.5, 0.27))]
         fx.append(('panel', 9.0, 12.0))
         els += [
             Text('SEU PRÓXIMO EVENTO', 800, 74, WHITE, 72, 1010, 9.15, 12.0),
@@ -480,7 +482,7 @@ def stills(mode, outdir, times):
 
 def cover(out):
     init_grads()
-    sh = Shot('S1_9837', 0, 1, cx=0.49, s0=1.0, s1=1.0)
+    sh = Shot('S1_9837', 0, 1, z=(1.25, 1.25), f=TV37, p=(0.5, 0.4), p1=(0.5, 0.4))
     fr = sh.render(0)
     fr.alpha_composite(grad(700, 1500, 0.0, 0.9)); fr.alpha_composite(grad(0, 520, 0.6, 0.0))
     L = logo('neg', 330)
