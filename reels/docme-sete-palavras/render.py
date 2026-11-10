@@ -94,9 +94,43 @@ def vid(name, lt, zoom=(1.0, 1.06)):
     return kenburns(im, 0, z, z, W / 2, H / 2, W / 2, H / 2)
 
 # ---------- scenes ----------
-def s_hook(t):  # 0–2
-    img = vid("hook1", t) if t < 1.2 else vid("hook2", t - 1.2)
-    grad(img, True, 1000, 200)
+import pickle
+_CR = pickle.load(open(f"{S}/work/cards.pkl", "rb"))
+CARDS = []
+# layout: (centre x, top y, rotation deg, width)
+LAYOUT = [(560, 625, -3.0, 720), (500, 900, 2.5, 700), (600, 1060, -2.0, 660), (470, 1245, 3.0, 610), (620, 1480, -2.5, 610), (440, 1650, 2.0, 540)]
+for (pb, size, hb, hls), (cx, ty, rot, w) in zip(_CR, LAYOUT):
+    plain = Image.frombytes("RGB", size, pb); hl = Image.frombytes("RGB", size, hb)
+    k = w / size[0]
+    CARDS.append(dict(plain=plain.resize((w, round(size[1] * k)), Image.LANCZOS), hl=hl.resize((w, round(size[1] * k)), Image.LANCZOS),
+                      boxes=[tuple(round(v * k) for v in bx) for bx in hls], cx=cx, ty=ty, rot=rot))
+
+def _rounded(im, r=22):
+    m = Image.new("L", im.size, 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, im.width - 1, im.height - 1], r, fill=255)
+    return m
+
+def s_hook(t):  # 0–2.4  collage of real client requests over the dimmed behind-the-scenes footage
+    bg = vid("hook1", t) if t < 1.2 else vid("hook2", min(t - 1.2, 0.79))
+    bg = bg.filter(ImageFilter.GaussianBlur(6)).point(lambda v: int(v * 0.32))
+    img = bg
+    for i, c in enumerate(CARDS):
+        p = ease((t - 0.05 - i * 0.11) / 0.22)
+        if p <= 0: continue
+        card = c["plain"].copy()
+        for j, bx in enumerate(c["boxes"]):  # orange highlight wipes in left -> right
+            q = ease((t - 0.35 - i * 0.11 - j * 0.06) / 0.18)
+            if q > 0:
+                x1 = bx[0] + max(1, int((bx[2] - bx[0]) * q))
+                card.paste(c["hl"].crop((bx[0], bx[1], x1, bx[3])), (bx[0], bx[1]))
+        rgba = card.convert("RGBA"); rgba.putalpha(_rounded(card))
+        sc = 0.86 + 0.14 * p
+        rgba = rgba.resize((int(rgba.width * sc), int(rgba.height * sc)), Image.BICUBIC).rotate(c["rot"], resample=Image.BICUBIC, expand=True)
+        a = rgba.getchannel("A").point(lambda v: int(v * p)); rgba.putalpha(a)
+        sh = Image.new("RGBA", (rgba.width + 60, rgba.height + 60), (0, 0, 0, 0)); sh.paste((0, 0, 0, int(160 * p)), (30, 42), a)
+        sh = sh.filter(ImageFilter.GaussianBlur(16))
+        x = int(c["cx"] - rgba.width / 2); y = int(c["ty"] + (1 - p) * 40)
+        img.paste(sh, (x - 30, y - 30), sh); img.paste(rgba, (x, y), rgba)
+    grad(img, True, 620, 230)
     label(img, [("Um pedido de", "plain"), ("sete palavras", "box"), ("virou esse vídeo.", "plain")], 90, 250, t + 0.25)
     return img
 
@@ -111,7 +145,7 @@ def s_request(t):  # 2–4
         else: cur = test
     lines.append(cur)
     full = "\n".join(lines)
-    n = max(1, int(len(full) * ease(t / 0.9)))
+    n = max(1, int(len(full) * ease(t / 0.75)))
     shown = full[:n]
     # orange quote mark
     d.text((86, 560), "“", font=F("ExtraBold", 260), fill=ORANGE)
@@ -120,10 +154,10 @@ def s_request(t):  # 2–4
         bb = d.multiline_textbbox((96, 820), shown, font=font, spacing=18)
         d.rectangle([bb[2] + 8, bb[3] - 90, bb[2] + 16, bb[3]], fill=ORANGE)
     # honesty tag: illustrative example, not a client quote
-    a = ease((t - 0.9) / 0.4)
+    a = ease((t - 0.75) / 0.3)
     if a > 0:
         d.text((100, 1330), "exemplo ilustrativo", font=FM, fill=tuple(int(c * a + DARK[i] * (1 - a)) for i, c in enumerate(LIGHT)))
-    d.rectangle([0, H - 14, int(W * min(1, t / 2.0)), H], fill=ORANGE)  # thin progress accent
+    d.rectangle([0, H - 14, int(W * min(1, t / 1.6)), H], fill=ORANGE)  # thin progress accent
     return img
 
 def s_strategy(t):  # 4–8
@@ -225,7 +259,7 @@ def s_result(t):  # 17–22
     img.paste(LOGO_L, ((W - LOGO_L.width) // 2, 1210), LOGO_L)
     return img
 
-SCENES = [(0, 2, s_hook), (2, 4, s_request), (4, 8, s_strategy), (8, 13, s_capture), (13, 17, s_edit), (17, 22, s_result)]
+SCENES = [(0, 2.4, s_hook), (2.4, 4, s_request), (4, 8, s_strategy), (8, 13, s_capture), (13, 17, s_edit), (17, 22, s_result)]
 def render(t):
     for a, b, fn in SCENES:
         if a <= t < b or (fn is s_result and t >= a): return fn(t - a)

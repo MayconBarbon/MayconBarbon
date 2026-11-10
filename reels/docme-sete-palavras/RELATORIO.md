@@ -6,8 +6,8 @@ Frase do pedido: "Preciso divulgar meu negócio nas redes sociais." (7 palavras,
 ## Montagem
 | Tempo | Conteúdo | Texto |
 |---|---|---|
-| 0–2 s | IMG_8402 (controle do drone) → IMG_8398 (close da lente) | Um pedido de **sete palavras** virou esse vídeo. |
-| 2–4 s | Tela tipográfica, selo "exemplo ilustrativo" | "Preciso divulgar meu negócio nas redes sociais." |
+| 0–2,4 s | Colagem de 6 prints de pedidos reais de clientes (WhatsApp), com as palavras **vídeo, drone, foto, filmagem** em tarja laranja; ao fundo, IMG_8402 + IMG_8398 escurecidos e desfocados | Um pedido de **sete palavras** virou esse vídeo. |
+| 2,4–4 s | Tela tipográfica, selo "exemplo ilustrativo" | "Preciso divulgar meu negócio nas redes sociais." |
 | 4–8 s | Sala de reunião DocMe (ESPAÇOS DOC.ME/1.jpg) → PDF de planejamento → estúdio DocMe (ESPAÇOS DOC.ME/5.jpg) | Primeiro, **a estratégia.** |
 | 8–13 s | IMG_8400 → foto produtora com fone (WhatsApp 2025-10-14) → foto produtor com fone (19 (1)-Aprimorado-NR) → IMG_7381 → IMG_8406 | Depois, **a captação.** |
 | 13–17 s | Timeline gráfica animada com frames reais das cenas acima | Edição para dar **forma à ideia.** |
@@ -21,6 +21,12 @@ Frase do pedido: "Preciso divulgar meu negócio nas redes sociais." (7 palavras,
 - Bastidores (`A DOCME/BASTIDORES`): IMG_8402, IMG_8398, IMG_8400, IMG_7381, IMG_8406 (.MOV); fotos `19 (1)-Aprimorado-NR.jpg`, `WhatsApp Image 2025-10-14 at 15.59.21 (1).jpeg`
 - Planejamento: `Planejamento_Conteudos_20_Dias_Delegada_Olivia_DOCME.pdf` (pág. 1, conteúdo do cliente desfocado)
 - Finalizados verticais: Assaí vertical v4 com trilha 4k.mp4, Unimed Novo equipamento - vertical.mp4, Vertical AP1.mp4, Stories 2.mov, Stories Fundiart.mp4, ESPAÇO VERTICAL.mp4
+
+## Prints da abertura (enviados pelo cliente nesta conversa)
+- O número de telefone do contato foi recortado (só o balão da mensagem aparece).
+- O nome "Vinicius" foi desfocado.
+- O destaque bege de busca do WhatsApp em "orçamento" foi neutralizado.
+- São mensagens reais de clientes: confirme que pode publicá-las (sem identificação).
 
 ## Ação pendente — desativar links públicos
 Para baixar os vídeos acima de ~4 MB, estes arquivos foram abertos com "qualquer pessoa com o link". O conector não permite desativar; fazer manualmente no Drive (Compartilhar → Acesso geral → Restrito):
