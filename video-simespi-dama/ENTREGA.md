@@ -1,41 +1,24 @@
-# SIMESPI × Dama Bier: vídeo institucional (v4)
+# SIMESPI × Dama Bier: vídeo institucional (v5)
 
-**Arquivo:** `SIMESPI_DamaBier_institucional_v4_16x9.mp4`
-1920×1080 · 30 fps · H.264 ~7 Mbps · AAC 320 kbps · **1:29,9** · −16 LUFS
+**Arquivo:** `SIMESPI_DamaBier_institucional_v5_16x9.mp4`
+1920×1080 · 30 fps · H.264 ~7 Mbps · AAC 320 kbps · **1:30** · −16 LUFS
 
-## Correções aplicadas (lista da revisão)
+## Correções desta rodada
 
-| # | Pedido | O que foi feito |
-|---|---|---|
-| 1 | 0:00, endireitar | Brinde de abertura (IMG_2652) girado +4°. Medido depois da correção: 0,0°. |
-| 2 | 0:05, tirar | Plano dos aplausos removido da abertura. |
-| 3 | 0:10, tirar | Helicóptero (Águia) removido. Entrou o rio Piracicaba (Institucional SIMESPI 2026). |
-| 4 | 0:15, endireitar | Entrada na fábrica (IMG_2608) girada +4,3°. |
-| 5 | 0:24, tirar | Close no salão (IMG_2635) removido. |
-| 6 | 0:31, tirar | EB Bombas removido. |
-| 7 | 0:52, corrigir zoom | O operador (IMG_2634) tinha um zoom digital no meio do clipe. Agora só aparece o trecho depois do zoom, já estável. |
-| 8 | 0:56, tirar | IMG_2635 (ela acompanhando a linha) removido. |
-| 9 | 0:58, PC | Novo plano do PC: quadro fixo (IMG_2595, 15 s, a designer e o rótulo completo na tela), sem balanço, com zoom-in suave até o rótulo. |
-| 10 | tirar | Interpretei como o segundo plano do PC (IMG_2595 aos 11 s, logo depois do item 9), que foi removido. **Se for outra cena, me avise.** |
-
-## Voz e pronúncia
-- **Voz nova:** Gabriel, "Friendly Brazilian Ad Voice" (biblioteca ElevenLabs, modelo v4). Entre cerca de 30 vozes masculinas pt-BR, é a de **timbre mais parecido com o locutor do vídeo de referência**: 0,84 de semelhança, contra 0,68 da voz anterior, e tom médio de 138 Hz, contra 143 Hz na referência. É uma voz de catálogo licenciada, não um clone do locutor da referência.
-- **SIMÉSPI:** o "é" aberto foi confirmado (F1 ≈ 500 Hz). Nas duas ocorrências em fim de frase, o "i" final saía sussurrado e soava como "Simésp". Troquei esse "i" pelo "i" sonoro do próprio Gabriel.
-- **Dama Biêr:** escrito como "Biêr" para a voz.
-- **Porquê:** escrito "Porquê" para a voz. Na tela continua a grafia correta, "Porque somos a indústria!".
-- Para caber em 1:30, o andamento foi ajustado em 4% com Rubber Band, sem alterar o tom.
-
-## Estrutura (1:29,9)
-| Tempo | Conteúdo |
+| Pedido | O que foi feito |
 |---|---|
-| 0:00–0:05 | Abertura com o brinde (só trilha) |
-| 0:05–0:21 | Piracicaba e a chegada à fábrica (locução 1–2) |
-| 0:21–0:23 | **Quebra:** o casal no passeio |
-| 0:23–0:59 | Cadeia produtiva, CPL Cerva, parceria e linha (locução 3–5) |
-| 0:59–1:03 | **Quebra / build-up:** construção do rótulo (PC com zoom, bobina, selo) |
-| 1:03–1:13 | A revelação e o casal abrindo o kit (locução 6) |
-| 1:13–1:16 | **Quebra:** celebração |
-| 1:16–1:23 | "Porquê somos a indústria!" com Piracicaba vista do alto (locução 7) |
-| 1:23–1:30 | Cartela: SIMESPI, 35 anos e Dama Bier (locução 8) |
+| 0:06, retirar e estender as aéreas de fábricas | Saiu o pôr do sol (Paques). Os planos aéreos da cidade e do rio foram estendidos e entrou uma aérea de fábrica (Uninorte), antes do letreiro da Dama Bier. |
+| Mais processos, mais dinâmico | Cortes de 0,8 a 1,4 s. Entraram planos de processo que ainda não tinham sido usados: tampa e visor do tanque (2691, 2694), malte (2677, 2682), operador na moega (2675), tanques (2668, 2631), esteira (2654), rotuladora (2660) e operador na envasadora (2642). |
+| 0:23, retirar o zoom | O plano com zoom (2617) saiu. Entrou o grupo entre os tanques DAMA (2610). |
+| 0:34, "…des" repetido | Cortado o resto de "oportunidades" que sobrava no início de "Nesse contexto". A transcrição confirma: "…novas oportunidades. Nesse contexto…". |
+| Dama Bier | Regravado com a grafia "Bi-êr", escolhida entre três testes: "ê" fechado (F1 ≈ 406 Hz), tônica no "ê" e "r" final sonoro, sem o "h" aspirado. |
+| 1:03, endireitar | A apresentação (1184) foi girada −3°, medidos pelas bordas do monitor. |
+| 1:06, mostrar o brinde abrindo a caixa | Logo depois da apresentação já entra o casal abrindo a caixa (2598), depois as taças (2599) e a garrafa. |
+| 1:14, cena repetida | A taça na reunião, igual à da abertura, saiu. A celebração agora usa ela com a garrafa (2601) e os selos 35 anos (2666, outro trecho do clipe). |
+| "Porquê, somos a indústria!" | Regravado com a vírgula: pausa de ~0,2 s depois de "Porquê". Na tela continua "Porque somos a indústria!". |
 
-Arquivos de apoio: `locucao_v4/` (trechos finais, tomada original do Gabriel e trilha) e `scripts/build4.py`. As versões anteriores estão em `v1/`, `v2/` e `v3/`.
+A voz é a mesma (Gabriel, ElevenLabs) e o "i" final de "Siméspi" continua sonoro em todas as ocorrências.
+
+Créditos ElevenLabs desta rodada: ~780 (três testes de "Bier" e a frase do "Porquê", 2 tomadas cada).
+
+Versões anteriores em `v1/` a `v4/`.
