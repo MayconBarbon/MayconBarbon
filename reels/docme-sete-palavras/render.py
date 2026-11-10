@@ -150,13 +150,9 @@ def s_request(t):  # 2–4
     # orange quote mark
     d.text((86, 560), "“", font=F("ExtraBold", 260), fill=ORANGE)
     d.multiline_text((96, 820), shown, font=font, fill=WHITE, spacing=18)
-    if t < 1.2 and int(t * 4) % 2 == 0:  # caret while typing
+    if t < 0.8 and int(t * 6) % 2 == 0:  # caret while typing
         bb = d.multiline_textbbox((96, 820), shown, font=font, spacing=18)
         d.rectangle([bb[2] + 8, bb[3] - 90, bb[2] + 16, bb[3]], fill=ORANGE)
-    # honesty tag: illustrative example, not a client quote
-    a = ease((t - 0.75) / 0.3)
-    if a > 0:
-        d.text((100, 1330), "exemplo ilustrativo", font=FM, fill=tuple(int(c * a + DARK[i] * (1 - a)) for i, c in enumerate(LIGHT)))
     d.rectangle([0, H - 14, int(W * min(1, t / 1.6)), H], fill=ORANGE)  # thin progress accent
     return img
 
@@ -171,11 +167,11 @@ def s_strategy(t):  # 4–8
     label(img, [("Primeiro,", "plain"), ("a estratégia.", "box")], 90, 1110, t)
     return img
 
-CAP = [("cap1", 1.3), ("cap2", 1.1), ("cap3", 0.8), ("cap4", 1.0), ("cap5", 0.8)]
+CAP = [("cap1", 1.6), ("cap3", 1.2), ("cap4", 1.2), ("cap5", 1.0)]
 def s_capture(t):  # 8–13
     acc = 0
     for name, d_ in CAP:
-        if t < acc + d_ or name == "cap5": img = vid(name, t - acc); break
+        if t < acc + d_ or name == CAP[-1][0]: img = vid(name, t - acc); break
         acc += d_
     grad(img, False, 900, 200)
     label(img, [("Depois,", "plain"), ("a captação.", "box")], 90, 1110, t)
@@ -186,7 +182,7 @@ def s_edit(t):  # 13–17  graphic timeline built from the real footage above
     global THUMBS
     if THUMBS is None:
         THUMBS = []
-        for name in ["hook1", "strat1", "cap1", "cap2", "cap3", "cap4", "strat3", "hook2"]:
+        for name in ["hook1", "strat1", "cap1", "cap3", "cap4", "cap5", "strat3", "hook2"]:
             f_ = frame(name, len(SEQ[name]) // 2)
             THUMBS.append((name, f_.resize((86, 153), Image.LANCZOS), f_.resize((330, 587), Image.LANCZOS)))
     img = Image.new("RGB", (W, H), DARK2); d = ImageDraw.Draw(img)
@@ -228,12 +224,12 @@ def s_edit(t):  # 13–17  graphic timeline built from the real footage above
 def s_result(t):  # 17–22
     img = Image.new("RGB", (W, H), DARK); d = ImageDraw.Draw(img)
     if t < 2.7:  # finished vertical videos from the Drive, full-bleed, 0.45 s each
-        k = min(5, int(t / 0.45)); lt = t - k * 0.45
+        k = min(4, int(t / 0.54)); lt = t - k * 0.54
         img = vid(f"v{k + 1}", lt, zoom=(1.04, 1.0))
         grad(img, True, 520, 170)
         d = ImageDraw.Draw(img)
         label(img, [("Conteúdo pronto.", "box")], 90, 250, t + 1, size=70)
-        for j in range(6):  # progress dots
+        for j in range(5):  # progress dots
             d.ellipse([92 + j * 30, 385, 108 + j * 30, 401], fill=ORANGE if j <= k else (200, 200, 205))
         return img
     q = t - 2.7
