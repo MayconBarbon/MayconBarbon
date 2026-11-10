@@ -14,5 +14,5 @@ used=set()
 for r in tl:
     c=r[4]
     for s in (c if isinstance(c,list) else [c]): used.add(s[0])
-allf={os.path.basename(p).rsplit('.',1)[0] for p in glob.glob(g['H']+'/*')+glob.glob(g['V']+'/*') if not p.endswith('.txt')}-{'PC_zoom'}
+allf={os.path.basename(p).rsplit('.',1)[0] for p in glob.glob(g['H']+'/*')+glob.glob(g['V']+'/*') if not p.endswith('.txt')}-{'PC_zoom'}; used.discard('MOCKUP')
 print('faltando',sorted(allf-used), len(allf), len(used&allf))

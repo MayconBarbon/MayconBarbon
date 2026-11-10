@@ -119,7 +119,7 @@ def L_panels(specs, n, rows=1):
     clips = []
     for s, (x, y, w, h) in zip(specs, cells):
         name, t0 = s[0], s[1]; o = s[2] if len(s) > 2 else {}
-        clips.append(frames(name, t0, n, w, h, o.get("speed", 1.0), (1.0, 1.06), o.get("focus", (0.5, 0.5))))
+        clips.append(frames(name, t0, n, w, h, o.get("speed", 1.0), o.get("zoom", (1.0, 1.06)), o.get("focus", (0.5, 0.5))))
     for i in range(n):
         c = np.zeros((HH, W, 3), np.uint8); c[:] = NAVY
         for j, ((x, y, w, h), cl) in enumerate(zip(cells, clips)):
@@ -131,6 +131,59 @@ def L_panels(specs, n, rows=1):
             else: c[y:y + h, x:x + w] = f
         canvas.append(c)
     return canvas
+
+
+# ---------------- HERO do produto (mockup oficial animado)
+_BOT = Image.open(f"{S}/mock/bottle.png").convert("RGBA")
+_rng = np.random.default_rng(5)
+_PART = _rng.random((70, 4))  # x, fase, velocidade, tamanho
+def L_hero(spec, n):
+    o = spec[2] if len(spec) > 2 else {}
+    cx = o.get("cx", 0.5); variant = o.get("v", 1)
+    yy, xx = np.mgrid[0:HH, 0:W].astype(np.float32)
+    out = []
+    bh = int(HH * 0.88); bw = int(_BOT.width * bh / _BOT.height)
+    base = _BOT.resize((bw, bh), Image.LANCZOS)
+    A = np.array(base)[:, :, 3].astype(np.float32) / 255
+    for i in range(n):
+        t = i / FPS; p = min(1, t / 0.55); e = 1 - (1 - p) ** 3
+        # fundo: gradiente radial marinho + feixe de luz girando
+        r = np.sqrt(((xx - W * cx) / W) ** 2 + ((yy - HH * 0.45) / HH) ** 2)
+        g = np.clip(1 - r * 1.6, 0, 1) ** 1.5
+        ang = np.arctan2(yy - HH * 1.1, xx - W * cx)
+        rays = (0.5 + 0.5 * np.cos(ang * 14 + t * 1.2)) ** 6 * np.clip(1 - r * 1.2, 0, 1) * 0.35
+        bg = np.zeros((HH, W, 3), np.float32)
+        for c in range(3):
+            bg[:, :, c] = NAVY[c] * 0.55 + (BLUE[c] * 1.1 - NAVY[c] * 0.55) * g + CYAN[c] * rays
+        # partículas (bolhas) subindo
+        for px, ph, sp, sz in _PART:
+            x = int((px * 0.9 + 0.05) * W); y = int(HH * (1.05 - ((ph + t * (0.15 + sp * 0.35)) % 1.1)))
+            rr = int(2 + sz * 6); cv2.circle(bg, (x, y), rr, (200, 235, 245), -1, cv2.LINE_AA)
+        bg = cv2.GaussianBlur(bg, (0, 0), 0.8)
+        # garrafa: entrada de baixo com escala e leve rotação; flutuação suave
+        sc = 1.18 - 0.18 * e; rot = (-6 + 6 * e) + 0.8 * math.sin(t * 2.2)
+        dy = (1 - e) * HH * 0.45 + 6 * math.sin(t * 2.6)
+        b = base.resize((max(1, int(bw * sc)), max(1, int(bh * sc))), Image.LANCZOS).rotate(rot, Image.BICUBIC, expand=True)
+        ba = np.array(b).astype(np.float32); al = ba[:, :, 3:] / 255 * min(1, t / 0.25)
+        # brilho diagonal correndo pelo vidro
+        hh_, ww_ = ba.shape[:2]; gy, gx = np.mgrid[0:hh_, 0:ww_].astype(np.float32)
+        pos = ((t - 0.35) / 0.9) * (ww_ + hh_) - hh_ * 0.3
+        band = np.exp(-((gx + gy * 0.45 - pos) / (ww_ * 0.09)) ** 2)[:, :, None] * 0.55
+        col = np.clip(ba[:, :, :3] + 255 * band, 0, 255)
+        x0 = int(W * cx - ww_ / 2); y0 = int(HH * 0.5 - hh_ / 2 + dy)
+        # sombra suave
+        sh = np.zeros((HH, W), np.float32)
+        cv2.ellipse(sh, (int(W * cx), int(HH * 0.5 + bh * sc / 2 + dy - 4)), (int(bw * 0.55), 18), 0, 0, 360, 1, -1)
+        sh = cv2.GaussianBlur(sh, (0, 0), 14) * 0.55 * e
+        bg *= (1 - sh[:, :, None])
+        X0, Y0 = max(0, x0), max(0, y0); X1, Y1 = min(W, x0 + ww_), min(HH, y0 + hh_)
+        if X1 > X0 and Y1 > Y0:
+            sub = (slice(Y0 - y0, Y1 - y0), slice(X0 - x0, X1 - x0))
+            reg = bg[Y0:Y1, X0:X1]; a_ = al[sub]
+            bg[Y0:Y1, X0:X1] = reg * (1 - a_) + col[sub] * a_
+        # halo ciano atrás no impacto
+        out.append(np.clip(bg, 0, 255).astype(np.uint8))
+    return out
 
 # ---------------- transições
 def whip(frs, side, direction=1, k=4):
@@ -201,9 +254,65 @@ class Text:
             a = min(1, max(0, dt / 0.2)) * fade_out
             sx = x0s[0] if self.pos[0] != "center" else (W - d.textlength(self.sub, font=sf_)) / 2
             d.text((sx + 4, y0 + tot_h + 10), self.sub, font=sf_, fill=WHITE + (int(235 * a),))
+        # faixa translúcida (marinho) para leitura sobre mosaicos
+        band = Image.new("RGBA", pil.size, (0, 0, 0, 0)); bd = ImageDraw.Draw(band)
+        ba = min(1, max(0, (t - self.t0) / 0.15)) * fade_out
+        bx0 = min(x0s) - 50; bx1 = max(x0 + wd for x0, wd in zip(x0s, widths)) + 40
+        by0 = y0 - 40; by1 = y0 + tot_h + (int(self.size * 0.42) + 30 if self.sub else 20)
+        bd.rounded_rectangle((bx0, by0, bx1, by1), radius=18, fill=NAVY + (int(150 * ba),))
+        band = band.filter(ImageFilter.GaussianBlur(14))
+        pil = Image.alpha_composite(pil, band)
         sh = sh.filter(ImageFilter.GaussianBlur(7))
         pil = Image.alpha_composite(pil, sh); pil = Image.alpha_composite(pil, lay)
         return np.array(pil.convert("RGB"))
+
+
+PW = 760
+def wrap_lines(words, fnt, maxw, d):
+    lines=[[]]; cur=0
+    for w,col in words:
+        ww=d.textlength(w+" ",font=fnt)
+        if lines[-1] and cur+ww>maxw: lines.append([]); cur=0
+        lines[-1].append((w,col)); cur+=ww
+    return lines
+def panel_text(img, tx, t, p):
+    """desenha o texto dentro do painel marinho [0, PW*p]."""
+    pil=Image.fromarray(img).convert("RGBA"); lay=Image.new("RGBA",pil.size,(0,0,0,0)); d=ImageDraw.Draw(lay)
+    words=[w for ln in tx.lines for w in ln]; size=int(tx.size*0.82)
+    while True:
+        fnt=font(tx.weight,size); lines=wrap_lines(words,fnt,PW-150,d)
+        if len(lines)<=4 or size<44: break
+        size-=4
+    lh=int(size*1.12); tot=lh*len(lines)+(int(size*1.1)+20 if tx.sub else 0)
+    x0=int(80-(1-p)*PW); y0=int(HH/2-tot/2)
+    fade=min(1,max(0,(tx.t1-t)/0.18)); k=0
+    bw=int(110*ease(min(1,(t-tx.t0)/0.3)))
+    d.rectangle((x0,y0-36,x0+bw,y0-26),fill=CYAN+(int(255*fade),))
+    for li,ln in enumerate(lines):
+        x=x0; y=y0+li*lh
+        for w,col in ln:
+            dt=t-tx.t0-0.12-k*0.05; k+=1; a=min(1,max(0,dt/0.15))*fade
+            if a>0:
+                dy=int((1-ease(min(1,dt/0.2)))*34)
+                d.text((x,y+dy),w,font=fnt,fill=col+(int(255*a),))
+            x+=d.textlength(w+" ",font=fnt)
+    if tx.sub:
+        sf_=font("SemiBold",int(size*0.42)); a=min(1,max(0,(t-tx.t0-0.35)/0.2))*fade
+        sl=wrap_lines([(w,WHITE) for w in tx.sub.split()],sf_,PW-150,d)
+        for j,ln in enumerate(sl):
+            d.text((x0+2,y0+lh*len(lines)+14+j*int(size*0.52))," ".join(w for w,_ in ln),font=sf_,fill=WHITE+(int(230*a),))
+    return np.array(Image.alpha_composite(pil,lay).convert("RGB"))
+def compose_panel(fr, TX, t):
+    act=[tx for tx in TX if tx.t0-0.22<=t<tx.t1+0.22]
+    if not act: return fr
+    tx=act[0]
+    p=ease(min(1,max(0,(t-(tx.t0-0.22))/0.22)))*ease(min(1,max(0,((tx.t1+0.22)-t)/0.22)))
+    x0=int(PW*p)
+    out=np.zeros_like(fr); out[:]=NAVY
+    if W-x0>0: out[:,x0:]=cover(fr,W-x0,HH,(0.6,0.5))
+    out[:,max(0,x0-6):x0]=CYAN
+    if tx.t0<=t<tx.t1: out=panel_text(out,tx,t,p)
+    return out
 
 def wd(s, col=WHITE): return [(w, col) for w in s.split()]
 
@@ -214,7 +323,7 @@ def logo(path, h):
 LOGOS = [logo(f"{B}/simespi_small_crop.png", 168), logo(f"{B}/logo35_crop.png", 270), logo(f"{B}/Logo_Dama_Horizontal_t_crop.png", 172)]
 def card_frame(t):  # t desde o início da cartela
     c = Image.new("RGBA", (W, HH), (255, 255, 255, 255)); d = ImageDraw.Draw(c)
-    gap = 120; tot = sum(l.width for l in LOGOS) + 2 * gap; x = (W - tot) // 2; cy = HH // 2 - 30
+    gap = 120; tot = sum(l.width for l in LOGOS) + 2 * gap; x = (W - tot) // 2; cy = HH // 2
     for i, lg in enumerate(LOGOS):
         dt = t - 0.10 - i * IBI / 2  # entra no contratempo
         a = min(1, max(0, dt / 0.18))
@@ -224,12 +333,6 @@ def card_frame(t):  # t desde o início da cartela
             im.putalpha(im.getchannel("A").point(lambda v: int(v * a)))
             c.alpha_composite(im, (int(x + (lg.width - im.width) / 2), int(cy - im.height / 2)))
         x += lg.width + gap
-    # linha ciano que cresce
-    p = ease(min(1, max(0, (t - 0.6) / 0.5))); lw = int(760 * p)
-    d.rectangle((W // 2 - lw // 2, cy + 175, W // 2 + lw // 2, cy + 181), fill=CYAN + (255,))
-    f2 = font("Bold", 40); msg = "SIMESPI — 35 ANOS FORTALECENDO A INDÚSTRIA"; a = min(1, max(0, (t - 0.9) / 0.3))
-    tw = d.textlength(msg, font=f2)
-    d.text(((W - tw) / 2, cy + 205), msg, font=f2, fill=NAVY + (int(255 * a),))
     fo = min(1, max(0, (t - 5.2) / 0.5))
     out = np.array(c.convert("RGB")).astype(np.float32)
     return (out * (1 - fo) + 255 * fo).astype(np.uint8)
@@ -240,13 +343,13 @@ def card_frame(t):  # t desde o início da cartela
 def F_(n, t, **o): return (n, t, o)
 SEQ = [
     # ---- GANCHO (0–2,5 s): a novidade
-    ("vcenter", 1, F_("IMG_2398", 1.0), "flash"),
-    ("vcenter", 1, F_("IMG_2667", 1.5), "whip"),
-    ("vcenter", 1, F_("IMG_2395", 0.3), "punch"),
-    ("vcenter", 2, F_("08DC7867", 2.0, zoom=(1.0, 1.08)), "whip"),
+    ("tri", 1, [F_("IMG_2396", 0.5), F_("IMG_2398", 1.0), F_("08DC7867", 17.2)], "flash"),
+    ("tri", 1, [F_("IMG_2664", 2.0), F_("IMG_2667", 1.5), F_("IMG_2664", 6.5)], "whip"),
+    ("tri", 1, [F_("IMG_2397", 31.0), F_("IMG_2395", 0.3), F_("08DC7867", 0.2)], "punch"),
+    ("tri", 2, [F_("IMG_2395", 5.0), F_("08DC7867", 2.0, zoom=(1.0, 1.08)), F_("IMG_2397", 14.0)], "whip"),
     # ---- 1: uma cerveja criada para o SIMESPI
-    ("vcenter", 2, F_("B399EA75", 5.0), "punch"),
-    ("vcenter", 2, F_("IMG_2397", 6.0), "whip"),
+    ("tri", 2, [F_("IMG_2397", 8.5), F_("B399EA75", 5.0), F_("IMG_2604", 12.0)], "punch"),
+    ("tri", 2, [F_("IMG_2604", 7.0), F_("IMG_2397", 6.0), F_("IMG_2395", 6.5)], "whip"),
     ("full", 2, F_("IMG_2655", 0.05, speed=0.8), "punch"),
     # ---- 2: parceria inédita — SIMESPI + Dama Bier
     ("full", 2, F_("IMG_2701", 0.2), "whip"),
@@ -272,7 +375,7 @@ SEQ = [
     ("full", 1, F_("IMG_2696", 9.0), "cut"),
     ("tri", 1, [F_("IMG_2686", 1.0), F_("IMG_2693", 0.5), F_("IMG_2695", 6.0)], "cut"),
     ("full", 1, F_("IMG_2698", 0.6), "punch"),
-    ("tri", 1, [F_("IMG_2697", 3.0), F_("IMG_2663", 12.0), F_("IMG_2633", 15.0)], "cut"),
+    ("tri", 1, [F_("IMG_2697", 3.0), F_("IMG_2663", 9.6), F_("IMG_2633", 22.0)], "cut"),
     ("full", 1, F_("IMG_2668", 0.6), "cut"),
     # ---- 4: cadeia produtiva / CPL Cerva / pessoas
     ("full", 1, F_("IMG_2687", 0.4), "whip"),
@@ -293,19 +396,19 @@ SEQ = [
     ("full", 1, F_("IMG_2616", 0), "cut"),
     ("tri", 1, [F_("IMG_2625_2", 0), F_("IMG_2626", 0), F_("IMG_2627", 0)], "cut"),
     # ---- TENSÃO (silêncio da trilha): a construção do rótulo
-    ("vcenter", 2, F_("IMG_2592", 14.0, zoom=(1.0, 1.15)), "whip"),
+    ("tri", 2, [F_("IMG_2592", 2.0), F_("IMG_2592", 14.0, zoom=(1.0, 1.15)), F_("IMG_2592", 19.0)], "whip"),
     ("full", 1, F_("PC_zoom", 1.6), "cut"),
     # ---- DROP (31,7 s): momento heroico da cerveja
-    ("vcenter", 3, F_("08DC7867", 12.0, zoom=(1.02, 1.12)), "flash"),
-    ("vcenter", 1, F_("IMG_2664", 3.0, speed=0.7), "whip"),
+    ("hero", 4, ("MOCKUP", 0, {"cx": 0.5}), "flash"),
+    ("tri", 1, [F_("IMG_2667", 0.5), F_("IMG_2664", 3.0, speed=0.7), F_("IMG_2664", 8.5)], "whip"),
     ("full", 1, F_("IMG_2656", 1.6), "cut"),
-    ("vcenter", 1, F_("IMG_2398", 3.5), "whip"),
+    ("tri", 1, [F_("08DC7867", 20.0), F_("IMG_2398", 3.5), F_("IMG_2396", 6.5)], "whip"),
     ("tri", 1, [F_("IMG_2657", 1.0), F_("IMG_2659", 2.0), F_("IMG_2661", 1.0)], "cut"),
     ("full", 1, F_("IMG_2666", 1.6), "punch"),
     ("full", 1, F_("IMG_2662", 1.0), "cut"),
     ("full", 1, F_("IMG_2660", 1.2), "cut"),
     ("full", 1, F_("IMG_2665", 1.6), "whip"),
-    ("vcenter", 2, F_("IMG_2396", 2.0, zoom=(1.0, 1.1)), "punch"),
+    ("tri", 2, [F_("IMG_2398", 0.3), F_("IMG_2396", 2.0, zoom=(1.0, 1.1)), F_("08DC7867", 18.2)], "punch"),
     ("quad", 2, [F_("IMG_2593", 1.0), F_("IMG_2594", 3.0), F_("IMG_2595", 14.6), F_("root_IMG_1184", 2.0)], "cut"),
     # ---- 6: preparado para você, associado
     ("full", 2, F_("IMG_2598", 7.5), "whip"),
@@ -315,18 +418,18 @@ SEQ = [
     ("full", 2, F_("IMG_2600", 0.3), "cut"),
     # ---- CELEBRAÇÃO
     ("full", 2, F_("IMG_2652", 38.3), "flash"),
-    ("vcenter", 1, F_("IMG_2605", 1.5), "whip"),
+    ("tri", 1, [F_("IMG_2397", 33.0), F_("IMG_2605", 1.5), F_("IMG_2395", 1.2)], "whip"),
     ("tri", 1, [F_("IMG_2638", 0), F_("IMG_2639", 0), F_("IMG_2628", 0)], "cut"),
     ("full", 1, F_("root_IMG_1185", 7.0), "punch"),
     ("full", 1, F_("IMG_2651", 0.5), "cut"),
     ("tri", 1, [F_("IMG_2629", 0), F_("IMG_2637", 0), F_("IMG_2397", 20.0)], "cut"),
     # ---- 7: Porquê, somos a indústria!
-    ("full", 2, F_("IMG_2701", 2.4, zoom=(1.08, 1.0)), "whip"),
-    ("full", 2, F_("IMG_2598", 28.0), "punch"),
-    ("vcenter", 2, F_("IMG_2395", 4.0), "whip"),
+    ("hero", 3, ("MOCKUP", 0, {"cx": 0.62}), "whip"),
+    ("full", 1, F_("IMG_2598", 28.0), "punch"),
+    ("tri", 2, [F_("IMG_2397", 20.0), F_("IMG_2395", 4.0), F_("IMG_2604", 15.0)], "whip"),
     # ---- 8: SIMESPI 35 anos — preenche até a cartela
     ("full", 2, F_("IMG_2666", 0.3), "cut"),
-    ("vcenter", 2, F_("B399EA75", 14.0), "punch"),
+    ("tri", 2, [F_("IMG_2397", 24.0), F_("B399EA75", 14.0), F_("IMG_2395", 7.2)], "punch"),
     ("tri", 1, [F_("IMG_2395", 7.0), F_("IMG_2396", 7.5), F_("IMG_2398", 5.5)], "cut"),
     ("full", 2, F_("IMG_2655", 1.0, speed=0.6), "whip"),
     ("full", 2, F_("IMG_2656", 3.0), "punch"),
@@ -352,7 +455,7 @@ def main():
         c = r[4]
         for s in (c if isinstance(c, list) else [c]): used.add(s[0])
     allf = {os.path.basename(p).rsplit('.', 1)[0] for p in glob.glob(f"{H}/*") + glob.glob(f"{V}/*") if not p.endswith('.txt')}
-    allf -= {"PC_zoom"}
+    allf -= {"PC_zoom"}; used.discard("MOCKUP")
     missing = sorted(allf - used); print("faltando:", missing)
     texts = json.load(open(f"{S}/n/texts.json")) if os.path.exists(f"{S}/n/texts.json") else []
     TX = [Text(**{**x, 'lines': [[(w, tuple(c)) for w, c in ln] for ln in x['lines']], 'pos': tuple(x['pos'])}) for x in texts]
@@ -366,6 +469,7 @@ def main():
         elif kind == "vcenter": frs = L_vcenter(content, n)
         elif kind == "tri": frs = L_panels(content, n, 1)
         elif kind == "quad": frs = L_panels(content, n, 2)
+        elif kind == "hero": frs = L_hero(content, n)
         if trans == "punch": frs = punch(frs)
         elif trans == "flash": frs = flash(punch(frs, 5, 1.08))
         elif trans == "whip": frs = whip(frs, "in", 1)
@@ -373,7 +477,7 @@ def main():
         if idx + 1 < len(tl) and tl[idx + 1][5] == "whip": frs = whip(frs, "out", 1, 3)
         for i, fr in enumerate(frs):
             tt = (f0 + i) / FPS
-            for tx in TX: fr = tx.draw(fr, tt)
+            fr = compose_panel(fr, TX, tt)
             enc.stdin.write(np.ascontiguousarray(fr).tobytes()); fidx += 1
         print(f"  {idx:02d} {t0:5.2f}-{t1:5.2f} {kind:7s} {trans}", flush=True)
     # cartela
