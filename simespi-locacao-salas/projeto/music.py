@@ -126,7 +126,7 @@ def build(mode):
         prog = ['F', 'Am', 'Dm', 'Bb', 'C']
         final_at = 12.0
         sec = dict(hats=0.0, kick=2.4, clap=4.8, arp=4.8, drop=final_at)
-        swells = [(1.8, 0.6), (10.8, 1.2)]
+        swells = [(1.8, 0.6)]
     nb = int(total * SR)
     keys = np.zeros(nb); pads = np.zeros(nb); bs = np.zeros(nb); dr = np.zeros(nb); fx = np.zeros(nb)
 
