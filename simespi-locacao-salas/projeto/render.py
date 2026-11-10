@@ -334,7 +334,57 @@ def build(mode):
         shots += [Plain(WHITE, 36.0, T + 1)]
         els += scene_end(36.0, T)
         fx += [('wipe', 12.0), ('wipe', 21.0), ('wipe', 30.0), ('wipe', 36.0)]
+        fx.append(('lgrad', 21.0, 30.0))
         wm_spans = [(0, 7.8), (12.0, 36.0)]
+    elif mode == 'tour':   # TOUR PELAS SALAS ~29 s
+        T = 28.8
+        shots += [Shot('S1_9837', 0, 4.2, cx=0.49)]
+        els += [
+            Chip('SIMESPI · PIRACICABA-SP', 72, 1110, 0.3, 4.2, bg=BLUE, border=None, s=28, w=700),
+            Text('CONHEÇA AS', 800, 96, WHITE, 72, 1200, 0.4, 4.2),
+            Text('SALAS PARA', 800, 96, WHITE, 72, 1306, 0.52, 4.2),
+            Text('LOCAÇÃO', 800, 96, CYAN, 72, 1412, 0.64, 4.2),
+        ]
+        # SALA 1
+        d1 = Shot('S1_9837', 8.7, 10.8, cx=0.472, cy=0.55, zoom=1.75, s0=1.0, s1=1.02); d1.marks = [(SCREEN_9837, 8.85)]
+        shots += [Shot('S1_9832', 4.2, 6.6, cx=0.5), Shot('S1_9825', 6.6, 8.7, cx=0.80), d1]
+        els += [
+            Text('SALA', 700, 44, WHITE, 72, 1004, 4.35, 10.8, track=0.3),
+            Text('01', 800, 150, WHITE, 66, 1050, 4.4, 10.8),
+            Chip('AMPLA E ORGANIZADA', 72, 1250, 4.8, 10.8),
+            Chip('CLIMATIZADA', 72, 1330, 6.7, 10.8),
+            Chip('LOUSA INTERATIVA', 72, 1410, 8.8, 10.8),
+        ]
+        # SALA 2
+        d2 = Shot('S2_8151', 15.3, 17.4, cx=0.55, s0=1.0, s1=1.02); d2.marks = [(SCREEN_8151, 15.45)]
+        shots += [Shot('S2_8138', 10.8, 13.2, cx=0.5), Shot('S2_8141', 13.2, 15.3, cx=0.40), d2]
+        els += [
+            Text('SALA', 700, 44, WHITE, 72, 1004, 10.95, 17.4, track=0.3),
+            Text('02', 800, 150, WHITE, 66, 1050, 11.0, 17.4),
+            Chip('MESAS E CADEIRAS PARA TURMAS', 72, 1250, 11.4, 17.4),
+            Chip('CLIMATIZADA', 72, 1330, 13.3, 17.4),
+            Chip('LOUSA INTERATIVA E CONECTADA', 72, 1410, 15.4, 17.4),
+        ]
+        # USOS — as duas salas inteiras
+        shots += [Stack('S1_9837', 'S2_8149', 17.4, 22.2)]
+        els += [
+            Text('CURSOS · PALESTRAS', 800, 56, WHITE, 72, 120, 17.6, 22.2),
+            Text('TREINAMENTOS', 800, 56, CYAN, 72, 186, 17.75, 22.2),
+            Chip('ASSOCIADOS OU NÃO', 72, 1700, 20.0, 22.2, bg=BLUE, border=None, s=34, w=700, pad=(34, 20)),
+        ]
+        # CONVERSÃO
+        shots += [Shot('S2_8138', 22.2, 25.8, cx=0.5, s0=1.0, s1=1.02)]
+        fx.append(('panel', 22.2, 25.8))
+        els += [
+            Text('ESTRUTURA PRONTA', 800, 74, WHITE, 72, 1010, 22.45, 25.8),
+            Text('PARA O SEU EVENTO.', 800, 74, CYAN, 72, 1092, 22.6, 25.8),
+            Chip('CONSULTE A DISPONIBILIDADE', 72, 1210, 22.9, 25.8, fg=NAVY, bg=CYAN, border=None, s=34, w=800, pad=(34, 20)),
+            Text('(19) 3417-8600', 800, 72, WHITE, 72, 1330, 23.4, 25.8),
+        ]
+        shots += [Plain(WHITE, 25.8, T + 1)]
+        els += scene_end(25.8, T)
+        fx += [('wipe', 4.2), ('wipe', 10.8), ('wipe', 17.4), ('wipe', 22.2), ('wipe', 25.8)]
+        wm_spans = [(0, 17.4), (22.2, 25.8)]
     else:   # AD 15 s
         T = 15.0
         s1 = Shot('S2_8151', 0, 3.0, cx=0.55, s0=1.0, s1=1.02)
@@ -389,7 +439,7 @@ def frame_at(t, T, shots, els, fx, WM, wm_spans):
             top = int(H - (H - 940) * q)
             ImageDraw.Draw(fr).rectangle((0, top, W, H), fill=NAVY)
             ImageDraw.Draw(fr).rectangle((0, top, W, top + 6), fill=CYAN)
-        elif 21.0 <= t < 30.0 and T > 20:
+        elif any(f[0] == 'lgrad' and f[1] <= t < f[2] for f in fx):
             fr.alpha_composite(G_LEFT); fr.alpha_composite(G_BOTTOM)
         else:
             fr.alpha_composite(G_BOTTOM)

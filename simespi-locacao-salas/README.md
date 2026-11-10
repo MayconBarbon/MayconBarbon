@@ -10,6 +10,7 @@ Campanha: **"Você tem o conhecimento. Nós temos o espaço."**
 | B | `B_SIMESPI_Anuncio_Locacao_Salas_15s_1080x1920.mp4` | 15,0 s · mesmo padrão técnico e visual |
 | C | `C_SIMESPI_Capa_Reels_1080x1920.jpg` | 1080×1920, texto e logo dentro do recorte 3:4 e 1:1 do grid |
 | D | `D_legenda_instagram.txt` | Legenda comercial com CTA e hashtags |
+| E | `E_SIMESPI_Tour_Salas_29s_1080x1920.mp4` | **3º vídeo — Tour pelas salas** · 28,8 s · mesmo padrão técnico (H.264, 30 fps, −14 LUFS) |
 
 ## Montagem do Reels (A)
 
@@ -23,6 +24,19 @@ Campanha: **"Você tem o conhecimento. Nós temos o espaço."**
 | 36–39 | Assinatura | Fundo branco | Logotipo original (colorido positivo) + SALAS PARA LOCAÇÃO + (19) 3417-8600 | — (acorde final da trilha) |
 
 **Anúncio de 15 s (B):** o texto do gancho já aparece no 1º quadro, sobre a foto com a lousa (IMG_8151) destacada por cantoneiras. Depois vêm salas, lousa, a chamada com telefone e o logotipo. Locução: "Você tem o conhecimento. Nós temos o espaço. / Salas modernas e climatizadas, com lousa interativa, em Piracicaba. / Consulte a disponibilidade e reserve sua sala no Simespi."
+
+## Tour pelas salas (E)
+
+| Tempo | Bloco | Imagens | Texto | Locução |
+|---|---|---|---|---|
+| 0–4,2 | Abertura | IMG_9837 | CONHEÇA AS SALAS PARA LOCAÇÃO | "Conheça as salas para locação do Simespi, em Piracicaba." |
+| 4,2–10,8 | Sala 01 | 9832 → 9825 → recorte da lousa (9837) | SALA 01 + AMPLA E ORGANIZADA · CLIMATIZADA · LOUSA INTERATIVA | "Ambientes amplos, organizados e climatizados." |
+| 10,8–17,4 | Sala 02 | 8138 → 8141 → 8151 (lousa) | SALA 02 + MESAS E CADEIRAS PARA TURMAS · CLIMATIZADA · LOUSA INTERATIVA E CONECTADA | "Mesas e cadeiras para turmas de diferentes formatos, com lousa interativa e conectada." |
+| 17,4–22,2 | Usos | As duas salas, fotos inteiras | CURSOS · PALESTRAS · TREINAMENTOS + ASSOCIADOS OU NÃO | "Estrutura pronta para cursos, palestras e treinamentos. Associados ou não." |
+| 22,2–25,8 | Conversão | 8138 + painel | ESTRUTURA PRONTA PARA O SEU EVENTO / CONSULTE A DISPONIBILIDADE / (19) 3417-8600 | "Consulte a disponibilidade: (19) 3417-8600." |
+| 25,8–28,8 | Assinatura | Fundo branco | Logotipo original + telefone | — |
+
+Os nomes "Sala 01" e "Sala 02" seguem as pastas do Drive. **Confirmar** se são esses os nomes comerciais e se as duas salas têm a lousa interativa: as duas fotos mostram o mesmo tipo de tela.
 
 ## Decisões criativas
 

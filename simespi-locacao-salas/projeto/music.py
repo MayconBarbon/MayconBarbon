@@ -115,6 +115,12 @@ def build(mode):
         prog = prog[:15]                                             # compasso 16 = acorde final
         sec = dict(hats=4.8, kick=12.0, clap=21.6, arp=21.6, drop=final_at)
         swells = [(10.8, 1.2), (19.8, 1.2)]
+    elif mode == 'tour':
+        total = 29.0
+        prog = ['F', 'Am', 'Dm', 'Bb'] * 2 + ['F', 'Am', 'Bb', 'C']
+        final_at = 25.8
+        sec = dict(hats=1.2, kick=4.2, clap=17.4, arp=10.8, drop=final_at)
+        swells = [(3.6, 0.6), (16.2, 1.2)]
     else:  # ad 15 s
         total = 15.2
         prog = ['F', 'Am', 'Dm', 'Bb', 'C']
