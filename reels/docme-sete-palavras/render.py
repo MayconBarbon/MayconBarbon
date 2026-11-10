@@ -25,7 +25,7 @@ def ease(x):  # easeOutCubic, clamped
 # ---------- assets ----------
 def seq(name):
     return [p for p in sorted(glob.glob(f"{S}/work/seg/{name}/*.jpg"))]
-SEQ = {n: seq(n) for n in ["hook1", "hook2", "prep", "cap1", "cap2", "cap3", "cap4", "cap5"] + [f"v{i}" for i in range(1, 7)]}
+SEQ = {n: seq(n) for n in ["hook1", "hook2", "strat1", "strat3", "cap1", "cap2", "cap3", "cap4", "cap5"] + [f"v{i}" for i in range(1, 7)]}
 _cache = {}
 def frame(name, i):
     fs = SEQ[name]; p = fs[min(i, len(fs) - 1)]
@@ -127,12 +127,12 @@ def s_request(t):  # 2–4
     return img
 
 def s_strategy(t):  # 4–8
-    if t < 1.35:
-        p = t / 1.35; img = kenburns(PG1, p, 1.0, 1.05, 560, 990, 580, 985)
-    elif t < 2.65:
-        p = (t - 1.35) / 1.3; img = kenburns(PG2, p, 1.0, 1.05, 920, 1250, 1120, 1230)
-    else:
-        img = vid("prep", t - 2.65)
+    if t < 1.4:   # DocMe meeting room
+        img = vid("strat1", t, zoom=(1.0, 1.0))
+    elif t < 2.65:  # planning document
+        p = (t - 1.4) / 1.25; img = kenburns(PG1, p, 1.0, 1.05, 560, 990, 580, 985)
+    else:         # DocMe studio
+        img = vid("strat3", t - 2.65, zoom=(1.0, 1.0))
     grad(img, False, 1100, 245)
     label(img, [("Primeiro,", "plain"), ("a estratégia.", "box")], 90, 1110, t)
     return img
@@ -152,7 +152,7 @@ def s_edit(t):  # 13–17  graphic timeline built from the real footage above
     global THUMBS
     if THUMBS is None:
         THUMBS = []
-        for name in ["hook1", "prep", "cap1", "cap2", "cap3", "cap4", "cap5", "hook2"]:
+        for name in ["hook1", "strat1", "cap1", "cap2", "cap3", "cap4", "strat3", "hook2"]:
             f_ = frame(name, len(SEQ[name]) // 2)
             THUMBS.append((name, f_.resize((86, 153), Image.LANCZOS), f_.resize((330, 587), Image.LANCZOS)))
     img = Image.new("RGB", (W, H), DARK2); d = ImageDraw.Draw(img)
