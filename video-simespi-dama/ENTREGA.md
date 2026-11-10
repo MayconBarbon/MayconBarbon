@@ -1,40 +1,41 @@
-# SIMESPI × Dama Bier: vídeo institucional (v3, versão emocional)
+# SIMESPI × Dama Bier: vídeo institucional (v4)
 
-**Arquivo:** `SIMESPI_DamaBier_institucional_v3_16x9.mp4`
-1920×1080 · 30 fps · H.264 ~7 Mbps · AAC 320 kbps · **1:29** · −16 LUFS
+**Arquivo:** `SIMESPI_DamaBier_institucional_v4_16x9.mp4`
+1920×1080 · 30 fps · H.264 ~7 Mbps · AAC 320 kbps · **1:29,9** · −16 LUFS
 
-## O que mudou em relação à v2
-- **Abre com o brinde:** ela rindo de taça na mão, ele com a garrafa, o rótulo de 35 anos e aplausos, só com trilha.
-- **Trilha nova:** corporativa e vibrante, a 120 BPM, com bateria, baixo pulsante, arpejos, pads e acordes. Tem impactos nas viradas, *build-up* com caixa acelerando na construção do rótulo e explosão na celebração.
-- **Voz mais grave e mais enérgica:** Antonio pt-BR com tom mais baixo, para soar mais madura, e fala 8% mais rápida. Pronúncia **"Siméspi"**.
-- **Quebras na locução** em que a trilha sobe: o passeio, a construção do rótulo e a celebração.
-- **Passeio completo** do casal do SIMESPI: recepção na porta, entrada na fábrica, conversas entre os tanques, close dela no envase, sala de reunião e abertura do kit.
-- **A surpresa como clímax:** a designer montando o rótulo na tela, depois a bobina, o selo no gargalo, a apresentação "Dama + SIMESPI", a reação dela e o casal abrindo o kit, até a celebração.
+## Correções aplicadas (lista da revisão)
 
-## Roteiro por tempo
-
-| Tempo | Áudio | Imagens |
+| # | Pedido | O que foi feito |
 |---|---|---|
-| 0:00–0:06 | **Abertura a frio**: trilha cheia | Brinde na reunião (IMG_2652) · garrafas 35 anos (2655) · ele com garrafa e taça (2598) · selos (2666) · aplausos (2652) |
-| 0:06–0:13 | "A história de Piracicaba…" | Drones: polo industrial ao pôr do sol (Paques), cidade (Institucional SIMESPI 2026), helicóptero sobre o rio (Águia), letreiro da Dama Bier |
-| 0:13–0:22 | "Na fábrica, cada etapa…" | Anfitrião abre a porta (2606) · o grupo entra (2608) · tanques, moagem, profissional com o malte |
-| 0:22–0:25 | **Quebra 1**: trilha sobe | O casal sob o tanque DAMA (2611) · close dela no salão (2635) |
-| 0:25–0:33 | "…cadeia produtiva…" | Malte · drones de Uninorte, DanPower, EB Bombas e distrito industrial |
-| 0:33–0:44 | "…indústria cervejeira… CPL Cerva…" | O casal conversando com o anfitrião (2617) · tanques · tina · cervejeiro · explicação técnica (2622) · lower-third "CPL Cerva" |
-| 0:44–0:57 | "…parceria do Siméspi com a Dama Bier…" | Grupo entre os tanques (2641, 2621, 2623) · envase · operador (2634) · ela acompanhando a linha (2635) |
-| 0:57–1:02 | **Quebra 2**: *build-up* | **Construção do rótulo**: designer na tela (2595) · bobina 35 anos · selo no gargalo |
-| 1:02–1:11 | "E o resultado está neste brinde…" | Apresentação na tela (1184) · reação dela (1185) · o casal abre o kit (2598, 2599) |
-| 1:11–1:15 | **Quebra 3**: celebração | Ela com a taça diante da tela "Dama + SIMESPI" (2652) · garrafa nas mãos (2600) |
-| 1:15–1:22 | "Porque somos a indústria!…" (texto na tela) | Piracicaba vista do alto (Paques, SIMESPI 2024) · sede do SIMESPI |
-| 1:22–1:29 | "Siméspi. Há 35 anos…" | Cartela com as logos SIMESPI, SIMESPI 35 anos e Dama Bier |
+| 1 | 0:00, endireitar | Brinde de abertura (IMG_2652) girado +4°. Medido depois da correção: 0,0°. |
+| 2 | 0:05, tirar | Plano dos aplausos removido da abertura. |
+| 3 | 0:10, tirar | Helicóptero (Águia) removido. Entrou o rio Piracicaba (Institucional SIMESPI 2026). |
+| 4 | 0:15, endireitar | Entrada na fábrica (IMG_2608) girada +4,3°. |
+| 5 | 0:24, tirar | Close no salão (IMG_2635) removido. |
+| 6 | 0:31, tirar | EB Bombas removido. |
+| 7 | 0:52, corrigir zoom | O operador (IMG_2634) tinha um zoom digital no meio do clipe. Agora só aparece o trecho depois do zoom, já estável. |
+| 8 | 0:56, tirar | IMG_2635 (ela acompanhando a linha) removido. |
+| 9 | 0:58, PC | Novo plano do PC: quadro fixo (IMG_2595, 15 s, a designer e o rótulo completo na tela), sem balanço, com zoom-in suave até o rótulo. |
+| 10 | tirar | Interpretei como o segundo plano do PC (IMG_2595 aos 11 s, logo depois do item 9), que foi removido. **Se for outra cena, me avise.** |
 
-## Locução
-O texto é o mesmo da v2, ou seja, o original com três frases levemente condensadas (veja `v2/ENTREGA_v2.md`). Os trechos separados estão em `locucao_v3/`.
+## Voz e pronúncia
+- **Voz nova:** Gabriel, "Friendly Brazilian Ad Voice" (biblioteca ElevenLabs, modelo v4). Entre cerca de 30 vozes masculinas pt-BR, é a de **timbre mais parecido com o locutor do vídeo de referência**: 0,84 de semelhança, contra 0,68 da voz anterior, e tom médio de 138 Hz, contra 143 Hz na referência. É uma voz de catálogo licenciada, não um clone do locutor da referência.
+- **SIMÉSPI:** o "é" aberto foi confirmado (F1 ≈ 500 Hz). Nas duas ocorrências em fim de frase, o "i" final saía sussurrado e soava como "Simésp". Troquei esse "i" pelo "i" sonoro do próprio Gabriel.
+- **Dama Biêr:** escrito como "Biêr" para a voz.
+- **Porquê:** escrito "Porquê" para a voz. Na tela continua a grafia correta, "Porque somos a indústria!".
+- Para caber em 1:30, o andamento foi ajustado em 4% com Rubber Band, sem alterar o tom.
 
-**Limitação:** a voz continua sendo sintética. A conta ElevenLabs tem 83 créditos e a locução completa custaria cerca de 1.100. Com créditos ou com um locutor gravado, eu troco a voz sem mexer na edição.
+## Estrutura (1:29,9)
+| Tempo | Conteúdo |
+|---|---|
+| 0:00–0:05 | Abertura com o brinde (só trilha) |
+| 0:05–0:21 | Piracicaba e a chegada à fábrica (locução 1–2) |
+| 0:21–0:23 | **Quebra:** o casal no passeio |
+| 0:23–0:59 | Cadeia produtiva, CPL Cerva, parceria e linha (locução 3–5) |
+| 0:59–1:03 | **Quebra / build-up:** construção do rótulo (PC com zoom, bobina, selo) |
+| 1:03–1:13 | A revelação e o casal abrindo o kit (locução 6) |
+| 1:13–1:16 | **Quebra:** celebração |
+| 1:16–1:23 | "Porquê somos a indústria!" com Piracicaba vista do alto (locução 7) |
+| 1:23–1:30 | Cartela: SIMESPI, 35 anos e Dama Bier (locução 8) |
 
-## Arquivos
-- **Imagens da Dama Bier:** IMG_2595, 2598, 2599, 2600, 2606, 2608, 2611, 2617, 2621, 2622, 2623, 2634, 2635, 2641, 2642, 2652, 2653, 2655, 2656, 2665, 2666, 2669, 2671, 2676, 2687, 2688, 2696, 2698, 2701, IMG_1184 e IMG_1185.
-- **Drones:** os mesmos da v2.
-
-Versões anteriores: `v1/` e `v2/`.
+Arquivos de apoio: `locucao_v4/` (trechos finais, tomada original do Gabriel e trilha) e `scripts/build4.py`. As versões anteriores estão em `v1/`, `v2/` e `v3/`.
