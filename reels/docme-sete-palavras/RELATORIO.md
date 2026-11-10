@@ -1,12 +1,12 @@
-# Reel DocMe — "Um pedido de sete palavras virou esse vídeo." (versão final: v2)
+# Reel DocMe — "Um pedido que pode virar muitos vídeos"
 
-**Entrega:** `DocMe_Reel_7palavras_v2_alternativa.mp4` — H.264, 1080×1920, 30 fps, 22,0 s, faixa AAC silenciosa (trilha a adicionar na publicação).
-Frase do pedido: "Preciso divulgar meu negócio nas redes sociais." (7 palavras, coerente com o gancho).
+**Entrega:** `DocMe_Reel_final.mp4` — H.264, 1080×1920, 30 fps, 22,0 s, faixa AAC silenciosa (trilha a adicionar na publicação).
+Frase do pedido (tela 2): "Preciso divulgar meu negócio nas redes sociais."
 
 ## Montagem
 | Tempo | Conteúdo | Texto |
 |---|---|---|
-| 0–2,4 s | Colagem de 6 prints de pedidos reais de clientes (WhatsApp), com as palavras **vídeo, drone, foto, filmagem** em tarja laranja; ao fundo, IMG_8402 + IMG_8398 escurecidos e desfocados | Um pedido de **sete palavras** virou esse vídeo. |
+| 0–2,4 s | Colagem de 6 prints de pedidos reais de clientes (WhatsApp), com as palavras **vídeo, drone, foto, filmagem** em tarja laranja; ao fundo, IMG_8402 + IMG_8398 escurecidos e desfocados | Um pedido que pode virar **muitos vídeos** |
 | 2,4–4 s | Tela tipográfica, selo "exemplo ilustrativo" | "Preciso divulgar meu negócio nas redes sociais." |
 | 4–8 s | Sala de reunião DocMe (ESPAÇOS DOC.ME/1.jpg) → PDF de planejamento → estúdio DocMe (ESPAÇOS DOC.ME/5.jpg) | Primeiro, **a estratégia.** |
 | 8–13 s | IMG_8400 → foto produtora com fone (WhatsApp 2025-10-14) → foto produtor com fone (19 (1)-Aprimorado-NR) → IMG_7381 → IMG_8406 | Depois, **a captação.** |

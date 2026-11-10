@@ -131,7 +131,7 @@ def s_hook(t):  # 0–2.4  collage of real client requests over the dimmed behin
         x = int(c["cx"] - rgba.width / 2); y = int(c["ty"] + (1 - p) * 40)
         img.paste(sh, (x - 30, y - 30), sh); img.paste(rgba, (x, y), rgba)
     grad(img, True, 620, 230)
-    label(img, [("Um pedido de", "plain"), ("sete palavras", "box"), ("virou esse vídeo.", "plain")], 90, 250, t + 0.25)
+    label(img, [("Um pedido que", "plain"), ("pode virar", "plain"), ("muitos vídeos", "box")], 90, 250, t + 0.25)
     return img
 
 def s_request(t):  # 2–4
