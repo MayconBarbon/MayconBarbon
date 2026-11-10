@@ -1,12 +1,10 @@
-# SIMESPI + Dama Bier: lançamento (v8)
+# SIMESPI + Dama Bier: lançamento (v9)
 
-**Arquivo:** `SIMESPI_DamaBier_lancamento_v8_16x9.mp4` · 1920×1080 · 58 s
+**Arquivo:** `SIMESPI_DamaBier_lancamento_v9_16x9.mp4` · 1920×1080 · 58 s
 
-## Correções em relação à v7
-- **Sem painel cortado ou sobrando na esquerda:** durante os textos, o layout é recomposto na área ao lado do painel. Os trípticos mostram só os dois últimos painéis, inteiros. Vale para 0:02, 0:03, 0:07, 0:09, 0:35, 0:44 e 0:48.
-- **0:24–0:26:** grades simétricas, com todas as células visíveis. A entrada escalonada, que deixava células vazias, foi substituída por uma entrada única e rápida.
-- **0:29:** o tríptico de fotos (IMG_2613–2615) saiu, e o plano anterior ganhou a batida.
-- **0:32:** a arte do mockup saiu. No drop entram as imagens reais do produto (garrafa, kit e taça).
-- **0:48:** o mockup animado agora tem fundo branco.
+## Correções em relação à v8
+- **0:29:** saiu a foto do grupo sob a escada (IMG_2616). O tríptico seguinte ganhou a batida.
+- **Plano que terminava no chão** (IMG_2636, na grade de 0:26): agora usa o trecho dos barris e da linha (4,6 s), sem piso.
+- **0:35, escala que aumentava e diminuía:** o painel de texto fecha e reabre só quando há pausa real. Entre textos próximos ele fica aberto (0:00–0:10, 0:31–0:38 e 0:42–0:49), sem o efeito de zoom no meio.
 
-A trilha, a locução, os efeitos (−15 dB) e a cartela final são os mesmos da v7.
+O resto (trilha, locução, efeitos, mockup em fundo branco e cartela) é igual à v8.

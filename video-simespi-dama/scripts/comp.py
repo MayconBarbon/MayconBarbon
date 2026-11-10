@@ -302,16 +302,25 @@ def panel_text(img, tx, t, p):
         for j,ln in enumerate(sl):
             d.text((x0+2,y0+lh*len(lines)+14+j*int(size*0.52))," ".join(w for w,_ in ln),font=sf_,fill=WHITE+(int(230*a),))
     return np.array(Image.alpha_composite(pil,lay).convert("RGB"))
+def panel_windows(TX, gap=1.3):
+    w=[]
+    for tx in sorted(TX,key=lambda z:z.t0):
+        a,b=tx.t0-0.22,tx.t1+0.22
+        if w and a-w[-1][1]<gap: w[-1][1]=max(w[-1][1],b)
+        else: w.append([a,b])
+    return w
 def compose_panel(fr, TX, t, alt=None):
-    act=[tx for tx in TX if tx.t0-0.22<=t<tx.t1+0.22]
-    if not act: return fr
-    tx=act[0]
-    p=ease(min(1,max(0,(t-(tx.t0-0.22))/0.22)))*ease(min(1,max(0,((tx.t1+0.22)-t)/0.22)))
+    win=[w for w in panel_windows(TX) if w[0]<=t<w[1]]
+    if not win: return fr
+    a,b=win[0]
+    act=[tx for tx in TX if tx.t0<=t<tx.t1]
+    tx=act[0] if act else None
+    p=ease(min(1,max(0,(t-a)/0.22)))*ease(min(1,max(0,(b-t)/0.22)))
     x0=int(PW*p)
     out=np.zeros_like(fr); out[:]=NAVY
     if W-x0>0: out[:,x0:]=cover(alt,W-x0,HH,(0.5,0.5)) if alt is not None else cover(fr,W-x0,HH,(0.6,0.5))
     out[:,max(0,x0-6):x0]=CYAN
-    if tx.t0<=t<tx.t1: out=panel_text(out,tx,t,p)
+    if tx is not None: out=panel_text(out,tx,t,p)
     return out
 
 def wd(s, col=WHITE): return [(w, col) for w in s.split()]
@@ -388,12 +397,11 @@ SEQ = [
     ("quad", 2, [F_("IMG_2621", 0.4), F_("IMG_2623", 0.4), F_("IMG_2610", 6.3), F_("IMG_2635", 9.2)], "cut"),
     ("tri", 1, [F_("IMG_2648", 0.5), F_("IMG_2649", 0.5), F_("root_IMG_1181", 30.0)], "cut"),
     ("full", 1, F_("IMG_2650", 0.5), "whip"),
-    ("quad", 2, [F_("IMG_2636", 6.0), F_("IMG_2700", 1.0), F_("IMG_2642", 0.4), F_("IMG_2646", 0.0)], "cut"),
+    ("quad", 2, [F_("IMG_2636", 4.6), F_("IMG_2700", 1.0), F_("IMG_2642", 0.4), F_("IMG_2646", 0.0)], "cut"),
     ("full", 1, F_("IMG_2653", 0.4), "punch"),
     ("full", 1, F_("IMG_2654", 0.6), "cut"),
     ("tri", 2, [F_("IMG_2643", 3.0), F_("IMG_2644", 2.0), F_("IMG_2658", 1.0)], "cut"),
-    ("full", 1, F_("IMG_2616", 0), "cut"),
-    ("tri", 1, [F_("IMG_2625_2", 0), F_("IMG_2626", 0), F_("IMG_2627", 0)], "cut"),
+    ("tri", 2, [F_("IMG_2625_2", 0), F_("IMG_2626", 0), F_("IMG_2627", 0)], "cut"),
     # ---- TENSÃO (silêncio da trilha): a construção do rótulo
     ("tri", 2, [F_("IMG_2592", 2.0), F_("IMG_2592", 14.0, zoom=(1.0, 1.15)), F_("IMG_2592", 19.0)], "whip"),
     ("full", 1, F_("PC_zoom", 1.6), "cut"),
@@ -485,7 +493,7 @@ def main():
         f0, f1 = int(round(t0 * FPS)), int(round(t1 * FPS)); n = f1 - f0
         nxt = idx + 1 < len(tl) and tl[idx + 1][5] == "whip"
         frs = render(kind, content, n, trans, nxt, W)
-        overl = any(tx.t0 - 0.22 < t1 and tx.t1 + 0.22 > t0 for tx in TX)
+        overl = any(a < t1 and b > t0 for a, b in panel_windows(TX))
         alt = render(kind, content, n, trans, nxt, W - PW) if overl else None
         for i, fr in enumerate(frs):
             tt = (f0 + i) / FPS
