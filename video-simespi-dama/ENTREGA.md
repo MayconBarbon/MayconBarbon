@@ -1,66 +1,69 @@
-# SIMESPI × Dama Bier: vídeo institucional
+# SIMESPI × Dama Bier: vídeo institucional (v2)
 
-**Arquivo final:** `SIMESPI_DamaBier_institucional_16x9.mp4`
-1920×1080 (16:9) · 30 fps · H.264 · AAC 320 kbps · **59,6 s** · −16 LUFS (pico −1,5 dBTP)
+**Arquivo final:** `SIMESPI_DamaBier_institucional_v2_16x9.mp4`
+1920×1080 (16:9) · 30 fps · H.264 (~7 Mbps) · AAC 320 kbps · **1:29,3** · −15,9 LUFS
+
+**O que mudou em relação à v1** (que continua em `v1/`):
+- Duração de até 1:30. A locução voltou a ser **praticamente integral**.
+- **Imagens de Piracicaba vistas do drone**, tiradas dos vídeos prontos (até 5 s por cena).
+- **Três respiros** em que a trilha sobe e ficam só as imagens: abertura, cadeia produtiva e revelação do rótulo.
 
 ---
 
-## 1. Locução final utilizada
+## 1. Locução final
 
-Pelo cálculo de tempo, o texto integral (~230 palavras) leva cerca de 90 s em ritmo natural (~2,5 palavras/s), então foi condensado. A voz está em velocidade normal, sem aceleração. Ela ocupa 53,6 s e o restante são pausas e a cartela.
+A locução integral leva 84 s. Somada aos respiros e à cartela, passaria de 1:30. Por isso, três frases foram levemente condensadas e todo o resto segue o texto original.
 
-| # | Texto final | Alteração em relação ao original |
+| # | Texto | Situação |
 |---|---|---|
-| 1 | A história de Piracicaba carrega as marcas da indústria. Uma trajetória construída pelo trabalho de gerações. | Igual ao original |
-| 2 | Na fábrica, cada etapa revela o que muitos não veem: máquinas em movimento, processos cuidadosos, profissionais especializados. | "processos cuidadosamente executados" virou **"processos cuidadosos"** |
-| 3 | É a força de uma extensa cadeia produtiva, que conecta empresas e promove crescimento, renda e oportunidades. | **Condensado.** Saiu "A vida da produção industrial chega às nossas mãos todos os dias" e "movimenta diferentes setores". "É a expressão" virou "É a força" |
-| 4 | Nela, a indústria cervejeira se destaca, com o incentivo do CPL Cerva, projeto do Simespi que fortalece essa cadeia. | **Condensado.** Saíram "Um setor que reúne diferentes atividades" e "integração" |
-| 5 | Dessa conexão nasceu a parceria do Simespi com a Dama Bier: indústria piracicabana de excelência, com precisão, tecnologia e qualidade. | **Condensado.** Saiu "Em sua linha de produção, o rigor técnico se revela em cada detalhe. São etapas que exigem…" e ficaram os três atributos |
-| 6 | O resultado está neste brinde, preparado especialmente para você, associado ao Simespi. | Saiu "Um produto que carrega a identidade e a força industrial da nossa região" |
-| 7 | Porque somos a indústria! Fazemos o trabalho que transforma o presente e o futuro de Piracicaba. | Saiu "todos os dias" |
-| 8 | Simespi. Há 35 anos, representando e fortalecendo a indústria. | Igual ao original |
+| 1 | A história de Piracicaba carrega as marcas da indústria. Uma trajetória construída pelo trabalho de gerações. | Original |
+| 2 | Na fábrica, cada etapa revela o que muitos não veem. Máquinas em movimento, processos cuidadosamente executados, profissionais especializados. | Original |
+| 3 | É a expressão de uma extensa cadeia produtiva que conecta empresas, movimenta diferentes setores, promove crescimento, renda e novas oportunidades. | **Condensado:** saiu "A vida da produção industrial chega às nossas mãos todos os dias." |
+| 4 | Nesse contexto, a indústria cervejeira também se destaca, e encontra no CPL Cerva, projeto do Simespi, um importante incentivo à integração e ao fortalecimento de sua cadeia produtiva. | **Condensado:** saiu "Um setor que reúne diferentes atividades" |
+| 5 | Foi dessa conexão que nasceu a parceria do Simespi com a Dama Bier: indústria piracicabana reconhecida pela excelência de sua produção, onde o rigor técnico se revela em cada detalhe, com precisão, tecnologia e compromisso com a qualidade. | **Unido em uma frase:** "Em sua linha de produção…" e "São etapas que exigem…" |
+| 6 | E o resultado está neste brinde, preparado especialmente para você, associado ao Simespi. Um produto que carrega a identidade e a força industrial da nossa região. | Original |
+| 7 | Porque somos a indústria! Fazemos o trabalho que transforma, todos os dias, o presente e o futuro de Piracicaba. | Original |
+| 8 | Simespi. Há 35 anos, representando e fortalecendo a indústria. | Original |
 
-Nenhum fato foi acrescentado.
-
-**Voz:** a voz neural pt-BR "Antonio" (Microsoft) foi usada como **guia de locução**, porque a conta ElevenLabs conectada não tinha créditos (83 de 971 necessários) e o gerador do CoDesign exige login. Para a versão de veiculação, a recomendação é gravar com locutor profissional ou com uma voz premium usando o mesmo texto e a mesma marcação de tempo. Os trechos ficam separados em `locucao/a_1.wav … a_8.wav` para facilitar a troca.
+Nenhum fato foi acrescentado. A velocidade da voz é a natural.
+A voz continua sendo uma **voz guia** neural pt-BR, porque a conta ElevenLabs está sem créditos. Os trechos estão separados em `locucao_v2/a_1…a_8.wav` para facilitar a troca por um locutor profissional.
 
 ---
 
 ## 2. Divisão por tempo
 
-| Tempo | Locução | Imagens (arquivo · trecho de origem) |
+| Tempo | Áudio | Imagens (arquivo · origem) |
 |---|---|---|
-| 0:00–0:07,7 | 1. "A história de Piracicaba…" | IMG_2701 (letreiro "DAMA BIER", céu) · IMG_2700 (fachada e jardim) |
-| 0:07,7–0:16,2 | 2. "Na fábrica, cada etapa…" | IMG_2669 (tanques) · IMG_2671 (moagem/clarificação) · IMG_2676 (profissional despejando malte) |
-| 0:16,2–0:23,0 | 3. "…extensa cadeia produtiva…" | IMG_2687 (sacos de malte de fornecedores) · IMG_2677 (malte na moega) · IMG_2673 (fermentadores) |
-| 0:23,0–0:31,2 | 4. "…indústria cervejeira… CPL Cerva…" | IMG_2688 (tanques DAMA) · IMG_2696 (interior da tina) · IMG_2698 (cervejeiro no painel) · **lower-third "CPL Cerva / Projeto do SIMESPI"** (0:26,4–0:30,9) |
-| 0:31,2–0:40,3 | 5. "Dessa conexão nasceu a parceria…" | IMG_2610 (visita do SIMESPI à fábrica) · IMG_2642 (envase) · IMG_2653 (garrafas na esteira) · IMG_2662 (rotuladora com rótulos 35 anos) |
-| 0:40,3–0:46,3 | 6. "O resultado está neste brinde…" | IMG_2652 (taça, garrafa e tela "Dama + SIMESPI") · IMG_2656 (bobina do rótulo comemorativo) · IMG_2600 (garrafa nas mãos) |
-| 0:46,3–0:52,4 | 7. "Porque somos a indústria!…" | IMG_2666 (gargalos com selo 35 anos) · IMG_2598 (entrega do kit, garrafa e taças) · **texto "Porque somos a indústria!"** |
-| 0:52,4–0:59,6 | 8. "Simespi. Há 35 anos…" | Cartela branca com as logos SIMESPI, SIMESPI 35 anos e Dama Bier, entrando em sequência suave |
+| 0:00–0:04 | **Respiro 1** (só trilha) | Pôr do sol sobre o polo industrial (vídeo **Paques**) |
+| 0:04–0:11 | Trecho 1, "A história de Piracicaba…" | Cidade vista do alto (**Institucional SIMESPI 2026**) · helicóptero sobre a avenida e o rio (**Águia**) · rio Piracicaba (Institucional SIMESPI 2026) · letreiro da Dama Bier |
+| 0:11–0:21 | Trecho 2, "Na fábrica…" | Tanques, moagem e clarificação, profissional despejando malte, fermentadores (Dama) |
+| 0:21–0:30 | Trecho 3, "cadeia produtiva que conecta empresas…" | Sacos de malte de fornecedores · distrito industrial (**Uninorte**, drone) · **DanPower** · **EB Bombas** |
+| 0:30–0:34 | **Respiro 2** (só trilha) | Distritos industriais de Piracicaba vistos do alto (Institucional SIMESPI 2026) |
+| 0:34–0:46 | Trecho 4, indústria cervejeira e CPL Cerva | Tanques DAMA, interior da tina, cervejeiro, grupo do SIMESPI na fábrica · lower-third "CPL Cerva / Projeto do SIMESPI" |
+| 0:46–1:00 | Trecho 5, parceria com a Dama Bier | Visita do SIMESPI, cervejeiro explicando, envase, esteira, enchedora, rotuladora |
+| 1:00–1:03,5 | **Respiro 3** (só trilha) | Bobina do rótulo de 35 anos · aplicação do selo no gargalo |
+| 1:03,5–1:14 | Trecho 6, o brinde | Taça e garrafa diante da tela "Dama + SIMESPI", garrafas rotuladas, garrafa nas mãos, selos, entrega do kit |
+| 1:14–1:22 | Trecho 7, "Porque somos a indústria!" (texto na tela) | Piracicaba vista do alto: polo industrial (Paques) · horizonte (**Institucional SIMESPI 2024**) · sede do SIMESPI (Institucional SIMESPI 2026) |
+| 1:22–1:29 | Trecho 8, "Simespi. Há 35 anos…" | Cartela com as logos SIMESPI, SIMESPI 35 anos e Dama Bier |
 
-Edição: cortes secos suavizados (0,15 s) e dissolves discretos (0,5 s) só nas mudanças de bloco. O material original é HDR (HLG/BT.2020) e foi convertido para SDR BT.709 com tone-mapping, com um leve ajuste de gama. Não há câmera lenta nem efeitos de transição prontos.
-
-Trilha: instrumental original composta para o vídeo (piano suave, cordas e baixo, Ré maior, 80 BPM), com uma elevação leve no brinde e final suave. Fica cerca de 17 a 25 dB abaixo da voz, com ducking automático sob a locução.
+Os vídeos prontos têm legendas, selos e janelas de Libras gravados na imagem. Usei só janelas limpas e, quando necessário, um **recorte leve** (zoom de 1,1 a 1,3×) para tirar legenda, selo "35" e Libras. Nenhum GC de outra empresa aparece.
 
 ---
 
-## 3. Arquivos usados e observações
+## 3. Arquivos usados e pendências
 
-**Imagens** (Drive › Dama › VIDEOS › HORIZONTAL, todas 1920×1080):
-IMG_2598, 2600, 2610, 2642, 2652, 2653, 2656, 2662, 2666, 2669, 2671, 2673, 2676, 2677, 2687, 2688, 2696, 2698, 2700, 2701.
+**Dama Bier** (Drive › Dama › VIDEOS › HORIZONTAL): IMG_2598, 2600, 2610, 2622, 2641, 2642, 2646, 2652, 2653, 2655, 2656, 2662, 2665, 2666, 2669, 2671, 2673, 2676, 2687, 2688, 2696, 2698, 2701.
 
-**Identidade visual** (Drive › SIMESPI):
-- Logo SIMESPI colorida: vetor extraído do `Carrossel_Linha_do_Tempo.psd` (pasta REDES SOCIAIS › 35 ANOS › EDITÁVEL), sem alteração.
-- Logo SIMESPI 35 anos: vetor (PDF) extraído do mesmo PSD, sem alteração.
-- Paleta (#3bb9d8, #276e84, #0a3643, branco) conforme `Projeto Manual Simespi.pdf`.
+**Drones (vídeos prontos):**
+- Institucional SIMESPI: `SIMESPI INSTITUCIONAL 2026 (horizontal).mp4` e `Institucional SIMESPI - 2024`
+- Paques: `VÍDEO - PAQUES - EDITADO`
+- DanPower: `Danpower I legendado.mp4` (a legenda foi recortada)
+- EB Bombas: `EB BOMBAS 2023.mp4` (letterbox recortado)
+- Águia: `AGUIA.ME v2 .mp4`. **O vídeo é vertical.** Usei 2,5 s recortados na horizontal, o que deixa a imagem um pouco mais suave.
+- Uninorte: o vídeo pronto (`Inauguração uninorte.mp4`) é vertical e não tem drone. Usei o drone bruto da pasta *12.06 – UNIDADE UNINORTE › Drone* (`temp_video_for_share.mp4`, 720p).
 
-**Logo Dama Bier:** `Logo_Dama_Horizontal.pdf`. **Este arquivo não estava nas pastas indicadas.** Ele foi encontrado em outra pasta do seu Drive (arquivo de patrocinadores). Vale confirmar se é a versão vigente.
+**Não encontrado:** **Uniliste.** Procurei por "Uniliste", "Unileste", "Unilist" e variações, e só existe uma foto `unileste.jpg`, sem vídeo. Se o nome for outro, eu incluo a cena.
 
-**Pendências e limitações:**
-1. **Piracicaba:** não há imagens da cidade em si (paisagem, rio, marcos). A abertura usa a fachada da Dama Bier. Se houver takes da cidade, eles podem substituir os planos de 0:00 a 0:07.
-2. **Fonte:** o manual indica **Gotham**, que não está nas pastas e é comercial. Os dois textos de apoio usam **Montserrat**, a substituta livre mais próxima. Basta trocar o arquivo da fonte em `scripts/gfx.py` e reexecutar.
-3. **Voz:** é uma voz guia (ver item 1). Também foi feita uma tentativa no ElevenLabs, que falhou por falta de créditos, sem nenhuma cobrança.
-4. Não foram usados: a pasta VERTICAL, o IMG_1181 (que está na vertical), as fotos .heic (quase todas verticais) e os takes de caminhada, chão e desfoque.
+**Identidade:** as logos SIMESPI e SIMESPI 35 anos são os vetores oficiais do PSD da pasta 35 ANOS, e a logo da Dama Bier é o `Logo_Dama_Horizontal.pdf`, achado fora das pastas indicadas. A fonte de apoio é Montserrat, como substituta da Gotham.
 
-Os scripts de montagem estão em `scripts/` e o mapa de quadros, a 1 s por quadro, em `contato_1s.jpg`.
+**Trilha:** instrumental original (piano, cordas e baixo), com subidas nos três respiros e ducking automático sob a voz.
