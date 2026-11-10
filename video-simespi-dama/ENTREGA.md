@@ -1,22 +1,15 @@
-# SIMESPI × Dama Bier: institucional (v10, sobre a v5)
+# SIMESPI × Dama Bier: institucional (v11)
 
-**Arquivo:** `SIMESPI_DamaBier_institucional_v10_16x9.mp4` · 1920×1080 · 1:30 · −16 LUFS
+**Arquivo:** `SIMESPI_DamaBier_institucional_v11_16x9.mp4` · 1920×1080 · 1:30
 
-Esta versão parte da **v5** (1:30, locução integral com a voz Gabriel).
+## Mudança em relação à v10: abertura
+A abertura usa cortes secos, só com trechos de câmera estável. Saiu o movimento rápido ("chicote") que havia entre os planos.
 
-## Mudanças
-- **Abertura com o Paulo** (o senhor da visita), só com imagens reais:
-  1. ele sorrindo com a garrafa e as taças (IMG_2598);
-  2. close dele segurando a garrafa;
-  3. a garrafa nas mãos dele (IMG_2599);
-  4. os selos de 35 anos.
-- **Legenda moderna no estilo do vídeo da Silvana Marques:**
-  - frase curta centralizada na parte de baixo, em branco e sem caixa;
-  - uma palavra-chave por frase em serifada itálica grande (Playfair Display Italic), o restante em sans limpa (Montserrat);
-  - sombra suave e entrada com leve subida;
-  - 41 legendas, sincronizadas palavra a palavra pela transcrição da própria locução;
-  - na cartela branca, a legenda fica em marinho para continuar legível.
-- **"Dama Bíer"** com a pronúncia corrigida (tônica no "Bí").
-- Como a legenda já mostra o texto, saíram os grafismos que o repetiam: "CPL Cerva / Projeto do SIMESPI" e "Porque somos a indústria!".
+| Tempo | Plano |
+|---|---|
+| 0,0–2,2 s | **Paulo em plano geral** (IMG_2598, trecho estável) |
+| 2,2–3,4 s | **Paulo fechado**: garrafa e taças (IMG_2598) |
+| 3,4–4,3 s | A garrafa nas mãos dele (IMG_2599, trecho estável) |
+| 4,3–5,0 s | Selos de 35 anos |
 
-O restante da v5 (imagens, drones, trilha, respiros e cartela) não mudou.
+Legendas, locução, trilha e todo o resto são iguais à v10.
