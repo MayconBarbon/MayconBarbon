@@ -10,3 +10,10 @@
 Arquivos: `DocMe_Confra_LoungeHouse_25s_locucao.mp4`, `DocMe_Confra_LoungeHouse_25s_so_trilha.mp4`, `trilha_lounge_house.m4a`, `previa_final.jpg`, `render2.py`, `music3.py`.
 
 Links que ainda precisam voltar para "Restrito": ver `../docme-confraternizacoes/RELATORIO.md` e `../docme-confraternizacoes-v2/RELATORIO.md`.
+
+## Atualização: trilha Deep House
+- A trilha lounge house foi trocada por uma **deep house eletrônica e agitada, gerada no ElevenLabs Music** (modelo eleven_music_v2_5, cerca de 121 BPM): kick four-on-the-floor, baixo rolando, claps, hi-hats, acordes em stab e um hook de synth. A energia fica cheia do começo ao fim. É **instrumental**: conferi com transcrição, sem voz.
+- Custo no ElevenLabs: ~1.800 créditos (2 versões geradas; a segunda sumia aos 16 s e foi descartada) + ~140 de transcrição.
+- A locução continua a mesma, com a trilha abaixando automaticamente sob a voz. Volume final em −14 LUFS.
+- Arquivos: `DocMe_Confra_DeepHouse_25s_locucao.mp4`, `DocMe_Confra_DeepHouse_25s_so_trilha.mp4`, `trilha_deep_house.mp3`. A versão lounge house fica no histórico do git e em `trilha_lounge_house.m4a`.
+- Uso comercial: confira se o plano do ElevenLabs inclui licença comercial para música gerada.
