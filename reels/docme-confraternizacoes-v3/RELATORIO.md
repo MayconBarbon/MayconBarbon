@@ -5,6 +5,8 @@
 1. **Trilha lounge house agitada** (original, sintetizada em código, 120 BPM): acordes de piano elétrico com harmonia jazzy (Dm9, G13, Cmaj9, Am9), baixo groovado sincopado, shaker com swing, hi-hat aberto, palmas no 2 e no 4, congas a partir de 9 s, riff de marimba com eco e "ooh" vocal sintético em 18–22 s. As viradas continuam em 3, 9, 18 e 22 s.
 2. **Encerramento sem o texto "DocMe."** Agora aparece "Ainda dá tempo." e, logo depois, a **logo DocMe assina o vídeo**, entrando em 23,3 s junto com o "DocMe" da locução. Embaixo ficam a linha laranja e "Foto e vídeo para confraternizações".
 
+3. **Abertura nova (0–2 s): "Foto e vídeo para o seu evento".** A pergunta "A confraternização da firma está chegando?" passou para 2–4,6 s, e "Para guardar cada momento" fica de 4,6 a 9 s (sem repetir "foto e vídeo"). A locução foi deslocada junto: a pergunta entra em 2,1 s e a frase da DocMe em 4,35 s.
+
 Arquivos: `DocMe_Confra_LoungeHouse_25s_locucao.mp4`, `DocMe_Confra_LoungeHouse_25s_so_trilha.mp4`, `trilha_lounge_house.m4a`, `previa_final.jpg`, `render2.py`, `music3.py`.
 
 Links que ainda precisam voltar para "Restrito": ver `../docme-confraternizacoes/RELATORIO.md` e `../docme-confraternizacoes-v2/RELATORIO.md`.

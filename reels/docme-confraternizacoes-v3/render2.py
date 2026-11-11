@@ -133,8 +133,9 @@ def kinetic(base, items, size, cx, cy, t, t0, t1, stagger=0.09):
         base.paste(im2, (int(bx + x + (im.width - w2) / 2), int(by + y + (im.height - h2) / 2 + (1 - ease(u)) * 30)), im2)
 
 TXT = [  # (t0, t1, lines, highlight, font)
-    (0.10, 2.98, ["A confraternização", "da firma está chegando?"], {"confraternização", "chegando"}, FX),
-    (3.05, 8.98, ["Foto e vídeo para", "guardar cada momento"], {"foto", "vídeo"}, FX),
+    (0.05, 1.98, ["Foto e vídeo", "para o seu evento"], {"foto", "vídeo"}, FX),
+    (2.02, 4.58, ["A confraternização", "da firma está chegando?"], {"confraternização", "chegando"}, FX),
+    (4.62, 8.98, ["Para guardar", "cada momento"], {"cada", "momento"}, FX),
     (9.00, 10.98, ["PISTA CHEIA"], {"cheia"}, FBIG),
     (11.00, 12.98, ["ENCONTROS"], set(), FBIG),
     (13.00, 14.98, ["SHOW"], {"show"}, FBIG),
