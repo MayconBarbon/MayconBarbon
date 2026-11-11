@@ -23,13 +23,20 @@ MODEL = os.environ.get("YUNET", os.path.join(os.path.dirname(__file__), "yunet.o
 PW, PH = 2400, 1350           # placa 16:9 (folga para zoom 105% em 1920x1080)
 SAFE = 0.04                   # margem segura (zoom de 5% corta 2,4% por lado)
 
-# Referências de uniforme enviadas pelo cliente: não entram no vídeo.
-REFERENCE_PREFIX = "WhatsApp Image"
+# As imagens "WhatsApp Image ..." (sem EXIF) eram as referências de uniforme;
+# por pedido do cliente passaram a entrar no vídeo, classificadas visualmente.
+REFERENCE_PREFIX = None
 # Duplicata exata (cmp idêntico) de "Cópia de DSC_8321.JPG".
 DUPLICATES = {"DSC_8321.JPG"}
 # Fotos sem EXIF, conferidas visualmente: camiseta verde "Pizza do Bem 10 anos",
 # mesma câmera/resolução (6240x4160) e sequência numérica do lote 2023.
 MANUAL_YEAR = {"Cópia de IMG_0769.jpg": 2023, "Cópia de IMG_1319.jpg": 2023}
+# WhatsApp: (8) = grupo de uniforme rosa -> 2018. Demais: camiseta preta e/ou
+# salão com cortinas vermelhas/verdes e mesma convidada (vestido preto rendado)
+# das fotos de 2019 -> 2019.
+_WA = "WhatsApp Image 2026-11-11 at 09.02.50{}.jpeg"
+MANUAL_YEAR.update({_WA.format(" (8)"): 2018})
+MANUAL_YEAR.update({_WA.format(s): 2019 for s in ["", " (1)", " (2)", " (3)", " (4)", " (5)", " (6)", " (7)"]})
 
 det = cv2.FaceDetectorYN.create(MODEL, "", (320, 320), 0.75, 0.3, 5000)
 
@@ -144,12 +151,12 @@ def main():
         p = os.path.join(SRC, fn)
         im = Image.open(p); date, cam = exif_info(im)
         rec = {"file": fn, "exif_date": date, "camera": cam}
-        if fn.startswith(REFERENCE_PREFIX):
+        if REFERENCE_PREFIX and fn.startswith(REFERENCE_PREFIX):
             rec.update(year=None, status="referencia_uniforme"); man.append(rec); continue
         if fn in DUPLICATES:
             rec.update(year=None, status="duplicata"); man.append(rec); continue
         if fn in MANUAL_YEAR:
-            year, how = MANUAL_YEAR[fn], "visual (uniforme verde 10 anos) + sequência/câmera"
+            year, how = MANUAL_YEAR[fn], "visual (uniforme/local), sem EXIF"
         elif date[:4].isdigit():
             year, how = int(date[:4]), "EXIF"
         else:

@@ -27,9 +27,15 @@ FONT_SMALL = "/usr/share/fonts/opentype/inter/InterDisplay-Regular.otf"
 # Ordem: abertura de cada bloco com foto que mostra o uniforme do ano, depois
 # ordem cronológica (EXIF). O encerramento de 2025 é o registro coletivo das
 # voluntárias de uniforme vinho.
-OPENER = {2018: "IMG_2529", 2019: "IMG_4323", 2022: "1L8A7852",
-          2023: "Cópia_de_IMG_0336", 2025: "Cesar_Cinato_Foto_CasaRonald_MOEMA_2025_Pizza_Bem-5974"}
-CLOSER = {2025: "Cesar_Cinato_Foto_CasaRonald_MOEMA_2025_Pizza_Bem-5767"}
+WA = "WhatsApp_Image_2026-11-11_at_09.02.50"
+OPENER = {2018: ["IMG_2529"],
+          2019: [WA, WA + "_(1)", WA + "_(2)", WA + "_(3)", "IMG_4323"],
+          2022: ["1L8A7852"], 2023: ["Cópia_de_IMG_0336"],
+          2025: ["Cesar_Cinato_Foto_CasaRonald_MOEMA_2025_Pizza_Bem-5974"]}
+# 2018 fecha com o grupo de voluntárias de rosa e passa ao grupo de preto de 2019.
+CLOSER = {2018: [WA + "_(8)"], 2019: [WA + "_(5)", WA + "_(4)", WA + "_(7)", WA + "_(6)"],
+          2025: ["Cesar_Cinato_Foto_CasaRonald_MOEMA_2025_Pizza_Bem-5767"]}
+SHOW_YEAR = False   # cliente pediu o vídeo sem a identificação dos anos
 
 WORK = sys.argv[1]
 MODE = sys.argv[2]
@@ -41,8 +47,8 @@ def timeline():
     for y in sorted({r["year"] for r in man}):
         rs = sorted([r for r in man if r["year"] == y], key=lambda r: (r["exif_date"] or "9", r["file"]))
         key = lambda r: os.path.splitext(r["plate"])[0][5:]
-        op = [r for r in rs if key(r) == OPENER.get(y)]
-        cl = [r for r in rs if key(r) == CLOSER.get(y)]
+        pick = lambda names: [r for n in names for r in rs if key(r) == n]
+        op = pick(OPENER.get(y, [])); cl = pick(CLOSER.get(y, []))
         mid = [r for r in rs if r not in op and r not in cl]
         seq += op + mid + cl
     clips = []
@@ -154,7 +160,7 @@ def frame(fi):
         acc = im if acc is None else acc * (1 - ramp(local, 0, X)) + im * ramp(local, 0, X)
     img = acc if acc is not None else np.zeros((H, W, 3), np.float32)
     # identificação dos anos
-    for b in BLOCKS:
+    for b in (BLOCKS if SHOW_YEAR else []):
         bs, be = b["start"], b["end"]
         tt = t
         if MODE == "loop" and b is BLOCKS[0] and t > TOTAL - X:

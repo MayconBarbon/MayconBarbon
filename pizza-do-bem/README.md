@@ -10,8 +10,8 @@ olhando os uniformes nas folhas de contato.
 
 | Ano | Fotos | Uniforme conferido | Câmeras (EXIF) | Data do evento |
 |---|---|---|---|---|
-| 2018 | 21 | Rosa | Canon EOS 60D | 11/11/2018 |
-| 2019 | 15 | Camiseta preta/azul-marinho | Canon EOS 60D + Sony ILCE-6300 | 24/11/2019 |
+| 2018 | 22 | Rosa | Canon EOS 60D | 11/11/2018 |
+| 2019 | 23 | Camiseta preta/azul-marinho | Canon EOS 60D + Sony ILCE-6300 | 24/11/2019 |
 | 2020 | 0 | Nenhuma foto, bloco não criado | n/a | n/a |
 | 2021 | 0 | Nenhuma foto, bloco não criado | n/a | n/a |
 | 2022 | 40 | Roxo | Canon 5D Mark III + Nikon D610 | 23/10/2022 |
@@ -19,7 +19,7 @@ olhando os uniformes nas folhas de contato.
 | 2024 | 0 | Nenhuma foto, bloco não criado | n/a | n/a |
 | 2025 | 15 | Vinho | (arquivos "Cesar_Cinato…MOEMA_2025") | 30/11/2025 |
 
-São 129 fotos no vídeo.
+São 138 fotos no vídeo: todas as fotos da pasta. A única exceção é a duplicata idêntica descrita abaixo.
 
 Casos especiais:
 
@@ -28,7 +28,12 @@ Casos especiais:
   - a apresentadora está com o mesmo vestido laranja das outras fotos de 2023;
   - têm a mesma resolução de câmera (6240×4160) e a numeração está dentro da sequência de 2023.
 - **`DSC_8321.JPG`** é igual, byte a byte, a `Cópia de DSC_8321.JPG`. Só uma das duas entrou no vídeo.
-- **As 9 imagens "WhatsApp Image 2026-11-11…"** são as referências de uniforme. Não entram no vídeo.
+- **As 9 imagens "WhatsApp Image 2026-11-11…"** vieram como referências de uniforme e não têm EXIF.
+  - Por pedido, entraram no vídeo, classificadas visualmente.
+  - **2018:** `(8)`, o grupo de uniforme rosa. Fecha o bloco de 2018.
+  - **2019:** as outras 8, pela camiseta preta, pelo salão com cortinas vermelhas e verdes e pela mesma convidada de vestido preto rendado das fotos de 2019.
+  - O grupo de preto abre 2019.
+  - Elas têm só 1280 px de largura, então ficam um pouco menos nítidas no telão.
 - **`Cópia de IMG_0259.jpg` (2023)** mostra a equipe de produção com camisetas roxas/pretas ("Eu não, nós").
   - Não é o uniforme roxo de 2022.
   - O EXIF é de 12/11/2023 e a câmera é a mesma do resto de 2023, então a foto ficou em 2023.
@@ -57,11 +62,8 @@ Casos especiais:
   - o movimento é suave no início e no fim e segue o centro do grupo de rostos.
 - **Abertura de cada ano:** começa com uma foto que mostra o uniforme. Depois as fotos seguem em ordem cronológica.
 - **Encerramento:** a última foto é a das voluntárias de vinho (`…-5767`). Ela fica uns 4 s em tela e termina com fade out.
-- **Ano na tela:**
-  - aparece grande no canto inferior esquerdo por uns 2 s na primeira foto de cada ano;
-  - depois fica uma identificação pequena no mesmo canto até o fim do bloco;
-  - fonte Inter Display, branca, com sombra suave;
-  - não há telas pretas entre os anos.
+- **Ano na tela:** por pedido, os vídeos saem **sem a identificação dos anos**. Para reativar, use `SHOW_YEAR = True` em `render.py`.
+- Não há telas pretas entre os anos, e as fotos seguem a ordem cronológica.
 - **Versão LOOP:**
   - sem fade de abertura nem de encerramento;
   - 2025 se dissolve de volta para 2018;
