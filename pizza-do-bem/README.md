@@ -82,6 +82,50 @@ ffmpeg -i PizzaDoBem_Retrospectiva_2018-2025.mp4 -i trilha.mp3 -map 0:v -map 1:a
 Com uma trilha de andamento constante, a 4,4 s por foto as trocas caem a cada 2 compassos em ~109 BPM,
 ou a cada compasso em ~54,5 BPM.
 
+## Como gerar os vídeos no seu computador (Windows)
+
+### 1. Instale os programas (só uma vez)
+
+- **Python 3:** baixe em [python.org/downloads](https://www.python.org/downloads/). Na instalação, **marque a opção "Add python.exe to PATH"**.
+- **ffmpeg:** abra o *Prompt de Comando* e rode:
+
+```bash
+winget install Gyan.FFmpeg
+```
+
+Depois **feche e abra** o Prompt de Comando, para o Windows enxergar o ffmpeg.
+
+### 2. Baixe os scripts
+
+Baixe o ZIP deste branch:
+[MayconBarbon-claude-amazing-mccarthy-i8o263.zip](https://github.com/MayconBarbon/MayconBarbon/archive/refs/heads/claude/amazing-mccarthy-i8o263.zip)
+
+Descompacte e entre na pasta `pizza-do-bem`. Ela tem `GERAR_VIDEOS.bat`, `prep.py`, `render.py` e `yunet.onnx`.
+
+### 3. Gere os vídeos
+
+Dê **duplo clique em `GERAR_VIDEOS.bat`**. Quando ele pedir, arraste para a janela a pasta das fotos e tecle Enter, por exemplo:
+
+```text
+F:\#2026\#Casa Ronald\Novembro\Telão pizza do bem-20261111T133446Z-1-001\Telão pizza do bem
+```
+
+O script vai, nesta ordem:
+1. instalar as bibliotecas necessárias (Pillow, NumPy, OpenCV);
+2. classificar e tratar as 139 fotos, mostrando no final quantas fotos entraram em cada ano. Se alguma foto não for identificada, ela aparece como **"entre os anos"** e entra no vídeo entre 2023 e 2025;
+3. renderizar o vídeo principal e a versão loop.
+
+Cada vídeo leva de **20 a 60 minutos**, conforme o computador. Ao terminar, a pasta `SAIDA` abre sozinha com:
+
+- `PizzaDoBem_Retrospectiva_2018-2025.mp4`, o principal;
+- `PizzaDoBem_Retrospectiva_2018-2025_LOOP.mp4`, para repetição contínua;
+- um `*_timeline.csv` para cada vídeo (abre no Excel), com a ordem das fotos;
+- `trabalho\plates`, com as fotos já tratadas em 16:9.
+
+Precisa de uns 4 GB livres em disco. Feche outros programas pesados durante a renderização.
+
+`yunet.onnx` é o modelo de detecção de rostos YuNet, do OpenCV Zoo, com licença MIT.
+
 ## Como gerar de novo
 
 ```bash

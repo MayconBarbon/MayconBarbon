@@ -39,6 +39,8 @@ _WA = "WhatsApp Image 2026-11-11 at 09.02.50{}.jpeg"
 MANUAL_YEAR.update({_WA.format(" (8)"): 2018})
 MANUAL_YEAR.update({_WA.format(s): 2019 for s in ["", " (1)", " (2)", " (3)", " (4)", " (5)", " (6)", " (7)"]})
 
+UNKNOWN_SLOT = 2024.5   # posição na linha do tempo para fotos sem edição identificada
+
 det = cv2.FaceDetectorYN.create(MODEL, "", (320, 320), 0.75, 0.3, 5000)
 
 
@@ -161,7 +163,9 @@ def main():
         elif date[:4].isdigit():
             year, how = int(date[:4]), "EXIF"
         else:
-            rec.update(year=None, status="nao_confirmada"); man.append(rec); continue
+            # Edição não identificada: entra no vídeo entre 2023 e 2025
+            # (pedido do cliente), sem inventar um ano.
+            year, how = UNKNOWN_SLOT, "edição não identificada (colocada entre os anos)"
         im = ImageOps.exif_transpose(im).convert("RGB")
         a, borders = trim_black(np.asarray(im))
         a = correct(a)
@@ -180,13 +184,22 @@ def main():
                 fcen = (float(np.mean(xs)), float(np.mean(ys)))
             else:
                 fcen = (0.5, 0.5)
-        name = f"{year}_{os.path.splitext(fn)[0].replace(' ', '_')}.jpg"
+        tag = "sem_data" if year == UNKNOWN_SLOT else str(year)
+        name = f"{tag}_{os.path.splitext(fn)[0].replace(' ', '_')}.jpg"
         out.save(os.path.join(plates, name), quality=96, subsampling=0)
         rec.update(year=year, status="ok", method=how, plate=name, mode=mode,
                    faces=len(fs), borders_removed=borders, focus=fcen,
                    size=list(im.size))
         man.append(rec); print(year, mode, len(fs), borders, fn, flush=True)
-    json.dump(man, open(os.path.join(WORK, "manifest.json"), "w"), indent=1, ensure_ascii=False)
+    json.dump(man, open(os.path.join(WORK, "manifest.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    from collections import Counter
+    cnt = Counter("entre os anos" if r["year"] == UNKNOWN_SLOT else r["year"] for r in man if r["status"] == "ok")
+    print("\nFotos no vídeo:", sum(cnt.values()))
+    for y, n in sorted(cnt.items(), key=lambda kv: str(kv[0])):
+        print(f"  {y}: {n}")
+    for r in man:
+        if r["year"] == UNKNOWN_SLOT:
+            print("  [entre os anos]", r["file"])
 
 
 if __name__ == "__main__":

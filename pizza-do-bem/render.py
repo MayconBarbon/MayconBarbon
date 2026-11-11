@@ -42,11 +42,11 @@ MODE = sys.argv[2]
 
 
 def timeline():
-    man = [r for r in json.load(open(os.path.join(WORK, "manifest.json"))) if r["status"] == "ok"]
+    man = [r for r in json.load(open(os.path.join(WORK, "manifest.json"), encoding="utf-8")) if r["status"] == "ok"]
     seq = []
     for y in sorted({r["year"] for r in man}):
         rs = sorted([r for r in man if r["year"] == y], key=lambda r: (r["exif_date"] or "9", r["file"]))
-        key = lambda r: os.path.splitext(r["plate"])[0][5:]
+        key = lambda r: os.path.splitext(r["plate"])[0].split("_", 1)[1]
         pick = lambda names: [r for n in names for r in rs if key(r) == n]
         op = pick(OPENER.get(y, [])); cl = pick(CLOSER.get(y, []))
         mid = [r for r in rs if r not in op and r not in cl]
@@ -202,7 +202,7 @@ def render_chunk(args):
 
 
 def main():
-    out = sys.argv[3]; workers = int(sys.argv[4]) if len(sys.argv) > 4 else 4
+    out = sys.argv[3]; workers = int(sys.argv[4]) if len(sys.argv) > 4 else max(1, min(8, (os.cpu_count() or 4)))
     nf = int(round(TOTAL * FPS))
     if os.environ.get("PREVIEW"):                           # frames de conferência
         for s in os.environ["PREVIEW"].split(","):
@@ -215,14 +215,16 @@ def main():
     with ProcessPoolExecutor(workers) as ex:
         parts = list(ex.map(render_chunk, jobs))
     lst = os.path.join(tmp, "list.txt")
-    open(lst, "w").write("".join(f"file '{os.path.abspath(p)}'\n" for p in parts))
+    open(lst, "w", encoding="utf-8").write(
+        "".join("file '" + os.path.abspath(p).replace("\\", "/") + "'\n" for p in parts))
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
                     "-i", lst, "-c", "copy", "-movflags", "+faststart", out], check=True)
     # linha do tempo editável (EDL simples)
-    with open(os.path.splitext(out)[0] + "_timeline.csv", "w") as f:
+    with open(os.path.splitext(out)[0] + "_timeline.csv", "w", encoding="utf-8-sig") as f:
         f.write("ordem;ano;placa;inicio_s;duracao_s;movimento\n")
         for i, c in enumerate(CLIPS):
-            f.write(f"{i+1};{c['year']};{c['plate']};{c['start']:.2f};{c.get('hold', D) + X:.2f};"
+            ano = "entre 2023 e 2025" if c["year"] == 2024.5 else c["year"]
+            f.write(f"{i+1};{ano};{c['plate']};{c['start']:.2f};{c.get('hold', D) + X:.2f};"
                     f"{'zoom in 100-105%' if c['zin'] else 'zoom out 105-100%'}\n")
     print(out, nf, "frames", f"{TOTAL:.1f}s")
 
