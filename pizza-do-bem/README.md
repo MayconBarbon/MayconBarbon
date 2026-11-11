@@ -14,12 +14,12 @@ olhando os uniformes nas folhas de contato.
 | 2019 | 23 | Camiseta preta/azul-marinho | Canon EOS 60D + Sony ILCE-6300 | 24/11/2019 |
 | 2020 | 0 | Nenhuma foto, bloco não criado | n/a | n/a |
 | 2021 | 0 | Nenhuma foto, bloco não criado | n/a | n/a |
-| 2022 | 40 | Roxo | Canon 5D Mark III + Nikon D610 | 23/10/2022 |
+| 2022 | 41 | Roxo | Canon 5D Mark III + Nikon D610 | 23/10/2022 |
 | 2023 | 38 | Verde ("10 anos") | Canon EOS RP | 12/11/2023 |
 | 2024 | 0 | Nenhuma foto, bloco não criado | n/a | n/a |
 | 2025 | 15 | Vinho | (arquivos "Cesar_Cinato…MOEMA_2025") | 30/11/2025 |
 
-São 138 fotos no vídeo: todas as fotos da pasta. A única exceção é a duplicata idêntica descrita abaixo.
+São 139 fotos no vídeo: todas as fotos da pasta, sem exceção.
 
 Casos especiais:
 
@@ -27,7 +27,7 @@ Casos especiais:
   - têm a camiseta verde "10 anos";
   - a apresentadora está com o mesmo vestido laranja das outras fotos de 2023;
   - têm a mesma resolução de câmera (6240×4160) e a numeração está dentro da sequência de 2023.
-- **`DSC_8321.JPG`** é igual, byte a byte, a `Cópia de DSC_8321.JPG`. Só uma das duas entrou no vídeo.
+- **`DSC_8321.JPG`** é igual, byte a byte, a `Cópia de DSC_8321.JPG`. Por pedido, as duas entram, em pontos diferentes do bloco de 2022.
 - **As 9 imagens "WhatsApp Image 2026-11-11…"** vieram como referências de uniforme e não têm EXIF.
   - Por pedido, entraram no vídeo, classificadas visualmente.
   - **2018:** `(8)`, o grupo de uniforme rosa. Fecha o bloco de 2018.

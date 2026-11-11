@@ -30,7 +30,7 @@ FONT_SMALL = "/usr/share/fonts/opentype/inter/InterDisplay-Regular.otf"
 WA = "WhatsApp_Image_2026-11-11_at_09.02.50"
 OPENER = {2018: ["IMG_2529"],
           2019: [WA, WA + "_(1)", WA + "_(2)", WA + "_(3)", "IMG_4323"],
-          2022: ["1L8A7852"], 2023: ["Cópia_de_IMG_0336"],
+          2022: ["1L8A7852", "1L8A7900", "DSC_8321"], 2023: ["Cópia_de_IMG_0336"],  # DSC_8321 (cópia) longe da original
           2025: ["Cesar_Cinato_Foto_CasaRonald_MOEMA_2025_Pizza_Bem-5974"]}
 # 2018 fecha com o grupo de voluntárias de rosa e passa ao grupo de preto de 2019.
 CLOSER = {2018: [WA + "_(8)"], 2019: [WA + "_(5)", WA + "_(4)", WA + "_(7)", WA + "_(6)"],

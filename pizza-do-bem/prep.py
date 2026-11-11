@@ -26,8 +26,9 @@ SAFE = 0.04                   # margem segura (zoom de 5% corta 2,4% por lado)
 # As imagens "WhatsApp Image ..." (sem EXIF) eram as referências de uniforme;
 # por pedido do cliente passaram a entrar no vídeo, classificadas visualmente.
 REFERENCE_PREFIX = None
-# Duplicata exata (cmp idêntico) de "Cópia de DSC_8321.JPG".
-DUPLICATES = {"DSC_8321.JPG"}
+# "DSC_8321.JPG" é idêntica a "Cópia de DSC_8321.JPG"; por pedido do cliente
+# (usar todas as fotos da pasta) ela entra também, em outro ponto do bloco 2022.
+DUPLICATES = set()
 # Fotos sem EXIF, conferidas visualmente: camiseta verde "Pizza do Bem 10 anos",
 # mesma câmera/resolução (6240x4160) e sequência numérica do lote 2023.
 MANUAL_YEAR = {"Cópia de IMG_0769.jpg": 2023, "Cópia de IMG_1319.jpg": 2023}
