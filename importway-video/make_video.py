@@ -21,13 +21,13 @@ FULL = (IW / 2, IH / 2, IW)  # (centro x, centro y, largura do quadro em px da f
 KEYS = [
     (0.0,  *FULL),
     (0.5,  *FULL),
-    (3.0,  465, 190, 900),   # zoom-in: área "NOSSAS MARCAS"
-    (3.5,  445, 145, 740),   # 1º grupo: Starke / BrinQway / LifeWay
-    (5.7,  490, 145, 740),   # deslocamento horizontal discreto
-    (6.5,  490, 240, 740),   # 2º grupo: Alumiway / Way Sound / Femax
-    (8.7,  445, 240, 720),   # zoom progressivo + leve deslocamento
-    (9.5,  470, 372, 840),   # licenciadas + frase
-    (11.8, 470, 380, 800),
+    (3.0,  465, 245, 1000),  # zoom-in moderado: área "NOSSAS MARCAS" (todas as marcas no quadro)
+    (3.5,  445, 250, 900),   # 1º grupo: Starke / BrinQway / LifeWay
+    (5.7,  490, 250, 900),   # deslocamento horizontal discreto
+    (6.5,  490, 262, 880),   # 2º grupo: Alumiway / Way Sound / Femax
+    (8.7,  445, 262, 860),   # zoom progressivo leve
+    (9.5,  470, 272, 880),   # licenciadas + frase (BLACK+DECKER / Real Madrid sempre visíveis)
+    (11.8, 470, 276, 860),
     (14.3, *FULL),           # zoom-out revelando toda a parede
     (15.0, *FULL),
 ]
