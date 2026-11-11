@@ -1,15 +1,9 @@
-# SIMESPI × Dama Bier: institucional (v11)
+# SIMESPI × Dama Bier: institucional (v12)
 
-**Arquivo:** `SIMESPI_DamaBier_institucional_v11_16x9.mp4` · 1920×1080 · 1:30
+**Arquivo:** `SIMESPI_DamaBier_institucional_v12_16x9.mp4` · 1920×1080 · 1:30
 
-## Mudança em relação à v10: abertura
-A abertura usa cortes secos, só com trechos de câmera estável. Saiu o movimento rápido ("chicote") que havia entre os planos.
+## Mudanças em relação à v11
+- **0:05, imagem aérea da cidade, e 1:19, horizonte de Piracicaba:** mais contraste, mais saturação e menos clareza (curva em S, saturação +45%, leve aquecimento para não puxar para o azul).
+- **Marca d'água:** logo oficial dos 35 anos no canto superior direito, com 40% de opacidade, do início até a cartela. Na cartela ela sai, porque a logo já aparece ali.
 
-| Tempo | Plano |
-|---|---|
-| 0,0–2,2 s | **Paulo em plano geral** (IMG_2598, trecho estável) |
-| 2,2–3,4 s | **Paulo fechado**: garrafa e taças (IMG_2598) |
-| 3,4–4,3 s | A garrafa nas mãos dele (IMG_2599, trecho estável) |
-| 4,3–5,0 s | Selos de 35 anos |
-
-Legendas, locução, trilha e todo o resto são iguais à v10.
+O restante é igual à v11.
