@@ -40,3 +40,8 @@ Stories Fundiart.mp4 · abril reels - 1.mp4 · abril reels - 6.mp4 · Vertical A
 5. Igor removido do gancho e das cenas sinalizadas; as cenas de captação IMG_8400 e IMG_8406 ainda mostram o cinegrafista à distância — trocar se necessário.
 
 Fonte: Poppins (Google Fonts, OFL). Cor da marca: #E9570D.
+
+## Trilha (atualização)
+- Duas trilhas lounge instrumentais **originais**, geradas no ElevenLabs Music (modelo eleven_music_v2_5) na conta conectada, ~118 BPM (Rhodes, sub bass, groove deep house suave). Arquivos em `trilhas/`.
+- Versões com música: `DocMe_Reel_final_lounge_A.mp4` e `DocMe_Reel_final_lounge_B.mp4` (fade-in 0,25 s, fade-out de 20,2 s a 22 s, normalizado a ≈ −14 LUFS).
+- Confirme no plano ElevenLabs da conta que o uso comercial das músicas geradas está incluído.
