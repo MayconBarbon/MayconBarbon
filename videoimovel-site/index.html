@@ -180,6 +180,46 @@ section{padding-block:clamp(72px,10vw,128px)}
 .brand,.nav .btn{white-space:nowrap}
 @media (max-width:820px){.m-blog{display:inline;margin-left:auto}.nav .m-blog+.btn{margin-left:14px}.nav .wrap{gap:14px}}
 
+
+/* espaços em São Paulo */
+.sp{background:#07090d;color:#f4f5f8;overflow:hidden}
+.sp .eyebrow{color:#c8a96a}
+.sp-head{display:grid;grid-template-columns:1.1fr .9fr;gap:20px 56px;align-items:end;margin-bottom:40px}
+.sp-head h2{font-size:clamp(2.2rem,4.8vw,3.8rem);letter-spacing:-.03em}
+.sp-head h2 em{font-style:normal;color:#c8a96a}
+.sp-head .lead{color:#b4bccb}
+@media (max-width:860px){.sp-head{grid-template-columns:1fr}}
+.sp-hero{position:relative;margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:16/8;background:#111}
+.sp-hero img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.sp-hero:hover img{transform:scale(1.02)}
+.sp-hero figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:end;gap:16px;padding:64px 28px 24px;background:linear-gradient(transparent,rgba(4,6,10,.78))}
+.sp-hero figcaption b{display:block;font:700 clamp(1.1rem,2vw,1.5rem) var(--font-display)}
+.sp-hero figcaption span{font-size:.9rem;color:#c9cfdb}
+@media (max-width:640px){.sp-hero{aspect-ratio:4/3}.sp-hero figcaption{padding:48px 14px 14px}.sp-hero figcaption span{display:none}.sp-open{padding:.6em .95em;font-size:.82rem}}
+.sp-open{display:inline-flex;align-items:center;gap:8px;font:600 .88rem var(--font-body);color:#0d1a2e;background:rgba(255,255,255,.92);border:0;border-radius:999px;padding:.7em 1.1em;cursor:pointer;white-space:nowrap}
+.sp-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,240px);gap:12px;margin-top:12px}
+.sp-grid button{position:relative;padding:0;border:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:#111;min-width:0}
+.sp-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s}
+.sp-grid button:hover img,.sp-grid button:focus-visible img{transform:scale(1.04)}
+.sp-grid span{position:absolute;left:12px;bottom:12px;font-size:.78rem;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(5,8,14,.62);color:#fff;backdrop-filter:blur(6px)}
+.sp-a{grid-column:span 2;grid-row:span 2}.sp-c{grid-row:span 2}.sp-f{grid-column:span 2}
+@media (max-width:760px){.sp-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.sp-a{grid-column:span 2;grid-row:span 1}.sp-c{grid-row:span 1}.sp-f,.sp-g{grid-column:span 2}}
+.sp-cta{margin-top:40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 32px;padding:28px 30px;border:1px solid rgba(200,169,106,.35);border-radius:var(--r);background:linear-gradient(120deg,rgba(200,169,106,.10),rgba(255,255,255,.02))}
+.sp-cta h3{font-size:1.35rem}
+.sp-cta p{color:#b4bccb;font-size:.98rem;margin-top:6px}
+.sp-cta .btn-ghost{color:#f4f5f8;border-color:rgba(255,255,255,.25)}
+.sp-cta .btn-ghost:hover{background:rgba(255,255,255,.08)}
+.sp-box{border:0;padding:0;background:#05070b;max-width:none;max-height:none;width:100vw;height:100dvh;margin:0;color:#fff}
+.sp-box::backdrop{background:rgba(3,5,8,.94)}
+.sp-box[open]{display:grid;grid-template-rows:auto 1fr auto}
+.sp-bar{display:flex;justify-content:space-between;align-items:center;padding:14px max(16px,env(safe-area-inset-left,0px))}
+.sp-bar span{font-size:.9rem;color:#c9cfdb}
+.sp-box img{width:100%;height:100%;object-fit:contain;min-height:0}
+.sp-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px max(16px,env(safe-area-inset-left,0px)) max(18px,env(safe-area-inset-bottom,0px))}
+.sp-nav p{flex:1;text-align:center;font-size:.92rem;color:#dfe3ea;max-width:none}
+.sp-ctl{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;font-size:1.2rem;cursor:pointer;flex:none}
+.sp-ctl:hover{background:rgba(255,255,255,.18)}
+
 /* passos */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:0;counter-reset:s}
 .steps li{background:var(--band);border-radius:var(--r);padding:32px 28px;display:grid;gap:12px;align-content:start;counter-increment:s;min-width:0}
@@ -510,6 +550,37 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     </div>
   </section>
 
+  <section id="espacos-sp" class="sp" aria-labelledby="h-sp">
+    <div class="wrap">
+      <div class="sp-head reveal">
+        <div><p class="eyebrow">Fotografia de espaços · São Paulo (SP)</p><h2 id="h-sp">Espaços que pedem <em>presença</em>.</h2></div>
+        <p class="lead">Tendas, auditórios, bares, terraços e salões de eventos fotografados pela equipe do Vídeo Imóvel em São Paulo. Luz, enquadramento e composição pensados para mostrar a escala, os materiais e a personalidade de cada lugar, sem mudar nada do que ele é.</p>
+      </div>
+      <figure class="sp-hero reveal">
+        <img src="assets/sp/sp-tenda-1200.webp" srcset="assets/sp/sp-tenda-1200.webp 1200w, assets/sp/sp-tenda-2000.webp 2000w" sizes="(max-width: 1120px) 100vw, 1080px" alt="Tenda de eventos com cobertura de lonas claras e estrutura de iluminação, com a Ponte Estaiada ao fundo" loading="lazy" decoding="async" width="2000" height="1333">
+        <figcaption><div><b>Tenda de eventos</b><span>São Paulo (SP) · fotografia de arquitetura</span></div><button type="button" class="sp-open" data-i="0" aria-label="Ampliar foto: Tenda de eventos">Ver galeria ⤢</button></figcaption>
+      </figure>
+      <div class="sp-grid">
+        <button type="button" class="sp-a" data-i="1" aria-label="Ampliar foto: Auditório"><img src="assets/sp/sp-auditorio-800.webp" alt="Auditório com poltronas vermelhas em dois níveis, balcão superior e paredes revestidas de madeira" loading="lazy" decoding="async" width="800" height="533"><span>Auditório</span></button>
+        <button type="button" class="sp-b" data-i="2" aria-label="Ampliar foto: Salão panorâmico"><img src="assets/sp/sp-salao-piano-800.webp" alt="Salão com paredes de vidro do piso ao teto, mesa de mármore escuro, poltronas e piano de cauda branco, com prédios da cidade ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Salão panorâmico</span></button>
+        <button type="button" class="sp-c" data-i="3" aria-label="Ampliar foto: Galeria envidraçada"><img src="assets/sp/sp-galeria-800.webp" alt="Galeria em perspectiva com paredes de vidro em caixilhos verdes, piso de pedra e porta ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Galeria envidraçada</span></button>
+        <button type="button" class="sp-d" data-i="4" aria-label="Ampliar foto: Deck com piscina"><img src="assets/sp/sp-deck-800.webp" alt="Deck de madeira sob pergolado de vidro, com piscina, espreguiçadeiras e vasos de plantas" loading="lazy" decoding="async" width="800" height="533"><span>Deck com piscina</span></button>
+        <button type="button" class="sp-e" data-i="5" aria-label="Ampliar foto: Bar"><img src="assets/sp/sp-bar-800.webp" alt="Bar com balcão longo de pedra, bancos em sequência, prateleiras de copos e garrafas e forro de madeira" loading="lazy" decoding="async" width="800" height="533"><span>Bar</span></button>
+        <button type="button" class="sp-f" data-i="6" aria-label="Ampliar foto: Terraço"><img src="assets/sp/sp-terraco-800.webp" alt="Terraço amplo com cobertura em estrutura metálica, jardim vertical e uma torre de vidro colorida ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Terraço</span></button>
+        <button type="button" class="sp-g" data-i="7" aria-label="Ampliar foto: Hall de entrada"><img src="assets/sp/sp-hall-800.webp" alt="Hall com piso de mármore, lustres de cristal, espelhos, arranjos de flores e portas de elevador em metal" loading="lazy" decoding="async" width="800" height="533"><span>Hall de entrada</span></button>
+      </div>
+      <div class="sp-cta reveal">
+        <div><h3>Quer apresentar o seu espaço assim?</h3><p>Fotografia profissional para espaços de eventos, hotéis, escritórios e espaços comerciais, em São Paulo e em todo o Brasil.</p></div>
+        <div class="actions"><a class="btn btn-primary" style="--brand:#f5f5f7;--brand-fg:#0d1a2e" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Vi%20os%20espa%C3%A7os%20de%20S%C3%A3o%20Paulo%20no%20site%20e%20quero%20fotografar%20o%20meu%20espa%C3%A7o." target="_blank" rel="noopener">Pedir orçamento</a><a class="btn btn-ghost" href="#portfolio">Ver portfólio</a></div>
+      </div>
+    </div>
+    <dialog class="sp-box" id="sp-box" aria-label="Galeria de espaços em São Paulo">
+      <div class="sp-bar"><span id="sp-count">1 de 8</span><button type="button" class="sp-ctl" id="sp-close" aria-label="Fechar galeria">✕</button></div>
+      <img id="sp-img" src="" alt="">
+      <div class="sp-nav"><button type="button" class="sp-ctl" id="sp-prev" aria-label="Foto anterior">←</button><p id="sp-cap"></p><button type="button" class="sp-ctl" id="sp-next" aria-label="Próxima foto">→</button></div>
+    </dialog>
+  </section>
+
   <section aria-labelledby="h-capt">
     <div class="wrap split">
       <img class="reveal" src="assets/clinica-espera.webp" alt="Sala de espera de uma clínica de terapia infantil, com sofá azul, tapete colorido e luz natural" loading="lazy" width="1440" height="1080">
@@ -644,6 +715,28 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     function set(on){d.classList.toggle('playing',on);bs[0].setAttribute('aria-pressed',!on);bs[1].setAttribute('aria-pressed',on); if(on){v.currentTime=0;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});} else v.pause();}
     bs[0].addEventListener('click',function(){set(false)});bs[1].addEventListener('click',function(){set(true)});
     v.addEventListener('ended',function(){set(false)});});
+  var SP=[
+{s:"assets/sp/sp-tenda-2000.webp",t:"Tenda de eventos",a:"Tenda de eventos com cobertura de lonas claras e estrutura de iluminação, com a Ponte Estaiada ao fundo"},
+{s:"assets/sp/sp-auditorio-1600.webp",t:"Auditório",a:"Auditório com poltronas vermelhas em dois níveis, balcão superior e paredes revestidas de madeira"},
+{s:"assets/sp/sp-salao-piano-1600.webp",t:"Salão panorâmico",a:"Salão com paredes de vidro do piso ao teto, mesa de mármore escuro, poltronas e piano de cauda branco, com prédios da cidade ao fundo"},
+{s:"assets/sp/sp-galeria-1600.webp",t:"Galeria envidraçada",a:"Galeria em perspectiva com paredes de vidro em caixilhos verdes, piso de pedra e porta ao fundo"},
+{s:"assets/sp/sp-deck-1600.webp",t:"Deck com piscina",a:"Deck de madeira sob pergolado de vidro, com piscina, espreguiçadeiras e vasos de plantas"},
+{s:"assets/sp/sp-bar-1600.webp",t:"Bar",a:"Bar com balcão longo de pedra, bancos em sequência, prateleiras de copos e garrafas e forro de madeira"},
+{s:"assets/sp/sp-terraco-1600.webp",t:"Terraço",a:"Terraço amplo com cobertura em estrutura metálica, jardim vertical e uma torre de vidro colorida ao fundo"},
+{s:"assets/sp/sp-hall-1600.webp",t:"Hall de entrada",a:"Hall com piso de mármore, lustres de cristal, espelhos, arranjos de flores e portas de elevador em metal"}];
+  var box=document.getElementById('sp-box');
+  if(box){
+    var im=document.getElementById('sp-img'),cap=document.getElementById('sp-cap'),cnt=document.getElementById('sp-count'),cur=0,x0=null;
+    function show(i){cur=(i+SP.length)%SP.length;im.src=SP[cur].s;im.alt=SP[cur].a;cap.textContent=SP[cur].t+' · São Paulo (SP)';cnt.textContent=(cur+1)+' de '+SP.length;}
+    document.querySelectorAll('#espacos-sp [data-i]').forEach(function(b){b.addEventListener('click',function(){show(+b.getAttribute('data-i'));if(box.showModal)box.showModal();else box.setAttribute('open','');});});
+    document.getElementById('sp-prev').addEventListener('click',function(){show(cur-1)});
+    document.getElementById('sp-next').addEventListener('click',function(){show(cur+1)});
+    document.getElementById('sp-close').addEventListener('click',function(){box.close()});
+    box.addEventListener('keydown',function(e){if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1);});
+    box.addEventListener('click',function(e){if(e.target===box)box.close();});
+    im.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+    im.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)show(cur+(d>0?-1:1));x0=null;});
+  }
   var wz=document.getElementById('wizard');
   if(wz){wz.addEventListener('change',function(){
     var f=new FormData(wz),t=f.get('tipo'),n=f.get('fotos'),c=f.get('capt'); if(!t||n===null||!c)return;
