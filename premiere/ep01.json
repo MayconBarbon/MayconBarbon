@@ -2,8 +2,8 @@
   "name": "EP01 - As formas dos nossos sentidos",
   "ep": 1,
   "intro_s": 8, "outro_s": 4,
-  "wide": 90, "close": 105,
-  "gap_keep": 18, "pad": 5,
+  "wide": 50, "close": 65,
+  "gap_keep": 40, "pad": 8,
   "blocks": [
     {"from": "00;08;40;22", "to": "00;08;52;19", "label": "Olá! A partir de agora..."},
     {"from": "00;09;02;24", "to": "00;09;07;28", "label": "E é nesse caminho..."},

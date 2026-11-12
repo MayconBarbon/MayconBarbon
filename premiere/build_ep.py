@@ -19,7 +19,29 @@ segs = []
 for i, l in enumerate(lines):
     m = re.match(r'(\d\d;\d\d;\d\d;\d\d) - (\d\d;\d\d;\d\d;\d\d)', l.strip())
     if m:
-        segs.append((tc2f(m[1]), tc2f(m[2]), lines[i + 1].strip() if i + 1 < len(lines) else ''))
+        txt = []
+        for x in lines[i + 1:]:
+            if not x.strip(): break
+            txt.append(x.strip())
+        segs.append((tc2f(m[1]), tc2f(m[2]), ' '.join(txt)))
+
+# velocidade media de fala (palavras/frame) p/ estimar fim/inicio de fala quando
+# a transcricao "cola" um trecho no seguinte (ali costuma ter erro/recomeco)
+import statistics
+_r = [len(t.split()) / (b - a) for a, b, t in segs if len(t.split()) >= 6 and b - a > 60]
+WPF = statistics.median(_r)
+def tighten(i0, i1):
+    """i0..i1 indices de segs usados no bloco; devolve (inicio, fim) ajustados"""
+    a, b = segs[i0][0], segs[i1][1]
+    last = segs[i1]
+    if i1 + 1 < len(segs) and segs[i1 + 1][0] - last[1] <= 3:
+        est = last[0] + round(len(last[2].split()) / WPF * 1.08) + 4
+        b = min(b, est - PAD)
+    first = segs[i0]
+    if i0 > 0 and first[0] - segs[i0 - 1][1] <= 3:
+        est = first[1] - round(len(first[2].split()) / WPF * 1.08) - 4
+        a = max(a, est + PAD)
+    return a, b
 
 tree = ET.parse(SRC); root = tree.getroot()
 seq = root.find('sequence')
@@ -35,11 +57,15 @@ def locate(f):
     raise ValueError(f)
 
 # --- trechos -> pedacos (corta pausas longas dentro do mesmo take)
-GAP_KEEP, PAD = cfg.get('gap_keep', 18), cfg.get('pad', 5)
+GAP_KEEP, PAD = cfg.get('gap_keep', 40), cfg.get('pad', 8)
 pieces = []  # (seq_in, seq_out, zoom_flag, label)
 for blk in cfg['blocks']:
     a, b = tc2f(blk['from']), tc2f(blk['to'])
-    ss = [s for s in segs if s[0] >= a - 2 and s[1] <= b + 2]
+    idx = [j for j, x in enumerate(segs) if x[0] >= a - 2 and x[1] <= b + 2]
+    ss = [list(segs[j]) for j in idx]
+    if idx:
+        ta, tb = tighten(idx[0], idx[-1]); ss[0][0] = ta; ss[-1][1] = tb
+        blk['_tight_end'] = tb < segs[idx[-1]][1]; blk['_tight_start'] = ta > segs[idx[0]][0]
     if blk.get('raw'): ss = [(a, b, blk.get('label', ''))]
     cur = None; bp = []
     for s0, s1, t in ss:
@@ -66,7 +92,7 @@ for s0, s1, t, z in pieces:
 
 # --- monta nova timeline
 LEAD, TAIL = round(cfg.get('intro_s', 8) * 29.97), round(cfg.get('outro_s', 4) * 29.97)
-WIDE, CLOSE = cfg.get('wide', 90), cfg.get('close', 105)
+WIDE, CLOSE = cfg.get('wide', 50), cfg.get('close', 65)
 
 def motion(scale0, scale1=None, kin=0, kout=0):
     f = ET.Element('filter'); e = ET.SubElement(f, 'effect')
