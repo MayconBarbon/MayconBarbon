@@ -11,7 +11,8 @@ TM = ("zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:des
 W, H = 1080, 1920
 LOGO = cv2.imread(f"{S}/up/logo_p-1.png", cv2.IMREAD_UNCHANGED)
 ys, xs = np.where(LOGO[:, :, 3] > 10); LOGO = LOGO[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
-LA = LOGO.shape[1] / LOGO.shape[0]
+SIM = cv2.imread(f"{S}/brand/simespi_small_crop.png", cv2.IMREAD_UNCHANGED)
+ys, xs = np.where(SIM[:, :, 3] > 10); SIM = SIM[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
 
 def hsvm(fr):
     hsv = cv2.cvtColor(fr, cv2.COLOR_BGR2HSV); h, s, v = cv2.split(hsv)
@@ -109,9 +110,9 @@ def fill_smooth(img, mask, sig):
     num = cv2.GaussianBlur(f * w[..., None], (0, 0), sig); den = cv2.GaussianBlur(w, (0, 0), sig)[..., None]
     return num / np.maximum(den, 1e-3)
 
-def prep_logo(lw):
-    lh = int(lw / LA)
-    lg = cv2.resize(LOGO, (lw, lh), interpolation=cv2.INTER_AREA).astype(np.float32)
+def prep_logo(lw, src_logo):
+    lh = int(lw * src_logo.shape[0] / src_logo.shape[1])
+    lg = cv2.resize(src_logo, (lw, lh), interpolation=cv2.INTER_AREA).astype(np.float32)
     u = np.linspace(-1, 1, lw)
     src = (np.arcsin(np.clip(u * 0.92, -1, 1)) / math.asin(0.92)) * 0.5 + 0.5   # cilindro
     mapx = np.tile((src * (lw - 1)).astype(np.float32), (lh, 1))
@@ -120,7 +121,8 @@ def prep_logo(lw):
     lg[:, :, :3] *= (0.80 + 0.20 * np.cos(u * math.pi / 2))[None, :, None]
     return lg
 
-def place(fr, cx, cy, w, h, ang):
+def place(fr, cx, cy, w, h, ang, logo=None):
+    logo = LOGO if logo is None else logo
     beer, red, hsv = hsvm(fr)
     skin = skin_mask(hsv)
     # caixa da logo antiga (D + DAMA): rotacionada pela inclinação
@@ -140,7 +142,7 @@ def place(fr, cx, cy, w, h, ang):
     mb = cv2.GaussianBlur(old.astype(np.float32), (0, 0), 2.5)[..., None]
     clean = fr.astype(np.float32) * (1 - mb) + (sm + grain) * mb
     # nova logo
-    lw = int(s * 1.26); lg = prep_logo(lw); lh = lg.shape[0]
+    lw = int(s * (1.26 if logo is LOGO else 1.36)); lg = prep_logo(lw, logo); lh = lg.shape[0]
     pc = (cx + math.sin(math.radians(ang)) * s * 0.36, cy + math.cos(math.radians(ang)) * s * 0.36)
     M = cv2.getRotationMatrix2D((lw / 2, lh / 2), ang, 1.0); M[0, 2] += pc[0] - lw / 2; M[1, 2] += pc[1] - lh / 2
     wl = cv2.warpAffine(lg, M, (W, H), flags=cv2.INTER_LINEAR, borderValue=(0, 0, 0, 0))
@@ -187,11 +189,17 @@ def run(frs):
             ai = np.convolve(np.pad(ai, k // 2, mode="edge"), g, "valid"); ai[~ok] = np.nan
         else: ai = a
         angs[ti] = np.nan_to_num(ai, nan=0.0) * 0.75
+    # kit real: um copo SIMESPI e um copo 35 anos -> taça da esquerda SIMESPI, da direita 35 anos
+    means = [np.nanmean(t[:, 0]) for t in trs]
+    order = sorted(range(len(trs)), key=lambda k: -np.sum(~np.isnan(trs[k][:, 0])))[:2]
+    mid = np.mean([means[k] for k in order]) if len(order) == 2 else W / 2
+    which = {ti: (SIM if means[ti] < mid else LOGO) for ti in range(len(trs))}
+    if os.environ.get("ONLY35"): which = {ti: LOGO for ti in range(len(trs))}
     for i, f in enumerate(frs):
         o = f.copy()
         for ti, t in enumerate(trs):
             if np.isnan(t[i, 0]): continue
-            o = place(o, *t[i], angs[ti][i])
+            o = place(o, *t[i], angs[ti][i], which[ti])
         outs.append(o)
     return outs, trs
 

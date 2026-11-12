@@ -1,17 +1,16 @@
-# SIMESPI × Dama Bier: institucional (v14)
+# SIMESPI × Dama Bier: institucional (v15)
 
-**Arquivo:** `SIMESPI_DamaBier_institucional_v14_16x9.mp4` · 1920×1080 · 1:30 · −16 LUFS
+**Arquivo:** `SIMESPI_DamaBier_institucional_v15_16x9.mp4` · 1920×1080 · 1:30 · −16 LUFS
 
-## Mudanças em relação à v13 (pedidos do áudio da cliente)
-- **Abertura só com o detalhe do brinde (0:00–0:05):** aparecem só mãos e taças, sem rosto. Os planos do Paulo saíram da abertura e entraram dois trípticos do brinde (IMG_2805/2806/2808 e IMG_2806/2807/2805), com o som real do tilintar.
-- **Mantidos:** a entrada na fábrica (0:13) e a abertura da caixa (1:05).
-- **Depois de "…a força industrial da nossa região" (1:12):** entra o brinde (tilintar em 1:13) e depois a mão do Paulo com a garrafa (1:14), no lugar dos dois planos que estavam ali.
-- **Logo nas taças:** em todos os planos de brinde, a logo Dama impressa nas taças foi trocada pela logo colorida SIMESPI 35 anos.
-  - Ela foi aplicada quadro a quadro e acompanha o movimento e a inclinação do copo.
-  - Tem a curvatura do vidro e recebe a luz da cerveja por trás.
-  - Os brilhos do vidro e os dedos passam por cima, como numa impressão real.
-- A logo Dama do tanque, ao fundo, foi mantida porque faz parte do cenário real da cervejaria.
+## Mudanças em relação à v14 (checklist da cliente)
+- **Abertura (0:00–0:05):** o brinde saiu do início. O vídeo agora abre com o plano do print: as mãos da Thalita e do Paulo com as taças e a garrafa, sem rostos (IMG_2598, a partir de 29,0 s). O plano está em leve câmera lenta e com um pequeno reenquadramento para não aparecer nada do rosto.
+- **Mantidos:** a entrada da Thalita na fábrica (0:13) e a abertura da caixa (1:05).
+- **Sequência final, acompanhando a locução:**
+  1. Abertura da caixa (1:04).
+  2. Detalhe da cerveja (1:08).
+  3. Brinde, uma única vez, em "Um produto que carrega a identidade…" (1:10–1:12, tilintar em 1:11).
+  4. Paulo com a garrafa (1:12–1:15).
+  5. Encerramento com "Porque somos a indústria".
+- **Logos dos copos, conforme o kit real:** no brinde, uma taça tem a logo SIMESPI e a outra a logo comemorativa dos 35 anos, como os dois copos do kit. O copo que o Paulo segura no vídeo tem a logo SIMESPI impressa. A aplicação é quadro a quadro: acompanha o copo, tem a curvatura do vidro e fica atrás dos dedos e dos brilhos.
 
-O restante é igual à v13: locução, trilha, legendas e marca d'água de 35 anos a 40%.
-
-Versões anteriores ficam em `v1/` … `v13/`.
+Versões anteriores ficam em `v1/` … `v14/`.
