@@ -1,4 +1,4 @@
-# Seis artigos do Blog Vídeo Imóvel. Marca única: Vídeo Imóvel.
+# Artigos do Blog Vídeo Imóvel. Marca única: Vídeo Imóvel.
 # Cada seção: (h2, [parágrafos]). Parágrafos sem seção vêm em "intro".
 ARTS = [
 dict(n=1, slug="fotos-profissionais-de-imoveis",
@@ -121,4 +121,29 @@ dict(n=6, slug="fotografia-arquitetura-comercial",
  ],
  cta_title="Quer mostrar melhor a sua loja, clínica, escritório ou espaço profissional?", cta="Mostre o seu espaço com fotografia feita para apresentar sua marca. Fale com o Vídeo Imóvel e conheça esse serviço.",
  related=[1,2,5]),
+dict(n=7, slug="drone-fazendas-grandes-areas",
+ h1="Drone em fazendas e grandes áreas: veja a dimensão do imóvel",
+ seo_title="Drone para fazenda: veja a dimensão do imóvel do alto",
+ meta="Veja como o drone para fazenda mostra sede, acessos e áreas da propriedade e quando as imagens aéreas podem apoiar estimativas de distância e área.",
+ kw="drone para fazenda",
+ cover="cover-7.jpg", alt="Vista aérea de uma fazenda ao entardecer, com a sede de telhado cerâmico entre árvores, estrada de terra, pastagens e uma fileira de eucaliptos",
+ caption="A sede, a estrada de acesso, as pastagens e a fileira de eucaliptos no mesmo quadro: a visão que só o voo oferece. Foto aérea: acervo Vídeo Imóvel.",
+ intro=["Em uma fazenda ou propriedade extensa, caminhar por todo o terreno pode levar horas, e alguns trechos são difíceis de alcançar. Do chão, o proprietário conhece cada espaço pela rotina, mas nem sempre consegue visualizar a dimensão do conjunto ou a distância entre a sede, os acessos e as áreas mais afastadas.",
+   "O drone para fazenda oferece esse ponto de vista amplo. Com imagens aéreas de grandes áreas, fica mais fácil observar a relação entre as diferentes partes do imóvel e apresentar a propriedade de um jeito que fotos feitas apenas do solo não conseguem mostrar."],
+ sections=[
+  ("Filmagem aérea de fazenda: uma visão completa da propriedade",
+   ["Um voo planejado pode registrar a sede, as estradas internas, as lavouras, as pastagens, a mata, os açudes e as outras estruturas existentes, conforme as condições do local. Para quem está avaliando uma propriedade, essa visão ajuda a entender como ela está organizada e a perceber distâncias e acessos com mais clareza.",
+    "As imagens também mostram áreas difíceis de conhecer em uma visita rápida. O vídeo pode acompanhar um trajeto, como a chegada pela estrada até a sede, enquanto as fotografias aéreas apresentam a extensão e a configuração geral do lugar.",
+    "A captação deve respeitar os limites da propriedade, a privacidade de vizinhos e de terceiros e as condições de segurança. No Brasil, o voo de drones segue as regras da ANAC, o cadastro e as autorizações de espaço aéreo do DECEA e a homologação do equipamento pela Anatel."]),
+  ("Drone para medir terreno: o que dá para fazer",
+   ["O drone pode apoiar medições e estimativas quando o trabalho inclui um método adequado de mapeamento e processamento, como a fotogrametria. Nesse fluxo, fotografias feitas com sobreposição planejada são processadas para formar um mosaico ou um modelo do terreno, no qual pontos, distâncias e áreas podem ser calculados.",
+    "A precisão depende da altura e do planejamento do voo, da qualidade e da quantidade das imagens, da sobreposição, da resolução no solo, do georreferenciamento e do uso de pontos de controle. Uma filmagem aérea comum, sozinha, não equivale a um levantamento topográfico. Por isso, uma estimativa visual ou uma medição feita sem controle técnico não deve ser tratada como confirmação de área, divisa ou dado cadastral.",
+    "Quando a finalidade exige medidas precisas, documentação técnica ou a definição oficial de limites, como no georreferenciamento de imóveis rurais para o INCRA, procure um profissional habilitado em topografia ou agrimensura. O drone pode complementar esse trabalho, mas não substitui o método nem a responsabilidade técnica."]),
+  ("Vídeo aéreo de propriedade rural para divulgar e decidir",
+   ["Mesmo quando o objetivo é apenas divulgar a propriedade, a visão aérea deixa a apresentação mais completa. Um vídeo bem planejado mostra a escala, os acessos e o entorno da fazenda, e as imagens também apoiam conversas com corretores, compradores e parceiros.",
+    "Nas imagens de divulgação, evite desenhar limites ou indicar medidas que não tenham sido confirmadas por um levantamento. Se a área informada no anúncio vier da matrícula ou de um levantamento técnico, cite essa fonte no texto, e não a imagem.",
+    "O Vídeo Imóvel faz captação aérea para apresentar imóveis e grandes áreas com mais contexto visual. A equipe entende o objetivo da gravação e planeja imagens que valorizem o espaço, sem prometer medições técnicas que não façam parte do serviço contratado."]),
+ ],
+ cta_title="Quer mostrar a dimensão da sua propriedade?", cta="Mostre o que uma visita pelo chão não consegue revelar. Fale com o Vídeo Imóvel e conheça as imagens aéreas para fazendas e grandes áreas.",
+ related=[3,5,1]),
 ]
