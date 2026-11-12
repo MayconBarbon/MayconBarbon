@@ -1,0 +1,1557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="4">
+	<sequence id="sequence-1" TL.SQAudioVisibleBase="0" TL.SQVideoVisibleBase="0" TL.SQVisibleBaseTime="0" TL.SQAVDividerPosition="0.5" TL.SQHideShyTracks="0" TL.SQHeaderWidth="204" MZ.Sequence.PreviewFrameSizeHeight="1920" MZ.Sequence.PreviewFrameSizeWidth="1080" MZ.Sequence.AudioTimeDisplayFormat="200" MZ.Sequence.PreviewRenderingClassID="1061109567" MZ.Sequence.PreviewRenderingPresetCodec="1634755443" MZ.Sequence.PreviewRenderingPresetPath="EncoderPresets\SequencePreview\9678af98-a7b7-4bdb-b477-7ac9c8df4a4e\QuickTime.epr" MZ.Sequence.PreviewUseMaxRenderQuality="false" MZ.Sequence.PreviewUseMaxBitDepth="false" MZ.Sequence.EditingModeGUID="9678af98-a7b7-4bdb-b477-7ac9c8df4a4e" MZ.Sequence.VideoTimeDisplayFormat="102" explodedTracks="true">
+		<uuid>00000000-0000-4000-8000-000000000008</uuid>
+		<duration>3436</duration>
+		<rate>
+			<timebase>30</timebase>
+			<ntsc>TRUE</ntsc>
+		</rate>
+		<name>EP08 - A escultura hoje e amanha</name>
+		<media>
+			<video>
+				<format>
+					<samplecharacteristics>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<codec>
+							<name>Apple ProRes 422</name>
+							<appspecificdata>
+								<appname>Final Cut Pro</appname>
+								<appmanufacturer>Apple Inc.</appmanufacturer>
+								<appversion>7.0</appversion>
+								<data>
+									<qtcodec>
+										<codecname>Apple ProRes 422</codecname>
+										<codectypename>Apple ProRes 422</codectypename>
+										<codectypecode>apcn</codectypecode>
+										<codecvendorcode>appl</codecvendorcode>
+										<spatialquality>1024</spatialquality>
+										<temporalquality>0</temporalquality>
+										<keyframerate>0</keyframerate>
+										<datarate>0</datarate>
+									</qtcodec>
+								</data>
+							</appspecificdata>
+						</codec>
+						<width>1080</width>
+						<height>1920</height>
+						<anamorphic>FALSE</anamorphic>
+						<pixelaspectratio>square</pixelaspectratio>
+						<fielddominance>none</fielddominance>
+						<colordepth>24</colordepth>
+					</samplecharacteristics>
+				</format>
+				<track TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+				<clipitem id="clipitem-v1">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>240</start>
+						<end>810</end>
+						<in>1965</in>
+						<out>2535</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							<name>fx3 gabriel3741.MP4</name>
+							<pathurl>file://localhost/F%3a/#2026/#fUNDIART/#Novembro/Marcio%202/PRIVATE/M4ROOT/CLIP/fx3%20gabriel3741.MP4</pathurl>
+							<rate>
+								<timebase>30</timebase>
+								<ntsc>TRUE</ntsc>
+							</rate>
+							<duration>19995</duration>
+							<timecode>
+								<rate>
+									<timebase>30</timebase>
+									<ntsc>TRUE</ntsc>
+								</rate>
+								<string>17;57;47;06</string>
+								<frame>1938076</frame>
+								<displayformat>DF</displayformat>
+							</timecode>
+							<media>
+								<video>
+									<samplecharacteristics>
+										<rate>
+											<timebase>30</timebase>
+											<ntsc>TRUE</ntsc>
+										</rate>
+										<width>3840</width>
+										<height>2160</height>
+										<anamorphic>FALSE</anamorphic>
+										<pixelaspectratio>square</pixelaspectratio>
+										<fielddominance>none</fielddominance>
+									</samplecharacteristics>
+								</video>
+								<audio>
+									<samplecharacteristics>
+										<depth>16</depth>
+										<samplerate>48000</samplerate>
+									</samplecharacteristics>
+									<channelcount>2</channelcount>
+								</audio>
+							</media>
+						</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v1</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>1</clipindex></link><link><linkclipref>clipitem-a1</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>1</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b1</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>1</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>90</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v2">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>810</start>
+						<end>1076</end>
+						<in>2535</in>
+						<out>2801</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v2</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>2</clipindex></link><link><linkclipref>clipitem-a2</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>2</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b2</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>2</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>90</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v3">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1076</start>
+						<end>1215</end>
+						<in>2817</in>
+						<out>2956</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v3</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>3</clipindex></link><link><linkclipref>clipitem-a3</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>3</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b3</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>3</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>105</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v4">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1215</start>
+						<end>1453</end>
+						<in>3010</in>
+						<out>3248</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v4</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>4</clipindex></link><link><linkclipref>clipitem-a4</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>4</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b4</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>4</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>90</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v5">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1453</start>
+						<end>1718</end>
+						<in>3248</in>
+						<out>3513</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v5</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>5</clipindex></link><link><linkclipref>clipitem-a5</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>5</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b5</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>5</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>90</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v6">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1718</start>
+						<end>2079</end>
+						<in>4369</in>
+						<out>4730</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v6</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>6</clipindex></link><link><linkclipref>clipitem-a6</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b6</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>105</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v7">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2079</start>
+						<end>2250</end>
+						<in>8672</in>
+						<out>8843</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v7</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>7</clipindex></link><link><linkclipref>clipitem-a7</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b7</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>90</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v8">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2250</start>
+						<end>2613</end>
+						<in>9233</in>
+						<out>9596</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v8</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>8</clipindex></link><link><linkclipref>clipitem-a8</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>8</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b8</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>8</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>105</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v9">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2613</start>
+						<end>2948</end>
+						<in>13828</in>
+						<out>14163</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v9</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>9</clipindex></link><link><linkclipref>clipitem-a9</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>9</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b9</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>9</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>90</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v10">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2948</start>
+						<end>3058</end>
+						<in>14205</in>
+						<out>14315</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v10</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>10</clipindex></link><link><linkclipref>clipitem-a10</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>10</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b10</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>10</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>105</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v11">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>3058</start>
+						<end>3158</end>
+						<in>14326</in>
+						<out>14426</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v11</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>11</clipindex></link><link><linkclipref>clipitem-a11</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>11</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b11</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>11</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>90</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v12">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>3158</start>
+						<end>3316</end>
+						<in>19680</in>
+						<out>19838</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-14">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v12</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>12</clipindex></link><link><linkclipref>clipitem-a12</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>12</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b12</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>12</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>105</value></parameter></effect></filter></clipitem>
+					</track>
+				<track TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="0">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+				</track>
+				<track TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="0">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+				</track>
+			</video>
+			<audio>
+				<numOutputChannels>2</numOutputChannels>
+				<format>
+					<samplecharacteristics>
+						<depth>16</depth>
+						<samplerate>48000</samplerate>
+					</samplecharacteristics>
+				</format>
+				<outputs>
+					<group>
+						<index>1</index>
+						<numchannels>1</numchannels>
+						<downmix>0</downmix>
+						<channel>
+							<index>1</index>
+						</channel>
+					</group>
+					<group>
+						<index>2</index>
+						<numchannels>1</numchannels>
+						<downmix>0</downmix>
+						<channel>
+							<index>2</index>
+						</channel>
+					</group>
+				</outputs>
+				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="0" totalExplodedTrackCount="2" premiereTrackType="Stereo">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+					<outputchannelindex>1</outputchannelindex>
+				<clipitem id="clipitem-a1" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>240</start>
+						<end>810</end>
+						<in>1965</in>
+						<out>2535</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v1</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>1</clipindex></link><link><linkclipref>clipitem-a1</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>1</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b1</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>1</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a2" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>810</start>
+						<end>1076</end>
+						<in>2535</in>
+						<out>2801</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v2</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>2</clipindex></link><link><linkclipref>clipitem-a2</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>2</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b2</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>2</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a3" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1076</start>
+						<end>1215</end>
+						<in>2817</in>
+						<out>2956</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v3</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>3</clipindex></link><link><linkclipref>clipitem-a3</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>3</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b3</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>3</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a4" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1215</start>
+						<end>1453</end>
+						<in>3010</in>
+						<out>3248</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v4</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>4</clipindex></link><link><linkclipref>clipitem-a4</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>4</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b4</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>4</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a5" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1453</start>
+						<end>1718</end>
+						<in>3248</in>
+						<out>3513</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v5</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>5</clipindex></link><link><linkclipref>clipitem-a5</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>5</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b5</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>5</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a6" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1718</start>
+						<end>2079</end>
+						<in>4369</in>
+						<out>4730</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v6</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>6</clipindex></link><link><linkclipref>clipitem-a6</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b6</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a7" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2079</start>
+						<end>2250</end>
+						<in>8672</in>
+						<out>8843</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v7</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>7</clipindex></link><link><linkclipref>clipitem-a7</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b7</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a8" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2250</start>
+						<end>2613</end>
+						<in>9233</in>
+						<out>9596</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v8</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>8</clipindex></link><link><linkclipref>clipitem-a8</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>8</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b8</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>8</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a9" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2613</start>
+						<end>2948</end>
+						<in>13828</in>
+						<out>14163</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v9</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>9</clipindex></link><link><linkclipref>clipitem-a9</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>9</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b9</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>9</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a10" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2948</start>
+						<end>3058</end>
+						<in>14205</in>
+						<out>14315</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v10</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>10</clipindex></link><link><linkclipref>clipitem-a10</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>10</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b10</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>10</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a11" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>3058</start>
+						<end>3158</end>
+						<in>14326</in>
+						<out>14426</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v11</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>11</clipindex></link><link><linkclipref>clipitem-a11</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>11</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b11</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>11</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a12" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>3158</start>
+						<end>3316</end>
+						<in>19680</in>
+						<out>19838</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v12</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>12</clipindex></link><link><linkclipref>clipitem-a12</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>12</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b12</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>12</clipindex><groupindex>1</groupindex></link></clipitem>
+					</track>
+				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="1" totalExplodedTrackCount="2" premiereTrackType="Stereo">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+					<outputchannelindex>2</outputchannelindex>
+				<clipitem id="clipitem-b1" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>240</start>
+						<end>810</end>
+						<in>1965</in>
+						<out>2535</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v1</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>1</clipindex></link><link><linkclipref>clipitem-a1</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>1</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b1</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>1</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b2" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>810</start>
+						<end>1076</end>
+						<in>2535</in>
+						<out>2801</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v2</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>2</clipindex></link><link><linkclipref>clipitem-a2</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>2</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b2</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>2</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b3" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1076</start>
+						<end>1215</end>
+						<in>2817</in>
+						<out>2956</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v3</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>3</clipindex></link><link><linkclipref>clipitem-a3</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>3</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b3</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>3</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b4" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1215</start>
+						<end>1453</end>
+						<in>3010</in>
+						<out>3248</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v4</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>4</clipindex></link><link><linkclipref>clipitem-a4</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>4</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b4</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>4</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b5" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1453</start>
+						<end>1718</end>
+						<in>3248</in>
+						<out>3513</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v5</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>5</clipindex></link><link><linkclipref>clipitem-a5</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>5</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b5</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>5</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b6" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>1718</start>
+						<end>2079</end>
+						<in>4369</in>
+						<out>4730</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v6</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>6</clipindex></link><link><linkclipref>clipitem-a6</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b6</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b7" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2079</start>
+						<end>2250</end>
+						<in>8672</in>
+						<out>8843</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v7</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>7</clipindex></link><link><linkclipref>clipitem-a7</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b7</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b8" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2250</start>
+						<end>2613</end>
+						<in>9233</in>
+						<out>9596</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v8</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>8</clipindex></link><link><linkclipref>clipitem-a8</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>8</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b8</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>8</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b9" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2613</start>
+						<end>2948</end>
+						<in>13828</in>
+						<out>14163</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v9</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>9</clipindex></link><link><linkclipref>clipitem-a9</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>9</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b9</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>9</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b10" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2948</start>
+						<end>3058</end>
+						<in>14205</in>
+						<out>14315</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v10</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>10</clipindex></link><link><linkclipref>clipitem-a10</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>10</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b10</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>10</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b11" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>3058</start>
+						<end>3158</end>
+						<in>14326</in>
+						<out>14426</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v11</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>11</clipindex></link><link><linkclipref>clipitem-a11</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>11</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b11</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>11</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b12" premiereChannelType="stereo">
+						<masterclipid>masterclip-14</masterclipid>
+						<name>fx3 gabriel3741.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>19995</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>3158</start>
+						<end>3316</end>
+						<in>19680</in>
+						<out>19838</out>
+						<file id="file-14" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v12</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>12</clipindex></link><link><linkclipref>clipitem-a12</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>12</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b12</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>12</clipindex><groupindex>1</groupindex></link></clipitem>
+					</track>
+				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="0" totalExplodedTrackCount="2" premiereTrackType="Stereo">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+					<outputchannelindex>1</outputchannelindex>
+				</track>
+				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="1" totalExplodedTrackCount="2" premiereTrackType="Stereo">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+					<outputchannelindex>2</outputchannelindex>
+				</track>
+				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="0" totalExplodedTrackCount="2" premiereTrackType="Stereo">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+					<outputchannelindex>1</outputchannelindex>
+				</track>
+				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="1" totalExplodedTrackCount="2" premiereTrackType="Stereo">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+					<outputchannelindex>2</outputchannelindex>
+				</track>
+				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="0" totalExplodedTrackCount="2" premiereTrackType="Stereo">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+					<outputchannelindex>1</outputchannelindex>
+				</track>
+				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="1" totalExplodedTrackCount="2" premiereTrackType="Stereo">
+					<enabled>TRUE</enabled>
+					<locked>FALSE</locked>
+					<outputchannelindex>2</outputchannelindex>
+				</track>
+			</audio>
+		</media>
+		<timecode>
+			<rate>
+				<timebase>30</timebase>
+				<ntsc>TRUE</ntsc>
+			</rate>
+			<string>00;00;00;00</string>
+			<frame>0</frame>
+			<displayformat>DF</displayformat>
+		</timecode>
+		<labels>
+			<label2>Forest</label2>
+		</labels>
+		<logginginfo>
+			<description />
+			<scene />
+			<shottake />
+			<lognote />
+			<good />
+			<originalvideofilename />
+			<originalaudiofilename />
+		</logginginfo>
+	<marker><name>VINHETA ABERTURA (8s)</name><comment /><in>0</in><out>-1</out></marker><marker><name>VINHETA FECHAMENTO (4s)</name><comment /><in>3316</in><out>-1</out></marker></sequence>
+</xmeml>
