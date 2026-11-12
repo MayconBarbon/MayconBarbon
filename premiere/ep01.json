@@ -1,0 +1,19 @@
+{
+  "name": "EP01 - As formas dos nossos sentidos",
+  "ep": 1,
+  "intro_s": 8, "outro_s": 4,
+  "wide": 90, "close": 105,
+  "gap_keep": 18, "pad": 5,
+  "blocks": [
+    {"from": "00;08;40;22", "to": "00;08;52;19", "label": "Olá! A partir de agora..."},
+    {"from": "00;09;02;24", "to": "00;09;07;28", "label": "E é nesse caminho..."},
+    {"from": "00;02;46;14", "to": "00;03;05;02", "label": "Desde os primeiros gestos..."},
+    {"from": "00;03;06;01", "to": "00;03;20;03", "label": "Quando um objeto ocupa volume..."},
+    {"from": "00;04;44;06", "to": "00;05;01;23", "label": "Das primeiras ferramentas..."},
+    {"from": "00;05;05;00", "to": "00;05;13;09", "label": "A escultura nasce desse impulso..."},
+    {"from": "00;06;30;11", "to": "00;07;16;09", "label": "Ao longo da história..."},
+    {"from": "00;07;25;10", "to": "00;07;32;28", "label": "Porque no fundo...", "zoom_in": true},
+    {"from": "00;07;55;14", "to": "00;08;04;17", "label": "E talvez ao ser tocada..."},
+    {"from": "00;08;05;05", "to": "00;08;09;05", "label": "Vamos lá. Bem-vindos..."}
+  ]
+}
