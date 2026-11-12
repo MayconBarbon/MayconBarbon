@@ -1,6 +1,6 @@
-<title>Vídeo Imóvel</title>
+<title>Vídeo Imóvel – Vídeos e fotos para anúncios de imóveis</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Envie as fotos do imóvel e receba em até 48 horas um vídeo profissional pronto para portais, redes sociais e anúncios.">
+<meta name="description" content="Vídeo de imóvel profissional feito a partir das suas fotos, com tratamento de imagem e IA que preserva o imóvel real. Produção Doc.me, entrega em até 48 h.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
@@ -86,6 +86,13 @@ p{margin:0;max-width:62ch}
 
 section{padding-block:clamp(72px,10vw,128px)}
 .head{display:grid;gap:16px;margin-bottom:48px}
+
+
+/* serviços */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.service{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;display:grid;gap:10px;align-content:start;min-width:0}
+.service p{color:var(--muted);font-size:.98rem}
+@media (max-width:760px){.services{grid-template-columns:1fr}}
 
 /* antes e depois */
 .dark{background:var(--ink);color:var(--ink-fg)}
@@ -187,10 +194,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Vídeo Imóvel","url":"https://videoimovel.com.br/","logo":"assets/logo.png","telephone":"+55-19-99861-2626","sameAs":["https://www.instagram.com/video.imoveloficial/"],"parentOrganization":{"@type":"Organization","name":"Doc.me","sameAs":["https://www.instagram.com/docme.comunicacao/"]},"description":"Vídeos de imóveis feitos a partir de fotos, tratamento de fotos, aprimoramento com IA e captação com drone, produzidos pela Doc.me."}
+</script>
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#topo"><img src="assets/logo-mark.png" alt="" width="30" height="24">Vídeo Imóvel</a>
     <ul>
+      <li><a href="#servicos">Serviços</a></li>
       <li><a href="#como-funciona">Como funciona</a></li>
       <li><a href="#portfolio">Portfólio</a></li>
       <li><a href="#videos">Vídeos</a></li>
@@ -206,8 +217,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     <div class="wrap">
       <div class="hero-copy">
         <p class="eyebrow">Vídeo imobiliário com IA</p>
-        <h1 id="h1">Suas fotos. <span>O vídeo que o seu imóvel merece.</span></h1>
-        <p class="lead">Envie as fotos do imóvel, inclusive as feitas com celular. Em até 48 horas você recebe um vídeo profissional pronto para portais, redes sociais e anúncios.</p>
+        <h1 id="h1">Vídeo de imóvel profissional <span>feito a partir das suas fotos.</span></h1>
+        <p class="lead">Você envia as fotos do imóvel, inclusive as feitas com celular. A equipe da Doc.me trata as imagens, monta o vídeo e entrega em até 48 horas, pronto para portais, redes sociais e anúncios.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20transformar%20as%20fotos%20do%20meu%20im%C3%B3vel%20em%20v%C3%ADdeo." target="_blank" rel="noopener">Enviar fotos pelo WhatsApp</a>
           <a class="btn btn-ghost" href="#portfolio">Ver portfólio</a>
@@ -223,18 +234,34 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 
   <div class="audience" aria-label="Para quem é">
     <div class="wrap">
-      <article class="reveal"><h3>Imobiliárias</h3><p>Padronize a carteira, eleve o nível dos anúncios e atenda às exigências dos portais sem sobrecarregar a equipe.</p></article>
-      <article class="reveal"><h3>Corretores e proprietários</h3><p>Anuncie com mais impacto e valorize o imóvel com o material que você já tem em mãos.</p></article>
-      <article class="reveal"><h3>Anfitriões de temporada</h3><p>Destaque o seu espaço com vídeo profissional, mesmo quando as fotos foram feitas no celular.</p></article>
+      <article class="reveal"><h3>Imobiliárias</h3><p>Padronize a apresentação da carteira e publique vídeos em escala, sem tirar a equipe da rotina de atendimento.</p></article>
+      <article class="reveal"><h3>Corretores e proprietários</h3><p>Transforme as fotos que você já tem em um vídeo para o anúncio, o WhatsApp e as redes sociais.</p></article>
+      <article class="reveal"><h3>Anfitriões de temporada</h3><p>Mostre o espaço em movimento nas redes e nos seus canais de divulgação, mesmo partindo de fotos de celular.</p></article>
     </div>
   </div>
+
+  <section id="servicos" class="band" aria-labelledby="h-serv">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Serviços</p>
+        <h2 id="h-serv">Vídeo, foto e IA para apresentar imóveis com fidelidade.</h2>
+        <p class="lead">Quatro formas de mostrar o imóvel melhor, sempre a partir do que ele é de verdade.</p>
+      </div>
+      <div class="services">
+        <article class="service reveal"><h3>Vídeos de imóveis</h3><p>A Doc.me transforma as fotos do imóvel em vídeo, com movimento, ritmo e trilha, nos formatos vertical e horizontal.</p></article>
+        <article class="service reveal"><h3>Tratamento de fotos</h3><p>Correção de luz, cor, nitidez e enquadramento, para que cada ambiente apareça como é, com mais clareza.</p></article>
+        <article class="service reveal"><h3>Aprimoramento com IA</h3><p>Movimento, profundidade e redecoração virtual quando você pedir, preservando as características reais do imóvel.</p></article>
+        <article class="service reveal"><h3>Captação no local e drone</h3><p>Fotografia, vídeo e imagens aéreas para imóveis de alto padrão, chácaras, fazendas, empreendimentos e espaços comerciais.</p></article>
+      </div>
+    </div>
+  </section>
 
   <section class="dark" aria-labelledby="h-antes">
     <div class="wrap">
       <div class="head reveal">
         <p class="eyebrow">Antes e depois</p>
-        <h2 id="h-antes">Arraste e veja o que a IA faz com uma sala real.</h2>
-        <p class="lead">A mesma sala, a mesma luz, o mesmo enquadramento. À direita, a redecoração virtual que ajuda o comprador a imaginar o espaço.</p>
+        <h2 id="h-antes">Redecoração virtual com IA, sem mudar o imóvel.</h2>
+        <p class="lead">Arraste a barra. Paredes, piso, janelas e luz continuam os mesmos; só a mobília da direita foi simulada, para ajudar quem procura imóvel a imaginar o espaço em uso.</p>
       </div>
       <div class="compare" id="compare" style="--pos:50%">
         <img src="assets/staging-0.webp" alt="Sala de pé-direito duplo com sofás de couro, foto original" width="1600" height="842">
@@ -244,7 +271,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
         <label class="sr" for="compare-range" hidden>Comparar antes e depois</label>
         <input id="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparar foto original e simulação com IA">
       </div>
-      <p class="fine compare-note">Os móveis da simulação não fazem parte do imóvel. Ajustamos cor, luz e movimento, mas nunca alteramos características físicas do imóvel sem avisar.</p>
+      <p class="fine compare-note">Na redecoração virtual, os móveis são uma simulação e não fazem parte do imóvel. Nos demais usos de IA, ajustamos cor, luz e movimento, sem alterar estrutura, acabamentos, vista ou estado de conservação. Toda simulação é identificada.</p>
     </div>
   </section>
 
@@ -252,11 +279,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     <div class="wrap">
       <div class="head reveal">
         <p class="eyebrow">Como funciona</p>
-        <h2 id="h-como">Três passos. Nenhuma câmera.</h2>
+        <h2 id="h-como">Do envio das fotos ao vídeo pronto, em três passos.</h2>
       </div>
       <ol class="steps">
-        <li class="reveal"><h3>Envie as fotos</h3><p>Pelo WhatsApp, feitas com celular ou câmera. Trabalhamos com o material real que você já tem.</p></li>
-        <li class="reveal"><h3>Curadoria e tratamento</h3><p>Selecionamos as melhores imagens, corrigimos luz e enquadramento e aplicamos IA para dar movimento a cada ambiente.</p></li>
+        <li class="reveal"><h3>Envie as fotos</h3><p>Pelo WhatsApp, feitas com celular ou câmera. O ponto de partida é sempre o material real do imóvel.</p></li>
+        <li class="reveal"><h3>Curadoria e tratamento</h3><p>A equipe da Doc.me seleciona as melhores imagens, corrige luz, cor e enquadramento e usa IA para dar movimento a cada ambiente.</p></li>
         <li class="reveal"><h3>Vídeo em até 48 horas</h3><p>Depois do aceite da proposta, você recebe o vídeo pronto para portais, redes sociais e anúncios.</p></li>
       </ol>
     </div>
@@ -266,8 +293,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     <div class="wrap">
       <div class="head reveal">
         <p class="eyebrow">Portfólio</p>
-        <h2 id="h-port">A melhor imagem do imóvel está aqui.</h2>
-        <p class="lead">Apartamentos de praia, casas em condomínio, decorados, escritórios e imagens aéreas. Alguns dos projetos que já produzimos.</p>
+        <h2 id="h-port">Portfólio de vídeos e fotos de imóveis.</h2>
+        <p class="lead">Apartamentos de praia, casas de alto padrão, decorados, fazendas, escritórios e imagens aéreas. Uma amostra do que já produzimos.</p>
       </div>
       <div class="grid">
         <figure class="g-a reveal"><img src="assets/rj-mar.webp" alt="Vista do mar a partir da varanda de um apartamento no RJ" loading="lazy" width="1440" height="810"><figcaption><b>Apartamento frente ao mar</b>RJ · fotos e vídeo vertical</figcaption></figure>
@@ -289,7 +316,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       <div class="reels-head reveal">
         <div class="head" style="margin:0">
           <p class="eyebrow">Banco de vídeos</p>
-          <h2 id="h-videos">Veja em movimento.</h2>
+          <h2 id="h-videos">Veja os vídeos em movimento.</h2>
           <p class="lead">Vídeos verticais prontos para Reels, Stories, portais e anúncios. Toque em um vídeo para pausar.</p>
         </div>
         <div class="reels-nav"><button type="button" id="rv-prev" aria-label="Vídeos anteriores">←</button><button type="button" id="rv-next" aria-label="Próximos vídeos">→</button></div>
@@ -316,11 +343,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       <div class="copy reveal">
         <p class="eyebrow">Captação profissional</p>
         <h2 id="h-capt">Quando o imóvel pede mais, vamos até ele.</h2>
-        <p class="lead">Fazemos foto, vídeo e drone no local e combinamos tudo com o material que você já tem, potencializado com inteligência artificial.</p>
+        <p class="lead">Para casas de alto padrão, chácaras, fazendas e empreendimentos, a Doc.me faz a captação no local, com fotografia, vídeo e drone, e combina tudo com o material que você já tem.</p>
         <ul class="ticks">
           <li>Fotografia de interiores e fachada</li>
           <li>Vídeo vertical e horizontal no mesmo dia</li>
-          <li>Imagens aéreas com drone</li>
+          <li>Imagens aéreas com drone para grandes áreas</li>
         </ul>
       </div>
     </div>
@@ -361,6 +388,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
         <details><summary>Quanto tempo leva?</summary><p>Até 48 horas depois do aceite da proposta.</p></details>
         <details><summary>Vocês usam inteligência artificial?</summary><p>Sim, para dar movimento, fluidez e profundidade às fotos. Quando fazemos uma simulação, como uma redecoração virtual, ela é sinalizada como simulação.</p></details>
         <details><summary>Onde posso publicar o vídeo?</summary><p>Em portais imobiliários como ZAP e OLX, nas redes sociais e em anúncios pagos.</p></details>
+        <details><summary>A inteligência artificial muda o imóvel?</summary><p>Não. Usamos IA para dar movimento às fotos, melhorar luz e cor e, quando você pede, simular uma decoração. Não alteramos estrutura, acabamentos, vista ou estado de conservação, e toda simulação é identificada como tal.</p></details>
+        <details><summary>Quem produz os vídeos?</summary><p>Os vídeos são produzidos pela Doc.me, empresa de comunicação audiovisual responsável pelo Vídeo Imóvel, que também faz a captação de fotos, vídeo e drone no local.</p></details>
         <details><summary>Vocês atendem a minha cidade?</summary><p>Os vídeos feitos a partir de fotos são 100% digitais e atendemos todo o Brasil. Para captação no local, com foto, vídeo ou drone, consulte a disponibilidade pelo WhatsApp.</p></details>
       </div>
     </div>
@@ -381,7 +410,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 
 <footer>
   <div class="wrap">
-    <span>Vídeo Imóvel é um serviço da DocMe Comunicação · © 2026</span>
+    <span>Vídeo Imóvel é um serviço da Doc.me · © 2026</span>
     <span><a href="https://www.instagram.com/video.imoveloficial/" target="_blank" rel="noopener">@video.imoveloficial</a> · <a href="https://www.instagram.com/docme.comunicacao/" target="_blank" rel="noopener">@docme.comunicacao</a></span>
   </div>
 </footer>
