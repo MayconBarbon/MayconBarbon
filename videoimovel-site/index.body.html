@@ -121,6 +121,21 @@ section{padding-block:clamp(72px,10vw,128px)}
 @media (max-width:480px){.grid{grid-template-columns:1fr}.grid figure,.g-a,.g-g{grid-column:span 1!important}}
 .more{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
 
+
+/* banco de vídeos */
+.reels-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px;margin-bottom:36px}
+.reels-nav{display:flex;gap:10px}
+.reels-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:1.1rem;cursor:pointer}
+.reels-nav button:hover{background:var(--band)}
+.reels{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(200px,24vw,260px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin;overscroll-behavior-x:contain}
+.reel{scroll-snap-align:start;margin:0;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:9/16;background:#111;cursor:pointer}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel figcaption{position:absolute;inset:auto 0 0 0;padding:48px 16px 16px;color:#fff;font-size:.85rem;line-height:1.35;background:linear-gradient(transparent,rgba(5,10,20,.78))}
+.reel figcaption b{display:block;font-family:var(--font-display);font-size:1rem}
+.reel .pill{position:absolute;top:12px;left:12px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.88);color:#0d1a2e}
+.reel .pill.ia{background:var(--accent);color:#fff}
+.reels-note{margin-top:14px}
+
 /* captação */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .split img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%;height:auto}
@@ -133,7 +148,7 @@ section{padding-block:clamp(72px,10vw,128px)}
 /* planos */
 .band{background:var(--band)}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-.plan{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;display:grid;gap:18px;grid-template-rows:auto auto 1fr auto;min-width:0}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;display:grid;gap:18px;grid-template-rows:auto 1fr auto;min-width:0}
 .plan.featured{border-color:var(--accent);box-shadow:var(--shadow)}
 .plan .qty{font-size:.95rem;color:var(--muted)}
 .price{font:800 2rem/1 var(--font-display);letter-spacing:-.02em}
@@ -178,6 +193,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     <ul>
       <li><a href="#como-funciona">Como funciona</a></li>
       <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#videos">Vídeos</a></li>
       <li><a href="#planos">Planos</a></li>
       <li><a href="#duvidas">Dúvidas</a></li>
     </ul>
@@ -196,7 +212,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
           <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20transformar%20as%20fotos%20do%20meu%20im%C3%B3vel%20em%20v%C3%ADdeo." target="_blank" rel="noopener">Enviar fotos pelo WhatsApp</a>
           <a class="btn btn-ghost" href="#portfolio">Ver portfólio</a>
         </div>
-        <p class="fine">A partir de R$ 450 · Atendimento em todo o Brasil</p>
+        <p class="fine">Vídeo pronto em até 48 horas · Atendimento em todo o Brasil</p>
       </div>
       <div class="phone">
         <video src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline aria-label="Trecho de vídeo vertical de um apartamento iluminado à noite"></video>
@@ -268,6 +284,31 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     </div>
   </section>
 
+  <section id="videos" aria-labelledby="h-videos">
+    <div class="wrap">
+      <div class="reels-head reveal">
+        <div class="head" style="margin:0">
+          <p class="eyebrow">Banco de vídeos</p>
+          <h2 id="h-videos">Veja em movimento.</h2>
+          <p class="lead">Vídeos verticais prontos para Reels, Stories, portais e anúncios. Toque em um vídeo para pausar.</p>
+        </div>
+        <div class="reels-nav"><button type="button" id="rv-prev" aria-label="Vídeos anteriores">←</button><button type="button" id="rv-next" aria-label="Próximos vídeos">→</button></div>
+      </div>
+      <div class="reels" id="reels">
+        <figure class="reel"><video src="assets/reels/alto-padrao-condominio.mp4" poster="assets/reels/alto-padrao-condominio.jpg" muted loop playsinline preload="none" aria-label="Casa em condomínio: Pé-direito duplo e piscina de raia"></video><span class="pill ia">Alto padrão · IA</span><figcaption><b>Casa em condomínio</b>Pé-direito duplo e piscina de raia</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/rj-frente-mar.mp4" poster="assets/reels/rj-frente-mar.jpg" muted loop playsinline preload="none" aria-label="Apartamento no RJ: Noite, luz quente e vista da orla"></video><span class="pill">Frente ao mar</span><figcaption><b>Apartamento no RJ</b>Noite, luz quente e vista da orla</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/casa-paulo-ia.mp4" poster="assets/reels/casa-paulo-ia.jpg" muted loop playsinline preload="none" aria-label="Casa Paulo: Fotos reais com movimento criado por IA"></video><span class="pill ia">IA</span><figcaption><b>Casa Paulo</b>Fotos reais com movimento criado por IA</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/studio-sp.mp4" poster="assets/reels/studio-sp.jpg" muted loop playsinline preload="none" aria-label="Studio em São Paulo: TV giratória, piscina coberta e lavanderia"></video><span class="pill">Compacto</span><figcaption><b>Studio em São Paulo</b>TV giratória, piscina coberta e lavanderia</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/rj-vista-orla.mp4" poster="assets/reels/rj-vista-orla.jpg" muted loop playsinline preload="none" aria-label="Apartamento 3, RJ: Piscina, quadra e avenida arborizada"></video><span class="pill">Frente ao mar</span><figcaption><b>Apartamento 3, RJ</b>Piscina, quadra e avenida arborizada</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/chacara.mp4" poster="assets/reels/chacara.jpg" muted loop playsinline preload="none" aria-label="Chácara: Varanda, jardim e vista para os morros"></video><span class="pill ia">Campo · IA</span><figcaption><b>Chácara</b>Varanda, jardim e vista para os morros</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/rieti-lazer.mp4" poster="assets/reels/rieti-lazer.jpg" muted loop playsinline preload="none" aria-label="Residencial Rieti: Áreas comuns com textos na tela"></video><span class="pill">Condomínio</span><figcaption><b>Residencial Rieti</b>Áreas comuns com textos na tela</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/canada-piscinas.mp4" poster="assets/reels/canada-piscinas.jpg" muted loop playsinline preload="none" aria-label="Canadá Residencial: Piscinas, academia e quiosque"></video><span class="pill">Lançamento</span><figcaption><b>Canadá Residencial</b>Piscinas, academia e quiosque</figcaption></figure>
+        <figure class="reel"><video src="assets/reels/casa-paulo-real.mp4" poster="assets/reels/casa-paulo-real.jpg" muted loop playsinline preload="none" aria-label="Casa Paulo: Gravado no local e editado na vertical"></video><span class="pill">Captação</span><figcaption><b>Casa Paulo</b>Gravado no local e editado na vertical</figcaption></figure>
+      </div>
+      <p class="fine reels-note">Os vídeos marcados com IA receberam movimento criado por inteligência artificial a partir de fotos reais.</p>
+    </div>
+  </section>
+
   <section aria-labelledby="h-capt">
     <div class="wrap split">
       <img class="reveal" src="assets/rj-living.webp" alt="Varanda de apartamento com vista para o mar" loading="lazy" width="1440" height="810">
@@ -289,24 +330,21 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       <div class="head reveal">
         <p class="eyebrow">Planos de vídeo</p>
         <h2 id="h-planos">Escolha pelo número de fotos.</h2>
-        <p class="lead">As fotos podem ser de celular ou câmera. Fazemos a curadoria técnica antes da proposta e, com o aceite, o vídeo fica pronto em até 48 horas.</p>
+        <p class="lead">As fotos podem ser de celular ou câmera. Fazemos a curadoria técnica, enviamos a proposta sob medida e, com o aceite, o vídeo fica pronto em até 48 horas.</p>
       </div>
       <div class="plans">
         <article class="plan reveal">
           <div><h3>Essencial</h3><p class="qty">Até 5 fotos</p></div>
-          <p class="price"><small>a partir de</small>R$ 450</p>
           <ul class="ticks"><li>Curadoria e tratamento de luz e enquadramento</li><li>Aplicação de IA e trilha sonora</li><li>Vídeo pronto para anunciar</li></ul>
-          <a class="btn btn-ghost" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Essencial." target="_blank" rel="noopener">Quero o Essencial</a>
+          <a class="btn btn-ghost" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Essencial." target="_blank" rel="noopener">Pedir orçamento</a>
         </article>
         <article class="plan featured reveal">
-          <div><span class="badge">Mais completo por fotos</span><h3>Plus</h3><p class="qty">Até 10 fotos</p></div>
-          <p class="price"><small>a partir de</small>R$ 690</p>
+          <div><span class="badge">Mais escolhido</span><h3>Plus</h3><p class="qty">Até 10 fotos</p></div>
           <ul class="ticks"><li>Curadoria ampliada e tratamento aprimorado</li><li>IA aplicada para mais fluidez visual</li><li>Trilha sonora e textos sutis de apoio</li></ul>
-          <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Plus." target="_blank" rel="noopener">Quero o Plus</a>
+          <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Plus." target="_blank" rel="noopener">Pedir orçamento</a>
         </article>
         <article class="plan reveal">
           <div><h3>Premium</h3><p class="qty">Até 15 fotos</p></div>
-          <p class="price"><small>sob consulta</small>Personalizado</p>
           <ul class="ticks"><li>Curadoria completa e tratamento avançado</li><li>IA para mais profundidade e narrativa visual</li><li>Vídeo mais completo e envolvente</li></ul>
           <a class="btn btn-ghost" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20do%20plano%20Premium." target="_blank" rel="noopener">Pedir orçamento</a>
         </article>
@@ -351,5 +389,19 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 (function(){
   var box=document.getElementById('compare'), r=document.getElementById('compare-range');
   if(box&&r){ r.addEventListener('input',function(){ box.style.setProperty('--pos', r.value+'%'); }); }
+  var rail=document.getElementById('reels');
+  if(rail){
+    var vids=rail.querySelectorAll('video');
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if('IntersectionObserver' in window && !reduce){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target; if(e.isIntersecting){v.preload='auto'; var pr=v.play(); if(pr&&pr.catch)pr.catch(function(){});} else v.pause();});},{root:rail,threshold:.6});
+      vids.forEach(function(v){io.observe(v);});
+    }
+    rail.addEventListener('click',function(e){var f=e.target.closest('.reel'); if(!f)return; var v=f.querySelector('video'); if(v.paused){var pr=v.play(); if(pr&&pr.catch)pr.catch(function(){});} else v.pause();});
+    function step(d){var c=rail.querySelector('.reel'); rail.scrollBy({left:d*(c?c.offsetWidth+16:260)*2,behavior:'smooth'});}
+    document.getElementById('rv-prev').addEventListener('click',function(){step(-1)});
+    document.getElementById('rv-next').addEventListener('click',function(){step(1)});
+  }
+
 })();
 </script>
