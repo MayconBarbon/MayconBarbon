@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="assets/logo-mark.png">
+<title>Vídeo Imóvel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Envie as fotos do imóvel e receba em até 48 horas um vídeo profissional pronto para portais, redes sociais e anúncios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: faixas largas alternando claro / escuro, conteúdo em coluna de 1120px, muito respiro; o vídeo do imóvel é o protagonista. */
+:root{
+  --bg:#fbfbfd; --fg:#1d1d1f; --muted:#6b6b73; --line:#dcdce2; --band:#f1f2f5;
+  --ink:#0d1a2e; --ink-fg:#f4f5f8; --ink-muted:#a7b0c0;
+  --brand:#11233b; --brand-fg:#ffffff; --accent:#13a89e;
+  --card:#ffffff; --shadow:0 1px 2px rgba(13,26,46,.06),0 12px 32px rgba(13,26,46,.08);
+  --font-display:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1120px; --r:22px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0a0a0c; --fg:#f5f5f7; --muted:#a1a1aa; --line:#2a2a30; --band:#141418;
+  --ink:#050a13; --ink-fg:#f4f5f8; --ink-muted:#9aa4b6;
+  --brand:#f5f5f7; --brand-fg:#0a0a0c; --accent:#2cc6b8; --card:#151519;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a0a0c; --fg:#f5f5f7; --muted:#a1a1aa; --line:#2a2a30; --band:#141418;
+  --ink:#050a13; --ink-fg:#f4f5f8; --ink-muted:#9aa4b6;
+  --brand:#f5f5f7; --brand-fg:#0a0a0c; --accent:#2cc6b8; --card:#151519;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--font-display);letter-spacing:-.025em;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.6rem,6.2vw,4.8rem);font-weight:800}
+h2{font-size:clamp(2rem,4.4vw,3.3rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0;max-width:62ch}
+.eyebrow{font-family:var(--font-display);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:clamp(1.1rem,1.6vw,1.3rem);color:var(--muted)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:.55em;font:600 1rem/1 var(--font-body);padding:.95em 1.5em;border-radius:999px;text-decoration:none;border:1px solid transparent;transition:transform .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--brand);color:var(--brand-fg)}
+.btn-ghost{color:var(--fg);border-color:var(--line)}
+.btn-ghost:hover{background:var(--band)}
+.link{color:var(--accent);font-weight:600;text-decoration:none}
+.link:hover{text-decoration:underline}
+
+/* navegação */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.05rem var(--font-display);letter-spacing:-.01em}
+.brand img{width:30px;height:auto}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0;font-size:.92rem}
+.nav ul a{text-decoration:none;color:var(--muted)}
+.nav ul a:hover{color:var(--fg)}
+.nav .btn{padding:.6em 1.1em;font-size:.88rem}
+@media (max-width:820px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+
+/* hero */
+.hero{padding-block:clamp(48px,8vw,104px) clamp(56px,8vw,96px)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero-copy{display:grid;gap:26px;min-width:0}
+.hero h1 span{display:block;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.fine{font-size:.9rem;color:var(--muted)}
+.phone{justify-self:center;width:min(300px,78vw);aspect-ratio:9/19.2;border-radius:46px;padding:11px;background:linear-gradient(160deg,#2a2d33,#0e0f12);box-shadow:0 30px 80px rgba(13,26,46,.28),inset 0 0 0 1px rgba(255,255,255,.08);position:relative}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover;border-radius:36px;background:#111}
+.phone::after{content:"";position:absolute;top:22px;left:50%;translate:-50% 0;width:84px;height:24px;border-radius:20px;background:#000}
+.tag{position:absolute;left:-18px;bottom:46px;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:.82rem;line-height:1.35;box-shadow:var(--shadow)}
+.tag b{display:block;font-family:var(--font-display)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.tag{left:8px}}
+
+/* públicos */
+.audience{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.audience .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.audience article{padding:34px 28px 36px 0;display:grid;gap:8px;align-content:start;min-width:0}
+.audience article+article{padding-left:28px;border-left:1px solid var(--line)}
+.audience p{color:var(--muted);font-size:.98rem}
+@media (max-width:760px){.audience .wrap{grid-template-columns:1fr}.audience article,.audience article+article{padding:26px 0;border-left:0}.audience article+article{border-top:1px solid var(--line)}}
+
+section{padding-block:clamp(72px,10vw,128px)}
+.head{display:grid;gap:16px;margin-bottom:48px}
+
+/* antes e depois */
+.dark{background:var(--ink);color:var(--ink-fg)}
+.dark .lead,.dark .fine{color:var(--ink-muted)}
+.compare{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1600/842;max-width:100%;user-select:none;touch-action:pan-y}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare .after{clip-path:inset(0 0 0 var(--pos,50%))}
+.compare .bar{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;translate:-1px 0;pointer-events:none}
+.compare .bar::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;translate:-50% -50%;border-radius:50%;background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.compare .bar::before{content:"⟷";position:absolute;top:50%;left:50%;translate:-50% -50%;z-index:1;color:#0d1a2e;font-size:18px;font-weight:700}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.chip{position:absolute;top:16px;padding:6px 12px;border-radius:999px;font-size:.78rem;font-weight:600;background:rgba(10,15,25,.62);color:#fff;backdrop-filter:blur(6px)}
+.chip.l{left:16px}.chip.r{right:16px}
+.compare-note{margin-top:32px}
+
+/* passos */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{background:var(--band);border-radius:var(--r);padding:32px 28px;display:grid;gap:12px;align-content:start;counter-increment:s;min-width:0}
+.steps li::before{content:counter(s);font:800 2.4rem/1 var(--font-display);color:var(--accent)}
+.steps p{color:var(--muted);font-size:.98rem}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+
+/* portfólio */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.grid figure{margin:0;position:relative;border-radius:18px;overflow:hidden;background:var(--band);min-width:0}
+.grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.grid figure:hover img{transform:scale(1.035)}
+.grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:.85rem;line-height:1.35;color:#fff;background:linear-gradient(transparent,rgba(5,10,20,.72))}
+.grid figcaption b{display:block;font-family:var(--font-display);font-size:.98rem}
+.g-a{grid-column:span 7}.g-b{grid-column:span 5}.g-c{grid-column:span 4}.g-d{grid-column:span 4}.g-e{grid-column:span 4}.g-f{grid-column:span 5}.g-g{grid-column:span 7}
+.g-a img,.g-g img{aspect-ratio:16/10}.g-b img,.g-f img{aspect-ratio:8/7}
+@media (max-width:820px){.grid{grid-template-columns:1fr 1fr}.grid figure{grid-column:span 1!important}.g-a,.g-g{grid-column:span 2!important}.grid img{aspect-ratio:4/3!important;height:auto!important}}
+@media (max-width:480px){.grid{grid-template-columns:1fr}.grid figure,.g-a,.g-g{grid-column:span 1!important}}
+.more{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
+
+/* captação */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%;height:auto}
+.split .copy{display:grid;gap:20px;min-width:0}
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.ticks li{padding-left:28px;position:relative}
+.ticks li::before{content:"";position:absolute;left:2px;top:.55em;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);rotate:-45deg}
+@media (max-width:820px){.split{grid-template-columns:1fr;gap:32px}}
+
+/* planos */
+.band{background:var(--band)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;display:grid;gap:18px;grid-template-rows:auto auto 1fr auto;min-width:0}
+.plan.featured{border-color:var(--accent);box-shadow:var(--shadow)}
+.plan .qty{font-size:.95rem;color:var(--muted)}
+.price{font:800 2rem/1 var(--font-display);letter-spacing:-.02em}
+.price small{display:block;font:500 .8rem var(--font-body);color:var(--muted);letter-spacing:0;margin-bottom:6px}
+.plan .ticks{font-size:.95rem}
+.badge{justify-self:start;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+@media (max-width:900px){.plans{grid-template-columns:1fr}}
+
+/* dúvidas */
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq summary{cursor:pointer;list-style:none;font:700 1.12rem var(--font-display);display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:500;color:var(--muted);transition:rotate .2s}
+.faq details[open] summary::after{rotate:45deg}
+.faq p{margin-top:12px;color:var(--muted)}
+
+/* chamada final */
+.final{text-align:left}
+.final .wrap{display:grid;gap:26px}
+.contact{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.num{font:700 1.3rem var(--font-display);user-select:all;font-variant-numeric:tabular-nums}
+
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+
+/* movimento: elementos já visíveis em repouso; animação só onde o navegador suporta scroll-driven */
+@keyframes rise{from{opacity:.001;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hero-copy>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>*:nth-child(2){animation-delay:.08s}.hero-copy>*:nth-child(3){animation-delay:.16s}.hero-copy>*:nth-child(4){animation-delay:.24s}.hero-copy>*:nth-child(5){animation-delay:.32s}
+.phone{animation:rise 1.1s .2s cubic-bezier(.2,.7,.2,1) both}
+@supports (animation-timeline:view()){
+  @keyframes lift{from{transform:translateY(18px)}to{transform:none}}
+  .reveal{animation:lift linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo"><img src="assets/logo-mark.png" alt="" width="30" height="24">Vídeo Imóvel</a>
+    <ul>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+    </ul>
+    <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20transformar%20as%20fotos%20do%20meu%20im%C3%B3vel%20em%20v%C3%ADdeo." target="_blank" rel="noopener">Enviar fotos</a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Vídeo imobiliário com IA</p>
+        <h1 id="h1">Suas fotos. <span>O vídeo que o seu imóvel merece.</span></h1>
+        <p class="lead">Envie as fotos do imóvel, inclusive as feitas com celular. Em até 48 horas você recebe um vídeo profissional pronto para portais, redes sociais e anúncios.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20transformar%20as%20fotos%20do%20meu%20im%C3%B3vel%20em%20v%C3%ADdeo." target="_blank" rel="noopener">Enviar fotos pelo WhatsApp</a>
+          <a class="btn btn-ghost" href="#portfolio">Ver portfólio</a>
+        </div>
+        <p class="fine">A partir de R$ 450 · Atendimento em todo o Brasil</p>
+      </div>
+      <div class="phone">
+        <video src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline aria-label="Trecho de vídeo vertical de um apartamento iluminado à noite"></video>
+        <div class="tag"><b>Pronto para Reels</b>Vertical 9:16, com trilha</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="audience" aria-label="Para quem é">
+    <div class="wrap">
+      <article class="reveal"><h3>Imobiliárias</h3><p>Padronize a carteira, eleve o nível dos anúncios e atenda às exigências dos portais sem sobrecarregar a equipe.</p></article>
+      <article class="reveal"><h3>Corretores e proprietários</h3><p>Anuncie com mais impacto e valorize o imóvel com o material que você já tem em mãos.</p></article>
+      <article class="reveal"><h3>Anfitriões de temporada</h3><p>Destaque o seu espaço com vídeo profissional, mesmo quando as fotos foram feitas no celular.</p></article>
+    </div>
+  </div>
+
+  <section class="dark" aria-labelledby="h-antes">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Antes e depois</p>
+        <h2 id="h-antes">Arraste e veja o que a IA faz com uma sala real.</h2>
+        <p class="lead">A mesma sala, a mesma luz, o mesmo enquadramento. À direita, a redecoração virtual que ajuda o comprador a imaginar o espaço.</p>
+      </div>
+      <div class="compare" id="compare" style="--pos:50%">
+        <img src="assets/staging-0.webp" alt="Sala de pé-direito duplo com sofás de couro, foto original" width="1600" height="842">
+        <img class="after" src="assets/staging-1.webp" alt="A mesma sala com sofá laranja e móveis novos, simulação feita com IA" width="1600" height="842">
+        <span class="chip l">Foto original</span><span class="chip r">Simulação com IA</span>
+        <div class="bar" aria-hidden="true"></div>
+        <label class="sr" for="compare-range" hidden>Comparar antes e depois</label>
+        <input id="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparar foto original e simulação com IA">
+      </div>
+      <p class="fine compare-note">Os móveis da simulação não fazem parte do imóvel. Ajustamos cor, luz e movimento, mas nunca alteramos características físicas do imóvel sem avisar.</p>
+    </div>
+  </section>
+
+  <section id="como-funciona" aria-labelledby="h-como">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Como funciona</p>
+        <h2 id="h-como">Três passos. Nenhuma câmera.</h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal"><h3>Envie as fotos</h3><p>Pelo WhatsApp, feitas com celular ou câmera. Trabalhamos com o material real que você já tem.</p></li>
+        <li class="reveal"><h3>Curadoria e tratamento</h3><p>Selecionamos as melhores imagens, corrigimos luz e enquadramento e aplicamos IA para dar movimento a cada ambiente.</p></li>
+        <li class="reveal"><h3>Vídeo em até 48 horas</h3><p>Depois do aceite da proposta, você recebe o vídeo pronto para portais, redes sociais e anúncios.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="portfolio" class="band" aria-labelledby="h-port">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Portfólio</p>
+        <h2 id="h-port">A melhor imagem do imóvel está aqui.</h2>
+        <p class="lead">Apartamentos de praia, casas em condomínio, decorados, escritórios e imagens aéreas. Alguns dos projetos que já produzimos.</p>
+      </div>
+      <div class="grid">
+        <figure class="g-a reveal"><img src="assets/rj-mar.webp" alt="Vista do mar a partir da varanda de um apartamento no RJ" loading="lazy" width="1440" height="810"><figcaption><b>Apartamento frente ao mar</b>RJ · fotos e vídeo vertical</figcaption></figure>
+        <figure class="g-b reveal"><img src="assets/casa-paulo-piscina.webp" alt="Piscina com área gourmet integrada em um sobrado" loading="lazy" width="1280" height="662"><figcaption><b>Casa Paulo</b>Sobrado · fotos, vídeo e IA</figcaption></figure>
+        <figure class="g-c reveal"><img src="assets/bazzanelli-sala.webp" alt="Sala de apartamento decorado com sofá verde" loading="lazy" width="1440" height="960"><figcaption><b>Decorado</b>Ed. Antônio Bazzanelli, Americana-SP</figcaption></figure>
+        <figure class="g-d reveal"><img src="assets/escritorio.webp" alt="Escritório open space com estações de trabalho" loading="lazy" width="1440" height="960"><figcaption><b>Escritório e coworking</b>Fotografia corporativa em HDR</figcaption></figure>
+        <figure class="g-e reveal"><img src="assets/rieti-hall.webp" alt="Hall social decorado de um residencial" loading="lazy" width="1440" height="960"><figcaption><b>Residencial Rieti</b>Fotos, artes e vídeos</figcaption></figure>
+        <figure class="g-f reveal"><img src="assets/canada-aerea.webp" alt="Vista aérea de bosque com trilhas em um condomínio" loading="lazy" width="1440" height="810"><figcaption><b>Aérea com drone</b>Canadá Residencial, Piracicaba</figcaption></figure>
+        <figure class="g-g reveal"><img src="assets/rooftop.webp" alt="Rooftop com mesas altas ao entardecer" loading="lazy" width="1440" height="960"><figcaption><b>Rooftop ao entardecer</b>Fotografia de arquitetura</figcaption></figure>
+      </div>
+      <div class="more reveal">
+        <a class="link" href="https://www.instagram.com/video.imoveloficial/" target="_blank" rel="noopener">Ver mais no Instagram @video.imoveloficial →</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-capt">
+    <div class="wrap split">
+      <img class="reveal" src="assets/rj-living.webp" alt="Varanda de apartamento com vista para o mar" loading="lazy" width="1440" height="810">
+      <div class="copy reveal">
+        <p class="eyebrow">Captação profissional</p>
+        <h2 id="h-capt">Quando o imóvel pede mais, vamos até ele.</h2>
+        <p class="lead">Fazemos foto, vídeo e drone no local e combinamos tudo com o material que você já tem, potencializado com inteligência artificial.</p>
+        <ul class="ticks">
+          <li>Fotografia de interiores e fachada</li>
+          <li>Vídeo vertical e horizontal no mesmo dia</li>
+          <li>Imagens aéreas com drone</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos" class="band" aria-labelledby="h-planos">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Planos de vídeo</p>
+        <h2 id="h-planos">Escolha pelo número de fotos.</h2>
+        <p class="lead">As fotos podem ser de celular ou câmera. Fazemos a curadoria técnica antes da proposta e, com o aceite, o vídeo fica pronto em até 48 horas.</p>
+      </div>
+      <div class="plans">
+        <article class="plan reveal">
+          <div><h3>Essencial</h3><p class="qty">Até 5 fotos</p></div>
+          <p class="price"><small>a partir de</small>R$ 450</p>
+          <ul class="ticks"><li>Curadoria e tratamento de luz e enquadramento</li><li>Aplicação de IA e trilha sonora</li><li>Vídeo pronto para anunciar</li></ul>
+          <a class="btn btn-ghost" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Essencial." target="_blank" rel="noopener">Quero o Essencial</a>
+        </article>
+        <article class="plan featured reveal">
+          <div><span class="badge">Mais completo por fotos</span><h3>Plus</h3><p class="qty">Até 10 fotos</p></div>
+          <p class="price"><small>a partir de</small>R$ 690</p>
+          <ul class="ticks"><li>Curadoria ampliada e tratamento aprimorado</li><li>IA aplicada para mais fluidez visual</li><li>Trilha sonora e textos sutis de apoio</li></ul>
+          <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Plus." target="_blank" rel="noopener">Quero o Plus</a>
+        </article>
+        <article class="plan reveal">
+          <div><h3>Premium</h3><p class="qty">Até 15 fotos</p></div>
+          <p class="price"><small>sob consulta</small>Personalizado</p>
+          <ul class="ticks"><li>Curadoria completa e tratamento avançado</li><li>IA para mais profundidade e narrativa visual</li><li>Vídeo mais completo e envolvente</li></ul>
+          <a class="btn btn-ghost" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20do%20plano%20Premium." target="_blank" rel="noopener">Pedir orçamento</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="duvidas" aria-labelledby="h-faq">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow">Dúvidas</p><h2 id="h-faq">Perguntas frequentes</h2></div>
+      <div class="faq">
+        <details><summary>Fotos feitas com celular funcionam?</summary><p>Sim. Antes de enviar a proposta, fazemos a curadoria técnica das imagens e indicamos quais rendem melhor no vídeo.</p></details>
+        <details><summary>Quanto tempo leva?</summary><p>Até 48 horas depois do aceite da proposta.</p></details>
+        <details><summary>Vocês usam inteligência artificial?</summary><p>Sim, para dar movimento, fluidez e profundidade às fotos. Quando fazemos uma simulação, como uma redecoração virtual, ela é sinalizada como simulação.</p></details>
+        <details><summary>Onde posso publicar o vídeo?</summary><p>Em portais imobiliários como ZAP e OLX, nas redes sociais e em anúncios pagos.</p></details>
+        <details><summary>Vocês atendem a minha cidade?</summary><p>Os vídeos feitos a partir de fotos são 100% digitais e atendemos todo o Brasil. Para captação no local, com foto, vídeo ou drone, consulte a disponibilidade pelo WhatsApp.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark final" aria-labelledby="h-final">
+    <div class="wrap">
+      <p class="eyebrow">Vamos começar</p>
+      <h2 id="h-final">A melhor imagem do seu imóvel está aqui.</h2>
+      <p class="lead">Envie as fotos pelo WhatsApp e receba a proposta com a curadoria das imagens.</p>
+      <div class="contact">
+        <a class="btn btn-primary" style="--brand:#f5f5f7;--brand-fg:#0d1a2e" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20transformar%20as%20fotos%20do%20meu%20im%C3%B3vel%20em%20v%C3%ADdeo." target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <span class="num">+55 19 99861-2626</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Vídeo Imóvel é um serviço da DocMe Comunicação · © 2026</span>
+    <span><a href="https://www.instagram.com/video.imoveloficial/" target="_blank" rel="noopener">@video.imoveloficial</a> · <a href="https://www.instagram.com/docme.comunicacao/" target="_blank" rel="noopener">@docme.comunicacao</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var box=document.getElementById('compare'), r=document.getElementById('compare-range');
+  if(box&&r){ r.addEventListener('input',function(){ box.style.setProperty('--pos', r.value+'%'); }); }
+})();
+</script>
+
+</body>
+</html>
