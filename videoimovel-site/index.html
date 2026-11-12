@@ -166,6 +166,20 @@ section{padding-block:clamp(72px,10vw,128px)}
 .result p{color:var(--muted)}
 .plan.match{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow)}
 
+
+/* blog na home */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-decoration:none;display:grid;grid-template-rows:auto 1fr;min-width:0;transition:transform .2s ease}
+.post:hover{transform:translateY(-2px)}
+.post img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.post div{padding:20px 22px 24px;display:grid;gap:8px;align-content:start}
+.post p{color:var(--muted);font-size:.93rem}
+.post span{color:var(--accent);font-weight:600;font-size:.9rem}
+@media (max-width:900px){.posts{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:min(80vw,320px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.post{scroll-snap-align:start}}
+.m-blog{display:none;text-decoration:none;font-size:.92rem;font-weight:600;color:var(--fg)}
+.brand,.nav .btn{white-space:nowrap}
+@media (max-width:820px){.m-blog{display:inline;margin-left:auto}.nav .m-blog+.btn{margin-left:14px}.nav .wrap{gap:14px}}
+
 /* passos */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:0;counter-reset:s}
 .steps li{background:var(--band);border-radius:var(--r);padding:32px 28px;display:grid;gap:12px;align-content:start;counter-increment:s;min-width:0}
@@ -269,6 +283,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       <li><a href="#duvidas">Dúvidas</a></li>
       <li><a href="/blog/">Blog</a></li>
     </ul>
+    <a class="m-blog" href="/blog/">Blog</a>
     <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20transformar%20as%20fotos%20do%20meu%20im%C3%B3vel%20em%20v%C3%ADdeo." target="_blank" rel="noopener">Enviar fotos</a>
   </div>
 </header>
@@ -579,6 +594,23 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     </div>
   </section>
 
+  <section id="blog" class="band" aria-labelledby="h-blog">
+    <div class="wrap">
+      <div class="reels-head reveal">
+        <div class="head" style="margin:0"><p class="eyebrow">Blog</p><h2 id="h-blog">Artigos para anunciar melhor.</h2><p class="lead">Dicas práticas de foto, vídeo, descrição e divulgação de imóveis.</p></div>
+        <a class="btn btn-ghost" href="/blog/">Ver todos os artigos</a>
+      </div>
+      <div class="posts">
+        <a class="post" href="/video-de-imovel-para-anuncio/"><img src="blog/img/blog-3-1600.webp" alt="Dois quadros do mesmo vídeo de um apartamento: à esquerda a fechadura digital da porta de entrada; à direita a sala logo após a entrada, com poltronas, painel verde e televisão" loading="lazy" width="800" height="500"><div><h3>Vídeo de imóvel para anúncio: o que mostrar em um tour</h3><p>Saiba como um vídeo de imóvel pode apresentar ambientes, circulação e detalhes importantes para quem está pesquisando um novo endereço.</p><span>Ler artigo →</span></div></a>
+        <a class="post" href="/ia-fotos-de-imoveis/"><img src="blog/img/blog-2-1600.webp" alt="Comparação lado a lado do mesmo quarto: à esquerda a foto original, mais escura; à direita a versão tratada, com luz e cor corrigidas e os mesmos móveis e elementos" loading="lazy" width="800" height="500"><div><h3>Inteligência artificial em fotos de imóveis: como valorizar sem distorcer</h3><p>Entenda como a inteligência artificial pode apoiar o tratamento de fotos imobiliárias mantendo a representação fiel do imóvel.</p><span>Ler artigo →</span></div></a>
+        <a class="post" href="/fotos-profissionais-de-imoveis/"><img src="blog/img/blog-1-1600.webp" alt="Sala de apartamento organizada e iluminada, com sofá em primeiro plano e a sala de jantar ao fundo, mostrando a circulação entre os ambientes" loading="lazy" width="800" height="500"><div><h3>Fotos profissionais de imóveis: como preparar cada ambiente</h3><p>Veja como preparar cada cômodo para fotos profissionais de imóveis e apresentar os espaços com mais clareza em anúncios e portais.</p><span>Ler artigo →</span></div></a>
+        <a class="post" href="/como-divulgar-um-imovel/"><img src="blog/img/blog-5-1600.webp" alt="Ilustração do mesmo apartamento em três canais: um notebook com a galeria de fotos do anúncio, um celular com um quadro de vídeo vertical da sala e um post quadrado com a sala de jantar" loading="lazy" width="800" height="500"><div><h3>Como divulgar um imóvel para venda ou locação com mais consistência</h3><p>Veja como organizar as informações, as imagens e os canais de divulgação para apresentar um imóvel de forma consistente.</p><span>Ler artigo →</span></div></a>
+        <a class="post" href="/descricao-de-imovel-para-anuncio/"><img src="blog/img/blog-4-1600.webp" alt="Ilustração de um notebook aberto em um anúncio de apartamento, com foto principal da cozinha e miniaturas da suíte e do banheiro; as áreas de texto aparecem como faixas cinza, sem texto legível" loading="lazy" width="800" height="500"><div><h3>Descrição de imóvel para anúncio: como escrever com clareza</h3><p>Aprenda a escrever uma descrição de imóvel objetiva, com informações úteis, diferenciais reais e uma chamada clara para contato.</p><span>Ler artigo →</span></div></a>
+        <a class="post" href="/fotografia-arquitetura-comercial/"><img src="blog/img/blog-6-1600.webp" alt="Recepção de um espaço corporativo com pé-direito duplo, sofás vermelhos, escada metálica e mezanino envidraçado" loading="lazy" width="800" height="500"><div><h3>Fotografia de arquitetura comercial: valorize a imagem do seu espaço</h3><p>Fotografia de arquitetura comercial para lojas, clínicas, escritórios e outros espaços: como usar as fotos no Google, nas redes e no site.</p><span>Ler artigo →</span></div></a>
+      </div>
+    </div>
+  </section>
+
   <section class="dark final" aria-labelledby="h-final">
     <div class="wrap">
       <p class="eyebrow">Vamos começar</p>
@@ -595,7 +627,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 <footer>
   <div class="wrap">
     <span>Vídeo Imóvel · Atendimento em todo o Brasil, das 8h às 20h · © 2026</span>
-    <span><a href="https://www.instagram.com/video.imoveloficial/" target="_blank" rel="noopener">@video.imoveloficial</a></span>
+    <span><a href="/blog/">Blog</a> · <a href="https://www.instagram.com/video.imoveloficial/" target="_blank" rel="noopener">@video.imoveloficial</a></span>
   </div>
 </footer>
 
