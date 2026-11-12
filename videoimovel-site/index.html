@@ -195,15 +195,17 @@ section{padding-block:clamp(72px,10vw,128px)}
 .sp-hero figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:end;gap:16px;padding:64px 28px 24px;background:linear-gradient(transparent,rgba(4,6,10,.78))}
 .sp-hero figcaption b{display:block;font:700 clamp(1.1rem,2vw,1.5rem) var(--font-display)}
 .sp-hero figcaption span{font-size:.9rem;color:#c9cfdb}
-@media (max-width:640px){.sp-hero{aspect-ratio:4/3}.sp-hero figcaption{padding:48px 14px 14px}.sp-hero figcaption span{display:none}.sp-open{padding:.6em .95em;font-size:.82rem}}
+@media (max-width:640px){.sp-hero{aspect-ratio:4/3}.sp-hero figcaption{padding:48px 14px 14px}.sp-hero figcaption span{font-size:.78rem}.sp-open{padding:.6em .95em;font-size:.82rem}}
 .sp-open{display:inline-flex;align-items:center;gap:8px;font:600 .88rem var(--font-body);color:#0d1a2e;background:rgba(255,255,255,.92);border:0;border-radius:999px;padding:.7em 1.1em;cursor:pointer;white-space:nowrap}
-.sp-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,240px);gap:12px;margin-top:12px}
-.sp-grid button{position:relative;padding:0;border:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:#111;min-width:0}
-.sp-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s}
+.sp-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(176px,19vw,266px);gap:14px 12px;margin-top:14px}
+.sp-grid figure{margin:0;display:grid;grid-template-rows:1fr auto;gap:7px;min-width:0;min-height:0}
+.sp-grid button{position:relative;padding:0;border:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:#111;min-width:0;min-height:0}
+.sp-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .sp-grid button:hover img,.sp-grid button:focus-visible img{transform:scale(1.04)}
 .sp-grid span{position:absolute;left:12px;bottom:12px;font-size:.78rem;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(5,8,14,.62);color:#fff;backdrop-filter:blur(6px)}
-.sp-a{grid-column:span 2;grid-row:span 2}.sp-c{grid-row:span 2}.sp-f{grid-column:span 2}
-@media (max-width:760px){.sp-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.sp-a{grid-column:span 2;grid-row:span 1}.sp-c{grid-row:span 1}.sp-f,.sp-g{grid-column:span 2}}
+.sp-grid figcaption{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#8e96a6;padding-left:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sp-a{grid-column:span 2;grid-row:span 2}.sp-f{grid-column:span 2}
+@media (max-width:760px){.sp-grid{grid-template-columns:1fr 1fr;grid-auto-rows:172px}.sp-a,.sp-f{grid-column:span 2;grid-row:span 1}.sp-a{grid-row:span 1}}
 .sp-cta{margin-top:40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 32px;padding:28px 30px;border:1px solid rgba(200,169,106,.35);border-radius:var(--r);background:linear-gradient(120deg,rgba(200,169,106,.10),rgba(255,255,255,.02))}
 .sp-cta h3{font-size:1.35rem}
 .sp-cta p{color:#b4bccb;font-size:.98rem;margin-top:6px}
@@ -533,13 +535,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       <div class="head reveal">
         <p class="eyebrow">Portfólio</p>
         <h2 id="h-port">Portfólio de vídeos e fotos de imóveis.</h2>
-        <p class="lead">Casas de alto padrão, decorados, escritórios, clínicas, rooftops e imagens aéreas com drone. Uma amostra do que já produzimos.</p>
+        <p class="lead">Casas de alto padrão, decorados, espaços corporativos, clínicas, rooftops e imagens aéreas com drone. Uma amostra do que já produzimos.</p>
       </div>
       <div class="grid">
         <figure class="g-a reveal"><img src="assets/casa-paulo-piscina.webp" alt="Piscina com área gourmet integrada em um sobrado" loading="lazy" width="1280" height="662"><figcaption><b>Casa alto padrão</b>Sobrado · fotos, vídeo e IA</figcaption></figure>
         <figure class="g-b reveal"><img src="assets/canada-aerea.webp" alt="Vista aérea de bosque com trilhas em um condomínio" loading="lazy" width="1440" height="810"><figcaption><b>Aérea com drone</b>Canadá Residencial, Piracicaba</figcaption></figure>
         <figure class="g-c reveal"><img src="assets/bazzanelli-sala.webp" alt="Sala de apartamento decorado com sofá verde" loading="lazy" width="1440" height="960"><figcaption><b>Decorado</b>Ed. Antônio Bazzanelli, Americana-SP</figcaption></figure>
-        <figure class="g-d reveal"><img src="assets/escritorio.webp" alt="Escritório open space com estações de trabalho" loading="lazy" width="1440" height="960"><figcaption><b>Escritório e coworking</b>Fotografia corporativa em HDR</figcaption></figure>
+        <figure class="g-d reveal"><img src="assets/simespi-lounge.webp" alt="Salão de eventos com forro de madeira, mesas bistrô pretas, taças, buffet e iluminação em linhas de LED" loading="lazy" width="1440" height="960"><figcaption><b>Business Center Simespi</b>Piracicaba-SP · espaço para eventos</figcaption></figure>
         <figure class="g-e reveal"><img src="assets/rieti-hall.webp" alt="Hall social decorado de um residencial" loading="lazy" width="1440" height="960"><figcaption><b>Residencial Rieti</b>Fotos, artes e vídeos</figcaption></figure>
         <figure class="g-f reveal"><img src="assets/clinica-sensorial.webp" alt="Sala de integração sensorial de uma clínica infantil, com piso emborrachado, bolas, cama elástica e painel de casinhas de madeira" loading="lazy" width="1440" height="960"><figcaption><b>Clínica de terapia infantil</b>Sala sensorial · fotografia em HDR</figcaption></figure>
         <figure class="g-g reveal"><img src="assets/rooftop.webp" alt="Rooftop com mesas altas ao entardecer" loading="lazy" width="1440" height="960"><figcaption><b>Rooftop ao entardecer</b>Fotografia de arquitetura</figcaption></figure>
@@ -558,16 +560,17 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       </div>
       <figure class="sp-hero reveal">
         <img src="assets/sp/sp-tenda-1200.webp" srcset="assets/sp/sp-tenda-1200.webp 1200w, assets/sp/sp-tenda-2000.webp 2000w" sizes="(max-width: 1120px) 100vw, 1080px" alt="Tenda de eventos com cobertura de lonas claras e estrutura de iluminação, com a Ponte Estaiada ao fundo" loading="lazy" decoding="async" width="2000" height="1333">
-        <figcaption><div><b>Tenda de eventos</b><span>São Paulo (SP) · fotografia de arquitetura</span></div><button type="button" class="sp-open" data-i="0" aria-label="Ampliar foto: Tenda de eventos">Ver galeria ⤢</button></figcaption>
+        <figcaption><div><b>Tenda de eventos</b><span>Varanda Estaiada · São Paulo (SP)</span></div><button type="button" class="sp-open" data-i="0" aria-label="Ampliar foto: Tenda de eventos">Ver galeria ⤢</button></figcaption>
       </figure>
       <div class="sp-grid">
-        <button type="button" class="sp-a" data-i="1" aria-label="Ampliar foto: Auditório"><img src="assets/sp/sp-auditorio-800.webp" alt="Auditório com poltronas vermelhas em dois níveis, balcão superior e paredes revestidas de madeira" loading="lazy" decoding="async" width="800" height="533"><span>Auditório</span></button>
-        <button type="button" class="sp-b" data-i="2" aria-label="Ampliar foto: Salão panorâmico"><img src="assets/sp/sp-salao-piano-800.webp" alt="Salão com paredes de vidro do piso ao teto, mesa de mármore escuro, poltronas e piano de cauda branco, com prédios da cidade ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Salão panorâmico</span></button>
-        <button type="button" class="sp-c" data-i="3" aria-label="Ampliar foto: Galeria envidraçada"><img src="assets/sp/sp-galeria-800.webp" alt="Galeria em perspectiva com paredes de vidro em caixilhos verdes, piso de pedra e porta ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Galeria envidraçada</span></button>
-        <button type="button" class="sp-d" data-i="4" aria-label="Ampliar foto: Deck com piscina"><img src="assets/sp/sp-deck-800.webp" alt="Deck de madeira sob pergolado de vidro, com piscina, espreguiçadeiras e vasos de plantas" loading="lazy" decoding="async" width="800" height="533"><span>Deck com piscina</span></button>
-        <button type="button" class="sp-e" data-i="5" aria-label="Ampliar foto: Bar"><img src="assets/sp/sp-bar-800.webp" alt="Bar com balcão longo de pedra, bancos em sequência, prateleiras de copos e garrafas e forro de madeira" loading="lazy" decoding="async" width="800" height="533"><span>Bar</span></button>
-        <button type="button" class="sp-f" data-i="6" aria-label="Ampliar foto: Terraço"><img src="assets/sp/sp-terraco-800.webp" alt="Terraço amplo com cobertura em estrutura metálica, jardim vertical e uma torre de vidro colorida ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Terraço</span></button>
-        <button type="button" class="sp-g" data-i="7" aria-label="Ampliar foto: Hall de entrada"><img src="assets/sp/sp-hall-800.webp" alt="Hall com piso de mármore, lustres de cristal, espelhos, arranjos de flores e portas de elevador em metal" loading="lazy" decoding="async" width="800" height="533"><span>Hall de entrada</span></button>
+        <figure class="sp-a"><button type="button" data-i="1" aria-label="Ampliar foto: Auditório, Mackenzie"><img src="assets/sp/sp-auditorio-800.webp" alt="Auditório com poltronas vermelhas em dois níveis, balcão superior e paredes revestidas de madeira" loading="lazy" decoding="async" width="800" height="533"><span>Auditório</span></button><figcaption>Mackenzie</figcaption></figure>
+        <figure class="sp-b"><button type="button" data-i="2" aria-label="Ampliar foto: Salão panorâmico, Hotel WZ"><img src="assets/sp/sp-salao-piano-800.webp" alt="Salão com paredes de vidro do piso ao teto, mesa de mármore escuro, poltronas e piano de cauda branco, com prédios da cidade ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Salão panorâmico</span></button><figcaption>Hotel WZ</figcaption></figure>
+        <figure class="sp-c"><button type="button" data-i="3" aria-label="Ampliar foto: Galeria envidraçada, Jockey"><img src="assets/sp/sp-galeria-800.webp" alt="Galeria em perspectiva com paredes de vidro em caixilhos verdes, piso de pedra e porta ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Galeria envidraçada</span></button><figcaption>Jockey</figcaption></figure>
+        <figure class="sp-d"><button type="button" data-i="4" aria-label="Ampliar foto: Deck com piscina, Espaço L'Atelier"><img src="assets/sp/sp-deck-800.webp" alt="Deck de madeira sob pergolado de vidro, com piscina, espreguiçadeiras e vasos de plantas" loading="lazy" decoding="async" width="800" height="533"><span>Deck com piscina</span></button><figcaption>Espaço L'Atelier</figcaption></figure>
+        <figure class="sp-e"><button type="button" data-i="5" aria-label="Ampliar foto: Salão de eventos, Mackenzie"><img src="assets/sp/sp-salao-mackenzie-800.webp" alt="Salão amplo com piso de madeira, fileiras de cadeiras com assento laranja, forro iluminado e palco ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Salão de eventos</span></button><figcaption>Mackenzie</figcaption></figure>
+        <figure class="sp-f"><button type="button" data-i="6" aria-label="Ampliar foto: Bar, Jockey"><img src="assets/sp/sp-bar-800.webp" alt="Bar com balcão longo de pedra, bancos em sequência, prateleiras de copos e garrafas e forro de madeira" loading="lazy" decoding="async" width="800" height="533"><span>Bar</span></button><figcaption>Jockey</figcaption></figure>
+        <figure class="sp-g"><button type="button" data-i="7" aria-label="Ampliar foto: Terraço, Tomie Ohtake"><img src="assets/sp/sp-terraco-800.webp" alt="Terraço amplo com cobertura em estrutura metálica, jardim vertical e uma torre de vidro colorida ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Terraço</span></button><figcaption>Tomie Ohtake</figcaption></figure>
+        <figure class="sp-h"><button type="button" data-i="8" aria-label="Ampliar foto: Hall de entrada, Espaço L'Atelier"><img src="assets/sp/sp-hall-800.webp" alt="Hall com piso de mármore, lustres de cristal, espelhos, arranjos de flores e portas de elevador em metal" loading="lazy" decoding="async" width="800" height="533"><span>Hall de entrada</span></button><figcaption>Espaço L'Atelier</figcaption></figure>
       </div>
       <div class="sp-cta reveal">
         <div><h3>Quer apresentar o seu espaço assim?</h3><p>Fotografia profissional para espaços de eventos, hotéis, escritórios e espaços comerciais, em São Paulo e em todo o Brasil.</p></div>
@@ -575,7 +578,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       </div>
     </div>
     <dialog class="sp-box" id="sp-box" aria-label="Galeria de espaços em São Paulo">
-      <div class="sp-bar"><span id="sp-count">1 de 8</span><button type="button" class="sp-ctl" id="sp-close" aria-label="Fechar galeria">✕</button></div>
+      <div class="sp-bar"><span id="sp-count">1 de 9</span><button type="button" class="sp-ctl" id="sp-close" aria-label="Fechar galeria">✕</button></div>
       <img id="sp-img" src="" alt="">
       <div class="sp-nav"><button type="button" class="sp-ctl" id="sp-prev" aria-label="Foto anterior">←</button><p id="sp-cap"></p><button type="button" class="sp-ctl" id="sp-next" aria-label="Próxima foto">→</button></div>
     </dialog>
@@ -583,7 +586,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 
   <section aria-labelledby="h-capt">
     <div class="wrap split">
-      <img class="reveal" src="assets/clinica-espera.webp" alt="Sala de espera de uma clínica de terapia infantil, com sofá azul, tapete colorido e luz natural" loading="lazy" width="1440" height="1080">
+      <img class="reveal" src="assets/simespi-reuniao.webp" alt="Sala de reunião com mesa de tronco de madeira maciça, cadeiras pretas, parede azul com armários e TV" loading="lazy" width="1440" height="1080">
       <div class="copy reveal">
         <p class="eyebrow">Captação profissional</p>
         <h2 id="h-capt">Quando o imóvel pede mais, vamos até ele.</h2>
@@ -716,14 +719,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     bs[0].addEventListener('click',function(){set(false)});bs[1].addEventListener('click',function(){set(true)});
     v.addEventListener('ended',function(){set(false)});});
   var SP=[
-{s:"assets/sp/sp-tenda-2000.webp",t:"Tenda de eventos",a:"Tenda de eventos com cobertura de lonas claras e estrutura de iluminação, com a Ponte Estaiada ao fundo"},
-{s:"assets/sp/sp-auditorio-1600.webp",t:"Auditório",a:"Auditório com poltronas vermelhas em dois níveis, balcão superior e paredes revestidas de madeira"},
-{s:"assets/sp/sp-salao-piano-1600.webp",t:"Salão panorâmico",a:"Salão com paredes de vidro do piso ao teto, mesa de mármore escuro, poltronas e piano de cauda branco, com prédios da cidade ao fundo"},
-{s:"assets/sp/sp-galeria-1600.webp",t:"Galeria envidraçada",a:"Galeria em perspectiva com paredes de vidro em caixilhos verdes, piso de pedra e porta ao fundo"},
-{s:"assets/sp/sp-deck-1600.webp",t:"Deck com piscina",a:"Deck de madeira sob pergolado de vidro, com piscina, espreguiçadeiras e vasos de plantas"},
-{s:"assets/sp/sp-bar-1600.webp",t:"Bar",a:"Bar com balcão longo de pedra, bancos em sequência, prateleiras de copos e garrafas e forro de madeira"},
-{s:"assets/sp/sp-terraco-1600.webp",t:"Terraço",a:"Terraço amplo com cobertura em estrutura metálica, jardim vertical e uma torre de vidro colorida ao fundo"},
-{s:"assets/sp/sp-hall-1600.webp",t:"Hall de entrada",a:"Hall com piso de mármore, lustres de cristal, espelhos, arranjos de flores e portas de elevador em metal"}];
+{s:"assets/sp/sp-tenda-2000.webp",t:"Tenda de eventos · Varanda Estaiada",a:"Tenda de eventos com cobertura de lonas claras e estrutura de iluminação, com a Ponte Estaiada ao fundo"},
+{s:"assets/sp/sp-auditorio-1600.webp",t:"Auditório · Mackenzie",a:"Auditório com poltronas vermelhas em dois níveis, balcão superior e paredes revestidas de madeira"},
+{s:"assets/sp/sp-salao-piano-1600.webp",t:"Salão panorâmico · Hotel WZ",a:"Salão com paredes de vidro do piso ao teto, mesa de mármore escuro, poltronas e piano de cauda branco, com prédios da cidade ao fundo"},
+{s:"assets/sp/sp-galeria-1600.webp",t:"Galeria envidraçada · Jockey",a:"Galeria em perspectiva com paredes de vidro em caixilhos verdes, piso de pedra e porta ao fundo"},
+{s:"assets/sp/sp-deck-1600.webp",t:"Deck com piscina · Espaço L'Atelier",a:"Deck de madeira sob pergolado de vidro, com piscina, espreguiçadeiras e vasos de plantas"},
+{s:"assets/sp/sp-salao-mackenzie-1600.webp",t:"Salão de eventos · Mackenzie",a:"Salão amplo com piso de madeira, fileiras de cadeiras com assento laranja, forro iluminado e palco ao fundo"},
+{s:"assets/sp/sp-bar-1600.webp",t:"Bar · Jockey",a:"Bar com balcão longo de pedra, bancos em sequência, prateleiras de copos e garrafas e forro de madeira"},
+{s:"assets/sp/sp-terraco-1600.webp",t:"Terraço · Tomie Ohtake",a:"Terraço amplo com cobertura em estrutura metálica, jardim vertical e uma torre de vidro colorida ao fundo"},
+{s:"assets/sp/sp-hall-1600.webp",t:"Hall de entrada · Espaço L'Atelier",a:"Hall com piso de mármore, lustres de cristal, espelhos, arranjos de flores e portas de elevador em metal"}];
   var box=document.getElementById('sp-box');
   if(box){
     var im=document.getElementById('sp-img'),cap=document.getElementById('sp-cap'),cnt=document.getElementById('sp-count'),cur=0,x0=null;
