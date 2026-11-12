@@ -3,7 +3,7 @@
 <xmeml version="4">
 	<sequence id="sequence-1" TL.SQAudioVisibleBase="0" TL.SQVideoVisibleBase="0" TL.SQVisibleBaseTime="0" TL.SQAVDividerPosition="0.5" TL.SQHideShyTracks="0" TL.SQHeaderWidth="204" MZ.Sequence.PreviewFrameSizeHeight="1920" MZ.Sequence.PreviewFrameSizeWidth="1080" MZ.Sequence.AudioTimeDisplayFormat="200" MZ.Sequence.PreviewRenderingClassID="1061109567" MZ.Sequence.PreviewRenderingPresetCodec="1634755443" MZ.Sequence.PreviewRenderingPresetPath="EncoderPresets\SequencePreview\9678af98-a7b7-4bdb-b477-7ac9c8df4a4e\QuickTime.epr" MZ.Sequence.PreviewUseMaxRenderQuality="false" MZ.Sequence.PreviewUseMaxBitDepth="false" MZ.Sequence.EditingModeGUID="9678af98-a7b7-4bdb-b477-7ac9c8df4a4e" MZ.Sequence.VideoTimeDisplayFormat="102" explodedTracks="true">
 		<uuid>00000000-0000-4000-8000-000000000007</uuid>
-		<duration>3233</duration>
+		<duration>3138</duration>
 		<rate>
 			<timebase>30</timebase>
 			<ntsc>TRUE</ntsc>
@@ -58,9 +58,9 @@
 							<ntsc>TRUE</ntsc>
 						</rate>
 						<start>240</start>
-						<end>651</end>
-						<in>1669</in>
-						<out>2080</out>
+						<end>632</end>
+						<in>1673</in>
+						<out>2065</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -133,10 +133,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>651</start>
-						<end>1242</end>
-						<in>840</in>
-						<out>1431</out>
+						<start>632</start>
+						<end>1202</end>
+						<in>853</in>
+						<out>1423</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -209,10 +209,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1242</start>
-						<end>1989</end>
-						<in>1672</in>
-						<out>2419</out>
+						<start>1202</start>
+						<end>1702</end>
+						<in>1678</in>
+						<out>2178</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -247,10 +247,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1989</start>
-						<end>2529</end>
-						<in>2438</in>
-						<out>2978</out>
+						<start>1702</start>
+						<end>1904</end>
+						<in>2211</in>
+						<out>2413</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -285,10 +285,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>2529</start>
-						<end>2822</end>
-						<in>5070</in>
-						<out>5363</out>
+						<start>1904</start>
+						<end>2432</end>
+						<in>2443</in>
+						<out>2971</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -323,10 +323,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>2822</start>
-						<end>3113</end>
-						<in>7084</in>
-						<out>7375</out>
+						<start>2432</start>
+						<end>2713</end>
+						<in>5075</in>
+						<out>5356</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -352,6 +352,44 @@
 							<label2>Iris</label2>
 						</labels>
 					<link><linkclipref>clipitem-v6</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>6</clipindex></link><link><linkclipref>clipitem-a6</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b6</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>65</value></parameter></effect></filter></clipitem>
+					<clipitem id="clipitem-v7">
+						<masterclipid>masterclip-13</masterclipid>
+						<name>fx3 gabriel3740.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>7800</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2713</start>
+						<end>3018</end>
+						<in>7090</in>
+						<out>7395</out>
+						<alphatype>none</alphatype>
+						<pixelaspectratio>square</pixelaspectratio>
+						<anamorphic>FALSE</anamorphic>
+						<file id="file-13">
+							</file>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v7</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>7</clipindex></link><link><linkclipref>clipitem-a7</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b7</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link><filter><effect><name>Basic Motion</name><effectid>basic</effectid><effectcategory>motion</effectcategory><effecttype>motion</effecttype><mediatype>video</mediatype><parameter authoringApp="PremierePro"><parameterid>scale</parameterid><name>Scale</name><valuemin>0</valuemin><valuemax>1000</valuemax><value>50</value></parameter></effect></filter></clipitem>
 					</track>
 				<track TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="0">
 					<enabled>TRUE</enabled>
@@ -402,9 +440,9 @@
 							<ntsc>TRUE</ntsc>
 						</rate>
 						<start>240</start>
-						<end>651</end>
-						<in>1669</in>
-						<out>2080</out>
+						<end>632</end>
+						<in>1673</in>
+						<out>2065</out>
 						<file id="file-12" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -439,10 +477,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>651</start>
-						<end>1242</end>
-						<in>840</in>
-						<out>1431</out>
+						<start>632</start>
+						<end>1202</end>
+						<in>853</in>
+						<out>1423</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -477,10 +515,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1242</start>
-						<end>1989</end>
-						<in>1672</in>
-						<out>2419</out>
+						<start>1202</start>
+						<end>1702</end>
+						<in>1678</in>
+						<out>2178</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -515,10 +553,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1989</start>
-						<end>2529</end>
-						<in>2438</in>
-						<out>2978</out>
+						<start>1702</start>
+						<end>1904</end>
+						<in>2211</in>
+						<out>2413</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -553,10 +591,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>2529</start>
-						<end>2822</end>
-						<in>5070</in>
-						<out>5363</out>
+						<start>1904</start>
+						<end>2432</end>
+						<in>2443</in>
+						<out>2971</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -591,10 +629,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>2822</start>
-						<end>3113</end>
-						<in>7084</in>
-						<out>7375</out>
+						<start>2432</start>
+						<end>2713</end>
+						<in>5075</in>
+						<out>5356</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -620,6 +658,44 @@
 							<label2>Iris</label2>
 						</labels>
 					<link><linkclipref>clipitem-v6</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>6</clipindex></link><link><linkclipref>clipitem-a6</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b6</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-a7" premiereChannelType="stereo">
+						<masterclipid>masterclip-13</masterclipid>
+						<name>fx3 gabriel3740.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>7800</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2713</start>
+						<end>3018</end>
+						<in>7090</in>
+						<out>7395</out>
+						<file id="file-13" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>1</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v7</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>7</clipindex></link><link><linkclipref>clipitem-a7</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b7</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link></clipitem>
 					</track>
 				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="1" totalExplodedTrackCount="2" premiereTrackType="Stereo">
 					<enabled>TRUE</enabled>
@@ -635,9 +711,9 @@
 							<ntsc>TRUE</ntsc>
 						</rate>
 						<start>240</start>
-						<end>651</end>
-						<in>1669</in>
-						<out>2080</out>
+						<end>632</end>
+						<in>1673</in>
+						<out>2065</out>
 						<file id="file-12" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -672,10 +748,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>651</start>
-						<end>1242</end>
-						<in>840</in>
-						<out>1431</out>
+						<start>632</start>
+						<end>1202</end>
+						<in>853</in>
+						<out>1423</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -710,10 +786,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1242</start>
-						<end>1989</end>
-						<in>1672</in>
-						<out>2419</out>
+						<start>1202</start>
+						<end>1702</end>
+						<in>1678</in>
+						<out>2178</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -748,10 +824,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1989</start>
-						<end>2529</end>
-						<in>2438</in>
-						<out>2978</out>
+						<start>1702</start>
+						<end>1904</end>
+						<in>2211</in>
+						<out>2413</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -786,10 +862,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>2529</start>
-						<end>2822</end>
-						<in>5070</in>
-						<out>5363</out>
+						<start>1904</start>
+						<end>2432</end>
+						<in>2443</in>
+						<out>2971</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -824,10 +900,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>2822</start>
-						<end>3113</end>
-						<in>7084</in>
-						<out>7375</out>
+						<start>2432</start>
+						<end>2713</end>
+						<in>5075</in>
+						<out>5356</out>
 						<file id="file-13" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -853,6 +929,44 @@
 							<label2>Iris</label2>
 						</labels>
 					<link><linkclipref>clipitem-v6</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>6</clipindex></link><link><linkclipref>clipitem-a6</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b6</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>6</clipindex><groupindex>1</groupindex></link></clipitem>
+					<clipitem id="clipitem-b7" premiereChannelType="stereo">
+						<masterclipid>masterclip-13</masterclipid>
+						<name>fx3 gabriel3740.MP4</name>
+						<enabled>TRUE</enabled>
+						<duration>7800</duration>
+						<rate>
+							<timebase>30</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<start>2713</start>
+						<end>3018</end>
+						<in>7090</in>
+						<out>7395</out>
+						<file id="file-13" />
+						<sourcetrack>
+							<mediatype>audio</mediatype>
+							<trackindex>2</trackindex>
+						</sourcetrack>
+						<logginginfo>
+							<description />
+							<scene />
+							<shottake />
+							<lognote />
+							<good />
+							<originalvideofilename />
+							<originalaudiofilename />
+						</logginginfo>
+						<colorinfo>
+							<lut />
+							<lut1 />
+							<asc_sop />
+							<asc_sat />
+							<lut2 />
+						</colorinfo>
+						<labels>
+							<label2>Iris</label2>
+						</labels>
+					<link><linkclipref>clipitem-v7</linkclipref><mediatype>video</mediatype><trackindex>1</trackindex><clipindex>7</clipindex></link><link><linkclipref>clipitem-a7</linkclipref><mediatype>audio</mediatype><trackindex>1</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link><link><linkclipref>clipitem-b7</linkclipref><mediatype>audio</mediatype><trackindex>2</trackindex><clipindex>7</clipindex><groupindex>1</groupindex></link></clipitem>
 					</track>
 				<track TL.SQTrackAudioKeyframeStyle="0" TL.SQTrackShy="0" TL.SQTrackExpandedHeight="41" TL.SQTrackExpanded="0" MZ.TrackTargeted="1" PannerCurrentValue="0.5" PannerIsInverted="true" PannerStartKeyframe="-91445760000000000,0.5,0,0,0,0,0,0" PannerName="Equilíbrio" currentExplodedTrackIndex="0" totalExplodedTrackCount="2" premiereTrackType="Stereo">
 					<enabled>TRUE</enabled>
@@ -907,5 +1021,5 @@
 			<originalvideofilename />
 			<originalaudiofilename />
 		</logginginfo>
-	<marker><name>VINHETA ABERTURA (8s)</name><comment /><in>0</in><out>-1</out></marker><marker><name>VINHETA FECHAMENTO (4s)</name><comment /><in>3113</in><out>-1</out></marker></sequence>
+	<marker><name>VINHETA ABERTURA (8s)</name><comment /><in>0</in><out>-1</out></marker><marker><name>VINHETA FECHAMENTO (4s)</name><comment /><in>3018</in><out>-1</out></marker></sequence>
 </xmeml>

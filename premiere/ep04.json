@@ -1,4 +1,4 @@
-{"name": "EP04 - A linguagem da forma", "ep": 4, "tighten": false, "pad": 4,
+{"name": "EP04 - A linguagem da forma", "ep": 4, "tighten": false, "pad": 4, "silence_db": -58,
  "blocks": [
   {"from": "00;09;53;27", "to": "00;10;30;20"},
   {"from": "00;10;30;23", "to": "00;10;44;03", "end_after": "como ela ocupa o espaço"},

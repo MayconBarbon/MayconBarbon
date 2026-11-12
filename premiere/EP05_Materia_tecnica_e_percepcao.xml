@@ -3,7 +3,7 @@
 <xmeml version="4">
 	<sequence id="sequence-2" TL.SQAudioVisibleBase="0" TL.SQVideoVisibleBase="0" TL.SQVisibleBaseTime="0" TL.SQAVDividerPosition="0.5" TL.SQHideShyTracks="0" TL.SQHeaderWidth="204" MZ.Sequence.PreviewFrameSizeHeight="1920" MZ.Sequence.PreviewFrameSizeWidth="1080" MZ.Sequence.AudioTimeDisplayFormat="200" MZ.Sequence.PreviewRenderingClassID="1061109567" MZ.Sequence.PreviewRenderingPresetCodec="1634755443" MZ.Sequence.PreviewRenderingPresetPath="EncoderPresets\SequencePreview\9678af98-a7b7-4bdb-b477-7ac9c8df4a4e\QuickTime.epr" MZ.Sequence.PreviewUseMaxRenderQuality="false" MZ.Sequence.PreviewUseMaxBitDepth="false" MZ.Sequence.EditingModeGUID="9678af98-a7b7-4bdb-b477-7ac9c8df4a4e" MZ.Sequence.VideoTimeDisplayFormat="102" explodedTracks="true">
 		<uuid>00000000-0000-4000-8000-000000000005</uuid>
-		<duration>3898</duration>
+		<duration>3864</duration>
 		<rate>
 			<timebase>30</timebase>
 			<ntsc>TRUE</ntsc>
@@ -58,9 +58,9 @@
 							<ntsc>TRUE</ntsc>
 						</rate>
 						<start>240</start>
-						<end>1298</end>
-						<in>1296</in>
-						<out>2354</out>
+						<end>1317</end>
+						<in>1269</in>
+						<out>2346</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -133,10 +133,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1298</start>
-						<end>1844</end>
-						<in>2354</in>
-						<out>2900</out>
+						<start>1317</start>
+						<end>1888</end>
+						<in>2346</in>
+						<out>2917</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -171,10 +171,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1844</start>
-						<end>2598</end>
-						<in>3671</in>
-						<out>4425</out>
+						<start>1888</start>
+						<end>2635</end>
+						<in>3673</in>
+						<out>4420</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -209,8 +209,8 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>2598</start>
-						<end>3227</end>
+						<start>2635</start>
+						<end>3264</end>
 						<in>4657</in>
 						<out>5286</out>
 						<alphatype>none</alphatype>
@@ -247,10 +247,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>3227</start>
-						<end>3778</end>
-						<in>6797</in>
-						<out>7348</out>
+						<start>3264</start>
+						<end>3744</end>
+						<in>6798</in>
+						<out>7278</out>
 						<alphatype>none</alphatype>
 						<pixelaspectratio>square</pixelaspectratio>
 						<anamorphic>FALSE</anamorphic>
@@ -326,9 +326,9 @@
 							<ntsc>TRUE</ntsc>
 						</rate>
 						<start>240</start>
-						<end>1298</end>
-						<in>1296</in>
-						<out>2354</out>
+						<end>1317</end>
+						<in>1269</in>
+						<out>2346</out>
 						<file id="file-45" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -363,10 +363,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1298</start>
-						<end>1844</end>
-						<in>2354</in>
-						<out>2900</out>
+						<start>1317</start>
+						<end>1888</end>
+						<in>2346</in>
+						<out>2917</out>
 						<file id="file-45" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -401,10 +401,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1844</start>
-						<end>2598</end>
-						<in>3671</in>
-						<out>4425</out>
+						<start>1888</start>
+						<end>2635</end>
+						<in>3673</in>
+						<out>4420</out>
 						<file id="file-45" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -439,8 +439,8 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>2598</start>
-						<end>3227</end>
+						<start>2635</start>
+						<end>3264</end>
 						<in>4657</in>
 						<out>5286</out>
 						<file id="file-45" />
@@ -477,10 +477,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>3227</start>
-						<end>3778</end>
-						<in>6797</in>
-						<out>7348</out>
+						<start>3264</start>
+						<end>3744</end>
+						<in>6798</in>
+						<out>7278</out>
 						<file id="file-45" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -521,9 +521,9 @@
 							<ntsc>TRUE</ntsc>
 						</rate>
 						<start>240</start>
-						<end>1298</end>
-						<in>1296</in>
-						<out>2354</out>
+						<end>1317</end>
+						<in>1269</in>
+						<out>2346</out>
 						<file id="file-45" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -558,10 +558,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1298</start>
-						<end>1844</end>
-						<in>2354</in>
-						<out>2900</out>
+						<start>1317</start>
+						<end>1888</end>
+						<in>2346</in>
+						<out>2917</out>
 						<file id="file-45" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -596,10 +596,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>1844</start>
-						<end>2598</end>
-						<in>3671</in>
-						<out>4425</out>
+						<start>1888</start>
+						<end>2635</end>
+						<in>3673</in>
+						<out>4420</out>
 						<file id="file-45" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -634,8 +634,8 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>2598</start>
-						<end>3227</end>
+						<start>2635</start>
+						<end>3264</end>
 						<in>4657</in>
 						<out>5286</out>
 						<file id="file-45" />
@@ -672,10 +672,10 @@
 							<timebase>30</timebase>
 							<ntsc>TRUE</ntsc>
 						</rate>
-						<start>3227</start>
-						<end>3778</end>
-						<in>6797</in>
-						<out>7348</out>
+						<start>3264</start>
+						<end>3744</end>
+						<in>6798</in>
+						<out>7278</out>
 						<file id="file-45" />
 						<sourcetrack>
 							<mediatype>audio</mediatype>
@@ -755,5 +755,5 @@
 			<originalvideofilename />
 			<originalaudiofilename />
 		</logginginfo>
-	<marker><name>VINHETA ABERTURA (8s)</name><comment /><in>0</in><out>-1</out></marker><marker><name>VINHETA FECHAMENTO (4s)</name><comment /><in>3778</in><out>-1</out></marker></sequence>
+	<marker><name>VINHETA ABERTURA (8s)</name><comment /><in>0</in><out>-1</out></marker><marker><name>VINHETA FECHAMENTO (4s)</name><comment /><in>3744</in><out>-1</out></marker></sequence>
 </xmeml>

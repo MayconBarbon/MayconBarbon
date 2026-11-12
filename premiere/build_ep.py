@@ -5,6 +5,7 @@ import sys, json, copy, re
 import xml.etree.ElementTree as ET
 
 SRC, TXT, CFG, OUT = sys.argv[1:5]
+DBF = sys.argv[5] if len(sys.argv) > 5 else None
 cfg = json.load(open(CFG))
 FPS = 30  # timebase NTSC (29,97)
 
@@ -100,6 +101,67 @@ for i, p in enumerate(pieces):
     p[0] = max(p[0] - PAD, lo)
     nxt = pieces[i + 1][0] if i + 1 < len(pieces) and pieces[i + 1][0] >= p[1] and pieces[i+1][0] < p[1] + 60 else 10**9
     p[1] = min(p[1] + PAD, nxt)
+
+
+# --- encaixa cortes nos silencios reais do audio (envelope em dB, 10 ms)
+if DBF:
+    import numpy as np
+    db = np.load(DBF)
+    THR = cfg.get('silence_db', -52)
+    k = 3; sm = np.convolve(np.maximum(db, -90), np.ones(k) / k, 'same')
+    sp = sm > THR
+    # regioes de silencio (inicio, fim) em segundos
+    edges = np.diff(np.r_[0, (~sp).astype(int), 0])
+    st, en = np.where(edges == 1)[0], np.where(edges == -1)[0]
+    sil = [(a / 100, b / 100) for a, b in zip(st, en) if b - a >= 20]
+    F = 30000 / 1001
+    def near(t, lo, hi, minlen, key):
+        c = [x for x in sil if x[1] - x[0] >= minlen and lo <= key(x) - t <= hi]
+        return min(c, key=lambda x: abs(key(x) - t)) if c else None
+    def snap_start(f):
+        t = f / F
+        x = near(t, -1.2, 0.8, 0.30, lambda x: x[1]) or near(t, -1.2, 0.8, 0.2, lambda x: x[1])
+        return round(max(x[0], x[1] - 0.15) * F) if x else f
+    def snap_end(f):
+        t = f / F
+        x = near(t, -1.0, 1.4, 0.30, lambda x: x[0]) or near(t, -1.0, 1.4, 0.2, lambda x: x[0])
+        return round(min(x[1], x[0] + 0.22) * F) if x else f
+    def snap_mid(f):
+        t = f / F
+        x = near(t, -1.0, 1.0, 0.2, lambda x: (x[0] + x[1]) / 2)
+        return round((x[0] + x[1]) / 2 * F) if x else f
+    for i, p in enumerate(pieces):
+        cont_prev = i and abs(pieces[i - 1][1] - p[0]) <= 2
+        if not cont_prev: p[0] = snap_start(p[0])
+        nxt_cont = i + 1 < len(pieces) and abs(pieces[i + 1][0] - p[1]) <= 2
+        if nxt_cont:
+            m = snap_mid(p[1]); p[1] = m; pieces[i + 1][0] = m
+        else:
+            p[1] = snap_end(p[1])
+    # comprime pausas longas dentro dos trechos (mantem ~0,6 s)
+    MAXP, KEEP = cfg.get('max_pause', 1.6), 0.30
+    out = []
+    for p in pieces:
+        lo_clip, hi_clip = clips[locate(p[0])][0], clips[locate(p[0])][1]
+        p[1] = min(p[1], hi_clip)  # nunca invade o clipe seguinte (outro take)
+        cuts = []
+        for x in sil:
+            if x[1] - x[0] > MAXP and p[0] / F < x[0] and x[1] < p[1] / F:
+                cuts.append(x)
+        a = p[0]; first = True; z = p[3]
+        for j, x in enumerate(cuts):
+            left = x[0] - a / F
+            right_end = cuts[j + 1][0] if j + 1 < len(cuts) else p[1] / F
+            right = right_end - x[1]
+            if left < 1.0 and first:      # ruido/sobra antes da fala: descarta
+                a = round((x[1] - 0.15) * F); continue
+            if right < 1.0 and j == len(cuts) - 1:   # sobra depois da fala: descarta
+                p[1] = round((x[0] + 0.25) * F); break
+            out.append([a, round((x[0] + KEEP) * F), p[2], z if first else False, p[4]])
+            first = False
+            a = round((x[1] - KEEP) * F)
+        out.append([a, p[1], p[2], z if first else False, p[4]])
+    pieces = out
 
 # divide pedacos que cruzam fronteira de clipe
 final = []

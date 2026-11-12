@@ -1,4 +1,4 @@
-{"name": "EP02 - Do objeto a escultura", "ep": 2, "tighten": false, "pad": 4,
+{"name": "EP02 - Do objeto a escultura", "ep": 2, "tighten": false, "pad": 4, "silence_db": -58,
  "blocks": [
   {"from": "00;20;19;29", "to": "00;22;29;29", "split": true}
  ]}
