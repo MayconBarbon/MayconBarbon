@@ -1,0 +1,8 @@
+{"name": "EP05 - Materia tecnica e percepcao", "ep": 5, "tighten": false, "pad": 4,
+ "blocks": [
+  {"from": "00;23;08;18", "to": "00;23;48;24", "start_at": "toda a escultura começa com uma escolha"},
+  {"from": "00;23;48;26", "to": "00;24;13;24", "end_after": "visíveis ou invisíveis"},
+  {"from": "00;24;32;29", "to": "00;25;05;24", "end_after": "escala em relação ao corpo humano"},
+  {"from": "00;25;05;27", "to": "00;25;41;07", "end_after": "o tempo de observação"},
+  {"from": "00;26;17;09", "to": "00;26;35;12"}
+ ]}

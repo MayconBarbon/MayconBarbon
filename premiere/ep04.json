@@ -1,0 +1,8 @@
+{"name": "EP04 - A linguagem da forma", "ep": 4, "tighten": false, "pad": 4,
+ "blocks": [
+  {"from": "00;09;53;27", "to": "00;10;30;20"},
+  {"from": "00;10;30;23", "to": "00;10;44;03", "end_after": "como ela ocupa o espaço"},
+  {"from": "00;11;47;01", "to": "00;12;33;10", "start_at": "desde a antiguidade artistas exploram", "end_after": "mas extremamente precisa"},
+  {"from": "00;11;47;01", "to": "00;12;33;10", "start_at": "e quanto mais aprendemos a observar", "zoom_in": true},
+  {"from": "00;12;33;12", "to": "00;12;36;20"}
+ ]}

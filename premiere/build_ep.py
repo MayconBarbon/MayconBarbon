@@ -22,6 +22,7 @@ for i, l in enumerate(lines):
         txt = []
         for x in lines[i + 1:]:
             if not x.strip(): break
+            if x.strip() in ('Desconhecido',) or x.strip().startswith('Locutor'): continue
             txt.append(x.strip())
         segs.append((tc2f(m[1]), tc2f(m[2]), ' '.join(txt)))
 
@@ -43,6 +44,17 @@ def tighten(i0, i1):
         a = max(a, est + PAD)
     return a, b
 
+
+def _norm(t): return re.sub(r'[^\w ]', ' ', t.lower()).split()
+def phrase_time(seg, phrase, end):
+    """estima o instante de uma frase dentro do segmento (proporcional as palavras)"""
+    w = _norm(seg[2]); p = _norm(phrase)
+    for i in range(len(w) - len(p) + 1):
+        if w[i:i + len(p)] == p:
+            k = i + len(p) if end else i
+            return seg[0] + round((seg[1] - seg[0]) * k / len(w))
+    raise SystemExit(f'frase nao encontrada: {phrase!r} em {seg[2][:80]!r}')
+
 tree = ET.parse(SRC); root = tree.getroot()
 seq = root.find('sequence')
 vtracks = seq.findall('media/video/track')
@@ -63,10 +75,16 @@ for blk in cfg['blocks']:
     a, b = tc2f(blk['from']), tc2f(blk['to'])
     idx = [j for j, x in enumerate(segs) if x[0] >= a - 2 and x[1] <= b + 2]
     ss = [list(segs[j]) for j in idx]
-    if idx:
+    if idx and cfg.get('tighten', True):
         ta, tb = tighten(idx[0], idx[-1]); ss[0][0] = ta; ss[-1][1] = tb
-        blk['_tight_end'] = tb < segs[idx[-1]][1]; blk['_tight_start'] = ta > segs[idx[0]][0]
+    if blk.get('start_at'):
+        ss[0][0] = phrase_time(ss[0], blk['start_at'], False) - 6
+    if blk.get('end_after'):
+        ss[-1][1] = phrase_time(segs[idx[-1]], blk['end_after'], True) + 9
     if blk.get('raw'): ss = [(a, b, blk.get('label', ''))]
+    if blk.get('split'):
+        bp = [list(x) + [bool(blk.get('zoom_in')) and j == 0, True] for j, x in enumerate(ss)]
+        pieces += bp; continue
     cur = None; bp = []
     for s0, s1, t in ss:
         if cur and s0 - cur[1] <= GAP_KEEP: cur[1] = s1; cur[2] += ' ' + t
@@ -74,7 +92,7 @@ for blk in cfg['blocks']:
             if cur: bp.append(cur)
             cur = [s0, s1, t]
     bp.append(cur)
-    for j, p in enumerate(bp): p.append(bool(blk.get('zoom_in')) and j == 0)
+    for j, p in enumerate(bp): p += [bool(blk.get('zoom_in')) and j == 0, False]
     pieces += bp
 # padding sem invadir vizinhos
 for i, p in enumerate(pieces):
@@ -85,10 +103,10 @@ for i, p in enumerate(pieces):
 
 # divide pedacos que cruzam fronteira de clipe
 final = []
-for s0, s1, t, z in pieces:
+for s0, s1, t, z, sp in pieces:
     while locate(s0) != locate(s1 - 1):
-        e = clips[locate(s0)][1]; final.append((s0, e, t, z)); s0 = e
-    final.append((s0, s1, t, z))
+        e = clips[locate(s0)][1]; final.append((s0, e, t, z, sp)); s0 = e
+    final.append((s0, s1, t, z, sp))
 
 # --- monta nova timeline
 LEAD, TAIL = round(cfg.get('intro_s', 8) * 29.97), round(cfg.get('outro_s', 4) * 29.97)
@@ -113,11 +131,11 @@ for tr in (vtracks + atracks):
 
 emitted_files = set(); pos = LEAD; n = 0; close = False; report = []
 prev_end = None
-for s0, s1, t, z in final:
+for s0, s1, t, z, sp in final:
     k = locate(s0); cs, ce, cin = clips[k]
     src_in = cin + (s0 - cs); dur = s1 - s0
     # alterna zoom a cada corte (nao alterna se for continuacao direta do mesmo trecho)
-    if prev_end is not None and prev_end != s0: close = not close
+    if prev_end is not None and (abs(prev_end - s0) > 2 or sp): close = not close
     prev_end = s1
     n += 1
     ids = {'v': f'clipitem-v{n}', 'a1': f'clipitem-a{n}', 'a2': f'clipitem-b{n}'}
@@ -147,7 +165,7 @@ for s0, s1, t, z in final:
             else:
                 c.append(motion(CLOSE if close else WIDE))
         tr.append(c)
-    report.append((pos, dur, k, 'ZOOM' if z else ('close' if close else 'aberto'), t))
+    report.append((pos, dur, src_v[k].findtext('name').replace('fx3 ','').replace('.MP4',''), 'ZOOM' if z else ('close' if close else 'aberto'), t))
     pos += dur
 
 total = pos + TAIL
@@ -167,5 +185,5 @@ open(OUT, 'w', encoding='utf-8').write(txt)
 
 def f2s(f): s = f / 29.97; return f'{int(s // 60)}:{s % 60:05.2f}'
 for p, d, k, z, t in report:
-    print(f'{f2s(p):>8} +{d/29.97:5.1f}s  clip{3728+k}  {z:6}  {t[:90]}')
+    print(f'{f2s(p):>8} +{d/29.97:5.1f}s  {k}  {z:6}  {t[:90]}')
 print('TOTAL', f2s(total), '| fala', f2s(pos - LEAD))
