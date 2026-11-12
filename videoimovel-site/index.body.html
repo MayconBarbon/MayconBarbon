@@ -198,8 +198,8 @@ section{padding-block:clamp(72px,10vw,128px)}
 .sp-grid button:hover img,.sp-grid button:focus-visible img{transform:scale(1.04)}
 .sp-grid span{position:absolute;left:12px;bottom:12px;font-size:.78rem;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(5,8,14,.62);color:#fff;backdrop-filter:blur(6px)}
 .sp-grid figcaption{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#8e96a6;padding-left:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sp-a{grid-column:span 2;grid-row:span 2}.sp-f{grid-column:span 2}
-@media (max-width:760px){.sp-grid{grid-template-columns:1fr 1fr;grid-auto-rows:172px}.sp-a,.sp-f{grid-column:span 2;grid-row:span 1}.sp-a{grid-row:span 1}}
+.sp-a{grid-column:span 2;grid-row:span 2}.sp-f,.sp-i,.sp-j{grid-column:span 2}
+@media (max-width:760px){.sp-grid{grid-template-columns:1fr 1fr;grid-auto-rows:172px}.sp-a,.sp-f,.sp-i,.sp-j{grid-column:span 2;grid-row:span 1}.sp-a{grid-row:span 1}}
 .sp-cta{margin-top:40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 32px;padding:28px 30px;border:1px solid rgba(200,169,106,.35);border-radius:var(--r);background:linear-gradient(120deg,rgba(200,169,106,.10),rgba(255,255,255,.02))}
 .sp-cta h3{font-size:1.35rem}
 .sp-cta p{color:#b4bccb;font-size:.98rem;margin-top:6px}
@@ -548,7 +548,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     <div class="wrap">
       <div class="sp-head reveal">
         <div><p class="eyebrow">Fotografia de espaços · São Paulo (SP)</p><h2 id="h-sp">Espaços que pedem <em>presença</em>.</h2></div>
-        <p class="lead">Tendas, auditórios, bares, terraços e salões de eventos fotografados pela equipe do Vídeo Imóvel em São Paulo. Luz, enquadramento e composição pensados para mostrar a escala, os materiais e a personalidade de cada lugar, sem mudar nada do que ele é.</p>
+        <p class="lead">Tendas, auditórios, foyers, bares, terraços e salões de eventos fotografados pela equipe do Vídeo Imóvel em São Paulo. Luz, enquadramento e composição pensados para mostrar a escala, os materiais e a personalidade de cada lugar, sem mudar nada do que ele é.</p>
       </div>
       <figure class="sp-hero reveal">
         <img src="assets/sp/sp-tenda-1200.webp" srcset="assets/sp/sp-tenda-1200.webp 1200w, assets/sp/sp-tenda-2000.webp 2000w" sizes="(max-width: 1120px) 100vw, 1080px" alt="Tenda de eventos com cobertura de lonas claras e estrutura de iluminação, com a Ponte Estaiada ao fundo" loading="lazy" decoding="async" width="2000" height="1333">
@@ -563,6 +563,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
         <figure class="sp-f"><button type="button" data-i="6" aria-label="Ampliar foto: Bar, Jockey"><img src="assets/sp/sp-bar-800.webp" alt="Bar com balcão longo de pedra, bancos em sequência, prateleiras de copos e garrafas e forro de madeira" loading="lazy" decoding="async" width="800" height="533"><span>Bar</span></button><figcaption>Jockey</figcaption></figure>
         <figure class="sp-g"><button type="button" data-i="7" aria-label="Ampliar foto: Terraço, Tomie Ohtake"><img src="assets/sp/sp-terraco-800.webp" alt="Terraço amplo com cobertura em estrutura metálica, jardim vertical e uma torre de vidro colorida ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Terraço</span></button><figcaption>Tomie Ohtake</figcaption></figure>
         <figure class="sp-h"><button type="button" data-i="8" aria-label="Ampliar foto: Hall de entrada, Espaço L'Atelier"><img src="assets/sp/sp-hall-800.webp" alt="Hall com piso de mármore, lustres de cristal, espelhos, arranjos de flores e portas de elevador em metal" loading="lazy" decoding="async" width="800" height="533"><span>Hall de entrada</span></button><figcaption>Espaço L'Atelier</figcaption></figure>
+        <figure class="sp-i"><button type="button" data-i="9" aria-label="Ampliar foto: Foyer, Santander"><img src="assets/sp/sp-foyer-santander-800.webp" alt="Foyer amplo com piso de pedra, parede de madeira, galeria de fotografias em preto e branco e janelas ao fundo" loading="lazy" decoding="async" width="800" height="533"><span>Foyer</span></button><figcaption>Santander</figcaption></figure>
+        <figure class="sp-j"><button type="button" data-i="10" aria-label="Ampliar foto: Salão de eventos, Mirante"><img src="assets/sp/sp-salao-mirante-800.webp" alt="Salão com piso de madeira, mesas redondas com cadeiras de palha, vasos de plantas e estrutura aparente no teto" loading="lazy" decoding="async" width="800" height="533"><span>Salão de eventos</span></button><figcaption>Mirante</figcaption></figure>
       </div>
       <div class="sp-cta reveal">
         <div><h3>Quer apresentar o seu espaço assim?</h3><p>Fotografia profissional para espaços de eventos, hotéis, escritórios e espaços comerciais, em São Paulo e em todo o Brasil.</p></div>
@@ -570,7 +572,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       </div>
     </div>
     <dialog class="sp-box" id="sp-box" aria-label="Galeria de espaços em São Paulo">
-      <div class="sp-bar"><span id="sp-count">1 de 9</span><button type="button" class="sp-ctl" id="sp-close" aria-label="Fechar galeria">✕</button></div>
+      <div class="sp-bar"><span id="sp-count">1 de 11</span><button type="button" class="sp-ctl" id="sp-close" aria-label="Fechar galeria">✕</button></div>
       <img id="sp-img" src="" alt="">
       <div class="sp-nav"><button type="button" class="sp-ctl" id="sp-prev" aria-label="Foto anterior">←</button><p id="sp-cap"></p><button type="button" class="sp-ctl" id="sp-next" aria-label="Próxima foto">→</button></div>
     </dialog>
@@ -719,7 +721,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 {s:"assets/sp/sp-salao-mackenzie-1600.webp",t:"Salão de eventos · Mackenzie",a:"Salão amplo com piso de madeira, fileiras de cadeiras com assento laranja, forro iluminado e palco ao fundo"},
 {s:"assets/sp/sp-bar-1600.webp",t:"Bar · Jockey",a:"Bar com balcão longo de pedra, bancos em sequência, prateleiras de copos e garrafas e forro de madeira"},
 {s:"assets/sp/sp-terraco-1600.webp",t:"Terraço · Tomie Ohtake",a:"Terraço amplo com cobertura em estrutura metálica, jardim vertical e uma torre de vidro colorida ao fundo"},
-{s:"assets/sp/sp-hall-1600.webp",t:"Hall de entrada · Espaço L'Atelier",a:"Hall com piso de mármore, lustres de cristal, espelhos, arranjos de flores e portas de elevador em metal"}];
+{s:"assets/sp/sp-hall-1600.webp",t:"Hall de entrada · Espaço L'Atelier",a:"Hall com piso de mármore, lustres de cristal, espelhos, arranjos de flores e portas de elevador em metal"},
+{s:"assets/sp/sp-foyer-santander-1600.webp",t:"Foyer · Santander",a:"Foyer amplo com piso de pedra, parede de madeira, galeria de fotografias em preto e branco e janelas ao fundo"},
+{s:"assets/sp/sp-salao-mirante-1600.webp",t:"Salão de eventos · Mirante",a:"Salão com piso de madeira, mesas redondas com cadeiras de palha, vasos de plantas e estrutura aparente no teto"}];
   var box=document.getElementById('sp-box');
   if(box){
     var im=document.getElementById('sp-img'),cap=document.getElementById('sp-cap'),cnt=document.getElementById('sp-count'),cur=0,x0=null;
