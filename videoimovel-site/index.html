@@ -103,16 +103,68 @@ section{padding-block:clamp(72px,10vw,128px)}
 /* antes e depois */
 .dark{background:var(--ink);color:var(--ink-fg)}
 .dark .lead,.dark .fine{color:var(--ink-muted)}
-.compare{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:1600/842;max-width:100%;user-select:none;touch-action:pan-y}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tabs button{font:600 .92rem var(--font-body);padding:.7em 1.15em;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;color:var(--ink-fg);cursor:pointer}
+.tabs button[aria-selected="true"]{background:#f5f5f7;color:#0d1a2e;border-color:#f5f5f7}
+.ab{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center}
+.ab[hidden]{display:none}
+.ab .txt{display:grid;gap:12px;min-width:0}
+.ab .txt p{color:var(--ink-muted);font-size:.98rem}
+.ab.tall .compare{width:min(100%,calc(74vh * .8));justify-self:center}
+@media (max-width:860px){.ab{grid-template-columns:1fr;gap:20px}}
+.compare{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:var(--ar,1600/809);width:100%;user-select:none;touch-action:pan-y;background:#111}
 .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .compare .after{clip-path:inset(0 0 0 var(--pos,50%))}
 .compare .bar{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;translate:-1px 0;pointer-events:none}
 .compare .bar::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;translate:-50% -50%;border-radius:50%;background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.35)}
 .compare .bar::before{content:"⟷";position:absolute;top:50%;left:50%;translate:-50% -50%;z-index:1;color:#0d1a2e;font-size:18px;font-weight:700}
 .compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
-.chip{position:absolute;top:16px;padding:6px 12px;border-radius:999px;font-size:.78rem;font-weight:600;background:rgba(10,15,25,.62);color:#fff;backdrop-filter:blur(6px)}
+.chip{position:absolute;top:16px;padding:6px 12px;border-radius:999px;font-size:.78rem;font-weight:600;background:rgba(10,15,25,.62);color:#fff;backdrop-filter:blur(6px);pointer-events:none}
 .chip.l{left:16px}.chip.r{right:16px}
 .compare-note{margin-top:32px}
+
+/* foto que vira vídeo */
+.demos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.demo{margin:0;display:grid;gap:14px;align-content:start;min-width:0}
+.demo .media{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:#111}
+.demo .media img,.demo .media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.demo .media video{opacity:0;transition:opacity .35s}
+.demo.playing .media video{opacity:1}
+.seg{position:absolute;left:50%;bottom:14px;translate:-50% 0;display:flex;padding:4px;border-radius:999px;background:rgba(10,15,25,.62);backdrop-filter:blur(8px)}
+.seg button{font:600 .82rem var(--font-body);padding:.55em 1em;border:0;border-radius:999px;background:transparent;color:#fff;cursor:pointer}
+.seg button[aria-pressed="true"]{background:#fff;color:#0d1a2e}
+.demo .media .pill{position:absolute;top:12px;left:12px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.9);color:#0d1a2e}
+.demo .media .pill.ia{background:var(--accent);color:#fff}
+.demo figcaption{display:grid;gap:6px}
+.demo figcaption p{color:var(--muted);font-size:.95rem}
+@media (max-width:900px){.demos{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:min(78vw,320px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.demo{scroll-snap-align:start}}
+
+/* o que a IA faz */
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rules article{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;display:grid;gap:16px;align-content:start;min-width:0}
+.rules ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.rules li{padding-left:34px;position:relative}
+.rules li::before{position:absolute;left:0;top:.05em;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800}
+.rules .yes li::before{content:"✓";background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}
+.rules .no li::before{content:"✕";background:color-mix(in srgb,#d4483b 16%,transparent);color:#d4483b}
+.rules small{display:block;color:var(--muted);font-size:.88rem}
+@media (max-width:760px){.rules{grid-template-columns:1fr}}
+
+/* assistente de plano */
+.wizard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;margin-bottom:28px;display:grid;gap:24px}
+.wizard .q{display:grid;gap:12px;border:0;margin:0;padding:0;min-width:0}
+.wizard legend{font:700 1.05rem var(--font-display);padding:0;margin-bottom:12px}
+.wizard legend span{color:var(--accent);margin-right:6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opts span{display:inline-block;padding:.65em 1.1em;border-radius:999px;border:1px solid var(--line);font-size:.94rem;cursor:pointer;background:var(--bg)}
+.opts input:checked+span{background:var(--brand);color:var(--brand-fg);border-color:var(--brand)}
+.opts input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.result{border-top:1px solid var(--line);padding-top:22px;display:grid;gap:14px}
+.result h3 b{color:var(--accent)}
+.result p{color:var(--muted)}
+.plan.match{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent),var(--shadow)}
 
 /* passos */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:0;counter-reset:s}
@@ -265,22 +317,118 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     </div>
   </section>
 
-  <section class="dark" aria-labelledby="h-antes">
+  <section id="antes-e-depois" class="dark" aria-labelledby="h-antes">
     <div class="wrap">
       <div class="head reveal">
         <p class="eyebrow">Antes e depois</p>
-        <h2 id="h-antes">Redecoração virtual com IA, sem mudar o imóvel.</h2>
-        <p class="lead">Arraste a barra. Paredes, piso, janelas e luz continuam os mesmos; só a mobília da direita foi simulada, para ajudar quem procura imóvel a imaginar o espaço em uso.</p>
+        <h2 id="h-antes">Arraste a barra e veja a diferença.</h2>
+        <p class="lead">Três exemplos reais do nosso trabalho. Escolha um e arraste a barra sobre a imagem para comparar.</p>
       </div>
-      <div class="compare" id="compare" style="--pos:50%">
-        <img src="assets/staging-0.webp" alt="Sala de pé-direito duplo com sofás de couro, foto original" width="1600" height="842">
-        <img class="after" src="assets/staging-1.webp" alt="A mesma sala com sofá laranja e móveis novos, simulação feita com IA" width="1600" height="842">
-        <span class="chip l">Foto original</span><span class="chip r">Simulação com IA</span>
-        <div class="bar" aria-hidden="true"></div>
-        <label class="sr" for="compare-range" hidden>Comparar antes e depois</label>
-        <input id="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparar foto original e simulação com IA">
+      <div class="tabs" role="tablist" aria-label="Exemplos de antes e depois">
+        <button role="tab" id="t-trat" aria-controls="ab-trat" aria-selected="true">Tratamento de foto</button>
+        <button role="tab" id="t-cel" aria-controls="ab-cel" aria-selected="false" tabindex="-1">Foto de celular</button>
+        <button role="tab" id="t-decor" aria-controls="ab-decor" aria-selected="false" tabindex="-1">Redecoração virtual</button>
       </div>
-      <p class="fine compare-note">Na redecoração virtual, os móveis são uma simulação e não fazem parte do imóvel. Nos demais usos de IA, ajustamos cor, luz e movimento, sem alterar estrutura, acabamentos, vista ou estado de conservação. Toda simulação é identificada.</p>
+      <div class="ab tall" id="ab-trat" role="tabpanel" aria-labelledby="t-trat">
+        <div class="compare" style="--pos:50%;--ar:1000/1249">
+          <img src="assets/demo/ab-trat-0.webp" alt="Área da piscina de uma chácara, foto original sem tratamento" width="1000" height="1249" loading="lazy">
+          <img class="after" src="assets/demo/ab-trat-1.webp" alt="A mesma área da piscina depois do tratamento de luz, cor e nitidez" width="1000" height="1249" loading="lazy">
+          <span class="chip l">Foto original</span><span class="chip r">Foto tratada</span>
+          <div class="bar" aria-hidden="true"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Comparar: Foto original e Foto tratada">
+        </div>
+        <div class="txt"><h3>Mais luz e cor, o mesmo imóvel.</h3><p>Corrigimos exposição, cor, nitidez e alinhamento. A piscina, o deck e o jardim são os mesmos da foto original: nada foi acrescentado ou removido.</p></div>
+      </div>
+      <div class="ab tall" id="ab-cel" role="tabpanel" aria-labelledby="t-cel" hidden>
+        <div class="compare" style="--pos:50%;--ar:1000/1249">
+          <img src="assets/demo/ab-cel-0.webp" alt="Sala de uma chácara fotografada com celular, sem tratamento" width="1000" height="1249" loading="lazy">
+          <img class="after" src="assets/demo/ab-cel-1.webp" alt="A mesma sala depois da correção de luz, cor e perspectiva" width="1000" height="1249" loading="lazy">
+          <span class="chip l">Foto de celular</span><span class="chip r">Foto tratada</span>
+          <div class="bar" aria-hidden="true"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Comparar: Foto de celular e Foto tratada">
+        </div>
+        <div class="txt"><h3>Foto de celular, resultado profissional.</h3><p>Esta foto foi feita com celular. Ajustamos luz, cor e linhas tortas para o ambiente aparecer como ele é, com mais clareza. Os móveis, o piso e as paredes continuam os mesmos.</p></div>
+      </div>
+      <div class="ab" id="ab-decor" role="tabpanel" aria-labelledby="t-decor" hidden>
+        <div class="compare" style="--pos:50%;--ar:1600/809">
+          <img src="assets/demo/ab-decor-0.webp" alt="Sala de pé-direito duplo com sofás de couro, foto original" width="1600" height="809" loading="lazy">
+          <img class="after" src="assets/demo/ab-decor-1.webp" alt="A mesma sala com sofá laranja e móveis novos, simulação feita com IA" width="1600" height="809" loading="lazy">
+          <span class="chip l">Foto original</span><span class="chip r">Simulação com IA</span>
+          <div class="bar" aria-hidden="true"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Comparar: Foto original e Simulação com IA">
+        </div>
+        <div class="txt"><h3>Redecoração virtual com IA.</h3><p>Paredes, piso e janelas continuam os mesmos; a mobília e a iluminação decorativa da direita foram simuladas, para ajudar quem procura imóvel a imaginar o espaço em uso.</p><p class="fine">Os móveis simulados não fazem parte do imóvel, e a imagem é identificada como simulação.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="foto-em-video" aria-labelledby="h-video">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Foto que vira vídeo</p>
+        <h2 id="h-video">Uma foto parada, um vídeo em movimento.</h2>
+        <p class="lead">Toque em <b>Vídeo</b> para ver o que fazemos a partir de uma única foto. Quando há simulação, ela vem identificada.</p>
+      </div>
+      <div class="demos">
+        <figure class="demo reveal" id="d-movimento">
+          <div class="media">
+            <img src="assets/demo/ia-movimento.jpg" alt="Piscina com guarda-sol e jardim de uma chácara, foto tratada" width="720" height="900" loading="lazy">
+            <video muted playsinline loop preload="none" aria-label="Movimento de câmera, vídeo"><source src="assets/demo/ia-movimento.mp4" type="video/mp4"></video>
+            <span class="pill">Sem simulação</span>
+            <div class="seg" role="group" aria-label="Alternar foto e vídeo"><button type="button" aria-pressed="true" data-v="0">Foto</button><button type="button" aria-pressed="false" data-v="1">Vídeo</button></div>
+          </div>
+          <figcaption><h3>Movimento de câmera</h3><p>Uma aproximação suave criada a partir da foto tratada. Nada é acrescentado ao imóvel.</p></figcaption>
+        </figure>
+        <figure class="demo reveal" id="d-anoitecer">
+          <div class="media">
+            <img src="assets/demo/ia-anoitecer.jpg" alt="Fachada de sobrado com tijolos aparentes e jardim, foto diurna" width="720" height="900" loading="lazy">
+            <video muted playsinline loop preload="none" aria-label="Do dia ao anoitecer, vídeo"><source src="assets/demo/ia-anoitecer.mp4" type="video/mp4"></video>
+            <span class="pill ia">Simulação com IA</span>
+            <div class="seg" role="group" aria-label="Alternar foto e vídeo"><button type="button" aria-pressed="true" data-v="0">Foto</button><button type="button" aria-pressed="false" data-v="1">Vídeo</button></div>
+          </div>
+          <figcaption><h3>Do dia ao anoitecer</h3><p>A partir de uma foto diurna da fachada, a IA simula o fim de tarde com as luzes acesas. É uma simulação e vem identificada.</p></figcaption>
+        </figure>
+        <figure class="demo reveal" id="d-decoracao">
+          <div class="media">
+            <img src="assets/demo/ia-decoracao.jpg" alt="Sala de pé-direito duplo com sofás de couro, foto original" width="720" height="900" loading="lazy">
+            <video muted playsinline loop preload="none" aria-label="Redecoração em movimento, vídeo"><source src="assets/demo/ia-decoracao.mp4" type="video/mp4"></video>
+            <span class="pill ia">Simulação com IA</span>
+            <div class="seg" role="group" aria-label="Alternar foto e vídeo"><button type="button" aria-pressed="true" data-v="0">Foto</button><button type="button" aria-pressed="false" data-v="1">Vídeo</button></div>
+          </div>
+          <figcaption><h3>Redecoração em movimento</h3><p>A mobília muda diante de quem assiste. Os móveis novos são simulados; paredes, piso e janelas continuam os mesmos.</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="ia" class="band" aria-labelledby="h-ia">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Inteligência artificial com responsabilidade</p>
+        <h2 id="h-ia">O que a IA faz e o que ela nunca faz.</h2>
+        <p class="lead">A IA serve para mostrar melhor o imóvel real. Quem compra ou aluga precisa encontrar, na visita, o mesmo imóvel que viu no anúncio.</p>
+      </div>
+      <div class="rules">
+        <article class="yes reveal">
+          <h3>A IA faz</h3>
+          <ul>
+            <li>Dá movimento às fotos, como se a câmera passeasse pelo ambiente</li>
+            <li>Corrige luz, cor, nitidez e linhas tortas</li>
+            <li>Simula mobília nova, em ambientes vazios ou já mobiliados <small>sempre identificada como simulação</small></li>
+            <li>Simula entardecer ou anoitecer na fachada <small>sempre identificada como simulação</small></li>
+          </ul>
+        </article>
+        <article class="no reveal">
+          <h3>A IA nunca faz</h3>
+          <ul>
+            <li>Mudar metragem, planta ou número de cômodos</li>
+            <li>Trocar piso, revestimentos ou acabamentos</li>
+            <li>Esconder defeitos, infiltrações ou o estado de conservação</li>
+            <li>Inventar vista, vizinhança ou áreas de lazer</li>
+            <li>Apresentar uma simulação como se fosse foto real</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -370,18 +518,45 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
         <h2 id="h-planos">Escolha pelo número de fotos.</h2>
         <p class="lead">As fotos podem ser de celular ou câmera. Fazemos a curadoria técnica, enviamos a proposta sob medida e, com o aceite, o vídeo fica pronto em até 48 horas.</p>
       </div>
+      <form class="wizard reveal" id="wizard" aria-labelledby="h-wiz" onsubmit="return false">
+        <div><p class="eyebrow">Assistente</p><h3 id="h-wiz" style="font-size:1.5rem;margin-top:6px">Não sabe qual plano escolher? Responda três perguntas.</h3></div>
+        <fieldset class="q"><legend><span>1.</span>Qual é o tipo de imóvel?</legend><div class="opts">
+          <label><input type="radio" name="tipo" value="apartamento"><span>Apartamento</span></label>
+          <label><input type="radio" name="tipo" value="casa"><span>Casa</span></label>
+          <label><input type="radio" name="tipo" value="chácara, sítio ou fazenda"><span>Chácara, sítio ou fazenda</span></label>
+          <label><input type="radio" name="tipo" value="imóvel comercial"><span>Comercial</span></label>
+          <label><input type="radio" name="tipo" value="imóvel de temporada"><span>Temporada</span></label>
+        </div></fieldset>
+        <fieldset class="q"><legend><span>2.</span>Quantas fotos você tem?</legend><div class="opts">
+          <label><input type="radio" name="fotos" value="5"><span>Até 5</span></label>
+          <label><input type="radio" name="fotos" value="10"><span>De 6 a 10</span></label>
+          <label><input type="radio" name="fotos" value="15"><span>De 11 a 15</span></label>
+          <label><input type="radio" name="fotos" value="16"><span>Mais de 15</span></label>
+          <label><input type="radio" name="fotos" value="0"><span>Ainda não tenho fotos</span></label>
+        </div></fieldset>
+        <fieldset class="q"><legend><span>3.</span>Precisa de captação no local ou drone?</legend><div class="opts">
+          <label><input type="radio" name="capt" value="nao"><span>Não, vou enviar as fotos</span></label>
+          <label><input type="radio" name="capt" value="sim"><span>Sim, quero captação no local</span></label>
+          <label><input type="radio" name="capt" value="drone"><span>Sim, com drone</span></label>
+        </div></fieldset>
+        <div class="result" id="wiz-result" aria-live="polite" hidden>
+          <h3 id="wiz-title"></h3>
+          <p id="wiz-text"></p>
+          <div class="actions"><a class="btn btn-primary" id="wiz-cta" href="https://wa.me/5519998612626" target="_blank" rel="noopener">Pedir orçamento pelo WhatsApp</a></div>
+        </div>
+      </form>
       <div class="plans">
-        <article class="plan reveal">
+        <article class="plan reveal" id="plan-essencial">
           <div><h3>Essencial</h3><p class="qty">Até 5 fotos</p></div>
           <ul class="ticks"><li>Curadoria e tratamento de luz e enquadramento</li><li>Aplicação de IA e trilha sonora</li><li>Vídeo pronto para anunciar</li></ul>
           <a class="btn btn-ghost" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Essencial." target="_blank" rel="noopener">Pedir orçamento</a>
         </article>
-        <article class="plan featured reveal">
+        <article class="plan featured reveal" id="plan-plus">
           <div><span class="badge">Mais escolhido</span><h3>Plus</h3><p class="qty">Até 10 fotos</p></div>
           <ul class="ticks"><li>Curadoria ampliada e tratamento aprimorado</li><li>IA aplicada para mais fluidez visual</li><li>Trilha sonora e textos sutis de apoio</li></ul>
           <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Plus." target="_blank" rel="noopener">Pedir orçamento</a>
         </article>
-        <article class="plan reveal">
+        <article class="plan reveal" id="plan-premium">
           <div><h3>Premium</h3><p class="qty">Até 15 fotos</p></div>
           <ul class="ticks"><li>Curadoria completa e tratamento avançado</li><li>IA para mais profundidade e narrativa visual</li><li>Vídeo mais completo e envolvente</li></ul>
           <a class="btn btn-ghost" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20do%20plano%20Premium." target="_blank" rel="noopener">Pedir orçamento</a>
@@ -427,8 +602,29 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 
 <script>
 (function(){
-  var box=document.getElementById('compare'), r=document.getElementById('compare-range');
-  if(box&&r){ r.addEventListener('input',function(){ box.style.setProperty('--pos', r.value+'%'); }); }
+  document.querySelectorAll('.compare').forEach(function(box){var r=box.querySelector('input'); r.addEventListener('input',function(){box.style.setProperty('--pos',r.value+'%');});});
+  var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]'));
+  function sel(t,focus){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on;}); if(focus)t.focus();}
+  tabs.forEach(function(b,i){b.addEventListener('click',function(){sel(b)});b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(d){e.preventDefault();sel(tabs[(i+d+tabs.length)%tabs.length],true);}});});
+  document.querySelectorAll('.demo').forEach(function(d){var v=d.querySelector('video'),bs=d.querySelectorAll('.seg button');
+    function set(on){d.classList.toggle('playing',on);bs[0].setAttribute('aria-pressed',!on);bs[1].setAttribute('aria-pressed',on); if(on){v.currentTime=0;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});} else v.pause();}
+    bs[0].addEventListener('click',function(){set(false)});bs[1].addEventListener('click',function(){set(true)});
+    v.addEventListener('ended',function(){set(false)});});
+  var wz=document.getElementById('wizard');
+  if(wz){wz.addEventListener('change',function(){
+    var f=new FormData(wz),t=f.get('tipo'),n=f.get('fotos'),c=f.get('capt'); if(!t||n===null||!c)return;
+    var A={'apartamento':'o seu apartamento','casa':'a sua casa','chácara, sítio ou fazenda':'a sua chácara, sítio ou fazenda','imóvel comercial':'o seu imóvel comercial','imóvel de temporada':'o seu imóvel de temporada'}[t], k=+n, plan=k===0?'Premium':k<=5?'Essencial':k<=10?'Plus':'Premium', txt;
+    if(k===0||c!=='nao'){txt='Para '+A+', o melhor caminho é a captação no local'+(c==='drone'?', com imagens aéreas de drone':'')+(k>0?', somada às fotos que você já tem':'')+'. Combinamos data e local pelo WhatsApp e enviamos a proposta sob medida.'; plan=k===0?'Captação no local':plan+' + captação no local';}
+    else if(k===16){txt='Com mais de 15 fotos, o Premium é o ponto de partida. Fazemos a curadoria das melhores imagens e enviamos uma proposta sob medida.';}
+    else{txt='Com '+{5:'até 5',10:'6 a 10',15:'11 a 15'}[k]+' fotos, o plano '+plan+' é o mais indicado para '+A+'. Fazemos a curadoria antes da proposta e o vídeo fica pronto em até 48 horas depois do aceite.';}
+    document.getElementById('wiz-title').innerHTML='Sugestão: <b>'+plan+'</b>';
+    document.getElementById('wiz-text').textContent=txt;
+    var msg='Olá! Usei o assistente do site. Imóvel: '+t+'. Fotos: '+(k===0?'ainda não tenho':k===16?'mais de 15':{5:'até 5',10:'de 6 a 10',15:'de 11 a 15'}[k])+'. Captação: '+(c==='nao'?'não preciso':c==='drone'?'sim, com drone':'sim, no local')+'. Sugestão: '+plan+'. Quero um orçamento.';
+    document.getElementById('wiz-cta').href='https://wa.me/5519998612626?text='+encodeURIComponent(msg);
+    document.getElementById('wiz-result').hidden=false;
+    document.querySelectorAll('.plan').forEach(function(p){p.classList.remove('match')});
+    var id=plan.split(' ')[0].toLowerCase(), el=document.getElementById('plan-'+id); if(el)el.classList.add('match');
+  });}
   var rail=document.getElementById('reels');
   if(rail){
     var vids=rail.querySelectorAll('video');
