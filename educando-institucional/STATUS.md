@@ -38,6 +38,19 @@ Nenhum arquivo original foi modificado. Os clipes foram baixados temporariamente
 ### Trilha provisória
 "Dreamer" — Kevin MacLeod (incompetech.com), licença Creative Commons BY 4.0. Exige crédito: *"Dreamer" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License*. Deve ser trocada pela trilha definitiva licenciada pela Doc.Me.
 
+### Corte 1 — OFFLINE (13/11/2026)
+`montagem/Educando_corte1_OFFLINE.mp4` (4:15, 1080p, H.264). É um **animatic de baixa resolução**: com o Drive bloqueado, foi montado a partir dos quadros-chave da análise (~1 quadro/s, ampliados), não dos originais 4K. Ele serve para aprovar estrutura, ordem, tempos e escolha de planos. **Não é a versão de entrega.**
+- Segue os 10 blocos do roteiro, nas minutagens dele (B7 e B8 começam em 2:50 e 3:10, para não sobrepor os blocos anteriores).
+- A locução é a guia sintética, sem alterações no texto. A trilha é provisória, com ducking sob a voz. O áudio está normalizado em −16 LUFS.
+- Lacunas aparecem como tela preta com o texto amarelo **LACUNA · …**. Depoimentos e entrevistas que faltam aparecem como legenda **PENDENTE** na posição prevista.
+- Planos reais do Instituto usados como substitutos (ex.: treino infantil no lugar do Sub-09/11/15/17) levam a marca **PROVISÓRIO**.
+- Nenhuma imagem de banco foi usada.
+- Os takes dirigidos da chegada da Maíra (C0605–C0614) estão sem som, porque têm voz da direção.
+
+`montagem/corte1_premiere.xml`: sequência para o Premiere (Arquivo > Importar), 1920×1080, 29,97 fps. Os planos apontam para os **originais 4K** em `<pasta do projeto>/Dia 1|Dia 2/fx3 gabrielNNNN.MP4`, com escala de 50%. Lacunas viram *slugs*, e cada pendência tem um marcador na sequência. A locução-guia aponta para `projeto/claude_montagem/locucao_guia/` e a trilha para `projeto/claude_montagem/trilha/`. Se as mídias abrirem offline, use **Vincular mídia** para apontar para as pastas locais.
+
+`montagem/RELATORIO.md`: tabela Bloco | Cena solicitada | Arquivo utilizado | Origem | Situação. São 49 cenas utilizadas, 8 provisórias e 34 pendentes.
+
 ### Arquivos desta pasta
 - `curadoria/inventory.tsv` — inventário dos 441 clipes (dia, nome, id no Drive, tamanho).
 - `curadoria/catalog_D1.tsv`, `catalog_D2.tsv` — catálogo plano a plano (tags, faixa etária, enquadramento, nota 1–5, melhor trecho, descrição).

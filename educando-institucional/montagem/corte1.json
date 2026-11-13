@@ -1,0 +1,1687 @@
+{
+ "shots": [
+  {
+   "id": "s000",
+   "type": "black",
+   "dur": 1.5,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra"
+  },
+  {
+   "id": "s001",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0607",
+   "in": 0.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "audio": "mute",
+   "amb_db": -90,
+   "note": ""
+  },
+  {
+   "id": "s002",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0609",
+   "in": 8.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "audio": "mute",
+   "amb_db": -90,
+   "note": ""
+  },
+  {
+   "id": "s003",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0605",
+   "in": 4.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "audio": "mute",
+   "amb_db": -90,
+   "note": ""
+  },
+  {
+   "id": "s004",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0610",
+   "in": 4.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "audio": "mute",
+   "amb_db": -90,
+   "note": ""
+  },
+  {
+   "id": "s005",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0611",
+   "in": 2.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "audio": "mute",
+   "amb_db": -90,
+   "note": ""
+  },
+  {
+   "id": "s006",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0629",
+   "in": 12.0,
+   "dur": 2.0,
+   "speed": 1.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s007",
+   "type": "black",
+   "dur": 2.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "label": "P06 TEATRO (ação teatral real)"
+  },
+  {
+   "id": "s008",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0645",
+   "in": 0.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s009",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1734",
+   "in": 2.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s010",
+   "type": "black",
+   "dur": 1.5,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "label": "P09 FLAG presa à cintura"
+  },
+  {
+   "id": "s011",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0668",
+   "in": 2.0,
+   "dur": 2.0,
+   "speed": 1.0,
+   "block": "B1 0:00–0:25 Todo dia, alguém entra",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s012",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0612",
+   "in": 0.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "audio": "mute",
+   "amb_db": -90,
+   "note": ""
+  },
+  {
+   "id": "s013",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0615",
+   "in": 0.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s014",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0659",
+   "in": 8.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s015",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0651",
+   "in": 11.0,
+   "dur": 3.5,
+   "speed": 1.0,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s016",
+   "type": "black",
+   "dur": 3.0,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "label": "TEATRO infantil (expressão, interação, riso)"
+  },
+  {
+   "id": "s017",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0667",
+   "in": 4.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s018",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0671",
+   "in": 3.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s019",
+   "type": "black",
+   "dur": 2.5,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "label": "FLAG infantil (flag na cintura, corrida, retirada)"
+  },
+  {
+   "id": "s020",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0638",
+   "in": 11.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s021",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0684",
+   "in": 25.0,
+   "dur": 4.0,
+   "speed": 1.0,
+   "block": "B2 0:25–0:55 Uma segunda casa",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s022",
+   "type": "black",
+   "dur": 4.0,
+   "block": "B3 0:55–1:20 De onde viemos",
+   "label": "ARQUIVO 1997: campo, primeiros times"
+  },
+  {
+   "id": "s023",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0657",
+   "in": 4.0,
+   "dur": 4.0,
+   "speed": 1.0,
+   "block": "B3 0:55–1:20 De onde viemos",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s024",
+   "type": "black",
+   "dur": 3.5,
+   "block": "B3 0:55–1:20 De onde viemos",
+   "label": "ARQUIVO: uniformes antigos / campeonatos"
+  },
+  {
+   "id": "s025",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0662",
+   "in": 20.0,
+   "dur": 4.0,
+   "speed": 1.0,
+   "block": "B3 0:55–1:20 De onde viemos",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s026",
+   "type": "black",
+   "dur": 3.5,
+   "block": "B3 0:55–1:20 De onde viemos",
+   "label": "ARQUIVO: comunidade / famílias / grupo antigo"
+  },
+  {
+   "id": "s027",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0628",
+   "in": 3.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B3 0:55–1:20 De onde viemos",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s028",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0670",
+   "in": 18.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B3 0:55–1:20 De onde viemos",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s029",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1742",
+   "in": 3.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s030",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1728",
+   "in": 4.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s031",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1749",
+   "in": 2.0,
+   "dur": 2.0,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s032",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1760",
+   "in": 1.0,
+   "dur": 2.0,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s033",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1671",
+   "in": 3.0,
+   "dur": 2.0,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s034",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1695",
+   "in": 0.0,
+   "dur": 2.0,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s035",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1686",
+   "in": 4.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s036",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0665",
+   "in": 0.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s037",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0659",
+   "in": 15.0,
+   "dur": 2.0,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s038",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0660",
+   "in": 6.0,
+   "dur": 2.0,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s039",
+   "type": "black",
+   "dur": 3.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "label": "TEATRO infantil (palco, corpo, interação)"
+  },
+  {
+   "id": "s040",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0641",
+   "in": 11.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s041",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0652",
+   "in": 8.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s042",
+   "type": "black",
+   "dur": 3.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "label": "FLAG infantil (preparação, corrida, flag retirada)"
+  },
+  {
+   "id": "s043",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1786",
+   "in": 0.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s044",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1700",
+   "in": 2.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B4 1:20–1:55 Quando as possibilidades crescem",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s045",
+   "type": "black",
+   "dur": 7.0,
+   "block": "B5 1:55–2:25 Adolescer também é descobrir",
+   "label": "MÍDIAS DIGITAIS adolescentes"
+  },
+  {
+   "id": "s046",
+   "type": "black",
+   "dur": 8.0,
+   "block": "B5 1:55–2:25 Adolescer também é descobrir",
+   "label": "TEATRO adolescentes (obrigatório)"
+  },
+  {
+   "id": "s047",
+   "type": "black",
+   "dur": 7.0,
+   "block": "B5 1:55–2:25 Adolescer também é descobrir",
+   "label": "MÚSICA adolescentes"
+  },
+  {
+   "id": "s048",
+   "type": "black",
+   "dur": 8.0,
+   "block": "B5 1:55–2:25 Adolescer também é descobrir",
+   "label": "FUTEBOL adolescentes"
+  },
+  {
+   "id": "s049",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0670",
+   "in": 24.0,
+   "dur": 3.5,
+   "speed": 1.0,
+   "block": "B6 2:25–2:50 Aprender também é competir",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": "PROVISÓRIO: treino infantil — substituir por competitivo"
+  },
+  {
+   "id": "s050",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0671",
+   "in": 10.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B6 2:25–2:50 Aprender também é competir",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": "PROVISÓRIO: treino infantil — substituir por competitivo"
+  },
+  {
+   "id": "s051",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0673",
+   "in": 0.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B6 2:25–2:50 Aprender também é competir",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": "PROVISÓRIO: treino infantil — substituir por competitivo"
+  },
+  {
+   "id": "s052",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0674",
+   "in": 22.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B6 2:25–2:50 Aprender também é competir",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": "PROVISÓRIO: treino infantil — substituir por competitivo"
+  },
+  {
+   "id": "s053",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0675",
+   "in": 3.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B6 2:25–2:50 Aprender também é competir",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": "PROVISÓRIO: treino infantil — substituir por competitivo"
+  },
+  {
+   "id": "s054",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0672",
+   "in": 4.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B6 2:25–2:50 Aprender também é competir",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": "PROVISÓRIO: treino infantil — substituir por competitivo"
+  },
+  {
+   "id": "s055",
+   "type": "black",
+   "dur": 2.5,
+   "block": "B6 2:25–2:50 Aprender também é competir",
+   "label": "FUTEBOL SUB-17 (atletas maduros, treinador)"
+  },
+  {
+   "id": "s056",
+   "type": "black",
+   "dur": 4.0,
+   "block": "B6 2:25–2:50 Aprender também é competir",
+   "label": "FLAG COMPETITIVO"
+  },
+  {
+   "id": "s057",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0624",
+   "in": 0.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B7 2:50–3:10 Aprender não tem idade",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s058",
+   "type": "black",
+   "dur": 7.0,
+   "block": "B7 2:50–3:10 Aprender não tem idade",
+   "label": "VIOLÃO 50+ (mãos, cordas, sorriso ao conseguir)"
+  },
+  {
+   "id": "s059",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1777",
+   "in": 0.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B7 2:50–3:10 Aprender não tem idade",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": "PROVISÓRIO: inserto de mouse — substituir por 50+"
+  },
+  {
+   "id": "s060",
+   "type": "black",
+   "dur": 7.0,
+   "block": "B7 2:50–3:10 Aprender não tem idade",
+   "label": "INFORMÁTICA 50+ (tentativa, colega ajudando, resultado)"
+  },
+  {
+   "id": "s061",
+   "type": "black",
+   "dur": 6.0,
+   "block": "B8 3:10–3:35 As crianças de ontem",
+   "label": "TIAGO caminhando pelo Instituto"
+  },
+  {
+   "id": "s062",
+   "type": "black",
+   "dur": 6.0,
+   "block": "B8 3:10–3:35 As crianças de ontem",
+   "label": "CRIS observando atividade"
+  },
+  {
+   "id": "s063",
+   "type": "black",
+   "dur": 6.0,
+   "block": "B8 3:10–3:35 As crianças de ontem",
+   "label": "IVAN/Guardinha entre as crianças"
+  },
+  {
+   "id": "s064",
+   "type": "black",
+   "dur": 7.0,
+   "block": "B8 3:10–3:35 As crianças de ontem",
+   "label": "ARQUIVO foto antiga → rosto atual → criança atual"
+  },
+  {
+   "id": "s065",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0638",
+   "in": 19.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s066",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1779",
+   "in": 5.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s067",
+   "type": "black",
+   "dur": 1.2,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "label": "50+ aprendendo"
+  },
+  {
+   "id": "s068",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0671",
+   "in": 18.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s069",
+   "type": "black",
+   "dur": 1.2,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "label": "TEATRO"
+  },
+  {
+   "id": "s070",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1812",
+   "in": 4.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s071",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0645",
+   "in": 3.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s072",
+   "type": "black",
+   "dur": 1.1,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "label": "FLAG"
+  },
+  {
+   "id": "s073",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1724",
+   "in": 25.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s074",
+   "type": "black",
+   "dur": 1.5,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "label": "IVAN / CRIS / TIAGO + arquivo"
+  },
+  {
+   "id": "s075",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0614",
+   "in": 6.0,
+   "dur": 6.0,
+   "speed": 0.5,
+   "block": "B9 3:35–3:55 O futuro não está escrito",
+   "audio": "mute",
+   "amb_db": -90,
+   "note": ""
+  },
+  {
+   "id": "s076",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0613",
+   "in": 6.0,
+   "dur": 4.0,
+   "speed": 1.0,
+   "block": "B10 3:55–4:15 O que pode existir depois daqui?",
+   "audio": "mute",
+   "amb_db": -90,
+   "note": "PROVISÓRIO: chegada usada como saída"
+  },
+  {
+   "id": "s077",
+   "type": "black",
+   "dur": 3.0,
+   "block": "B10 3:55–4:15 O que pode existir depois daqui?",
+   "label": "Adulto ex-integrante divide o quadro com a criança"
+  },
+  {
+   "id": "s078",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0608",
+   "in": 11.0,
+   "dur": 3.0,
+   "speed": 1.0,
+   "block": "B10 3:55–4:15 O que pode existir depois daqui?",
+   "audio": "mute",
+   "amb_db": -90,
+   "note": ""
+  },
+  {
+   "id": "s079",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0650",
+   "in": 2.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B10 3:55–4:15 O que pode existir depois daqui?",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s080",
+   "type": "black",
+   "dur": 1.5,
+   "block": "B10 3:55–4:15 O que pode existir depois daqui?",
+   "label": "Rostos: adolescente / 50+ / ex-integrante"
+  },
+  {
+   "id": "s081",
+   "type": "clip",
+   "day": "D2",
+   "clip": "C1724",
+   "in": 35.0,
+   "dur": 1.5,
+   "speed": 1.0,
+   "block": "B10 3:55–4:15 O que pode existir depois daqui?",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s082",
+   "type": "clip",
+   "day": "D1",
+   "clip": "C0657",
+   "in": 12.0,
+   "dur": 2.5,
+   "speed": 1.0,
+   "block": "B10 3:55–4:15 O que pode existir depois daqui?",
+   "audio": "amb",
+   "amb_db": -18,
+   "note": ""
+  },
+  {
+   "id": "s083",
+   "type": "black",
+   "dur": 3.0,
+   "block": "B10 3:55–4:15 O que pode existir depois daqui?"
+  }
+ ],
+ "texts": [
+  {
+   "start": 16.55,
+   "end": 18.45,
+   "text": "LACUNA · P06 TEATRO (ação teatral real)",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 21.55,
+   "end": 22.95,
+   "text": "LACUNA · P09 FLAG presa à cintura",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 37.55,
+   "end": 40.45,
+   "text": "LACUNA · TEATRO infantil (expressão, interação, riso)",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 45.55,
+   "end": 47.95,
+   "text": "LACUNA · FLAG infantil (flag na cintura, corrida, retirada)",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 40.0,
+   "end": 52.0,
+   "text": "ÁUDIO DE ARQUIVO PENDENTE\\N«Aqui foi a nossa segunda casa. A gente aprendeu com as amizades, com os professores, a ser pessoas melhores...»",
+   "style": "Dep",
+   "fade": 0.2
+  },
+  {
+   "start": 55.05,
+   "end": 58.95,
+   "text": "LACUNA · ARQUIVO 1997: campo, primeiros times",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 63.05,
+   "end": 66.45,
+   "text": "LACUNA · ARQUIVO: uniformes antigos / campeonatos",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 70.55,
+   "end": 73.95,
+   "text": "LACUNA · ARQUIVO: comunidade / famílias / grupo antigo",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 100.05,
+   "end": 102.95,
+   "text": "LACUNA · TEATRO infantil (palco, corpo, interação)",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 108.05,
+   "end": 110.95,
+   "text": "LACUNA · FLAG infantil (preparação, corrida, flag retirada)",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 103.5,
+   "end": 112.5,
+   "text": "Futebol · Teatro · Música · Flag\\NMídias Digitais · Tênis de Mesa",
+   "style": "Sub",
+   "fade": 0.6,
+   "pos": ""
+  },
+  {
+   "start": 115.05,
+   "end": 121.95,
+   "text": "LACUNA · MÍDIAS DIGITAIS adolescentes",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 122.05,
+   "end": 129.95,
+   "text": "LACUNA · TEATRO adolescentes (obrigatório)",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 130.05,
+   "end": 136.95,
+   "text": "LACUNA · MÚSICA adolescentes",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 137.05,
+   "end": 144.95,
+   "text": "LACUNA · FUTEBOL adolescentes",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 116,
+   "end": 126,
+   "text": "PERGUNTA (condutor) PENDENTE\\N«Quando você encontra hoje um adulto que passou pelo Educando quando criança, o que espera perceber nele?»",
+   "style": "Dep",
+   "fade": 0.2,
+   "pos": ""
+  },
+  {
+   "start": 128.0,
+   "end": 136.0,
+   "text": "ÁUDIO DE ARQUIVO PENDENTE\\N«Era meio rebelde, o Ivan me colocava nos eixos.»",
+   "style": "Dep",
+   "fade": 0.2
+  },
+  {
+   "start": 145.1,
+   "end": 148.4,
+   "text": "PROVISÓRIO: treino infantil — substituir por competitivo",
+   "style": "Note",
+   "fade": 0.1
+  },
+  {
+   "start": 148.6,
+   "end": 151.4,
+   "text": "PROVISÓRIO: treino infantil — substituir por competitivo",
+   "style": "Note",
+   "fade": 0.1
+  },
+  {
+   "start": 151.6,
+   "end": 154.4,
+   "text": "PROVISÓRIO: treino infantil — substituir por competitivo",
+   "style": "Note",
+   "fade": 0.1
+  },
+  {
+   "start": 154.6,
+   "end": 157.4,
+   "text": "PROVISÓRIO: treino infantil — substituir por competitivo",
+   "style": "Note",
+   "fade": 0.1
+  },
+  {
+   "start": 157.6,
+   "end": 160.4,
+   "text": "PROVISÓRIO: treino infantil — substituir por competitivo",
+   "style": "Note",
+   "fade": 0.1
+  },
+  {
+   "start": 160.6,
+   "end": 163.4,
+   "text": "PROVISÓRIO: treino infantil — substituir por competitivo",
+   "style": "Note",
+   "fade": 0.1
+  },
+  {
+   "start": 163.55,
+   "end": 165.95,
+   "text": "LACUNA · FUTEBOL SUB-17 (atletas maduros, treinador)",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 166.05,
+   "end": 169.95,
+   "text": "LACUNA · FLAG COMPETITIVO",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 163.5,
+   "end": 169.5,
+   "text": "Sub-09 · Sub-11 · Sub-15 · Sub-17\\NFlag Competitivo",
+   "style": "Sub",
+   "fade": 0.6,
+   "pos": ""
+  },
+  {
+   "start": 173.05,
+   "end": 179.95,
+   "text": "LACUNA · VIOLÃO 50+ (mãos, cordas, sorriso ao conseguir)",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 180.1,
+   "end": 182.9,
+   "text": "PROVISÓRIO: inserto de mouse — substituir por 50+",
+   "style": "Note",
+   "fade": 0.1
+  },
+  {
+   "start": 183.05,
+   "end": 189.95,
+   "text": "LACUNA · INFORMÁTICA 50+ (tentativa, colega ajudando, resultado)",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 172.0,
+   "end": 178.0,
+   "text": "50+",
+   "style": "Big",
+   "fade": 0.8,
+   "pos": ""
+  },
+  {
+   "start": 190.05,
+   "end": 195.95,
+   "text": "LACUNA · TIAGO caminhando pelo Instituto",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 196.05,
+   "end": 201.95,
+   "text": "LACUNA · CRIS observando atividade",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 202.05,
+   "end": 207.95,
+   "text": "LACUNA · IVAN/Guardinha entre as crianças",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 208.05,
+   "end": 214.95,
+   "text": "LACUNA · ARQUIVO foto antiga → rosto atual → criança atual",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 190.5,
+   "end": 196.5,
+   "text": "ENTREVISTA PENDENTE\\N«TIAGO — Quando você olha para essas crianças, o que reconhece de você aqui?»",
+   "style": "Dep",
+   "fade": 0.2,
+   "pos": ""
+  },
+  {
+   "start": 197,
+   "end": 203,
+   "text": "ENTREVISTA PENDENTE\\N«CRIS — Quando uma criança sair definitivamente daqui e seguir a vida dela, o que você espera que ela leve?»",
+   "style": "Dep",
+   "fade": 0.2,
+   "pos": ""
+  },
+  {
+   "start": 203.5,
+   "end": 209.5,
+   "text": "ENTREVISTA PENDENTE\\N«IVAN — Depois de tantos anos, o que faz você continuar aqui?»",
+   "style": "Dep",
+   "fade": 0.2,
+   "pos": ""
+  },
+  {
+   "start": 218.05,
+   "end": 219.14999999999998,
+   "text": "LACUNA · 50+ aprendendo",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 220.75,
+   "end": 221.84999999999997,
+   "text": "LACUNA · TEATRO",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 224.95,
+   "end": 225.94999999999996,
+   "text": "LACUNA · FLAG",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 227.54999999999998,
+   "end": 228.94999999999996,
+   "text": "LACUNA · IVAN / CRIS / TIAGO + arquivo",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 235.09999999999997,
+   "end": 238.89999999999998,
+   "text": "PROVISÓRIO: chegada usada como saída",
+   "style": "Note",
+   "fade": 0.1
+  },
+  {
+   "start": 239.04999999999998,
+   "end": 241.94999999999996,
+   "text": "LACUNA · Adulto ex-integrante divide o quadro com a criança",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 246.54999999999998,
+   "end": 247.94999999999996,
+   "text": "LACUNA · Rostos: adolescente / 50+ / ex-integrante",
+   "style": "Gap",
+   "fade": 0.15
+  },
+  {
+   "start": 248.6,
+   "end": 251.0,
+   "text": "ÁUDIO DE ARQUIVO PENDENTE\\N«Você pode chegar onde você nem imagina.»",
+   "style": "Dep",
+   "fade": 0.2
+  },
+  {
+   "start": 252.0,
+   "end": 254.6,
+   "text": "INSTITUTO EDUCANDO PELO ESPORTE",
+   "style": "Title",
+   "fade": 0.6,
+   "pos": "{\\pos(960,500)}"
+  },
+  {
+   "start": 252.3,
+   "end": 254.6,
+   "text": "O QUE PODE EXISTIR DEPOIS DAQUI?",
+   "style": "Sub",
+   "fade": 0.6,
+   "pos": "{\\pos(960,590)}"
+  }
+ ],
+ "vo": [
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B1_01.wav",
+   "start": 3.2,
+   "db": 0,
+   "key": "B1_01"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B1_02.wav",
+   "start": 9.5,
+   "db": 0,
+   "key": "B1_02"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B2_01.wav",
+   "start": 26.0,
+   "db": 0,
+   "key": "B2_01"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B2_02.wav",
+   "start": 29.6,
+   "db": 0,
+   "key": "B2_02"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B2_03.wav",
+   "start": 32.2,
+   "db": 0,
+   "key": "B2_03"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B2_04.wav",
+   "start": 34.6,
+   "db": 0,
+   "key": "B2_04"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B3_01.wav",
+   "start": 56.0,
+   "db": 0,
+   "key": "B3_01"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B3_02.wav",
+   "start": 59.4,
+   "db": 0,
+   "key": "B3_02"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B3_03.wav",
+   "start": 66.8,
+   "db": 0,
+   "key": "B3_03"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B3_04.wav",
+   "start": 68.8,
+   "db": 0,
+   "key": "B3_04"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B3_05.wav",
+   "start": 71.0,
+   "db": 0,
+   "key": "B3_05"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B3_06.wav",
+   "start": 74.6,
+   "db": 0,
+   "key": "B3_06"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B4_01.wav",
+   "start": 81.0,
+   "db": 0,
+   "key": "B4_01"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B4_02.wav",
+   "start": 84.4,
+   "db": 0,
+   "key": "B4_02"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B4_03.wav",
+   "start": 91.6,
+   "db": 0,
+   "key": "B4_03"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B4_04.wav",
+   "start": 96.2,
+   "db": 0,
+   "key": "B4_04"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B6_01.wav",
+   "start": 146.0,
+   "db": 0,
+   "key": "B6_01"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B6_02.wav",
+   "start": 149.6,
+   "db": 0,
+   "key": "B6_02"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B6_03.wav",
+   "start": 152.0,
+   "db": 0,
+   "key": "B6_03"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B6_04.wav",
+   "start": 153.8,
+   "db": 0,
+   "key": "B6_04"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B6_05.wav",
+   "start": 155.6,
+   "db": 0,
+   "key": "B6_05"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B6_06.wav",
+   "start": 157.4,
+   "db": 0,
+   "key": "B6_06"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B6_07.wav",
+   "start": 159.0,
+   "db": 0,
+   "key": "B6_07"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B6_08.wav",
+   "start": 161.0,
+   "db": 0,
+   "key": "B6_08"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B7_01.wav",
+   "start": 171.0,
+   "db": 0,
+   "key": "B7_01"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B7_02.wav",
+   "start": 176.6,
+   "db": 0,
+   "key": "B7_02"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B9_01.wav",
+   "start": 216.0,
+   "db": 0,
+   "key": "B9_01"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B9_02.wav",
+   "start": 220.6,
+   "db": 0,
+   "key": "B9_02"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B9_03.wav",
+   "start": 225.8,
+   "db": 0,
+   "key": "B9_03"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B9_04.wav",
+   "start": 229.2,
+   "db": 0,
+   "key": "B9_04"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B10_01.wav",
+   "start": 236.0,
+   "db": 0,
+   "key": "B10_01"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B10_02.wav",
+   "start": 240.8,
+   "db": 0,
+   "key": "B10_02"
+  },
+  {
+   "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/tts/vo/B10_03.wav",
+   "start": 245.6,
+   "db": 0,
+   "key": "B10_03"
+  }
+ ],
+ "markers": [
+  {
+   "t": 16.5,
+   "dur": 2.0,
+   "name": "LACUNA: P06 TEATRO (ação teatral real)"
+  },
+  {
+   "t": 21.5,
+   "dur": 1.5,
+   "name": "LACUNA: P09 FLAG presa à cintura"
+  },
+  {
+   "t": 37.5,
+   "dur": 3.0,
+   "name": "LACUNA: TEATRO infantil (expressão, interação, riso)"
+  },
+  {
+   "t": 45.5,
+   "dur": 2.5,
+   "name": "LACUNA: FLAG infantil (flag na cintura, corrida, retirada)"
+  },
+  {
+   "t": 40.0,
+   "dur": 12.0,
+   "name": "DEPOIMENTO PENDENTE: Aqui foi a nossa segunda casa. A gente aprendeu com as amizades, com os professores, a ser pessoas melhores..."
+  },
+  {
+   "t": 55.0,
+   "dur": 4.0,
+   "name": "LACUNA: ARQUIVO 1997: campo, primeiros times"
+  },
+  {
+   "t": 63.0,
+   "dur": 3.5,
+   "name": "LACUNA: ARQUIVO: uniformes antigos / campeonatos"
+  },
+  {
+   "t": 70.5,
+   "dur": 3.5,
+   "name": "LACUNA: ARQUIVO: comunidade / famílias / grupo antigo"
+  },
+  {
+   "t": 100.0,
+   "dur": 3.0,
+   "name": "LACUNA: TEATRO infantil (palco, corpo, interação)"
+  },
+  {
+   "t": 108.0,
+   "dur": 3.0,
+   "name": "LACUNA: FLAG infantil (preparação, corrida, flag retirada)"
+  },
+  {
+   "t": 115.0,
+   "dur": 7.0,
+   "name": "LACUNA: MÍDIAS DIGITAIS adolescentes"
+  },
+  {
+   "t": 122.0,
+   "dur": 8.0,
+   "name": "LACUNA: TEATRO adolescentes (obrigatório)"
+  },
+  {
+   "t": 130.0,
+   "dur": 7.0,
+   "name": "LACUNA: MÚSICA adolescentes"
+  },
+  {
+   "t": 137.0,
+   "dur": 8.0,
+   "name": "LACUNA: FUTEBOL adolescentes"
+  },
+  {
+   "t": 116,
+   "dur": 10,
+   "name": "PERGUNTA CONDUTOR PENDENTE"
+  },
+  {
+   "t": 128.0,
+   "dur": 8.0,
+   "name": "DEPOIMENTO PENDENTE: Era meio rebelde, o Ivan me colocava nos eixos."
+  },
+  {
+   "t": 163.5,
+   "dur": 2.5,
+   "name": "LACUNA: FUTEBOL SUB-17 (atletas maduros, treinador)"
+  },
+  {
+   "t": 166.0,
+   "dur": 4.0,
+   "name": "LACUNA: FLAG COMPETITIVO"
+  },
+  {
+   "t": 173.0,
+   "dur": 7.0,
+   "name": "LACUNA: VIOLÃO 50+ (mãos, cordas, sorriso ao conseguir)"
+  },
+  {
+   "t": 183.0,
+   "dur": 7.0,
+   "name": "LACUNA: INFORMÁTICA 50+ (tentativa, colega ajudando, resultado)"
+  },
+  {
+   "t": 190.0,
+   "dur": 6.0,
+   "name": "LACUNA: TIAGO caminhando pelo Instituto"
+  },
+  {
+   "t": 196.0,
+   "dur": 6.0,
+   "name": "LACUNA: CRIS observando atividade"
+  },
+  {
+   "t": 202.0,
+   "dur": 6.0,
+   "name": "LACUNA: IVAN/Guardinha entre as crianças"
+  },
+  {
+   "t": 208.0,
+   "dur": 7.0,
+   "name": "LACUNA: ARQUIVO foto antiga → rosto atual → criança atual"
+  },
+  {
+   "t": 190.5,
+   "dur": 6.0,
+   "name": "ENTREVISTA PENDENTE: TIAGO — Quando você olha para essas cria"
+  },
+  {
+   "t": 197,
+   "dur": 6,
+   "name": "ENTREVISTA PENDENTE: CRIS — Quando uma criança sair definitiv"
+  },
+  {
+   "t": 203.5,
+   "dur": 6.0,
+   "name": "ENTREVISTA PENDENTE: IVAN — Depois de tantos anos, o que faz "
+  },
+  {
+   "t": 218.0,
+   "dur": 1.2,
+   "name": "LACUNA: 50+ aprendendo"
+  },
+  {
+   "t": 220.7,
+   "dur": 1.2,
+   "name": "LACUNA: TEATRO"
+  },
+  {
+   "t": 224.89999999999998,
+   "dur": 1.1,
+   "name": "LACUNA: FLAG"
+  },
+  {
+   "t": 227.49999999999997,
+   "dur": 1.5,
+   "name": "LACUNA: IVAN / CRIS / TIAGO + arquivo"
+  },
+  {
+   "t": 238.99999999999997,
+   "dur": 3.0,
+   "name": "LACUNA: Adulto ex-integrante divide o quadro com a criança"
+  },
+  {
+   "t": 246.49999999999997,
+   "dur": 1.5,
+   "name": "LACUNA: Rostos: adolescente / 50+ / ex-integrante"
+  },
+  {
+   "t": 248.6,
+   "dur": 2.4000000000000057,
+   "name": "DEPOIMENTO PENDENTE: Você pode chegar onde você nem imagina."
+  }
+ ],
+ "music": {
+  "path": "/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad/music/bed_dreamer.wav",
+  "start": 19.0,
+  "src_in": 0,
+  "keys": [
+   [
+    19,
+    -38
+   ],
+   [
+    25,
+    -22
+   ],
+   [
+    110,
+    -21
+   ],
+   [
+    115,
+    -19
+   ],
+   [
+    145,
+    -15
+   ],
+   [
+    168,
+    -15
+   ],
+   [
+    171,
+    -25
+   ],
+   [
+    190,
+    -22
+   ],
+   [
+    215,
+    -17
+   ],
+   [
+    247,
+    -17
+   ],
+   [
+    255,
+    -45
+   ]
+  ]
+ },
+ "watermark": "OFFLINE · baixa resolução · LOCUÇÃO-GUIA SINTÉTICA (gravação definitiva pendente) · trilha provisória",
+ "fade_in": 0,
+ "fade_out": 1.2,
+ "crf": 22
+}

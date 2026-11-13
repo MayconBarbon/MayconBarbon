@@ -55,15 +55,15 @@ def ext_audio(idx,path,start,d,name,db=0):
     return f'<clipitem id="x{idx}"><name>{escape(name)}</name>{rate(TB)}<start>{st}</start><end>{st+n}</end><in>0</in><out>{n}</out><file id="xf{idx}"><name>{escape(name)}</name><pathurl>{url}</pathurl>{rate(TB)}<duration>{n}</duration><media><audio><channelcount>1</channelcount></audio></media></file><filter><effect><name>Audio Levels</name><effectid>audiolevels</effectid><effectcategory>audiolevels</effectcategory><effecttype>audiolevels</effecttype><mediatype>audio</mediatype><parameter><parameterid>level</parameterid><name>Level</name><value>{10**(db/20):.3f}</value></parameter></effect></filter></clipitem>'
 vo=[]
 for j,v in enumerate(edl.get("vo",[])):
-    rel=f"{ROOT}/projeto/claude_montagem/locucao_guia/{os.path.basename(v['path'])}"
+    rel=f"{ROOT}/projeto/claude_montagem/locucao_guia/GUIA_{os.path.basename(v['path'])}"
     dd=float(os.popen(f"ffprobe -v error -show_entries format=duration -of csv=p=0 '{v['path']}'").read())
     vo.append(ext_audio(j,rel,v["start"],dd,"GUIA "+os.path.basename(v["path"]),v.get("db",0)))
 mus=[]
 m=edl.get("music")
 if m:
-    rel=f"{ROOT}/projeto/claude_montagem/trilha/{os.path.basename(m['path'])}"
+    rel=f"{ROOT}/projeto/claude_montagem/trilha/{os.path.basename(m['path']).replace('.wav','.mp3')}"
     mus.append(ext_audio(900,rel,m.get("start",0),TOTAL/ (30000/1001) - m.get("start",0),"TRILHA PROVISORIA "+os.path.basename(m["path"]),-12))
-markers="".join(f'<marker><name>{escape(x["text"])}</name><comment>{escape(x.get("comment",""))}</comment><in>{fr(x["t"])}</in><out>-1</out></marker>' for x in edl.get("markers",[]))
+markers="".join(f'<marker><name>{escape(x.get("text") or x.get("name",""))}</name><comment>{escape(x.get("comment",""))}</comment><in>{fr(x["t"])}</in><out>-1</out></marker>' for x in edl.get("markers",[]))
 def track(items): return "<track>"+"".join(items)+"</track>"
 xml=f'''<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xmeml>
