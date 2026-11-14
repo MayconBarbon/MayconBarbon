@@ -1,5 +1,5 @@
 # Educando pelo Esporte — "O que pode existir depois daqui?"
-## Status da curadoria e montagem (atualizado em 13/11/2026)
+## Status da curadoria e montagem (atualizado em 14/11/2026)
 
 ### Fonte do material
 Pasta do Drive **INSTITUCIONAL EDUCANDO PELO ESPORTE - DOC.ME** (compartilhada por link), com 441 clipes Sony FX3 (4K HEVC 59,94p, ~89,7 GB):
@@ -7,10 +7,11 @@ Pasta do Drive **INSTITUCIONAL EDUCANDO PELO ESPORTE - DOC.ME** (compartilhada p
 | Pasta | Dia | Clipes | Faixa | Analisados |
 |---|---|---|---|---|
 | 27.08 | Dia 1 | 86 | C0599–C0684 | 86 (100%) |
-| 08.09 | Dia 2 | 164 | C1669–C1832 | 134 (C1802–C1811 e C1813–C1832 bloqueados) |
-| 09.09 | Dia 3 | 191 | C1940–C2130 | 0 (bloqueado) |
+| 08.09 | Dia 2 | 164 | C1669–C1832 | 164 (100%) |
+| 09.09 | Dia 3 | 191 | C1940–C2130 | 191 (100%) |
 
-**Impedimento atual:** depois de ~55 GB baixados, o Google Drive passou a responder *"Quota exceeded"* para downloads anônimos. Não contornei o limite. A análise continua quando a cota for liberada (em geral, em até 24 h).
+**Análise completa:** os 441 clipes foram vistos (quadros-chave) e transcritos.
+**Impedimento atual:** o Google Drive volta a responder *"Quota exceeded"* depois de dezenas de GB baixados. Não contornei o limite. Ainda faltam 28 planos do Corte 2 em resolução cheia; eles serão renderizados quando a cota liberar.
 
 Nenhum arquivo original foi modificado. Os clipes foram baixados temporariamente, analisados (quadros-chave + áudio) e apagados.
 
@@ -26,17 +27,33 @@ Nenhum arquivo original foi modificado. Os clipes foram baixados temporariamente
 **Dia 2 (08.09)**
 - Tênis de mesa infantil (C1669–C1723, C1780–C1812).
 - Mídias digitais: aula de animação em tablets e informática (C1724–C1779).
+- Final e premiação do torneio de tênis de mesa (C1802–C1825); meninas desenhando em tablets (C1826–C1832).
 
-### Lacunas até agora (dependem do Dia 3 ou de material extra)
-- Teatro (infantil e adolescente — obrigatório), flag, música adolescente, futebol adolescente.
+**Dia 3 (09.09)**
+- **Violão 50+** (C1940–C1970), com o professor corrigindo a mão do aluno e sorrisos ao conseguir.
+- **Inclusão digital 50+** (C1973–C2024). A aula é de **celular**, não de computador; falta confirmar se atende a "informática 50+".
+- Roda de conversa de adolescentes (C2025–C2035).
+- **Música adolescente**: violão, trompete e saxofones (C2036–C2065).
+- Stop motion em tablets com pré-adolescentes (C2066–C2089) e laboratório de informática (C2090–C2130).
+
+### Lacunas (não existem em nenhum dos 3 dias)
+- **Teatro** infantil e adolescente (obrigatório pelo roteiro), **flag** infantil, **futebol adolescente**.
 - Competitivo Sub-09 / Sub-11 / Sub-15 / Sub-17 e flag competitivo.
-- Violão 50+ e informática 50+.
-- Entrevistas de Tiago, Cris e Ivan; depoimentos "Aqui foi a nossa segunda casa…", "Era meio rebelde, o Ivan me colocava nos eixos", "Você pode chegar onde você nem imagina".
+- Saída da criança-personagem no fim do dia; adulto ex-integrante dividindo o quadro com ela; plano geral da fachada.
+- Entrevistas de Tiago, Cris e Ivan (nenhuma entrevista com adultos no material); depoimentos "Aqui foi a nossa segunda casa…", "Era meio rebelde, o Ivan me colocava nos eixos", "Você pode chegar onde você nem imagina".
 - **Arquivo histórico desde 1997** (fotos antigas): não existe nas pastas do Drive.
 - **Locução definitiva:** não existe. Há uma faixa-guia sintética (`locucao_guia/`), marcada como GUIA, com o texto do roteiro sem alterações.
 
 ### Trilha provisória
 "Dreamer" — Kevin MacLeod (incompetech.com), licença Creative Commons BY 4.0. Exige crédito: *"Dreamer" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License*. Deve ser trocada pela trilha definitiva licenciada pela Doc.Me.
+
+### Corte 2 (14/11/2026) — versão atual
+`montagem/Educando_corte2_review.mp4` (4:15, 1080p, H.264). Inclui o Dia 3: violão 50+, aula de celular 50+, mídias digitais e música adolescentes.
+- 43 planos são **renderizados dos originais 4K**, com correção de cor uniforme.
+- 28 planos ainda são **offline** (baixa resolução) e têm a marca vermelha "OFFLINE" no canto superior esquerdo. O Drive bloqueou antes do fim; eles serão trocados quando a cota liberar.
+- No bloco do competitivo, dois planos da final e da premiação do torneio de tênis de mesa entraram como **SUGESTÃO**. Não estão no roteiro e dependem da sua aprovação.
+- `montagem/corte2_premiere.xml`: sequência do Corte 2 para o Premiere, inclusive com os clipes do Dia 3.
+- `montagem/RELATORIO.md`: 66 cenas utilizadas, 5 provisórias, 2 sugestões e 28 pendentes.
 
 ### Corte 1 — OFFLINE (13/11/2026)
 `montagem/Educando_corte1_OFFLINE.mp4` (4:15, 1080p, H.264). É um **animatic de baixa resolução**: com o Drive bloqueado, foi montado a partir dos quadros-chave da análise (~1 quadro/s, ampliados), não dos originais 4K. Ele serve para aprovar estrutura, ordem, tempos e escolha de planos. **Não é a versão de entrega.**

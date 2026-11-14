@@ -22,6 +22,10 @@ for (day,clip),shots in sorted(by_clip.items()):
         for t in range(4):
             subprocess.run(["curl","-sS","-L","--retry","3","-o",src,f"https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t"])
             if os.path.getsize(src)==size: break
+            if b"Quota exceeded" in open(src,"rb").read(3000):
+                os.remove(src); print("QUOTA",day,clip,flush=True); sys.exit(3)
+        if os.path.getsize(src)!=size:
+            print("FAIL",day,clip,flush=True); os.remove(src); continue
     for sh in todo:
         sp=sh.get("speed",1.0); srcdur=sh["dur"]*sp
         vf=f"setpts=PTS/{sp}," if sp!=1 else ""

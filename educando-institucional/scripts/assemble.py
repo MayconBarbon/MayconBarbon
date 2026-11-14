@@ -21,6 +21,7 @@ ass=["[Script Info]","ScriptType: v4.00+","PlayResX: 1920","PlayResY: 1080","",
 "Style: Gap,DejaVu Sans,40,&H0000D7FF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,1,0,1,0,0,5,120,120,80,1",
 "Style: Note,DejaVu Sans,26,&H0000D7FF,&H00FFFFFF,&H00000000,&HA0000000,0,0,0,0,100,100,0,0,3,4,0,1,30,30,24,1",
 "Style: Dep,DejaVu Sans,36,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0101010,0,1,0,0,100,100,0,0,3,10,0,2,200,200,170,1",
+"Style: Off,DejaVu Sans,22,&H000000FF,&H00FFFFFF,&H00000000,&HA0000000,1,0,0,0,100,100,0,0,3,4,0,7,30,30,24,1",
 "Style: Guide,DejaVu Sans,26,&H0000D7FF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,3,4,0,9,30,30,24,1","",
 "[Events]","Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
 for x in edl.get("texts",[]):

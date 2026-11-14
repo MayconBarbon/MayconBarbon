@@ -9,7 +9,7 @@ for sh in edl["shots"]:
     if sh.get("type","clip")!="clip": continue
     P=f"{S}/proc/{sh['day']}/{sh['clip']}"; out=f"{S}/render/seg/{sh['id']}.mov"
     key=json.dumps(["off",sh['day'],sh['clip'],sh['in'],sh['dur'],sh.get('speed',1),sh.get('vf','')])
-    if os.path.exists(out+".key") and open(out+".key").read()==key: continue
+    if os.path.exists(out+".key") and (open(out+".key").read()==key or os.environ.get("KEEP")): continue
     sp=sh.get("speed",1.0); srcdur=sh["dur"]*sp
     dur=float(json.load(open(P+"/probe.json"))["format"]["duration"])
     post=f"scale=1920:1080:flags=bicubic,{GRADE}"+(","+sh["vf"] if sh.get("vf") else "")

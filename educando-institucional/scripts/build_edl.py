@@ -2,22 +2,23 @@
 import json, csv
 S="/tmp/claude-0/-home-user-MayconBarbon/99707c74-1abd-56d4-a68a-c149be73686e/scratchpad"
 cat={}
-for d in ("D1","D2"):
-    for r in csv.reader(open(f"{S}/catalog_{d}.tsv"),delimiter="\t"):
+for d,f in (("D1","D1"),("D2","D2"),("D2","D2_extra"),("D3","D3")):
+    for r in csv.reader(open(f"{S}/catalog_{f}.tsv"),delimiter="\t"):
         cat[r[0]]=(d,r)
+DAYN={"D1":"Dia 1 – 27.08","D2":"Dia 2 – 08.09","D3":"Dia 3 – 09.09"}
 def bw(c):
     a,b=cat[c][1][6].split("-"); return float(a),float(b)
 MUTE={f"C06{n:02d}" for n in range(5,15)}  # takes dirigidos (voz da direção no áudio)
 shots=[]; texts=[]; vo=[]; markers=[]; table=[]
 t=0.0
-def clip(block,c,dur,off=0.0,speed=1.0,note="",scene=""):
+def clip(block,c,dur,off=0.0,speed=1.0,note="",scene="",status=""):
     global t
     d,_=cat[c]; a,b=bw(c); i=min(a+off, max(a,b-dur*speed))
     sid=f"s{len(shots):03d}"
     shots.append(dict(id=sid,type="clip",day=d,clip=c,**{"in":round(i,2)},dur=dur,speed=speed,block=block,
         audio="mute" if c in MUTE else "amb",amb_db=-90 if c in MUTE else -18,note=note))
     if note: texts.append(dict(start=t+0.1,end=t+dur-0.1,text=note,style="Note",fade=0.1))
-    table.append((block,scene,f"fx3 gabriel{c[1:]}.MP4 ({'Dia 1 – 27.08' if d=='D1' else 'Dia 2 – 08.09'}) {i:.1f}s+{dur*speed:.1f}s","Material bruto do Instituto","PROVISÓRIO – substituir" if note else "Utilizado"))
+    table.append((block,scene,f"fx3 gabriel{c[1:]}.MP4 ({DAYN[d]}) {i:.1f}s+{dur*speed:.1f}s","Material bruto do Instituto",status or ("PROVISÓRIO – substituir" if note else "Utilizado")))
     t+=dur
 def gap(block,label,dur,scene=None):
     global t
@@ -94,10 +95,15 @@ V("B4_01",81.0); V("B4_02",84.4); V("B4_03",91.6); V("B4_04",96.2)
 T(103.5,112.5,"Futebol · Teatro · Música · Flag\\NMídias Digitais · Tênis de Mesa","Sub",0.6)
 # ---------- B5 1:55–2:25
 cur=B="B5 1:55–2:25 Adolescer também é descobrir"
-gap(B,"MÍDIAS DIGITAIS adolescentes",7.0)
-gap(B,"TEATRO adolescentes (obrigatório)",8.0)
-gap(B,"MÚSICA adolescentes",7.0)
-gap(B,"FUTEBOL adolescentes",8.0)
+clip(B,"C2075",3.0,scene="MÍDIAS DIGITAIS adolescentes: professor em segundo plano")
+clip(B,"C2081",3.0,scene="MÍDIAS DIGITAIS adolescentes: troca entre alunos")
+clip(B,"C2089",2.5,scene="MÍDIAS DIGITAIS adolescentes: autonomia")
+clip(B,"C2124",3.0,off=4,scene="MÍDIAS DIGITAIS adolescentes: decisão/criação")
+gap(B,"TEATRO adolescentes (obrigatório)",6.0)
+clip(B,"C2039",3.0,off=4,scene="MÚSICA adolescentes: execução conjunta")
+clip(B,"C2045",2.5,scene="MÚSICA adolescentes: professor / repetição")
+clip(B,"C2058",3.0,off=1,scene="MÚSICA adolescentes: ensaio sopros")
+gap(B,"FUTEBOL adolescentes",4.0)
 T(116,126,"PERGUNTA (condutor) PENDENTE\\N«Quando você encontra hoje um adulto que passou pelo Educando quando criança, o que espera perceber nele?»","Dep",0.2)
 markers.append(dict(t=116,dur=10,name="PERGUNTA CONDUTOR PENDENTE"))
 table.append((B,"Áudio pergunta do condutor","—","—","PENDENTE (áudio não encontrado)"))
@@ -109,18 +115,23 @@ clip(B,"C0670",3.5,off=14,note=P,scene="FUTEBOL SUB-09")
 clip(B,"C0671",3.0,off=10,note=P,scene="FUTEBOL SUB-11")
 clip(B,"C0673",3.0,note=P,scene="FUTEBOL SUB-11 disputa")
 clip(B,"C0674",3.0,off=12,note=P,scene="FUTEBOL SUB-15")
-clip(B,"C0675",3.0,off=3,note=P,scene="FUTEBOL SUB-15 intensidade")
-clip(B,"C0672",3.0,off=4,note=P,scene="FUTEBOL SUB-17")
+clip(B,"C1819",3.0,off=6,note="SUGESTÃO: final do torneio de tênis de mesa (fora do roteiro)",scene="Competir/ganhar — final tênis de mesa",status="SUGESTÃO – aprovar")
+clip(B,"C1822",3.0,off=14,note="SUGESTÃO: premiação do torneio de tênis de mesa (fora do roteiro)",scene="Ganhar — premiação tênis de mesa",status="SUGESTÃO – aprovar")
 gap(B,"FUTEBOL SUB-17 (atletas maduros, treinador)",2.5)
 gap(B,"FLAG COMPETITIVO",4.0)
 V("B6_01",146.0); V("B6_02",149.6); V("B6_03",152.0); V("B6_04",153.8); V("B6_05",155.6); V("B6_06",157.4); V("B6_07",159.0); V("B6_08",161.0)
 T(163.5,169.5,"Sub-09 · Sub-11 · Sub-15 · Sub-17\\NFlag Competitivo","Sub",0.6)
 # ---------- B7 2:50–3:10 (roteiro: 2:48–3:10)
 cur=B="B7 2:50–3:10 Aprender não tem idade"
-clip(B,"C0624",3.0,scene="VIOLÃO inserto (instrumentos da sala)")
-gap(B,"VIOLÃO 50+ (mãos, cordas, sorriso ao conseguir)",7.0)
-clip(B,"C1777",3.0,note="PROVISÓRIO: inserto de mouse — substituir por 50+",scene="INFORMÁTICA mouse/tela")
-gap(B,"INFORMÁTICA 50+ (tentativa, colega ajudando, resultado)",7.0)
+clip(B,"C1951",2.5,scene="VIOLÃO 50+ plano conjunto")
+clip(B,"C1966",3.5,off=1,scene="VIOLÃO 50+ professor corrige a mão")
+clip(B,"C1943",2.0,scene="VIOLÃO 50+ dedos nas cordas")
+clip(B,"C1967",2.5,off=2,scene="VIOLÃO 50+ sorriso ao conseguir")
+ST="Utilizado – aula de celular (inclusão digital); confirmar se atende 'informática 50+'"
+clip(B,"C1996",2.5,off=3,scene="INFORMÁTICA 50+ professor explicando",status=ST)
+clip(B,"C2014",2.0,scene="INFORMÁTICA 50+ tela / mãos",status=ST)
+clip(B,"C2000",2.5,off=4,scene="INFORMÁTICA 50+ orientação individual",status=ST)
+clip(B,"C2004",2.5,scene="INFORMÁTICA 50+ reação ao conseguir",status=ST)
 V("B7_01",171.0); V("B7_02",176.6)
 T(172.0,178.0,"50+","Big",0.8)
 # ---------- B8 3:10–3:35 (roteiro: 3:08–3:35)
@@ -137,8 +148,8 @@ for a,b,q in [(190.5,196.5,"TIAGO — Quando você olha para essas crianças, o 
 # ---------- B9 3:35–3:55
 cur=B="B9 3:35–3:55 O futuro não está escrito"
 clip(B,"C0638",1.5,off=14,scene="Montagem final: criança tocando")
-clip(B,"C1779",1.5,off=5,scene="Montagem: diante da tela")
-gap(B,"50+ aprendendo",1.2)
+clip(B,"C2124",1.5,off=12,scene="Montagem: adolescente diante da tela")
+clip(B,"C1962",1.2,off=3,scene="Montagem: 50+ aprendendo")
 clip(B,"C0671",1.5,off=18,scene="Montagem: correndo")
 gap(B,"TEATRO",1.2)
 clip(B,"C1812",1.5,off=4,scene="Montagem: tênis de mesa")
@@ -153,10 +164,11 @@ cur=B="B10 3:55–4:15 O que pode existir depois daqui?"
 clip(B,"C0613",4.0,off=4,scene="Criança encerra o dia, caminha (PROVISÓRIO: saída não filmada)",note="PROVISÓRIO: chegada usada como saída")
 gap(B,"Adulto ex-integrante divide o quadro com a criança",3.0)
 clip(B,"C0608",3.0,off=8,scene="Criança atravessa o portão")
-clip(B,"C0650",1.5,off=2,scene="Rosto: criança")
-gap(B,"Rostos: adolescente / 50+ / ex-integrante",1.5)
-clip(B,"C1724",1.5,off=25,scene="Rosto: educador")
-clip(B,"C0657",2.5,off=12,scene="Último plano: Instituto vivo (plano geral)")
+clip(B,"C0650",1.2,off=2,scene="Rosto: criança")
+clip(B,"C2054",1.2,scene="Rosto: adolescente")
+clip(B,"C1944",1.2,scene="Rosto: 50+")
+clip(B,"C1724",1.2,off=25,scene="Rosto: educador")
+clip(B,"C0657",2.2,off=12,scene="Último plano: Instituto vivo (plano geral; fachada não filmada)")
 shots.append(dict(id=f"s{len(shots):03d}",type="black",dur=3.0,block=B)); 
 table.append((B,"Tela final","—","—","Utilizado (gerada)")); t+=3.0
 V("B10_01",236.0); V("B10_02",240.8); V("B10_03",245.6)
@@ -168,7 +180,7 @@ edl=dict(shots=shots,texts=texts,vo=vo,markers=markers,
   music=dict(path=f"{S}/music/bed_dreamer.wav",start=19.0,src_in=0,keys=[[19,-38],[25,-22],[110,-21],[115,-19],[145,-15],[168,-15],[171,-25],[190,-22],[215,-17],[247,-17],[255,-45]]),
   watermark="OFFLINE · baixa resolução · LOCUÇÃO-GUIA SINTÉTICA (gravação definitiva pendente) · trilha provisória",
   fade_in=0,fade_out=1.2,crf=22)
-json.dump(edl,open(f"{S}/edl/corte1.json","w"),ensure_ascii=False,indent=1)
-with open(f"{S}/edl/relatorio.tsv","w") as f:
+json.dump(edl,open(f"{S}/edl/corte2.json","w"),ensure_ascii=False,indent=1)
+with open(f"{S}/edl/relatorio2.tsv","w") as f:
     f.write("Bloco\tCena solicitada\tArquivo utilizado\tOrigem\tSituação\n")
     for r in table: f.write("\t".join(r)+"\n")
