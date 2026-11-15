@@ -1,5 +1,5 @@
 # Educando pelo Esporte — "O que pode existir depois daqui?"
-## Status da curadoria e montagem (atualizado em 14/11/2026)
+## Status da curadoria e montagem (atualizado em 15/11/2026)
 
 ### Fonte do material
 Pasta do Drive **INSTITUCIONAL EDUCANDO PELO ESPORTE - DOC.ME** (compartilhada por link), com 441 clipes Sony FX3 (4K HEVC 59,94p, ~89,7 GB):
@@ -11,7 +11,7 @@ Pasta do Drive **INSTITUCIONAL EDUCANDO PELO ESPORTE - DOC.ME** (compartilhada p
 | 09.09 | Dia 3 | 191 | C1940–C2130 | 191 (100%) |
 
 **Análise completa:** os 441 clipes foram vistos (quadros-chave) e transcritos.
-**Impedimento atual:** o Google Drive volta a responder *"Quota exceeded"* depois de dezenas de GB baixados. Não contornei o limite. Ainda faltam 28 planos do Corte 2 em resolução cheia; eles serão renderizados quando a cota liberar.
+**Downloads:** concluídos. Todos os planos do Corte 2 estão renderizados em 4K.
 
 Nenhum arquivo original foi modificado. Os clipes foram baixados temporariamente, analisados (quadros-chave + áudio) e apagados.
 
@@ -49,8 +49,7 @@ Nenhum arquivo original foi modificado. Os clipes foram baixados temporariamente
 
 ### Corte 2 (14/11/2026) — versão atual
 `montagem/Educando_corte2_review.mp4` (4:15, 1080p, H.264). Inclui o Dia 3: violão 50+, aula de celular 50+, mídias digitais e música adolescentes.
-- 43 planos são **renderizados dos originais 4K**, com correção de cor uniforme.
-- 28 planos ainda são **offline** (baixa resolução) e têm a marca vermelha "OFFLINE" no canto superior esquerdo. O Drive bloqueou antes do fim; eles serão trocados quando a cota liberar.
+- **Todos os planos foram renderizados dos originais 4K**, com correção de cor uniforme. O vídeo de revisão foi comprimido (CRF 26) para caber no GitHub.
 - No bloco do competitivo, dois planos da final e da premiação do torneio de tênis de mesa entraram como **SUGESTÃO**. Não estão no roteiro e dependem da sua aprovação.
 - `montagem/corte2_premiere.xml`: sequência do Corte 2 para o Premiere, inclusive com os clipes do Dia 3.
 - `montagem/RELATORIO.md`: 66 cenas utilizadas, 5 provisórias, 2 sugestões e 28 pendentes.
