@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Kit Corretor que Filma – Vídeo Imóvel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+:root{--navy:#0d1a2e;--navy2:#13223a;--acc:#13a89e;--acc2:#2cc6b8;--fg:#1d1d1f;--muted:#5d6472;--line:#dcdfe5;--band:#f2f4f7}
+body{margin:0;font:400 10.4pt/1.55 Inter,sans-serif;color:var(--fg);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3,h4{font-family:Manrope,sans-serif;letter-spacing:-.02em;margin:0;line-height:1.12}
+.page{width:210mm;height:297mm;padding:18mm 17mm 16mm;position:relative;overflow:hidden;page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto}
+.foot{position:absolute;left:17mm;right:17mm;bottom:9mm;display:flex;justify-content:space-between;font-size:7.8pt;color:#8a909c;border-top:1px solid var(--line);padding-top:3mm}
+.eb{font:700 8pt Manrope;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin:0 0 3mm}
+h2{font-size:22pt;margin-bottom:3mm}
+h3{font-size:12.5pt;margin:5mm 0 2mm}
+.lead{color:var(--muted);font-size:11pt;margin:0 0 6mm}
+p{margin:0 0 3mm}
+ul,ol{margin:0 0 3mm;padding-left:5mm}
+li{margin:0 0 1.3mm}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.card{border:1px solid var(--line);border-radius:4mm;padding:5mm;background:#fff;break-inside:avoid}
+.card h3{margin-top:0}
+.band{background:var(--band);border-radius:4mm;padding:5mm}
+.chk{list-style:none;padding:0}
+.chk li{padding-left:6.5mm;position:relative}
+.chk li::before{content:"";position:absolute;left:0;top:1.2mm;width:3.2mm;height:3.2mm;border:1.4px solid var(--acc);border-radius:1mm}
+.tip{border-left:3px solid var(--acc);padding:2mm 0 2mm 4mm;background:#eefaf8;border-radius:0 3mm 3mm 0;margin:4mm 0}
+.tip b{color:#0b7d75}
+.warn{border-left:3px solid #c8a96a;background:#faf6ee;padding:2mm 0 2mm 4mm;border-radius:0 3mm 3mm 0;margin:4mm 0}
+table{width:100%;border-collapse:collapse;font-size:9.4pt;break-inside:avoid}
+th{font:700 8pt Manrope;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;border-bottom:1.5px solid var(--fg);padding:2mm 2mm}
+td{border-bottom:1px solid var(--line);padding:2mm;vertical-align:top}
+td:first-child{white-space:nowrap;font-weight:600;color:var(--acc)}
+.num{display:inline-grid;place-items:center;width:6.5mm;height:6.5mm;border-radius:50%;background:var(--acc);color:#fff;font:800 9pt Manrope;margin-right:2mm}
+.ideas{columns:2;column-gap:7mm}
+.ideas h3{break-after:avoid}
+.ideas ol{counter-reset:none}
+.ideas li{break-inside:avoid}
+.tpl{font-family:Inter;background:var(--band);border-radius:3mm;padding:4mm;white-space:pre-wrap;font-size:9.3pt;margin:0 0 4mm;break-inside:avoid}
+/* capa */
+.cover{background:var(--navy);color:#f4f5f8;padding:0}
+.cover .img{height:150mm;background:url(cover.jpg) center/cover;position:relative}
+.cover .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,26,46,.1) 40%,var(--navy) 100%)}
+.cover .in{padding:0 17mm}
+.cover .brand{display:flex;align-items:center;gap:3mm;font:800 13pt Manrope;position:absolute;top:14mm;left:17mm;z-index:2;color:#fff}
+.cover .brand img{width:9mm}
+.cover h1{font-size:40pt;line-height:1.02;margin:-6mm 0 5mm;position:relative}
+.cover h1 span{color:var(--acc2)}
+.cover p{color:#a7b0c0;font-size:12.5pt;max-width:150mm}
+.cover .what{display:flex;gap:3mm;flex-wrap:wrap;margin-top:7mm}
+.cover .what span{border:1px solid rgba(244,245,248,.25);border-radius:99px;padding:1.6mm 4mm;font-size:9.5pt;color:#f4f5f8}
+.cover .ft{position:absolute;bottom:12mm;left:17mm;right:17mm;color:#a7b0c0;font-size:9pt;display:flex;justify-content:space-between}
+.toc{list-style:none;padding:0;margin:6mm 0 0}
+.toc li{display:flex;gap:4mm;align-items:baseline;border-bottom:1px solid var(--line);padding:3mm 0;font-size:11pt}
+.toc li b{font:800 11pt Manrope;color:var(--acc);width:9mm}
+.dark{background:var(--navy);color:#f4f5f8}
+.dark .lead,.dark p{color:#a7b0c0}
+.dark .foot{border-color:rgba(244,245,248,.15)}
+.big{font:800 30pt Manrope;color:var(--acc2)}
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<section class="page cover">
+  <div class="brand"><img src="logo-mark.png" alt="">Vídeo Imóvel</div>
+  <div class="img"></div>
+  <div class="in">
+    <h1>Kit Corretor<br><span>que Filma.</span></h1>
+    <p>Como gravar qualquer imóvel com o celular, na ordem certa e com a luz certa, para virar vídeo que segura quem está rolando o feed.</p>
+    <div class="what"><span>Roteiros por tipo de imóvel</span><span>Checklist de captação</span><span>3 estruturas de vídeo</span><span>30 ideias de vídeo</span><span>Modelos de legenda e WhatsApp</span></div>
+  </div>
+  <div class="ft"><span>videoimovel.com.br</span><span>Atendemos todo o Brasil · 8h às 20h</span></div>
+</section>
+
+<!-- SUMÁRIO -->
+<section class="page">
+  <p class="eb">Como usar este kit</p>
+  <h2>Grave uma vez. Use em tudo.</h2>
+  <p class="lead">Este kit é para quem quer começar a gravar os próprios imóveis com o celular. Siga a ordem: prepare o imóvel, confira a luz, grave as tomadas do roteiro e monte o vídeo com uma das estruturas. Se preferir não editar, mande o material para a Vídeo Imóvel.</p>
+  <ul class="toc">
+    <li><b>01</b>Equipamento e configuração do celular</li>
+    <li><b>02</b>Checklist de preparação do imóvel</li>
+    <li><b>03</b>Checklist de luz</li>
+    <li><b>04</b>Ângulos e movimentos que vendem</li>
+    <li><b>05</b>Roteiros de gravação por tipo de imóvel</li>
+    <li><b>06</b>3 estruturas de vídeo cronometradas</li>
+    <li><b>07</b>30 ideias de vídeo para corretores</li>
+    <li><b>08</b>Modelos de legenda e de WhatsApp</li>
+    <li><b>09</b>Como enviar o material para a Vídeo Imóvel</li>
+  </ul>
+  <div class="tip"><b>Regra de ouro:</b> mostre o imóvel como ele é. Corrigir luz e cor pode; esconder defeito, aumentar ambiente ou trocar a vista, não. Quem visita e encontra outro imóvel perde a confiança no anúncio e no corretor.</div>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>2</span></div>
+</section>
+
+<!-- 01 EQUIPAMENTO -->
+<section class="page">
+  <p class="eb">01 · Equipamento</p>
+  <h2>O celular que você tem já serve.</h2>
+  <p class="lead">O que faz diferença é a configuração e a firmeza da mão, não o modelo do aparelho.</p>
+  <div class="cols">
+    <div class="card">
+      <h3>Configure antes de sair</h3>
+      <ul class="chk">
+        <li>Vídeo em 1080p ou 4K, a 30 quadros por segundo.</li>
+        <li>Estabilização de vídeo ligada.</li>
+        <li>Lente principal (1x) ou grande-angular (0,5x) só em ambientes pequenos.</li>
+        <li>Grade da câmera ligada, para manter as linhas retas.</li>
+        <li>Modo avião ou "não perturbe" durante a gravação.</li>
+        <li>Pelo menos 10 GB livres e bateria acima de 70%.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Na hora de gravar</h3>
+      <ul class="chk">
+        <li>Limpe a lente com um pano macio.</li>
+        <li>Celular na <b>vertical</b> para Reels e Stories. Se o vídeo também for para portal, grave as tomadas principais de novo na horizontal.</li>
+        <li>Nada de zoom digital: chegue mais perto andando.</li>
+        <li>Toque na tela para travar foco e exposição no ambiente, não na janela.</li>
+        <li>Segure 2 segundos parado antes e depois de cada movimento.</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Opcional, mas ajuda</h3>
+  <table>
+    <tr><th>Acessório</th><th>Para quê</th></tr>
+    <tr><td>Estabilizador (gimbal)</td><td>Movimentos lisos ao andar pelo imóvel.</td></tr>
+    <tr><td>Tripé pequeno</td><td>Tomadas paradas de fachada, vista e detalhes.</td></tr>
+    <tr><td>Microfone de lapela</td><td>Só se você for falar para a câmera.</td></tr>
+  </table>
+  <div class="tip"><b>Sem gimbal?</b> Segure o celular com as duas mãos, cotovelos colados ao corpo, e ande devagar dobrando levemente os joelhos. Movimento lento sempre parece mais profissional.</div>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>3</span></div>
+</section>
+
+<!-- 02 PREPARAÇÃO + 03 LUZ -->
+<section class="page">
+  <p class="eb">02 · Preparação do imóvel</p>
+  <h2>Antes de apertar o botão.</h2>
+  <p class="lead">Quinze minutos de arrumação valem mais do que qualquer edição. Combine com o proprietário o que pode aparecer.</p>
+  <div class="cols">
+    <div class="card">
+      <h3>Em todos os ambientes</h3>
+      <ul class="chk">
+        <li>Abra todas as cortinas e persianas.</li>
+        <li>Acenda todas as luzes, inclusive abajures e luz de armário.</li>
+        <li>Tire objetos pessoais: fotos de família, remédios, documentos, roupa no varal.</li>
+        <li>Bancadas de cozinha e banheiro livres.</li>
+        <li>Tampas de vaso abaixadas, toalhas dobradas.</li>
+        <li>Cabos e carregadores escondidos.</li>
+        <li>Animais de estimação fora da cena.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Áreas externas</h3>
+      <ul class="chk">
+        <li>Carros fora da garagem e da frente da casa.</li>
+        <li>Piscina limpa e com a capa retirada.</li>
+        <li>Gramado aparado, folhas varridas.</li>
+        <li>Lixeiras e mangueiras fora do enquadramento.</li>
+        <li>Placas e números de outras casas: evite mostrar.</li>
+        <li>Em condomínio: pergunte à administração o que pode ser gravado nas áreas comuns.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="eb" style="margin-top:8mm">03 · Luz</p>
+  <h2 style="font-size:18pt">A luz decide metade do vídeo.</h2>
+  <table>
+    <tr><th>Situação</th><th>O que fazer</th></tr>
+    <tr><td>Melhor horário</td><td>Entre 9h e 11h ou entre 14h e 16h, com sol suave. Fachada: grave quando o sol estiver atrás de você.</td></tr>
+    <tr><td>Dia nublado</td><td>Ótimo para interiores: a luz fica uniforme. Na fachada, evite mostrar muito céu branco.</td></tr>
+    <tr><td>Janela estourada</td><td>Grave do lado da janela, não de frente para ela. Trave a exposição tocando na parede.</td></tr>
+    <tr><td>Ambiente escuro</td><td>Acenda tudo e grave mais devagar. Não use o flash do celular.</td></tr>
+    <tr><td>Fim de tarde</td><td>Use para vista, varanda e área de lazer com a luz quente. Interior já fica escuro.</td></tr>
+    <tr><td>Mistura de luzes</td><td>Se a luz da casa for amarela e a da janela azul, priorize a natural e apague as lâmpadas frias.</td></tr>
+  </table>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>4</span></div>
+</section>
+
+<!-- 04 ÂNGULOS -->
+<section class="page">
+  <p class="eb">04 · Ângulos e movimentos</p>
+  <h2>Cinco movimentos resolvem qualquer imóvel.</h2>
+  <p class="lead">Grave cada tomada com 5 a 8 segundos. Vídeo bom é feito de várias tomadas curtas, não de um passeio sem corte.</p>
+  <table>
+    <tr><th>Movimento</th><th>Como fazer</th><th>Onde usar</th></tr>
+    <tr><td><span class="num">1</span>Entrada</td><td>Comece fora do ambiente e atravesse a porta andando devagar para a frente.</td><td>Porta de entrada, sala, suíte principal.</td></tr>
+    <tr><td><span class="num">2</span>Panorâmica</td><td>Parado, gire o corpo devagar da esquerda para a direita (ou ao contrário), sem mexer só o pulso.</td><td>Salas amplas, vista, área de lazer.</td></tr>
+    <tr><td><span class="num">3</span>Avanço</td><td>Ande em linha reta para a frente, mirando um ponto forte (janela, bancada, piscina).</td><td>Corredores, cozinha, varanda.</td></tr>
+    <tr><td><span class="num">4</span>Revelação</td><td>Comece com a câmera atrás de uma parede, pilar ou planta e deslize de lado até revelar o ambiente.</td><td>Abertura do vídeo, ambientes integrados.</td></tr>
+    <tr><td><span class="num">5</span>Detalhe</td><td>Celular parado e próximo: acabamento, metais, vista da janela, fechadura.</td><td>Cozinha, banheiro, pisos e revestimentos.</td></tr>
+  </table>
+  <div class="cols" style="margin-top:6mm">
+    <div class="card">
+      <h3>Altura e enquadramento</h3>
+      <ul class="chk">
+        <li>Câmera na altura do peito (cerca de 1,2 m), nem do olho nem da cintura.</li>
+        <li>Linhas verticais (portas, paredes) retas, não inclinadas.</li>
+        <li>Grave dos cantos do ambiente: mostra mais espaço sem distorcer.</li>
+        <li>Banheiro pequeno: um passo para fora da porta e lente 0,5x.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Erros mais comuns</h3>
+      <ul class="chk">
+        <li>Andar rápido demais (o vídeo fica tremido e ninguém entende o ambiente).</li>
+        <li>Câmera apontada para o chão ou para o teto.</li>
+        <li>Zoom digital, que estraga a nitidez.</li>
+        <li>Gravar o próprio reflexo em espelhos e vidros.</li>
+        <li>Pular ambientes e depois não ter a cena para montar.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>5</span></div>
+</section>
+
+<!-- 05 ROTEIROS 1 -->
+<section class="page">
+  <p class="eb">05 · Roteiros por tipo de imóvel</p>
+  <h2>Grave na ordem da visita.</h2>
+  <p class="lead">Siga a lista de cima para baixo. Assim, na edição, as cenas já estão na sequência em que o comprador conheceria o imóvel.</p>
+  <h3>Apartamento</h3>
+  <table>
+    <tr><th>Ordem</th><th>Tomada</th><th>Destaque</th></tr>
+    <tr><td>1</td><td>Fachada do prédio (parado) e portaria</td><td>Nome do condomínio, segurança</td></tr>
+    <tr><td>2</td><td>Entrada: porta abrindo e avanço até a sala</td><td>Primeira impressão</td></tr>
+    <tr><td>3</td><td>Sala: panorâmica a partir do canto</td><td>Tamanho e integração</td></tr>
+    <tr><td>4</td><td>Varanda: avanço até o parapeito + vista</td><td>Churrasqueira, vista, sol</td></tr>
+    <tr><td>5</td><td>Cozinha e área de serviço: avanço + detalhe</td><td>Armários, bancada</td></tr>
+    <tr><td>6</td><td>Quartos (um por um) e suíte por último</td><td>Armários, janela</td></tr>
+    <tr><td>7</td><td>Banheiros: detalhe de metais e box</td><td>Acabamento</td></tr>
+    <tr><td>8</td><td>Vagas e áreas comuns: piscina, academia, salão</td><td>Lazer do condomínio</td></tr>
+  </table>
+  <h3>Casa ou sobrado em condomínio</h3>
+  <table>
+    <tr><th>Ordem</th><th>Tomada</th><th>Destaque</th></tr>
+    <tr><td>1</td><td>Rua do condomínio chegando na casa (andando ou do carro parado)</td><td>Entorno, rua arborizada</td></tr>
+    <tr><td>2</td><td>Fachada parada, de frente e na diagonal</td><td>Arquitetura</td></tr>
+    <tr><td>3</td><td>Entrada social e sala (revelação)</td><td>Pé-direito, integração</td></tr>
+    <tr><td>4</td><td>Cozinha e espaço gourmet</td><td>Churrasqueira, ilha, forno</td></tr>
+    <tr><td>5</td><td>Área externa: panorâmica da piscina e do jardim</td><td>Lazer da casa</td></tr>
+    <tr><td>6</td><td>Escada subindo (se sobrado) e suítes</td><td>Sacadas, closet</td></tr>
+    <tr><td>7</td><td>Diferenciais: escritório, home theater, adega</td><td>O que nenhum vizinho tem</td></tr>
+    <tr><td>8</td><td>Lazer do condomínio e portaria</td><td>Segurança e estrutura</td></tr>
+  </table>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>6</span></div>
+</section>
+
+<!-- 05 ROTEIROS 2 -->
+<section class="page">
+  <p class="eb">05 · Roteiros por tipo de imóvel</p>
+  <h3 style="margin-top:0">Chácara, sítio ou fazenda</h3>
+  <table>
+    <tr><th>Ordem</th><th>Tomada</th><th>Destaque</th></tr>
+    <tr><td>1</td><td>Porteira e estrada de acesso</td><td>Chegada, condição do acesso</td></tr>
+    <tr><td>2</td><td>Vista geral do ponto mais alto do terreno (panorâmica lenta)</td><td>Tamanho da área</td></tr>
+    <tr><td>3</td><td>Sede: fachada e varanda</td><td>Casa principal</td></tr>
+    <tr><td>4</td><td>Interior da sede na ordem da visita</td><td>Sala, cozinha, quartos</td></tr>
+    <tr><td>5</td><td>Lazer: piscina, área gourmet, campo</td><td>Fim de semana em família</td></tr>
+    <tr><td>6</td><td>Água: lago, rio, nascente, poço</td><td>Grande diferencial rural</td></tr>
+    <tr><td>7</td><td>Pomar, pasto, benfeitorias, casa de caseiro</td><td>Estrutura produtiva</td></tr>
+    <tr><td>8</td><td>Fim de tarde na varanda ou na vista</td><td>Fechamento emocional</td></tr>
+  </table>
+  <div class="warn"><b>Área e divisas:</b> o vídeo apresenta a propriedade, mas não mede. No anúncio, use a área da matrícula ou do georreferenciamento. Para imagens aéreas, contrate piloto de drone habilitado.</div>
+  <h3>Imóvel comercial</h3>
+  <table>
+    <tr><th>Ordem</th><th>Tomada</th><th>Destaque</th></tr>
+    <tr><td>1</td><td>Rua e calçada mostrando o movimento</td><td>Localização e visibilidade</td></tr>
+    <tr><td>2</td><td>Fachada e entrada</td><td>Vitrine, acesso</td></tr>
+    <tr><td>3</td><td>Salão principal: panorâmica</td><td>Área útil, pé-direito</td></tr>
+    <tr><td>4</td><td>Salas, banheiros, copa</td><td>Divisão interna</td></tr>
+    <tr><td>5</td><td>Estacionamento, carga e descarga, fundos</td><td>Operação do negócio</td></tr>
+  </table>
+  <h3>Temporada e lançamento</h3>
+  <ul class="chk">
+    <li><b>Temporada:</b> a primeira cena é a que decide a reserva. Abra com a piscina, a vista ou a varanda, e mostre camas arrumadas e mesa posta.</li>
+    <li><b>Lançamento ou imóvel em obra:</b> se usar imagens de projeto 3D ou do decorado, avise na tela "imagem ilustrativa". Grave o estande, a obra e o entorno reais.</li>
+  </ul>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>7</span></div>
+</section>
+
+<!-- 06 ESTRUTURAS -->
+<section class="page">
+  <p class="eb">06 · Estruturas de vídeo</p>
+  <h2>Três tempos, três objetivos.</h2>
+  <p class="lead">Use as estruturas como molde no editor que você preferir. O texto na tela vem dos dados do anúncio: nunca invente medida ou preço.</p>
+  <h3>Reels de 15 s · chamar atenção</h3>
+  <table>
+    <tr><th>Tempo</th><th>Cena</th><th>Texto na tela</th></tr>
+    <tr><td>0–2 s</td><td>Melhor cena do imóvel (vista, piscina, sala)</td><td>Gancho: "3 quartos e 2 vagas por R$ ___"</td></tr>
+    <tr><td>2–11 s</td><td>4 cenas de 2 s: sala, cozinha, suíte, lazer</td><td>Uma palavra por cena</td></tr>
+    <tr><td>11–15 s</td><td>Card final</td><td>Código · bairro · "Chame no WhatsApp"</td></tr>
+  </table>
+  <h3>Reels de 30 s · apresentar o imóvel</h3>
+  <table>
+    <tr><th>Tempo</th><th>Cena</th><th>Texto na tela</th></tr>
+    <tr><td>0–3 s</td><td>Entrada ou revelação</td><td>Pergunta: "Procurando casa com quintal?"</td></tr>
+    <tr><td>3–6 s</td><td>Número de destaque sobre a imagem</td><td>"120 m²", "15 m de raia"</td></tr>
+    <tr><td>6–18 s</td><td>Ambientes principais (tela dividida em 2 ou 3 funciona bem)</td><td>Nome de cada ambiente</td></tr>
+    <tr><td>18–24 s</td><td>Diferencial</td><td>"Estúdio", "Vista para o lago"</td></tr>
+    <tr><td>24–30 s</td><td>Preço e card final</td><td>Preço · código · CRECI · WhatsApp</td></tr>
+  </table>
+  <h3>Tour de 60 s · para quem já tem interesse</h3>
+  <table>
+    <tr><th>Tempo</th><th>Cena</th><th>Texto ou narração</th></tr>
+    <tr><td>0–5 s</td><td>Fachada e chegada</td><td>Bairro e tipo de imóvel</td></tr>
+    <tr><td>5–40 s</td><td>Visita completa na ordem do roteiro</td><td>Ambiente + um detalhe de cada</td></tr>
+    <tr><td>40–52 s</td><td>Lazer, condomínio, entorno</td><td>Estrutura e localização</td></tr>
+    <tr><td>52–60 s</td><td>Card final</td><td>Preço, condições e contato</td></tr>
+  </table>
+  <div class="tip"><b>Áudio:</b> use músicas da biblioteca do próprio Instagram ou de bancos com licença. Música de rádio ou de streaming pode derrubar o vídeo por direitos autorais.</div>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>8</span></div>
+</section>
+
+<!-- 07 IDEIAS -->
+<section class="page">
+  <p class="eb">07 · 30 ideias de vídeo</p>
+  <h2>Nunca mais fique sem pauta.</h2>
+  <p class="lead">Seis grupos com cinco ideias cada. Alterne entre eles ao longo do mês.</p>
+  <div class="ideas">
+    <h3>Imóvel em destaque</h3>
+    <ol>
+      <li>Tour de 30 s do imóvel da semana.</li>
+      <li>"O que R$ ___ compra em [bairro]".</li>
+      <li>Um único diferencial em 10 s (a vista, a varanda, a raia).</li>
+      <li>Antes e depois da arrumação do imóvel para as fotos.</li>
+      <li>"Três motivos para conhecer este imóvel".</li>
+    </ol>
+    <h3>Bairro e cidade</h3>
+    <ol start="6">
+      <li>Um dia no bairro: padaria, praça, escola, mercado.</li>
+      <li>Quanto tempo leva até o centro (gravado no trajeto).</li>
+      <li>Condomínios da cidade: o que cada um oferece.</li>
+      <li>Rua por rua: as mais procuradas do bairro.</li>
+      <li>"Onde morar em [cidade] com crianças".</li>
+    </ol>
+    <h3>Dicas para quem compra</h3>
+    <ol start="11">
+      <li>O que olhar na primeira visita.</li>
+      <li>Documentos para pedir antes de fechar negócio.</li>
+      <li>Apartamento ou casa: perguntas para decidir.</li>
+      <li>Como funciona a visita com o corretor.</li>
+      <li>Erros comuns de quem compra o primeiro imóvel.</li>
+    </ol>
+    <h3>Dicas para quem vende</h3>
+    <ol start="16">
+      <li>Como preparar o imóvel para as fotos.</li>
+      <li>Por que a primeira foto do anúncio importa.</li>
+      <li>Pequenos reparos antes de anunciar.</li>
+      <li>O que o comprador olha primeiro.</li>
+      <li>Como o vídeo ajuda o anúncio a ser lembrado.</li>
+    </ol>
+    <h3>Bastidores</h3>
+    <ol start="21">
+      <li>Como você grava um imóvel (mostrando o celular).</li>
+      <li>Preparando um imóvel antes da visita.</li>
+      <li>Um dia de trabalho de corretor.</li>
+      <li>A entrega das chaves (com autorização do cliente).</li>
+      <li>Perguntas que os clientes mais fazem.</li>
+    </ol>
+    <h3>Autoridade e relacionamento</h3>
+    <ol start="26">
+      <li>Mitos e verdades sobre financiamento.</li>
+      <li>"Responda nos comentários: casa ou apartamento?"</li>
+      <li>Depoimento de cliente (sempre com autorização).</li>
+      <li>Sua história: por que você é corretor.</li>
+      <li>Resumo do mês: imóveis que você apresentou.</li>
+    </ol>
+  </div>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>9</span></div>
+</section>
+
+<!-- 08 MODELOS -->
+<section class="page">
+  <p class="eb">08 · Modelos de legenda e de WhatsApp</p>
+  <h2>Texto pronto, é só trocar os dados.</h2>
+  <p class="lead">Substitua o que está entre colchetes. Use apenas informações confirmadas no anúncio.</p>
+  <h3>Legenda curta (Reels)</h3>
+  <div class="tpl">[Tipo de imóvel] em [bairro], [cidade]: [nº] quartos, [nº] vagas e [diferencial].
+[Preço] · Código [___]
+Quer ver por dentro? Me chama no WhatsApp (link na bio).
+[Seu nome] · CRECI [___]</div>
+  <h3>Legenda completa (carrossel ou tour)</h3>
+  <div class="tpl">[Gancho em uma linha: o que esse imóvel tem de especial]
+
+[Área] m², [nº] dormitórios ([nº] suítes), [ambientes principais]. [Lazer ou diferencial].
+Localizado em [bairro/condomínio], [cidade].
+
+[Preço] · [condições: aceita financiamento / permuta, se confirmado]
+Código [___] · [Imobiliária] · CRECI [___]</div>
+  <h3>WhatsApp · primeira resposta</h3>
+  <div class="tpl">Oi, [nome]! Obrigado pelo interesse no [código]. Te mando o vídeo completo aqui 👇
+Você procura para morar ou investir? E pretende financiar?</div>
+  <h3>WhatsApp · convite para visita</h3>
+  <div class="tpl">[Nome], tenho horário para mostrar o [código] na [dia] às [hora] ou na [dia] às [hora]. Qual fica melhor para você?</div>
+  <div class="warn"><b>Atenção às regras:</b> todo anúncio de imóvel deve trazer o seu número de CRECI ou o da imobiliária. Não use "último dia" ou "preço imperdível" se não for verdade.</div>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>10</span></div>
+</section>
+
+<!-- 09 ENVIAR -->
+<section class="page dark">
+  <p class="eb" style="color:var(--acc2)">09 · Sem tempo para editar?</p>
+  <h2 style="font-size:26pt">Grave. A Vídeo Imóvel edita.</h2>
+  <p class="lead">Você pode usar este kit só para gravar e mandar o material para a gente transformar em Reels prontos. Também dá para enviar apenas as fotos que você já tem do anúncio.</p>
+  <h3 style="color:#fff">Como enviar</h3>
+  <ol style="color:#d6dbe4">
+    <li>Crie uma pasta com o código do imóvel (ex.: AP0933).</li>
+    <li>Coloque os vídeos na ordem do roteiro, numerados (01-fachada, 02-sala…).</li>
+    <li>Envie o link da pasta (Google Drive) ou os arquivos pelo WhatsApp.</li>
+    <li>Mande junto os dados do anúncio: preço, área, quartos, vagas, diferenciais e seu CRECI.</li>
+  </ol>
+  <h3 style="color:#fff">O que você recebe</h3>
+  <ul style="color:#d6dbe4">
+    <li>Curadoria das melhores tomadas e tratamento de luz e cor.</li>
+    <li>Reels vertical com textos, medidas, trilha e o seu contato no final.</li>
+    <li>Vídeo pronto em até 48 horas após recebermos o material completo.</li>
+  </ul>
+  <div style="margin-top:9mm;border:1px dashed var(--acc2);border-radius:4mm;padding:6mm">
+    <p style="color:#f4f5f8;font-size:12pt;margin:0 0 2mm"><b style="color:var(--acc2)">Bônus de quem comprou o kit:</b> assine qualquer plano da Vídeo Imóvel em até 30 dias e o valor do kit volta como desconto na primeira mensalidade.</p>
+    <p style="margin:0">Planos a partir de 6 vídeos por mês · videoimovel.com.br/assinatura</p>
+  </div>
+  <div style="margin-top:12mm">
+    <p class="big" style="margin:0">(19) 99861-2626</p>
+    <p style="margin:2mm 0 0">WhatsApp · Atendemos todo o Brasil, das 8h às 20h · videoimovel.com.br</p>
+  </div>
+  <div class="foot"><span>Kit Corretor que Filma · Vídeo Imóvel</span><span>11</span></div>
+</section>
+
+</body>
+</html>
