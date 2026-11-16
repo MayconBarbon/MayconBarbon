@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Imóvel que Fatura – Método VIP · Vídeo Imóvel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+:root{--navy:#0d1a2e;--navy2:#13223a;--gold:#c8a96a;--gold2:#e2c48a;--acc:#13a89e;--fg:#1d1d1f;--muted:#5d6472;--line:#dcdfe5;--band:#f4f2ee}
+body{margin:0;font:400 10.3pt/1.55 Inter,sans-serif;color:var(--fg);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-.02em;margin:0;line-height:1.12}
+a{color:inherit}
+.page{width:210mm;height:297mm;padding:17mm 17mm 16mm;position:relative;overflow:hidden;page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto}
+.foot{position:absolute;left:17mm;right:17mm;bottom:9mm;display:flex;justify-content:space-between;font-size:7.8pt;color:#8a909c;border-top:1px solid var(--line);padding-top:3mm}
+.foot a{color:#9a7b3f;text-decoration:none;font-weight:600}
+.eb{font:700 8pt Manrope;letter-spacing:.16em;text-transform:uppercase;color:#9a7b3f;margin:0 0 3mm}
+h2{font-size:21pt;margin-bottom:3mm}
+h3{font-size:12pt;margin:4.5mm 0 2mm}
+.lead{color:var(--muted);font-size:10.8pt;margin:0 0 5mm}
+p{margin:0 0 2.6mm}
+ul,ol{margin:0 0 3mm;padding-left:5mm}
+li{margin:0 0 1.2mm}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.card{border:1px solid var(--line);border-radius:4mm;padding:4.5mm;background:#fff;break-inside:avoid}
+.card h3{margin-top:0}
+.chk{list-style:none;padding:0}
+.chk li{padding-left:6.5mm;position:relative}
+.chk li::before{content:"";position:absolute;left:0;top:1.1mm;width:3.2mm;height:3.2mm;border:1.4px solid var(--gold);border-radius:1mm}
+.tip{border-left:3px solid var(--gold);padding:2mm 0 2mm 4mm;background:#faf6ee;border-radius:0 3mm 3mm 0;margin:3.5mm 0}
+.tip b{color:#7d6230}
+.warn{border-left:3px solid var(--acc);background:#eefaf8;padding:2mm 0 2mm 4mm;border-radius:0 3mm 3mm 0;margin:3.5mm 0}
+.prompt{font-family:Inter;background:#f2f4f7;border-radius:3mm;padding:3.2mm 4mm;font-size:9.2pt;margin:0 0 3mm;break-inside:avoid;border:1px dashed #c9ced8}
+.prompt b{display:block;font:700 7.6pt Manrope;letter-spacing:.12em;text-transform:uppercase;color:#9a7b3f;margin-bottom:1mm}
+table{width:100%;border-collapse:collapse;font-size:9.3pt;break-inside:avoid}
+th{font:700 7.8pt Manrope;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;border-bottom:1.5px solid var(--fg);padding:1.8mm}
+td{border-bottom:1px solid var(--line);padding:1.8mm;vertical-align:top}
+td:first-child{font-weight:600;color:#7d6230}
+.ph{border-radius:3mm;overflow:hidden;position:relative;background:#e9ecf1;margin:0}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:5mm 3mm 2mm;font-size:7.6pt;color:#fff;background:linear-gradient(transparent,rgba(13,26,46,.85))}
+.strip{display:grid;gap:3mm;margin:3.5mm 0}
+.mod{display:flex;gap:4mm;align-items:center;margin-bottom:2mm}
+.mod .n{font:800 30pt/1 Manrope;color:var(--gold)}
+.mod .t{font:700 8pt Manrope;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.quote{font:800 15pt/1.25 Manrope;color:var(--navy);margin:4mm 0;border-left:4px solid var(--gold);padding-left:4mm}
+.deliver{background:var(--navy);color:#f4f5f8;border-radius:4mm;padding:4mm 5mm;margin-top:3mm;break-inside:avoid}
+.deliver b{color:var(--gold2);font:700 7.8pt Manrope;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:1mm}
+/* capa */
+.cover{background:var(--navy);color:#f4f5f8;padding:0}
+.cover .img{position:absolute;inset:0;background:url(img/e03.jpg) center 40%/cover}
+.cover .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,26,46,.25) 0%,rgba(13,26,46,.05) 30%,rgba(13,26,46,.7) 55%,#0d1a2e 74%)}
+.cover .brand{display:flex;align-items:center;gap:3mm;font:800 13pt Manrope;position:absolute;top:14mm;left:17mm;z-index:2;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.cover .brand img{width:9mm}
+.cover .in{position:absolute;left:17mm;right:17mm;bottom:30mm;z-index:2}
+.cover .k{display:inline-block;background:var(--gold);color:#1b1407;font:800 8.5pt Manrope;letter-spacing:.14em;text-transform:uppercase;padding:1.6mm 4mm;border-radius:99px;margin-bottom:5mm}
+.cover h1{font-size:40pt;line-height:1}
+.cover h1 span{color:var(--gold2)}
+.cover .vip{font:700 12pt Manrope;color:#d8dde6;margin:4mm 0 5mm;letter-spacing:.02em}
+.cover .vip b{color:var(--gold2)}
+.cover p{color:#b8c0cd;font-size:11.5pt;max-width:160mm}
+.cover .ft{position:absolute;bottom:12mm;left:17mm;right:17mm;color:#a7b0c0;font-size:9pt;display:flex;justify-content:space-between;z-index:2}
+.cover .ft a{color:var(--gold2);text-decoration:none;font-weight:600}
+.dark{background:var(--navy);color:#f4f5f8}
+.dark .lead,.dark p,.dark li{color:#b8c0cd}
+.dark h2,.dark h3{color:#fff}
+.dark .foot{border-color:rgba(244,245,248,.15)}
+.dark .card{background:var(--navy2);border-color:rgba(244,245,248,.15)}
+.toc{list-style:none;padding:0;margin:4mm 0 0;columns:2;column-gap:8mm}
+.toc li{display:flex;gap:3mm;align-items:baseline;border-bottom:1px solid var(--line);padding:2.4mm 0;font-size:10.2pt;break-inside:avoid}
+.toc li b{font:800 10.5pt Manrope;color:#9a7b3f;width:7mm}
+.folder{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:3mm 0}
+.folder figure{margin:0;font-size:8pt;color:var(--muted);text-align:center}
+.folder .vt{border-radius:2.5mm;overflow:hidden;aspect-ratio:9/12;position:relative;background:#000}
+.folder .vt img{width:100%;height:100%;object-fit:cover;opacity:.92}
+.folder .vt::after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:13pt;text-shadow:0 2px 6px rgba(0,0,0,.6)}
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:4mm}
+.paths .card h3{font-size:12.5pt}
+.paths .tag{font:700 7.4pt Manrope;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.igbox{display:flex;gap:5mm;align-items:center;border:1px solid rgba(244,245,248,.2);border-radius:4mm;padding:4mm 5mm;margin-top:5mm}
+.igbox img{width:24mm;height:24mm}
+.igbox a{color:var(--gold2);font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- 1 CAPA -->
+<section class="page cover">
+  <div class="img"></div>
+  <div class="brand"><img src="logo-mark.png" alt="">Vídeo Imóvel</div>
+  <div class="in">
+    <div class="k">Guia para aluguel por temporada</div>
+    <h1>Imóvel que <span>Fatura™</span></h1>
+    <div class="vip">Método VIP · <b>V</b>ídeo, <b>I</b>magem e <b>P</b>osicionamento</div>
+    <p>O que aprendi colocando uma chácara de temporada para funcionar: como fotografar, gravar, descrever e organizar o imóvel para ele ser escolhido pelo hóspede certo.</p>
+  </div>
+  <div class="ft"><span><a href="https://videoimovel.com.br">videoimovel.com.br</a> · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>Atendemos todo o Brasil</span></div>
+</section>
+
+<!-- 2 ABERTURA -->
+<section class="page">
+  <p class="eb">Antes de começar</p>
+  <h2>Você não vende o imóvel. Vende a percepção dele.</h2>
+  <p class="lead">Este guia nasceu de uma chácara de verdade, o Recanto, que precisava sair do vazio. Nada aqui depende de equipamento caro, agência ou sorte. Depende de direção.</p>
+  <div class="cols">
+    <div class="card"><h3>O que é o Método VIP</h3>
+      <p><b>V</b>ídeo: o que encanta antes da reserva e orienta depois dela.</p>
+      <p><b>I</b>magem: fotos com direção, sequência e edição honesta.</p>
+      <p><b>P</b>osicionamento: público certo, descrição clara e operação que sustenta a nota 5.</p></div>
+    <div class="card"><h3>A regra que vale para tudo</h3>
+      <p>Aqui a gente melhora a apresentação. Não inventa realidade.</p>
+      <p>Clareza, organização e luz: sim. Distorcer tamanho, esconder defeito ou prometer o que não existe: não.</p>
+      <p>Reserva baseada em engano vira cancelamento. Reserva baseada em clareza vira avaliação 5 estrelas.</p></div>
+  </div>
+  <ul class="toc">
+    <li><b>01</b>Mentalidade de ativo</li>
+    <li><b>02</b>Captação inteligente</li>
+    <li><b>03</b>Percepção e erros caros</li>
+    <li><b>04</b>Análise de foto com IA</li>
+    <li><b>05</b>Edição rápida e profissional</li>
+    <li><b>06</b>Vídeo que encanta</li>
+    <li><b>07</b>Experiência 5 estrelas</li>
+    <li><b>08</b>Gestão inteligente</li>
+    <li><b>09</b>Descrição que reduz perguntas</li>
+    <li><b>+</b>Pacote de prompts e próximos passos</li>
+  </ul>
+  <div class="tip"><b>Tarefa de 1 minuto:</b> abra um anúncio qualquer, seu ou de um lugar que você gostaria de visitar, e anote o que dá vontade de clicar e o que dá vontade de sair. Hoje começa a construção do seu olhar.</div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>2</span></div>
+</section>
+
+<!-- 3 M1 -->
+<section class="page">
+  <div class="mod"><div class="n">01</div><div class="t">Mentalidade de ativo</div></div>
+  <h2>O imóvel não está parado. Está mal posicionado.</h2>
+  <p class="lead">Imóvel parado não é neutro: tem condomínio, IPTU, manutenção, energia e limpeza todo mês. Quando você trata o imóvel como ativo, muda a foto, a descrição e a estrutura. E ele começa a trabalhar.</p>
+  <div class="cols">
+    <div>
+      <h3 style="margin-top:0">O caso do Recanto</h3>
+      <p>A chácara tinha custo fixo de cerca de <b>R$ 3.000 por mês</b>. Depois de refazer imagem e posicionamento, a primeira semana no ar rendeu <b>R$ 2.400</b>.</p>
+      <p>O terreno era o mesmo, a piscina era a mesma. Mudou a forma de mostrar, de explicar e de transmitir confiança: quantas pessoas cabem, que tipo de evento é permitido, o que está incluso, as regras e como funciona o check-in.</p>
+      <p style="font-size:8.6pt;color:var(--muted)">Resultado de um caso real. Cada imóvel tem a sua realidade de região, temporada e preço.</p>
+    </div>
+    <div class="strip" style="grid-template-columns:1fr 1fr;margin:0">
+      <figure class="ph" style="height:62mm"><img src="img/e02.jpg" alt=""><figcaption>Recanto: a piscina</figcaption></figure>
+      <figure class="ph" style="height:62mm"><img src="img/e01.jpg" alt=""><figcaption>O pomar e a natureza</figcaption></figure>
+    </div>
+  </div>
+  <h3>Cada imóvel conversa com um público</h3>
+  <table>
+    <tr><th>Imóvel</th><th>Público natural</th><th>O que a imagem precisa mostrar</th></tr>
+    <tr><td>Casa com piscina e gourmet</td><td>Famílias, grupos, confraternização leve</td><td>Piscina, churrasqueira, mesa para todos</td></tr>
+    <tr><td>Loft urbano</td><td>Casais, trabalho remoto, estadia curta</td><td>Mesa de trabalho, Wi-Fi, localização</td></tr>
+    <tr><td>Chácara</td><td>Descanso, natureza, grupo pequeno</td><td>Verde, silêncio, varanda, acesso</td></tr>
+  </table>
+  <div class="quote">Você não quer qualquer hóspede. Quer o hóspede certo para o seu imóvel.</div>
+  <div class="deliver"><b>Exercício</b>Complete a frase: "Meu imóvel é escolhido por ____." Sem generalizar. Clareza de público gera clareza de comunicação.</div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>3</span></div>
+</section>
+
+<!-- 4 M2 -->
+<section class="page">
+  <div class="mod"><div class="n">02</div><div class="t">Captação inteligente</div></div>
+  <h2>Você não precisa de câmera. Precisa de direção.</h2>
+  <p class="lead">Fotografei o Recanto inteiro com os óculos Ray-Ban Meta, porque era o que eu tinha. O resultado foi decidido pelo olhar e pelo tratamento depois, não pelo equipamento.</p>
+  <div class="strip" style="grid-template-columns:repeat(4,1fr)">
+    <figure class="ph" style="height:52mm"><img src="img/e08.jpg" alt=""><figcaption>Canto A: profundidade</figcaption></figure>
+    <figure class="ph" style="height:52mm"><img src="img/e09.jpg" alt=""><figcaption>Canto B: o outro lado</figcaption></figure>
+    <figure class="ph" style="height:52mm"><img src="img/e17.jpg" alt=""><figcaption>Detalhe de desejo</figcaption></figure>
+    <figure class="ph" style="height:52mm"><img src="img/e10.jpg" alt=""><figcaption>Contexto e circulação</figcaption></figure>
+  </div>
+  <div class="cols">
+    <div class="card"><h3>O método dos 4 cliques por cômodo</h3>
+      <ol><li><b>Canto A</b> mostrando porta e janela.</li><li><b>Canto oposto</b>, para criar profundidade.</li><li><b>Detalhe de desejo</b>: colcha bem feita, café servido, toalha dobrada.</li><li><b>Contexto</b>: circulação e integração entre os ambientes.</li></ol>
+      <p>Sempre com as linhas retas. Quando a vertical cai, o cérebro lê instabilidade.</p></div>
+    <div class="card"><h3>Equipamento, de forma honesta</h3>
+      <p><b>Celular:</b> resolve a maioria dos casos.</p>
+      <p><b>Óculos Meta:</b> ótimos para bastidor e ponto de vista; trate como complemento, porque o formato é vertical e o campo é estreito.</p>
+      <p><b>Câmera profissional:</b> para imóvel premium ou portfólio.</p>
+      <p>Com luz natural, organização e ângulo, o celular dá conta.</p></div>
+  </div>
+  <div class="tip"><b>Fotografe sobrando:</b> no Recanto foram entre 50 e 80 fotos para usar 28. Fotografia de imóvel não é acertar de primeira, é aumentar a chance de acerto.</div>
+  <div class="deliver"><b>Entrega do módulo</b>Checklist de 4 cliques por cômodo e a escolha da foto principal (o "hero shot"): a imagem que resume por que alguém clicaria no seu anúncio.</div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>4</span></div>
+</section>
+
+<!-- 5 M3 -->
+<section class="page">
+  <div class="mod"><div class="n">03</div><div class="t">Percepção e erros caros</div></div>
+  <h2>Metragem informa. Percepção convence.</h2>
+  <p class="lead">No digital você não vende metros quadrados, vende leitura do espaço. E ela depende de três coisas: linhas retas, profundidade visível e referências como porta e janela.</p>
+  <div class="cols">
+    <div>
+      <h3 style="margin-top:0">O caso da Barra da Tijuca</h3>
+      <p>Um imóvel no Rio, bem cuidado e iluminado, foi entregue em fotos verticais. O cliente olhou e disse que não sentia amplitude.</p>
+      <p>Refizemos na horizontal: mesma sala, mesma luz, com porta e janela no quadro. A sensação mudou por completo. O imóvel não cresceu; a percepção cresceu.</p>
+      <p><b>Vertical aproxima. Horizontal amplia.</b> Use o vertical para Reels e Stories, e o horizontal para o anúncio.</p>
+    </div>
+    <div>
+      <svg width="100%" viewBox="0 0 300 190" style="display:block">
+        <rect x="8" y="10" width="284" height="150" rx="8" fill="#f2f4f7" stroke="#c9ced8"/>
+        <rect x="20" y="40" width="40" height="80" fill="#c8d6e8"/><rect x="230" y="30" width="44" height="100" fill="#e9dcc2"/>
+        <rect x="110" y="18" width="80" height="134" rx="4" fill="none" stroke="#13a89e" stroke-width="3" stroke-dasharray="6 4"/>
+        <rect x="16" y="18" width="268" height="134" rx="4" fill="none" stroke="#c8a96a" stroke-width="3"/>
+        <text x="150" y="176" text-anchor="middle" font-family="Inter" font-size="10" fill="#5d6472">tracejado: vertical · dourado: horizontal</text>
+        <text x="40" y="133" text-anchor="middle" font-family="Inter" font-size="8" fill="#5d6472">janela</text>
+        <text x="252" y="143" text-anchor="middle" font-family="Inter" font-size="8" fill="#5d6472">porta</text>
+      </svg>
+      <p style="font-size:8.6pt;color:var(--muted);margin-top:2mm">No mesmo cômodo, o enquadramento vertical corta a porta e a janela, que são as referências de escala.</p>
+    </div>
+  </div>
+  <h3>Cinco erros que acabam hoje</h3>
+  <table>
+    <tr><th>Erro</th><th>Por que custa caro</th><th>Correção na hora</th></tr>
+    <tr><td>Foto escura</td><td>Transmite abandono, não aconchego</td><td>Abra cortinas, acenda as luzes, volte no horário certo</td></tr>
+    <tr><td>Linha torta</td><td>Passa sensação de instabilidade</td><td>Endireite na captura, com a grade da câmera</td></tr>
+    <tr><td>Sem porta e janela</td><td>Perde a referência de escala</td><td>Mude para o canto oposto</td></tr>
+    <tr><td>Abrir com detalhe</td><td>Detalhe é complemento, não introdução</td><td>Primeiro o ambiente, depois o detalhe</td></tr>
+    <tr><td>Bagunça visual</td><td>Reduz a percepção de padrão</td><td>Tire cabos, baldes e itens pessoais</td></tr>
+  </table>
+  <div class="tip"><b>As 5 primeiras fotos:</b> são as que mais pesam no anúncio, e a primeira é a que aparece na busca. Elas precisam responder: por que eu clico, o que é esse lugar, onde eu durmo, como é a área social e qual é o diferencial.</div>
+  <div class="warn"><b>Amplitude, sim. Distorção, não.</b> Lente ultra-angular exagerada quebra a expectativa, e expectativa quebrada vira avaliação baixa.</div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>5</span></div>
+</section>
+
+<!-- 6 M4 -->
+<section class="page">
+  <div class="mod"><div class="n">04</div><div class="t">Análise de foto com IA</div></div>
+  <h2>Um olho técnico de fora, em minutos.</h2>
+  <p class="lead">Você olha a foto e pensa "tá boa". O hóspede olha e sente "não entendi o espaço". A IA serve de segundo olhar: aponta enquadramento, linhas, profundidade e o que está sobrando no quadro.</p>
+  <div class="prompt"><b>Prompt de análise · copie e cole com a foto</b>Analise esta foto de um cômodo para anúncio de aluguel por temporada. 1) Liste 3 pontos fortes e 3 pontos fracos. 2) Diga exatamente onde eu deveria ficar para refazer a foto (ângulo e canto). 3) Sugira um corte ideal e ajustes de luz e cor naturais, sem filtro pesado. 4) Aponte distrações, como cabos e objetos, que devo remover.</div>
+  <div class="cols">
+    <div class="card"><h3>O que a análise deve checar</h3>
+      <ul class="chk"><li>Linhas verticais retas.</li><li>Câmera entre 1,10 m e 1,30 m de altura.</li><li>Luz natural dominante, sem mistura de luz fria e quente.</li><li>Pelo menos dois planos do ambiente (profundidade).</li><li>Nada que quebre a leitura: cabos, objetos no chão.</li></ul></div>
+    <div class="card"><h3>Use também para</h3>
+      <ul class="chk"><li>Comparar duas fotos e escolher a que dá mais amplitude.</li><li>Decidir a ordem das 5 primeiras fotos.</li><li>Conferir se a edição ficou natural ou exagerada.</li></ul>
+      <p style="margin-top:2mm"><b>A IA recomenda. Você decide.</b> Ela não conhece o seu público, o seu preço nem o seu diferencial.</p></div>
+  </div>
+  <div class="strip" style="grid-template-columns:repeat(3,1fr)">
+    <figure class="ph" style="height:46mm"><img src="img/e07.jpg" alt=""><figcaption>Sala: dois planos e janela</figcaption></figure>
+    <figure class="ph" style="height:46mm"><img src="img/e13.jpg" alt=""><figcaption>Quarto: porta como referência</figcaption></figure>
+    <figure class="ph" style="height:46mm"><img src="img/e04.jpg" alt=""><figcaption>Gourmet: profundidade</figcaption></figure>
+  </div>
+  <div class="deliver"><b>Tarefa</b>Envie 1 foto para análise e refaça seguindo 2 recomendações. Compare as duas versões lado a lado.</div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>6</span></div>
+</section>
+
+<!-- 7 M5 -->
+<section class="page">
+  <div class="mod"><div class="n">05</div><div class="t">Edição rápida e profissional</div></div>
+  <h2>Edição não é enganar. É tirar ruído.</h2>
+  <p class="lead">Melhorar clareza, sim. Criar ilusão, não. As plataformas orientam a não exagerar na edição e a não usar edição, inclusive com IA, para esconder danos ou mostrar o que não existe.</p>
+  <div class="cols">
+    <div class="card"><h3>Nível 1 · no celular, 1 a 2 minutos por foto</h3>
+      <ol><li><b>Endireitar.</b> Linha torta parece descuido.</li><li><b>Clarear com equilíbrio.</b> Luz natural tem de parecer natural.</li><li><b>Temperatura realista.</b> Nem azul hospital, nem amarelo exagerado.</li><li><b>Contraste leve.</b> Só para definir formas.</li><li><b>Corte.</b> Tire distrações das bordas.</li></ol></div>
+    <div class="card"><h3>Nível 2 · profissional</h3>
+      <ul class="chk"><li>Remover um cabo que já vai ser retirado.</li><li>Corrigir perspectiva que caiu levemente.</li><li>Ajustar uma pequena distração visual.</li><li>Equilibrar céu e janela estourada.</li></ul>
+      <p style="margin-top:2mm"><b>Não pode:</b> apagar rachadura ou infiltração, inventar vista, mudar acabamento.</p></div>
+  </div>
+  <div class="quote">Se o hóspede chegar e disser "isso não estava na foto", a edição errou.</div>
+  <h3>Quando vale terceirizar</h3>
+  <p>Imóvel de padrão mais alto, muitas fotos para tratar ou falta de tempo. Nesses casos, o tratamento profissional e o vídeo feito a partir das suas fotos ampliam a percepção sem exigir nova sessão.</p>
+  <div class="warn"><b>Vídeo Imóvel:</b> você manda as fotos que já tem, a gente faz a curadoria, trata luz e cor e entrega o vídeo pronto para redes e portais. <a href="https://videoimovel.com.br" style="font-weight:700;color:#0b7d75">videoimovel.com.br</a></div>
+  <div class="strip" style="grid-template-columns:repeat(4,1fr)">
+    <figure class="ph" style="height:42mm"><img src="img/e05.jpg" alt=""><figcaption>Cozinha</figcaption></figure>
+    <figure class="ph" style="height:42mm"><img src="img/e15.jpg" alt=""><figcaption>Quarto</figcaption></figure>
+    <figure class="ph" style="height:42mm"><img src="img/e16.jpg" alt=""><figcaption>Banheiro</figcaption></figure>
+    <figure class="ph" style="height:42mm"><img src="img/e19.jpg" alt=""><figcaption>Beliche</figcaption></figure>
+  </div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>7</span></div>
+</section>
+
+<!-- 8 M6 -->
+<section class="page">
+  <div class="mod"><div class="n">06</div><div class="t">Vídeo que encanta</div></div>
+  <h2>Foto atrai. Vídeo faz o hóspede se imaginar ali.</h2>
+  <p class="lead">O vídeo tem dois papéis: encantar quem ainda não conhece o imóvel, nas redes e no Marketplace, e orientar quem já reservou. Você não precisa de dez vídeos. Precisa de três bem feitos.</p>
+  <table>
+    <tr><th>Vídeo</th><th>Para quê</th><th>Como fazer</th></tr>
+    <tr><td>1 · Tour do desejo</td><td>Atrair nas redes</td><td>30 a 45 s. Gancho nos 3 primeiros segundos com o diferencial (piscina, varanda, vista). Movimento lento. Termina no conforto: quarto pronto, mesa posta.</td></tr>
+    <tr><td>2 · Utilitário</td><td>Evitar dúvida e estresse</td><td>Curto e direto: portão, registro, cascata, aquecimento. Sem narrativa, só clareza.</td></tr>
+    <tr><td>3 · Entorno</td><td>Transmitir segurança</td><td>Caminho de chegada, mercado, comércio, acesso. Responde "será que é tranquilo?" sem precisar falar.</td></tr>
+  </table>
+  <div class="strip" style="grid-template-columns:repeat(3,1fr)">
+    <figure class="ph" style="height:58mm"><img src="img/v7.jpg" alt=""><figcaption>Vista aérea da região</figcaption></figure>
+    <figure class="ph" style="height:58mm"><img src="img/v6.jpg" alt=""><figcaption>Comércio local</figcaption></figure>
+    <figure class="ph" style="height:58mm"><img src="img/v1.jpg" alt=""><figcaption>Chegando pela estrada</figcaption></figure>
+  </div>
+  <div class="warn"><b>Respeite a plataforma:</b> antes da reserva, a conversa e o pagamento ficam dentro do Airbnb, sem levar o hóspede para fora. Depois da reserva confirmada, dá para enviar vídeos e links (como uma pasta no Drive) pelas mensagens. Confira sempre as regras atuais na central de ajuda da plataforma.</div>
+  <div class="prompt"><b>Prompt de roteiro</b>Crie um roteiro de 30 segundos para um vídeo desta propriedade (cômodos: ___), começando pelo diferencial e terminando no conforto, com sensação de fim de semana perfeito e sem exageros.</div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>8</span></div>
+</section>
+
+<!-- 9 M7 -->
+<section class="page">
+  <div class="mod"><div class="n">07</div><div class="t">Experiência 5 estrelas</div></div>
+  <h2>A avaliação começa no momento da reserva.</h2>
+  <p class="lead">Você não vai responder mais rápido. Vai responder menos, porque vai antecipar. A maior parte das perguntas do hóspede é operacional: como abre o portão, o registro está fechado, como liga a cascata.</p>
+  <h3>A pasta "Boas-vindas + Orientações" do Recanto</h3>
+  <div class="folder">
+    <figure><div class="vt"><img src="img/v1.jpg" alt=""></div>1. Chegando: estrada de terra</figure>
+    <figure><div class="vt"><img src="img/v2.jpg" alt=""></div>2. Portão de entrada e chaves</figure>
+    <figure><div class="vt"><img src="img/v4.jpg" alt=""></div>4. Cascata: ligar e desligar</figure>
+    <figure><div class="vt"><img src="img/v5.jpg" alt=""></div>5. Registros de água</figure>
+  </div>
+  <p style="font-size:8.8pt;color:var(--muted)">A pasta real também tem: comércio local, vista aérea da região, luzes externas e TV. Um vídeo curto para cada dúvida que se repete.</p>
+  <div class="cols">
+    <div class="card"><h3>Estrutura da pasta</h3>
+      <ol><li><b>Chegada:</b> caminho final e ponto de entrada.</li><li><b>Portão e chave:</b> abrir, estacionar, trancar.</li><li><b>Água e registros:</b> onde ficam e o que fazer.</li><li><b>Piscina e gourmet:</b> uso, horário, cuidados.</li><li><b>Regras e FAQ:</b> silêncio, pet, capacidade, lixo, emergência.</li></ol></div>
+    <div class="card"><h3>O caso do registro fechado</h3>
+      <p>O hóspede achou que a água tinha acabado. Situação de crise.</p>
+      <p>Mas existia um vídeo de 15 segundos: "se faltar água, verifique este registro aqui". Enviado, problema resolvido. Sem deslocamento, sem estresse, sem avaliação negativa.</p></div>
+  </div>
+  <div class="prompt"><b>Prompt de mensagem pós-reserva</b>Crie uma mensagem acolhedora para enviar após a confirmação da reserva, com as instruções de chegada e o link para a pasta de vídeos de orientação.</div>
+  <div class="deliver"><b>Tarefa</b>Crie a pasta e grave 3 vídeos: chegada, portão ou porta de entrada, e o uso de algum equipamento que sempre gera dúvida.</div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>9</span></div>
+</section>
+
+<!-- 10 M8 -->
+<section class="page">
+  <div class="mod"><div class="n">08</div><div class="t">Gestão inteligente</div></div>
+  <h2>Imóvel pode ser renda ou prisão. A diferença é processo.</h2>
+  <p class="lead">Gestão não é apagar incêndio, é evitar incêndio. Chave trava, disjuntor desarma, pelo de cachorro vai parar no filtro da piscina. Checklist não é burocracia: é liberdade.</p>
+  <div class="cols">
+    <div class="card"><h3>Pré-check-in (antes de cada hóspede)</h3>
+      <ul class="chk"><li>Testar chuveiros e pressão de água</li><li>Conferir os registros</li><li>Testar ar-condicionado e ventiladores</li><li>Verificar o Wi-Fi</li><li>Conferir o enxoval</li><li>Checar o gás</li><li>Testar a iluminação</li><li>Conferir as fechaduras</li><li>Avaliar a limpeza da piscina</li><li>Registrar fotos internas</li></ul></div>
+    <div class="card"><h3>Pós-check-out (depois da saída)</h3>
+      <ul class="chk"><li>Avaliar danos</li><li>Conferir utensílios</li><li>Checar o lixo</li><li>Avaliar o estado do enxoval</li><li>Testar equipamentos</li><li>Conferir o filtro da piscina</li><li>Checar consumo fora do normal</li><li>Registrar fotos</li><li>Atualizar o estoque</li><li>Anotar pendências</li></ul></div>
+  </div>
+  <div class="cols" style="margin-top:4mm">
+    <div class="card"><h3>O "dia do imóvel"</h3>
+      <p>Um dia fixo na semana sem hóspede, só para revisão: casa de máquinas, registros, pintura e desgaste, estoque de manutenção. No Recanto, é a quarta-feira.</p>
+      <p>Manutenção preventiva evita a emergência de sábado à noite.</p></div>
+    <div class="card"><h3>Pet: regra clara</h3>
+      <p>Se aceita: defina porte, taxa, área permitida e limpeza extra, inclusive do filtro da piscina.</p>
+      <p>Se não aceita: escreva no anúncio. Ambiguidade gera conflito; clareza gera avaliação alta.</p></div>
+  </div>
+  <div class="prompt"><b>Prompt de checklist personalizado</b>Crie um checklist pré-check-in e pós-check-out com 10 itens cada para um imóvel de temporada com estes ambientes e equipamentos: ___. Inclua itens de manutenção preventiva.</div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>10</span></div>
+</section>
+
+<!-- 11 M9 -->
+<section class="page">
+  <div class="mod"><div class="n">09</div><div class="t">Descrição que reduz perguntas</div></div>
+  <h2>Descrição fraca gera curiosos. Descrição forte filtra.</h2>
+  <p class="lead">"Tem Wi-Fi?", "Pode fazer festa?", "Quantas pessoas cabem mesmo?" Essas perguntas não são culpa do hóspede: são sintoma de descrição incompleta.</p>
+  <table>
+    <tr><th>Bloco</th><th>O que escrever</th></tr>
+    <tr><td>1 · Abertura</td><td>Duas linhas de ambientação, sem exagero, para a pessoa se imaginar ali.</td></tr>
+    <tr><td>2 · Resumo</td><td>Capacidade, quartos, camas, banheiros.</td></tr>
+    <tr><td>3 · Comodidades</td><td>Tudo marcado também nos campos da plataforma: quem filtra por "piscina" só encontra quem marcou.</td></tr>
+    <tr><td>4 · Limites</td><td>O que não tem: TV, Wi-Fi, som alto, visitas extras.</td></tr>
+    <tr><td>5 · Regras</td><td>Silêncio, pet, eventos, lixo, câmeras externas se houver.</td></tr>
+    <tr><td>6 · Check-in e check-out</td><td>Horários, forma de acesso, se alguém recepciona.</td></tr>
+    <tr><td>7 · Região</td><td>Mercado, farmácia, acesso: segurança, não roteiro turístico.</td></tr>
+    <tr><td>8 · FAQ</td><td>As 5 perguntas que sempre aparecem, já respondidas.</td></tr>
+  </table>
+  <div class="quote">Dizer o que o imóvel não tem não afasta o hóspede certo. Afasta o conflito.</div>
+  <div class="prompt"><b>Prompt de descrição em 8 blocos</b>Crie uma descrição para um imóvel de temporada com estas características: ___. Siga 8 blocos: abertura, resumo objetivo, comodidades, limites, regras, check-in, região e FAQ. Seja claro, direto e sem exageros.</div>
+  <div class="prompt"><b>Prompt de revisão</b>Analise esta descrição e diga quais dúvidas ainda podem surgir e como eliminá-las.</div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>11</span></div>
+</section>
+
+<!-- 12 PROMPTS -->
+<section class="page">
+  <p class="eb">Pacote de prompts</p>
+  <h2>Copie, cole e troque os dados.</h2>
+  <p class="lead">Use com qualquer assistente de IA. Revise sempre o resultado antes de publicar: a IA ajuda, mas quem responde pelo anúncio é você.</p>
+  <div class="cols">
+    <div>
+      <div class="prompt"><b>Enquadramento</b>Explique como fotografar uma sala pequena usando apenas o celular, priorizando amplitude e a percepção real do espaço.</div>
+      <div class="prompt"><b>Percepção</b>Analise esta foto e diga se a percepção de amplitude está correta. Aponte onde falta referência de escala e como melhorar.</div>
+      <div class="prompt"><b>Edição</b>Analise esta foto editada e diga se a correção de luz e cor está natural ou exagerada para um anúncio de temporada.</div>
+      <div class="prompt"><b>Vídeo utilitário</b>Crie um roteiro curto e direto explicando como usar ___ em um imóvel de temporada.</div>
+    </div>
+    <div>
+      <div class="prompt"><b>Chegada</b>Crie um roteiro simples para um vídeo de boas-vindas explicando como chegar, abrir o portão e pegar a chave.</div>
+      <div class="prompt"><b>FAQ</b>Crie um FAQ para um imóvel com piscina e área gourmet, com dúvidas sobre registros de água, uso da piscina e convivência.</div>
+      <div class="prompt"><b>Pet</b>Crie um protocolo para aceitar pet em imóvel com piscina: regras, limpeza e prevenção de danos.</div>
+      <div class="prompt"><b>Manual do hóspede</b>Crie um manual simples explicando o uso de utensílios, aquecedor, piscina, registros e equipamentos deste imóvel: ___.</div>
+    </div>
+  </div>
+  <div class="strip" style="grid-template-columns:repeat(4,1fr)">
+    <figure class="ph" style="height:40mm"><img src="img/e03.jpg" alt=""></figure>
+    <figure class="ph" style="height:40mm"><img src="img/e06.jpg" alt=""></figure>
+    <figure class="ph" style="height:40mm"><img src="img/e14.jpg" alt=""></figure>
+    <figure class="ph" style="height:40mm"><img src="img/e18.jpg" alt=""></figure>
+  </div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a></span><span>12</span></div>
+</section>
+
+<!-- 13 FINAL -->
+<section class="page dark">
+  <p class="eb" style="color:var(--gold2)">Próximo passo</p>
+  <h2 style="font-size:24pt">Não é sorte. É posicionamento.</h2>
+  <p class="lead">Se você aplicou, já saiu da média. Agora você sabe fotografar com direção, montar a sequência que vende, gravar vídeo que segura atenção, escrever descrição que filtra e organizar processo para não virar refém do imóvel.</p>
+  <div class="paths">
+    <div class="card"><span class="tag">Caminho 1</span><h3>Aplicar sozinho</h3><p>Com este guia, os checklists e os prompts, um imóvel por vez.</p></div>
+    <div class="card"><span class="tag">Caminho 2</span><h3>Mentoria VIP</h3><p>Turma pequena, de até 10 pessoas, com olhar no seu imóvel: fotos, sequência, descrição, preço e operação.</p></div>
+    <div class="card"><span class="tag">Caminho 3</span><h3>Premium</h3><p>Captação profissional, direção e execução com equipe, para elevar o padrão do anúncio.</p></div>
+  </div>
+  <div class="card" style="margin-top:5mm"><h3 style="color:var(--gold2)">Prefere que alguém faça por você?</h3><p style="margin:0">A Vídeo Imóvel transforma as fotos que você já tem em vídeo para redes e portais, com curadoria e tratamento de luz e cor, sem mudar nada do imóvel. <a href="https://videoimovel.com.br" style="color:var(--gold2);font-weight:700">videoimovel.com.br</a></p></div>
+  <div class="igbox"><img src="img/qr_ig.svg" alt="QR code do Instagram"><div><b style="color:#fff;font:800 12pt Manrope">Acompanhe no Instagram</b><br>Antes e depois, bastidores e dicas para anfitriões em <a href="https://www.instagram.com/video.imoveloficial/">@video.imoveloficial</a>. Aponte a câmera para o código.</div></div>
+  <div class="foot"><span>Imóvel que Fatura™ · Método VIP · <a href="https://www.instagram.com/video.imoveloficial/" style="color:var(--gold2)">@video.imoveloficial</a></span><span>13</span></div>
+</section>
+
+</body>
+</html>
