@@ -7,6 +7,13 @@ BLACK=IF+'InterDisplay-Black.otf'; SEMI=IF+'Inter-SemiBold.otf'; BOLD=IF+'Inter-
 W,H,FPS=1080,1920,30; GAP=8
 ACC=(110,150,225); MBLUE=(69,88,118); WHITE=(255,255,255)
 _c={}
+RENDERS=set()
+_bad={}
+def badge(w,h):
+    if (w,h) not in _bad:
+        im=Image.new('RGBA',(w,h),(0,0,0,0)); d=ImageDraw.Draw(im); fo=ImageFont.truetype(SEMI,24); t='IMAGEM ILUSTRATIVA · PROJETO 3D'
+        tw=d.textlength(t,font=fo); d.rounded_rectangle((w-tw-60,24,w-24,66),20,fill=(0,0,0,150)); d.text((w-tw-42,31),t,font=fo,fill=(255,255,255,255)); _bad[(w,h)]=np.array(im)
+    return _bad[(w,h)]
 def img(f):
     if f not in _c: _c[f]=treat(M+f)
     return _c[f]
@@ -20,11 +27,14 @@ def cover(im,w,h,t,mode):
     Mx=np.float32([[s,0,-x0*s],[0,s,-y0*s]])
     return cv2.warpAffine(im,Mx,(w,h),flags=cv2.INTER_LINEAR,borderMode=cv2.BORDER_REFLECT)
 def bg(f,t,mode):
-    if isinstance(f,str): return cover(img(f),W,H,t,mode).astype(np.float32)
+    if isinstance(f,str):
+        fr=cover(img(f),W,H,t,mode).astype(np.float32)
+        return blend(fr,badge(W,H)) if f in RENDERS else fr
     k=len(f); ph=(H-GAP*(k-1))//k; fr=np.full((H,W,3),255,np.float32)
     for j,ff in enumerate(f):
         m=mode if j%2==0 else {'lr':'rl','rl':'lr'}.get(mode,mode)
-        fr[j*(ph+GAP):j*(ph+GAP)+ph]=cover(img(ff),W,ph,t,m)
+        pt=cover(img(ff),W,ph,t,m).astype(np.float32)
+        fr[j*(ph+GAP):j*(ph+GAP)+ph]=blend(pt,badge(W,ph)) if ff in RENDERS else pt
     return fr
 def F(p,s): return ImageFont.truetype(p,s)
 def spaced(d,xy,txt,fo,fill,sp=6):
@@ -92,6 +102,7 @@ def shot_frames(sh):
             for j,(f,mode,lab) in enumerate(panels):
                 pt=cover(img(f),W,ph,t,mode).astype(np.float32)
                 if labs[j] is not None: pt=blend(pt,labs[j],ease((i-4-3*j)/(0.25*FPS)))
+                if f in RENDERS: pt=blend(pt,badge(W,ph))
                 # entrada: painel desliza alternando lados
                 e=ease((i-3*j)/(0.35*FPS)); off=int((1-e)*W*(1 if j%2==0 else -1))
                 y0=j*(ph+GAP); row=np.full((ph,W,3),255,np.float32)
