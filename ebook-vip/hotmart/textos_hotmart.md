@@ -33,5 +33,5 @@ Feito pela Vídeo Imóvel.
 
 ## Textos alternativos
 Capa/vitrine horizontal: Capa do e-book Imóvel que Fatura, da Vídeo Imóvel, com a piscina de uma chácara e um ombrelone sob céu azul.
-Banner: Banner do e-book Imóvel que Fatura, da Vídeo Imóvel, com a piscina de uma chácara, ombrelone e espreguiçadeiras.
-Vitrine vertical: Capa do e-book Imóvel que Fatura, da Vídeo Imóvel, com o pomar e as árvores de uma chácara sob céu azul.
+Banner: Banner do e-book Imóvel que Fatura, da Vídeo Imóvel, com a vista aérea de um condomínio às margens de uma represa.
+Vitrine vertical: Capa do e-book Imóvel que Fatura, da Vídeo Imóvel, com a vista aérea de um condomínio contornado por uma represa.
