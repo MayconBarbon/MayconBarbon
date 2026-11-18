@@ -83,6 +83,14 @@
         : S.txt(v);
       return '<div class="midia"><h3>' + t + "</h3>" + conteudo + "</div>";
     }
+    function videos(lista) {
+      if (!lista || !lista.length) return "";
+      return '<h2 class="h2" style="margin-top:40px">Os vídeos entregues</h2>' +
+        '<div class="vid-lista">' + lista.map(function (v) {
+          return '<figure class="vid-item"><video controls preload="none" playsinline poster="' + S.esc(v.poster || "") + '" src="' + S.esc(v.src) + '"></video>' +
+            "<figcaption>" + S.esc(v.rotulo) + "</figcaption></figure>";
+        }).join("") + "</div>";
+    }
     function instagram(lista) {
       if (!lista || !lista.length) return "";
       return '<h2 class="h2" style="margin-top:40px">No Instagram do cliente</h2>' +
@@ -105,6 +113,7 @@
       "</div>" +
       '<h2 class="h2" style="margin-top:40px">No dia e depois</h2>' +
       '<div class="midias">' + midia("Publicado no dia", c.noDia) + midia("Aftermovie / entrega posterior", c.aftermovie) + "</div>" +
+      videos(c.videos) +
       instagram(c.instagram) +
       '<div class="case-corpo" style="margin-top:28px">' + bloco("Resultado e retorno", c.resultado, "resultados e prints") + "</div>" +
       '<p style="margin-top:32px"><a class="btn" href="index.html#aprenda">Aprenda o método da DocMe</a></p>';

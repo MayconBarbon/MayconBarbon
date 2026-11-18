@@ -82,6 +82,7 @@ PARES = [
     (r"Corrida ESG( — Chelso Sports)?", "corrida de rua"),
     (r"Jornada Caipira", "festa caipira"),
     (r"[Cc]asamento Carol e Daniel", "casamento com mais de 30 atrações"),
+    (r"Carol(ina)? Cardona( Estética)?( — Salão de Beleza( e Estética)?)?", "salão de beleza do bairro"),
 ]
 PROIBIDOS = r"Best-Seller|Bestseller|Celebra|Comida na Rua|\bCIDE?\b|APEX|ACIPI|Carol Sampaio|Para Sempre|Engenho|Guarujá|Karla|Expo ESG|Festa d[oa]|Pirabir|PiraBeer|Pirabeer|McDia|Ronald|Pizza do Bem|Feijoada|Dia de Doar|Aninha|SIMESPI|Unimed|Dia das Crianças"
 

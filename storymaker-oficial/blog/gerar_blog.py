@@ -49,7 +49,7 @@ CORRECOES = {
 # Nomes de eventos que nunca podem aparecer nos artigos publicados (checagem automática)
 PROIBIDOS = ["CID", "CIDE", "Celebra", "Comida na Rua", "Best-Seller", "Bestseller", "Expo ESG", "APEX", "Apex",
              "ACIPI", "Pirabir", "PiraBeer", "McDia", "Ronald", "Pizza do Bem", "Feijoada do Bem", "Dia de Doar",
-             "Festa do Frango", "Festa da Batata", "Karla Corrente", "Carol Sampaio", "Aninha", "Engenho", "SIMESPI", "Festa da Imprensa", "PedalaPira", "PiraOlímpica", "Lilian Geraldini", "Chelso", "Jornada Caipira", "Carol e Daniel"]
+             "Festa do Frango", "Festa da Batata", "Karla Corrente", "Carol Sampaio", "Aninha", "Engenho", "SIMESPI", "Festa da Imprensa", "PedalaPira", "PiraOlímpica", "Lilian Geraldini", "Chelso", "Jornada Caipira", "Carol e Daniel", "Cardona"]
 # Termos de tendência pedidos pelo fundador, distribuídos sem repetição forçada.
 TERMOS_TENDENCIA = ["cobertura mobile", "cobertura com celular", "storymaker mobile", "conteúdo em tempo real"]
 TEXTO = {

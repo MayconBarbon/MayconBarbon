@@ -252,6 +252,10 @@ details p { color: var(--suave); margin: 12px 0 0; }
 .ig-item { border-radius: var(--raio); background: var(--fundo-alt); padding: 22px; }
 .ig-item h3 { font-size: 1rem; margin-bottom: 12px; }
 .ig-item .instagram-media { margin: 0 auto !important; min-width: 0 !important; width: 100% !important; }
+.vid-lista { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.vid-item { margin: 0; }
+.vid-item video { width: 100%; aspect-ratio: 9 / 16; border-radius: var(--raio); background: #1b1a1f; display: block; object-fit: cover; }
+.vid-item figcaption { font-size: .92rem; margin-top: 8px; }
 .midias { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px; }
 .midia { border-radius: var(--raio); background: var(--fundo-alt); padding: 22px; }
 .midia h3 { font-size: 1rem; }
@@ -272,6 +276,7 @@ details p { color: var(--suave); margin: 12px 0 0; }
   .topo { background: rgba(27, 26, 31, .96); }
   .hero { padding-top: 108px; }
   .cards4, .grid-cases, .produtos, .metodo, .equipe, .para-quem, .case-corpo, .midias, .ig-lista { grid-template-columns: 1fr; }
+  .vid-lista { grid-template-columns: 1fr 1fr; }
   .equipe { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .pacote__itens { columns: 1; }
   .rodape__in { grid-template-columns: 1fr; }

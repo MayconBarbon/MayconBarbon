@@ -88,3 +88,6 @@ Enviados pelo fundador em 18/11/2026. Ficam no campo `instagram` de `site/assets
 | Corrida ESG Chelso Sports | https://www.instagram.com/p/DNBFsTWu1Cp/ |
 | Jornada Caipira | https://www.instagram.com/reel/DQffWjkD3qt/ |
 | Casamento Carol e Daniel | https://www.instagram.com/reel/DCYVOrMOz0P/ |
+| Kokedama em 5 minutos (artesã) | https://www.instagram.com/p/DadDsgCJ8RL/ |
+
+**Carolina Cardona — Salão de Beleza e Estética:** 7 vídeos na pasta do Drive (V1 a V6 e V8). V1 a V6 foram comprimidos para o site em `site/assets/video/salao/` (540×960). O V8 (73 MB) não baixou: o Drive bloqueou por limite de downloads; incluir depois.
