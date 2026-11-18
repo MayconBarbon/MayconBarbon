@@ -317,6 +317,19 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 .case-vids video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#000;display:block}
 .case-vids figcaption{font-size:.78rem;color:var(--ink-muted);margin-top:6px;text-align:center}
 @media (max-width:820px){.case{grid-template-columns:1fr}}
+.prem{background:#0b0f17;color:#f4f5f8;padding-block:clamp(64px,9vw,112px)}
+.prem .pw{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,72px);align-items:center}
+.prem video{width:100%;max-width:400px;aspect-ratio:9/16;object-fit:cover;border-radius:24px;display:block;margin-inline:auto;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#000}
+.prem .eyebrow{color:#e2c48a}
+.prem h2{font-size:clamp(2rem,4.4vw,3.3rem);margin:.3em 0 .5em}
+.prem h2 em{font-style:normal;color:#e2c48a}
+.prem p{color:#aab3c2}
+.prem ul{list-style:none;padding:0;margin:22px 0 28px;display:grid;gap:12px}
+.prem li{padding-left:28px;position:relative;color:#e6e9ef}
+.prem li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:2px;background:#e2c48a}
+.prem .cred{font-size:.85rem;color:#8b94a5;margin-top:12px;text-align:center}
+.prem .btn-primary{--brand:#e2c48a;--brand-fg:#1b1407}
+@media (max-width:820px){.prem .pw{grid-template-columns:1fr}}
 </style>
 
 <script type="application/ld+json">
@@ -578,6 +591,27 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       </div>
       <div class="more reveal">
         <a class="link" href="https://www.instagram.com/video.imoveloficial/" target="_blank" rel="noopener">Ver mais no Instagram @video.imoveloficial →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="construtoras" class="prem" aria-labelledby="h-prem">
+    <div class="wrap pw">
+      <div class="reveal">
+        <video src="assets/reels/maison-dor.mp4" poster="assets/reels/maison-dor.jpg" muted loop playsinline autoplay preload="none" aria-label="Vídeo do Maison D'or Residence, em Piracicaba: fachada com brises, piscina vista de cima pelo drone e o prédio ao pôr do sol"></video>
+        <p class="cred">Maison D'or Residence · Kraide Engenharia · Piracicaba-SP</p>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Vídeo premium · Construtoras e incorporadoras</p>
+        <h2 id="h-prem">O empreendimento visto como <em>obra de arquitetura</em>.</h2>
+        <p class="lead" style="color:#aab3c2">Para lançamentos e prédios entregues, produzimos vídeos com drone na golden hour, que mostram a fachada, os materiais, o lazer e a relação do prédio com a cidade.</p>
+        <ul>
+          <li>Captação com drone e câmera em solo, com roteiro de cenas</li>
+          <li>Golden hour e pôr do sol para valorizar fachada e materiais</li>
+          <li>Vista de cima do lazer: piscina, rooftop e áreas comuns</li>
+          <li>Versões verticais para Reels e horizontais para site e estande</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Sou%20de%20uma%20construtora%2Fincorporadora%20e%20quero%20um%20v%C3%ADdeo%20premium%20do%20nosso%20empreendimento." target="_blank" rel="noopener">Falar sobre o seu empreendimento</a>
       </div>
     </div>
   </section>
