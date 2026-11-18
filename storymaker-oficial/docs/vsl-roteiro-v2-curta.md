@@ -167,4 +167,4 @@ Descartados por licença restrita nesta rodada: 45449, 45448.
 Remontar: `v3.py` (usa `cenas.json` com a narração gerada por `narrar_gabriel.py`) e `v3_render.js` (animações quadro a quadro com Playwright).
 
 
-**Atualização 18/11/2026 (v3):** a frase da cena 7 passou a ser "Não é falta de talento. Na maioria das vezes, é falta de método. E método se aprende." (menos definitiva), regravada com o Gabriel e conferida por transcrição. Capa do player: `docs/video/vsl/capa-vsl-v3.jpg`.
+Capa do player: `docs/video/vsl/capa-vsl-v3.jpg`.

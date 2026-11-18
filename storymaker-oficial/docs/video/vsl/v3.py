@@ -8,7 +8,7 @@ CENA = {
  4: dict(tipo="FOOT", lay="S", clips=[(41222, 1), (43256, 0.5), (4537, 3)], tituloMd="O que o cliente **espera?**"),
  5: dict(tipo="FOOT", lay="S", clips=[(44071, 2), (41273, 1), (44074, 2)], tituloMd="A edição que não **termina**"),
  6: dict(tipo="FOOT", lay="S", clips=[(51529, 1), (51643, 2), (4632, 4)], tituloMd="O momento que não **volta**"),
- 7: dict(tipo="SWAP", rotulo="Método", frases=["Não é falta de **talento.**", "Na maioria das vezes, é falta de **método.**", "E método **se aprende.**"]),
+ 7: dict(tipo="SWAP", rotulo="Método", frases=["Nada disso é falta de **talento.**", "É falta de **método.**", "E método **se aprende.**"]),
  8: dict(tipo="FOOT", lay="V", clips=[(1170, 2)], tituloMd="Começa antes do **evento**"),
  9: dict(tipo="FOOT", lay="S", clips=[(5217, 0.5), (5206, 1), (18204, 4)], tituloMd="", rotulos=["ABERTO", "MÉDIO", "DETALHE"]),
  10: dict(tipo="FOOT", lay="S", clips=[(50406, 0.5), (50470, 1), (44074, 6)], tituloMd="A edição não escolhe **por você**"),

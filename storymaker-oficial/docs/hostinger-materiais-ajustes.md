@@ -148,4 +148,4 @@ por:
 <p class="secao__intro">Não é falta de talento. Na maioria das vezes, é falta de método, e método se aprende. Ao lado de cada situação, o material que trata dela.</p>
 ```
 
-A VSL v3 já foi atualizada com a mesma frase.
+O vídeo (VSL v3) fica como está.
