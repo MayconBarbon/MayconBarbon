@@ -11,11 +11,11 @@ CENAS = [
  ("2. O que muda quando você planeja", "Começa antes do evento", "Tudo começa antes de ligar a câmera: uma boa conversa com o cliente."),
  ("2. O que muda quando você planeja", "Aberto, médio, detalhe", "No evento, você alterna plano aberto, médio e detalhe. É assim que a sequência conta a história."),
  ("3. A ferramenta ajuda, a escolha é sua", "A edição não escolhe por você", "O aplicativo de edição ajuda. Mas depende das cenas que você escolheu."),
- ("4. A trilha de materiais", "Materiais práticos", "[curious] Por isso, a DocMe Comunicação organizou o método em materiais práticos. Para storymakers, social medias e socialmakers."),
+ ("4. A trilha de materiais", "Materiais práticos", "[curious] Por isso, o Storymaker Oficial organizou o método em materiais práticos. Para storymakers, social medias e socialmakers."),
  ("4. A trilha de materiais", "Do checklist ao e-book", "Checklists, modelo de briefing, planilha de custos, contrato e o e-book Do briefing à história. E o Kit Lançamento reúne quatro deles."),
  ("5. Comece pequeno e pratique", "Comece pequeno", "[warmly] Comece pequeno: um negócio do bairro, uma comemoração. E pratique."),
- ("5. Comece pequeno e pratique", "Do simples ao grande", "Nesta página, você vê coberturas reais da equipe DocMe, do simples ao grande."),
- ("6. Convite", "Escolha por onde começar", "[warmly] Escolha o material da etapa em que você está. A compra e a entrega são pela Kiwify. [pause] Método desenvolvido pela DocMe Comunicação."),
+ ("5. Comece pequeno e pratique", "Do simples ao grande", "Nesta página, você vê coberturas reais, do simples ao grande."),
+ ("6. Convite", "Escolha por onde começar", "[warmly] Escolha o material da etapa em que você está. A compra e a entrega são pela Kiwify. [pause] Storymaker Oficial."),
 ]
 LIMPA = lambda t: re.sub(r"\[[a-z ]+\]\s*", "", t).replace("...", ",").strip()
 out = []

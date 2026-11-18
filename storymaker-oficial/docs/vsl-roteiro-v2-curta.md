@@ -107,3 +107,61 @@ Descartados por licença restrita: 48636, 9216, 49412, 33273, 23145 (e na v1: 53
 ## Como remontar
 
 `cenas_curto.py` (texto) → `narrar_gabriel.py` (voz e conferência por transcrição) → `v2.py` (que chama `v2_overlays.js`). Os clipes saem de `https://assets.mixkit.co/videos/ID/ID-720.mp4`.
+
+---
+
+# Versão v3 (atual) — estilo da referência
+
+**1min31 · 1080×1920 · mesma narração do Gabriel, sem citar a DocMe** · arquivos `vsl-storymaker-9x16-v3.mp4` (master), `-v3-web.mp4` (720×1280, 8 MB) e `.srt`.
+
+- Cenas tipográficas em fundos sólidos da marca (off-white `#ece8e3`, grafite `#1b1a1f`, laranja `#e7570c`), como na referência: digitação com cursor laranja, palavras regulares e em negrito na mesma linha, lista que rola com o item destacado, troca de palavras no mesmo lugar, etiquetas pequenas nos cantos ("01 / 03"), guias geométricas e cortes rápidos de cor antes do logo.
+- Cenas com vídeo: títulos digitados, legendas palavra por palavra (destaque em `#e7570c`), três clipes empilhados ou vertical em tela cheia, rótulos ABERTO / MÉDIO / DETALHE na cena dos planos.
+- Mais natureza (pôr do sol, flores, campo, regador) e brindes; o bolo saiu.
+- A narração fala do **Storymaker Oficial**; o cartão final tem só "Imagens ilustrativas · Mixkit" em letra pequena.
+
+| # | Tipo | Início | Duração | Clipes | Texto na tela |
+|---|---|---|---|---|---|
+| 1 | FOOT | 0.0s | 4.8s | 4632, 51540, 51541 | Você conhece essa cena? |
+| 2 | WHEEL | 4.8s | 3.5s | — | O que gravar primeiro? |
+| 3 | FOOT | 8.3s | 4.7s | 5224, 51553, 18204 | Imagens bonitas… |
+| 4 | FOOT | 13.0s | 4.7s | 41222, 43256, 4537 | O que o cliente espera? |
+| 5 | FOOT | 17.6s | 4.3s | 44071, 41273, 44074 | A edição que não termina |
+| 6 | FOOT | 21.9s | 5.8s | 51529, 51643, 4632 | O momento que não volta |
+| 7 | SWAP | 27.8s | 6.4s | — | Nada disso é falta de talento. / É falta de método. / E método se aprende. |
+| 8 | FOOT | 34.2s | 5.4s | 1170 | Começa antes do evento |
+| 9 | FOOT | 39.6s | 6.9s | 5217, 5206, 18204 | Storymaker Oficial · Escolha por onde começar |
+| 10 | FOOT | 46.5s | 5.3s | 50406, 50470, 44074 | A edição não escolhe por você |
+| 11 | SWAP | 51.8s | 8.6s | — | Materiais práticos. / Storymaker / Social media / Socialmaker |
+| 12 | LIST | 60.4s | 9.8s | — | Checklists / Modelo de briefing / Planilha de custos / Modelo de contrato / E-book / Kit Lançamento |
+| 13 | FOOT | 70.1s | 5.9s | 1186 | Comece pequeno |
+| 14 | FOOT | 76.0s | 5.0s | 1780, 4702, 51540 | Do simples ao grande |
+| 15 | FINAL | 81.0s | 10.0s | — | Storymaker Oficial · Escolha por onde começar |
+
+**Clipes usados na v3 (Mixkit Stock Video Free License, conferidos em 18/11/2026):**
+
+- 1170: https://mixkit.co/free-stock-video/sun-setting-or-rising-over-palm-trees-1170/
+- 1186: https://mixkit.co/free-stock-video/small-pink-flowers-1186/
+- 1780: https://mixkit.co/free-stock-video/watering-a-flower-pot-1780/
+- 4537: https://mixkit.co/free-stock-video/a-couple-of-friends-sitting-laughing-with-their-cell-phones-4537/
+- 4632: https://mixkit.co/free-stock-video/microphone-in-a-party-hall-4632/
+- 4702: https://mixkit.co/free-stock-video/girl-dancing-happily-in-a-field-of-flowers-4702/
+- 5206: https://mixkit.co/free-stock-video/a-brides-hand-on-the-grooms-shoulder-at-their-wedding-5206/
+- 5217: https://mixkit.co/free-stock-video/wedding-ceremony-5217/
+- 5224: https://mixkit.co/free-stock-video/sequence-of-a-decorated-wedding-table-5224/
+- 18204: https://mixkit.co/free-stock-video/bridal-bouquet-of-white-flowers-in-a-close-up-shot-18204/
+- 41222: https://mixkit.co/free-stock-video/two-girls-chatting-at-the-counter-of-a-coffee-shop-41222/
+- 41273: https://mixkit.co/free-stock-video/youtuber-editing-a-video-41273/
+- 43256: https://mixkit.co/free-stock-video/two-friends-talking-in-the-cafeteria-43256/
+- 44071: https://mixkit.co/free-stock-video/boy-editing-a-video-on-a-computer-44071/
+- 44074: https://mixkit.co/free-stock-video/close-shot-of-a-guy-editing-a-video-on-a-44074/
+- 50406: https://mixkit.co/free-stock-video/a-smartphone-is-recording-a-brunette-woman-applying-50406/
+- 50470: https://mixkit.co/free-stock-video/smarphone-recording-a-young-woman-talking-in-a-vintage-phone-50470/
+- 51529: https://mixkit.co/free-stock-video/a-group-of-friends-make-a-toast-and-drink-from-51529/
+- 51540: https://mixkit.co/free-stock-video/a-joyful-group-of-friends-holding-champagne-glasses-and-sparklers-51540/
+- 51541: https://mixkit.co/free-stock-video/a-group-of-friends-donned-with-elegant-dresses-and-suits-51541/
+- 51553: https://mixkit.co/free-stock-video/close-up-shot-of-bubbly-and-effervescent-champagne-glasses-51553/
+- 51643: https://mixkit.co/free-stock-video/a-young-couple-in-elegant-attire-make-a-toast-with-51643/
+
+Descartados por licença restrita nesta rodada: 45449, 45448.
+
+Remontar: `v3.py` (usa `cenas.json` com a narração gerada por `narrar_gabriel.py`) e `v3_render.js` (animações quadro a quadro com Playwright).
