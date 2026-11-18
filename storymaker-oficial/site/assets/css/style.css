@@ -93,15 +93,25 @@ mark.falta { background: #fff3c4; color: #7a5a00; border: 1px dashed #d9b200; bo
 .phone { justify-self: center; width: min(290px, 78vw); aspect-ratio: 9 / 16; border-radius: 38px; background: #0e0d11; padding: 12px; box-shadow: 0 0 0 2px #34333a, 0 40px 80px rgba(0, 0, 0, .5); position: relative; }
 .phone__bars { position: absolute; top: 24px; left: 26px; right: 26px; display: flex; gap: 5px; z-index: 3; }
 .phone__bars i { flex: 1; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, .3); overflow: hidden; position: relative; }
-.phone__bars i.on { background: #fff; }
-.phone__bars i.run::after { content: ""; position: absolute; inset: 0; background: #fff; transform-origin: left; animation: barra 4s linear infinite; }
+.phone__bars i::after { content: ""; position: absolute; inset: 0; background: #fff; transform-origin: left; transform: scaleX(0); animation: 16s linear infinite; }
+.phone__bars i:nth-child(1)::after { animation-name: barra1; }
+.phone__bars i:nth-child(2)::after { animation-name: barra2; }
+.phone__bars i:nth-child(3)::after { animation-name: barra3; }
+.phone__bars i:nth-child(4)::after { animation-name: barra4; }
+@keyframes barra1 { 0% { transform: scaleX(0); } 25%, 100% { transform: scaleX(1); } }
+@keyframes barra2 { 0%, 25% { transform: scaleX(0); } 50%, 100% { transform: scaleX(1); } }
+@keyframes barra3 { 0%, 50% { transform: scaleX(0); } 75%, 100% { transform: scaleX(1); } }
+@keyframes barra4 { 0%, 75% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
 .phone__stage { position: relative; height: 100%; border-radius: 28px; overflow: hidden; }
-.phone__slide { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 22px; opacity: 0; animation: slides 16s infinite; }
-.phone__slide span { font: 700 1.25rem/1.15 var(--display); }
-.s1 { background: linear-gradient(160deg, #e7570c, #7d2c05); animation-delay: 0s; }
-.s2 { background: linear-gradient(160deg, #5d5c63, #232227); animation-delay: 4s; }
-.s3 { background: linear-gradient(160deg, #ff7a2e, #5d5c63); animation-delay: 8s; }
-.s4 { background: linear-gradient(160deg, #2b2a30, #e7570c); animation-delay: 12s; }
+.phone__slide { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 22px; opacity: 0; animation: slides 16s infinite; color: #fff;
+  background: linear-gradient(180deg, rgba(27, 26, 31, 0) 40%, rgba(27, 26, 31, .85) 100%), var(--foto, none) center / cover no-repeat, var(--fundo-slide); }
+.phone__slide span { font: 700 1.5rem/1.1 var(--display); }
+.phone__slide small { font: 700 .62rem/1 var(--corpo); letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
+.phone__slide b { font: 500 .85rem/1.35 var(--corpo); max-width: 22ch; }
+.s1 { --foto: url(../img/hero-1.jpg); --fundo-slide: linear-gradient(160deg, #e7570c, #7d2c05); animation-delay: 0s; }
+.s2 { --foto: url(../img/hero-2.jpg); --fundo-slide: linear-gradient(160deg, #ff7a2e, #9a3412); animation-delay: 4s; }
+.s3 { --foto: url(../img/hero-3.jpg); --fundo-slide: linear-gradient(160deg, #c2410c, #3a2a2f); animation-delay: 8s; }
+.s4 { --foto: url(../img/hero-4.jpg); --fundo-slide: linear-gradient(160deg, #5d5c63, #c2410c); animation-delay: 12s; }
 .phone__live { position: absolute; top: 40px; left: 26px; z-index: 3; background: var(--laranja); font: 700 .65rem/1 var(--corpo); letter-spacing: .1em; padding: 5px 8px; border-radius: 4px; }
 @keyframes slides { 0%, 22% { opacity: 1; } 25%, 100% { opacity: 0; } }
 @keyframes barra { from { transform: scaleX(0); } to { transform: scaleX(1); } }
@@ -286,7 +296,7 @@ details p { color: var(--suave); margin: 12px 0 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .s1 { opacity: 1; }
-  .phone__bars i.run::after { transform: scaleX(.5); }
+  .phone__bars i:first-child::after { transform: scaleX(1); }
 }
 
 /* =========================================================
@@ -328,10 +338,10 @@ details p { color: var(--suave); margin: 12px 0 0; }
 [data-tema="laranja"] .hero .btn--ghost { background: transparent; color: var(--texto-sobre-laranja); border-color: var(--grafite); }
 [data-tema="laranja"] .hero .btn--ghost:hover { background: rgba(27, 26, 31, .08); }
 [data-tema="laranja"] .phone { background: var(--grafite); box-shadow: 0 0 0 2px #2b2a30, 0 40px 80px rgba(80, 25, 0, .45); }
-[data-tema="laranja"] .s1 { background: linear-gradient(160deg, #3a393f, #1b1a1f); }
-[data-tema="laranja"] .s2 { background: linear-gradient(160deg, #5d5c63, #26252b); }
-[data-tema="laranja"] .s3 { background: linear-gradient(160deg, #2b2a30, #5d5c63); }
-[data-tema="laranja"] .s4 { background: linear-gradient(160deg, #1b1a1f, #3a393f); }
+[data-tema="laranja"] .s1 { --fundo-slide: linear-gradient(160deg, #3a393f, #1b1a1f); }
+[data-tema="laranja"] .s2 { --fundo-slide: linear-gradient(160deg, #5d5c63, #26252b); }
+[data-tema="laranja"] .s3 { --fundo-slide: linear-gradient(160deg, #2b2a30, #5d5c63); }
+[data-tema="laranja"] .s4 { --fundo-slide: linear-gradient(160deg, #1b1a1f, #3a393f); }
 [data-tema="laranja"] .phone__live { background: #fff; color: var(--laranja-escuro); }
 
 /* faixa "Seu olhar..." e página de case */

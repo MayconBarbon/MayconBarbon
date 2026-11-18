@@ -54,6 +54,7 @@ Antes de escrever títulos, textos do site, nomes de produtos, descrições, leg
 - O "Cimesp" citado na conversa é o **SIMESPI** (Piracicaba).
 
 - **Faixas, letreiros e destaques do site usam palavras do audiovisual** (storymaker mobile, cobertura mobile, stories, reels, aftermovie, bastidores, entrega no mesmo dia), **nunca nomes de clientes**. Números do site: **+100 eventos produzidos pela DocMe**.
+- **Exceção pedida pelo fundador (18/11/2026):** o celular do topo do site mostra 4 eventos de destaque como stories, com o nome do evento (escolhidos pelo fundador: CIDE 2026, Celebra 2026, ApexBrasil, PedalaPira 2026). Fotos em `site/assets/img/hero-1.jpg` a `hero-4.jpg` (verticais, 9:16).
 - **Nenhum material cita o evento pelo nome** (blog, e-books, guias, checklists, catálogo). Usar nomes genéricos: confraternização de fim de ano, evento infantil, congresso em São Paulo, congresso de negócios, congresso empresarial regional, evento nacional, casamento com mais de 30 atrações, circuito gastronômico, workshop de dois dias. O script `produtos/nomes_genericos.py` faz a troca e o gerador do blog bloqueia nomes conhecidos. Os nomes reais ficam só nos documentos internos (`docs/`).
 - Evento de grande porte (artigo 10): equipe de cerca de 25 pessoas, público de cerca de 13 mil pessoas, em média 25 palestrantes.
 - O evento citado como "CID Brasil" se chama **CIDE** (CIDE 2026).
