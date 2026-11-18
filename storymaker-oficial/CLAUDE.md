@@ -31,7 +31,8 @@ Antes de escrever títulos, textos do site, nomes de produtos, descrições, leg
 
 ## 4. Voz fixa da marca
 
-- Narração, locução e vídeos de ensino: **Gabriel — Friendly Brazilian Ad Voice** (ElevenLabs).
+- **Locução padrão DocMe** (vale para todos os projetos, ver `../CLAUDE.md`).
+- Narração, locução, VSL e vídeos de ensino: **Gabriel — Friendly Brazilian Ad Voice** (ElevenLabs).
 - `voice_id`: `WPgqgCVa3mD38JuyODU6` · modelo `eleven_v4`.
 - Mesma voz dos vídeos Importway Brand Film 60s e SIMESPI x Dama Bier.
 - Estilo: marcações de tom como `[warmly]`, `[curious]`, `[pause]`, `[long pause]`; frases curtas; nomes difíceis escritos como se pronunciam (ex.: "Siméspi", "Bí-er").

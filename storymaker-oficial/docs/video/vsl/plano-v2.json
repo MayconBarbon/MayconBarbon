@@ -1,0 +1,912 @@
+[
+ {
+  "n": 1,
+  "bloco": "1. As dificuldades",
+  "titulo": "Você conhece essa cena?",
+  "fala": "[warmly] Você chega ao evento... e tudo acontece ao mesmo tempo.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Você chega ao evento, e tudo acontece ao mesmo tempo."
+   }
+  ],
+  "voz": "gabriel/g01.mp3",
+  "voz_dur": 4.21,
+  "pad_ini": 0.25,
+  "dur": 4.81,
+  "inicio": 0,
+  "transcricao": "Você chega ao evento e tudo acontece ao mesmo tempo",
+  "layout": "S",
+  "clips": [
+   [
+    4632,
+    1
+   ],
+   [
+    4640,
+    3
+   ],
+   [
+    51541,
+    4
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Você chega ao evento,",
+    "ini": 0.25,
+    "fim": 1.89,
+    "hl": 3
+   },
+   {
+    "texto": "e tudo acontece ao",
+    "ini": 1.89,
+    "fim": 3.53,
+    "hl": 2
+   },
+   {
+    "texto": "mesmo tempo.",
+    "ini": 3.53,
+    "fim": 4.76,
+    "hl": 0
+   }
+  ],
+  "titulo_fim": 1.68
+ },
+ {
+  "n": 2,
+  "bloco": "1. As dificuldades",
+  "titulo": "Por onde começar?",
+  "fala": "[curious] Por onde começar? O que gravar primeiro?",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Por onde começar?"
+   },
+   {
+    "texto": "O que gravar primeiro?"
+   }
+  ],
+  "voz": "gabriel/g02.mp3",
+  "voz_dur": 2.85,
+  "pad_ini": 0.25,
+  "dur": 3.45,
+  "inicio": 4.81,
+  "transcricao": "Por onde começar? O que gravar primeiro?",
+  "layout": "S",
+  "clips": [
+   [
+    5227,
+    1
+   ],
+   [
+    46893,
+    2
+   ],
+   [
+    4385,
+    2
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Por onde começar?",
+    "ini": 0.25,
+    "fim": 1.5,
+    "hl": 2
+   },
+   {
+    "texto": "O que gravar primeiro?",
+    "ini": 1.5,
+    "fim": 3.4,
+    "hl": 3
+   }
+  ],
+  "titulo_fim": 1.4
+ },
+ {
+  "n": 3,
+  "bloco": "1. As dificuldades",
+  "titulo": "Imagens bonitas…",
+  "fala": "Você faz imagens bonitas. Mas elas não viram uma história.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Você faz imagens bonitas."
+   },
+   {
+    "texto": "Mas elas não viram uma história."
+   }
+  ],
+  "voz": "gabriel/g03.mp3",
+  "voz_dur": 4.13,
+  "pad_ini": 0.25,
+  "dur": 4.73,
+  "inicio": 8.26,
+  "transcricao": "Você faz imagens bonitas, mas elas não viram uma história",
+  "layout": "S",
+  "clips": [
+   [
+    5224,
+    0.5
+   ],
+   [
+    5223,
+    1
+   ],
+   [
+    18204,
+    0.5
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Você faz imagens bonitas.",
+    "ini": 0.25,
+    "fim": 1.86,
+    "hl": 2
+   },
+   {
+    "texto": "Mas elas não viram",
+    "ini": 1.86,
+    "fim": 3.47,
+    "hl": 3
+   },
+   {
+    "texto": "uma história.",
+    "ini": 3.47,
+    "fim": 4.68,
+    "hl": 1
+   }
+  ],
+  "titulo_fim": 1.66
+ },
+ {
+  "n": 4,
+  "bloco": "1. As dificuldades",
+  "titulo": "O que o cliente espera?",
+  "fala": "O que o cliente espera, de verdade? Quem precisa aparecer?",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "O que o cliente espera, de verdade?"
+   },
+   {
+    "texto": "Quem precisa aparecer?"
+   }
+  ],
+  "voz": "gabriel/g04.mp3",
+  "voz_dur": 4.05,
+  "pad_ini": 0.25,
+  "dur": 4.65,
+  "inicio": 12.99,
+  "transcricao": "O que o cliente espera, de verdade? Quem precisa aparecer?",
+  "layout": "S",
+  "clips": [
+   [
+    41222,
+    1
+   ],
+   [
+    43256,
+    0.5
+   ],
+   [
+    4537,
+    3
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "O que o cliente espera,",
+    "ini": 0.25,
+    "fim": 2.17,
+    "hl": 3
+   },
+   {
+    "texto": "de verdade?",
+    "ini": 2.17,
+    "fim": 3.06,
+    "hl": 1
+   },
+   {
+    "texto": "Quem precisa aparecer?",
+    "ini": 3.06,
+    "fim": 4.6,
+    "hl": 2
+   }
+  ],
+  "titulo_fim": 1.63
+ },
+ {
+  "n": 5,
+  "bloco": "1. As dificuldades",
+  "titulo": "A edição que não termina",
+  "fala": "Na edição, você se perde. E a entrega não sai.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Na edição, você se perde."
+   },
+   {
+    "texto": "E a entrega não sai."
+   }
+  ],
+  "voz": "gabriel/g05.mp3",
+  "voz_dur": 3.71,
+  "pad_ini": 0.25,
+  "dur": 4.31,
+  "inicio": 17.64,
+  "transcricao": "Na edição, você se perde e a entrega não sai",
+  "layout": "S",
+  "clips": [
+   [
+    44071,
+    2
+   ],
+   [
+    41273,
+    1
+   ],
+   [
+    44074,
+    2
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Na edição,",
+    "ini": 0.25,
+    "fim": 1.07,
+    "hl": 1
+   },
+   {
+    "texto": "você se perde.",
+    "ini": 1.07,
+    "fim": 2.2,
+    "hl": 2
+   },
+   {
+    "texto": "E a entrega não sai.",
+    "ini": 2.2,
+    "fim": 4.26,
+    "hl": 2
+   }
+  ],
+  "titulo_fim": 1.51
+ },
+ {
+  "n": 6,
+  "bloco": "1. As dificuldades",
+  "titulo": "O momento que não volta",
+  "fala": "[pause] E bate aquele medo: perder a fala, a entrada, o parabéns.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "E bate aquele medo: perder a fala, a entrada, o parabéns."
+   }
+  ],
+  "voz": "gabriel/g06.mp3",
+  "voz_dur": 5.25,
+  "pad_ini": 0.25,
+  "dur": 5.85,
+  "inicio": 21.95,
+  "transcricao": "E bate aquele medo: perder a fala, a entrada, o parabéns",
+  "layout": "S",
+  "clips": [
+   [
+    4663,
+    2
+   ],
+   [
+    5112,
+    1
+   ],
+   [
+    5109,
+    1
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "E bate aquele medo:",
+    "ini": 0.25,
+    "fim": 2.05,
+    "hl": 2
+   },
+   {
+    "texto": "perder a fala,",
+    "ini": 2.05,
+    "fim": 3.46,
+    "hl": 0
+   },
+   {
+    "texto": "a entrada,",
+    "ini": 3.46,
+    "fim": 4.48,
+    "hl": 1
+   },
+   {
+    "texto": "o parabéns.",
+    "ini": 4.48,
+    "fim": 5.8,
+    "hl": 1
+   }
+  ],
+  "titulo_fim": 2.05
+ },
+ {
+  "n": 7,
+  "bloco": "1. As dificuldades",
+  "titulo": "Falta de método",
+  "fala": "[warmly] Nada disso é falta de talento. É falta de método. E método se aprende.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Nada disso é falta de talento."
+   },
+   {
+    "texto": "É falta de método."
+   },
+   {
+    "texto": "E método se aprende."
+   }
+  ],
+  "voz": "gabriel/g07.mp3",
+  "voz_dur": 5.8,
+  "pad_ini": 0.25,
+  "dur": 6.4,
+  "inicio": 27.8,
+  "transcricao": "Nada disso é falta de talento, é falta de método. E método se aprende",
+  "layout": "V",
+  "clips": [
+   [
+    42308,
+    1
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Nada disso é falta",
+    "ini": 0.25,
+    "fim": 1.88,
+    "hl": 1
+   },
+   {
+    "texto": "de talento.",
+    "ini": 1.88,
+    "fim": 2.8,
+    "hl": 1
+   },
+   {
+    "texto": "É falta de método.",
+    "ini": 2.8,
+    "fim": 4.42,
+    "hl": 3
+   },
+   {
+    "texto": "E método se aprende.",
+    "ini": 4.42,
+    "fim": 6.35,
+    "hl": 3
+   }
+  ],
+  "titulo_fim": 2.2
+ },
+ {
+  "n": 8,
+  "bloco": "2. O que muda quando você planeja",
+  "titulo": "Começa antes do evento",
+  "fala": "Tudo começa antes de ligar a câmera: uma boa conversa com o cliente.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Tudo começa antes de ligar a câmera:"
+   },
+   {
+    "texto": "uma boa conversa com o cliente."
+   }
+  ],
+  "voz": "gabriel/g08.mp3",
+  "voz_dur": 4.83,
+  "pad_ini": 0.25,
+  "dur": 5.43,
+  "inicio": 34.2,
+  "transcricao": "Tudo começa antes de ligar a câmera: uma boa conversa com o cliente",
+  "layout": "S",
+  "clips": [
+   [
+    41813,
+    0.5
+   ],
+   [
+    43266,
+    1
+   ],
+   [
+    1741,
+    3
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Tudo começa antes de",
+    "ini": 0.25,
+    "fim": 1.69,
+    "hl": 1
+   },
+   {
+    "texto": "ligar a câmera:",
+    "ini": 1.69,
+    "fim": 2.82,
+    "hl": 2
+   },
+   {
+    "texto": "uma boa conversa com",
+    "ini": 2.82,
+    "fim": 4.26,
+    "hl": 2
+   },
+   {
+    "texto": "o cliente.",
+    "ini": 4.26,
+    "fim": 5.38,
+    "hl": 1
+   }
+  ],
+  "titulo_fim": 1.9
+ },
+ {
+  "n": 9,
+  "bloco": "2. O que muda quando você planeja",
+  "titulo": "Aberto, médio, detalhe",
+  "fala": "No evento, você alterna plano aberto, médio e detalhe. É assim que a sequência conta a história.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "No evento, você alterna plano aberto, médio e detalhe."
+   },
+   {
+    "texto": "É assim que a sequência conta a história."
+   }
+  ],
+  "voz": "gabriel/g09.mp3",
+  "voz_dur": 6.27,
+  "pad_ini": 0.25,
+  "dur": 6.87,
+  "inicio": 39.63,
+  "transcricao": "No evento, você alterna plano aberto, médio e detalhe. É assim que a sequência conta a história",
+  "layout": "S",
+  "clips": [
+   [
+    5217,
+    0.5
+   ],
+   [
+    5206,
+    1
+   ],
+   [
+    18204,
+    4
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "No evento,",
+    "ini": 0.25,
+    "fim": 1.07,
+    "hl": 1
+   },
+   {
+    "texto": "você alterna plano aberto,",
+    "ini": 1.07,
+    "fim": 2.51,
+    "hl": 1
+   },
+   {
+    "texto": "médio e detalhe.",
+    "ini": 2.51,
+    "fim": 3.64,
+    "hl": 2
+   },
+   {
+    "texto": "É assim que a",
+    "ini": 3.64,
+    "fim": 5.08,
+    "hl": 1
+   },
+   {
+    "texto": "sequência conta a história.",
+    "ini": 5.08,
+    "fim": 6.82,
+    "hl": 0
+   }
+  ],
+  "titulo_fim": 2.2
+ },
+ {
+  "n": 10,
+  "bloco": "3. A ferramenta ajuda, a escolha é sua",
+  "titulo": "A edição não escolhe por você",
+  "fala": "O aplicativo de edição ajuda. Mas depende das cenas que você escolheu.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "O aplicativo de edição ajuda."
+   },
+   {
+    "texto": "Mas depende das cenas que você escolheu."
+   }
+  ],
+  "voz": "gabriel/g10.mp3",
+  "voz_dur": 4.68,
+  "pad_ini": 0.25,
+  "dur": 5.28,
+  "inicio": 46.5,
+  "transcricao": "O aplicativo de edição ajuda, mas depende das cenas que você escolheu",
+  "layout": "S",
+  "clips": [
+   [
+    50406,
+    0.5
+   ],
+   [
+    50470,
+    1
+   ],
+   [
+    44074,
+    6
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "O aplicativo de edição ajuda.",
+    "ini": 0.25,
+    "fim": 2.15,
+    "hl": 1
+   },
+   {
+    "texto": "Mas depende das cenas",
+    "ini": 2.15,
+    "fim": 3.71,
+    "hl": 1
+   },
+   {
+    "texto": "que você escolheu.",
+    "ini": 3.71,
+    "fim": 5.23,
+    "hl": 2
+   }
+  ],
+  "titulo_fim": 1.85
+ },
+ {
+  "n": 11,
+  "bloco": "4. A trilha de materiais",
+  "titulo": "Materiais práticos",
+  "fala": "[curious] Por isso, a DocMe Comunicação organizou o método em materiais práticos. Para storymakers, social medias e socialmakers.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Por isso, a DocMe Comunicação organizou o método em materiais práticos."
+   },
+   {
+    "texto": "Para storymakers, social medias e socialmakers."
+   }
+  ],
+  "voz": "gabriel/g11.mp3",
+  "voz_dur": 8.05,
+  "pad_ini": 0.25,
+  "dur": 8.65,
+  "inicio": 51.78,
+  "transcricao": "Por isso, a Dokme Comunicação organizou o método em materiais práticos para storymakers, social medias e social makers",
+  "layout": "S",
+  "clips": [
+   [
+    4919,
+    1
+   ],
+   [
+    817,
+    1
+   ],
+   [
+    50015,
+    0.5
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Por isso,",
+    "ini": 0.25,
+    "fim": 1.3,
+    "hl": 1
+   },
+   {
+    "texto": "a DocMe Comunicação organizou",
+    "ini": 1.3,
+    "fim": 3.15,
+    "hl": 2
+   },
+   {
+    "texto": "o método em materiais práticos.",
+    "ini": 3.15,
+    "fim": 5.4,
+    "hl": 3
+   },
+   {
+    "texto": "Para storymakers,",
+    "ini": 5.4,
+    "fim": 6.45,
+    "hl": 1
+   },
+   {
+    "texto": "social medias e socialmakers.",
+    "ini": 6.45,
+    "fim": 8.6,
+    "hl": 3
+   }
+  ],
+  "titulo_fim": 2.2
+ },
+ {
+  "n": 12,
+  "bloco": "4. A trilha de materiais",
+  "titulo": "Do checklist ao e-book",
+  "fala": "Checklists, modelo de briefing, planilha de custos, contrato e o e-book Do briefing à história. E o Kit Lançamento reúne quatro deles.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Checklists, modelo de briefing, planilha de custos, contrato e o e-book Do briefing à história."
+   },
+   {
+    "texto": "E o Kit Lançamento reúne quatro deles."
+   }
+  ],
+  "voz": "gabriel/g12.mp3",
+  "voz_dur": 9.17,
+  "pad_ini": 0.25,
+  "dur": 9.77,
+  "inicio": 60.43,
+  "transcricao": "Checklists, modelo de briefing, planilha de custos, contrato e o e-book Do Briefing à História. E o Kit Lançamento reúne quatro deles",
+  "layout": "V",
+  "clips": [
+   [
+    34408,
+    0.5
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Checklists,",
+    "ini": 0.25,
+    "fim": 0.81,
+    "hl": 0
+   },
+   {
+    "texto": "modelo de briefing,",
+    "ini": 0.81,
+    "fim": 2.07,
+    "hl": 2
+   },
+   {
+    "texto": "planilha de custos,",
+    "ini": 2.07,
+    "fim": 3.33,
+    "hl": 0
+   },
+   {
+    "texto": "contrato e o e-book",
+    "ini": 3.33,
+    "fim": 4.94,
+    "hl": 0
+   },
+   {
+    "texto": "Do briefing à história.",
+    "ini": 4.94,
+    "fim": 6.55,
+    "hl": 1
+   },
+   {
+    "texto": "E o Kit Lançamento",
+    "ini": 6.55,
+    "fim": 8.16,
+    "hl": 3
+   },
+   {
+    "texto": "reúne quatro deles.",
+    "ini": 8.16,
+    "fim": 9.72,
+    "hl": 1
+   }
+  ],
+  "titulo_fim": 2.2
+ },
+ {
+  "n": 13,
+  "bloco": "5. Comece pequeno e pratique",
+  "titulo": "Comece pequeno",
+  "fala": "[warmly] Comece pequeno: um negócio do bairro, uma comemoração. E pratique.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Comece pequeno:"
+   },
+   {
+    "texto": "um negócio do bairro, uma comemoração."
+   },
+   {
+    "texto": "E pratique."
+   }
+  ],
+  "voz": "gabriel/g13.mp3",
+  "voz_dur": 5.33,
+  "pad_ini": 0.25,
+  "dur": 5.93,
+  "inicio": 70.2,
+  "transcricao": "Comece pequeno. Um negócio do bairro, uma comemoração e pratique",
+  "layout": "S",
+  "clips": [
+   [
+    50053,
+    0
+   ],
+   [
+    3581,
+    1
+   ],
+   [
+    46874,
+    1
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Comece pequeno:",
+    "ini": 0.25,
+    "fim": 1.37,
+    "hl": 1
+   },
+   {
+    "texto": "um negócio do bairro,",
+    "ini": 1.37,
+    "fim": 3.34,
+    "hl": 1
+   },
+   {
+    "texto": "uma comemoração.",
+    "ini": 3.34,
+    "fim": 4.46,
+    "hl": 1
+   },
+   {
+    "texto": "E pratique.",
+    "ini": 4.46,
+    "fim": 5.88,
+    "hl": 1
+   }
+  ],
+  "titulo_fim": 2.08
+ },
+ {
+  "n": 14,
+  "bloco": "5. Comece pequeno e pratique",
+  "titulo": "Do simples ao grande",
+  "fala": "Nesta página, você vê coberturas reais da equipe DocMe, do simples ao grande.",
+  "clip": -1,
+  "legendas": [
+   {
+    "texto": "Nesta página, você vê coberturas reais da equipe DocMe, do simples ao grande."
+   }
+  ],
+  "voz": "gabriel/g14.mp3",
+  "voz_dur": 5.41,
+  "pad_ini": 0.25,
+  "dur": 6.01,
+  "inicio": 76.13,
+  "transcricao": "Nesta página, você vê coberturas reais da equipe DocMe, do simples ao grande",
+  "layout": "S",
+  "clips": [
+   [
+    817,
+    4
+   ],
+   [
+    5117,
+    0.5
+   ],
+   [
+    4632,
+    5
+   ]
+  ],
+  "caps": [
+   {
+    "texto": "Nesta página,",
+    "ini": 0.25,
+    "fim": 1.16,
+    "hl": 1
+   },
+   {
+    "texto": "você vê coberturas reais",
+    "ini": 1.16,
+    "fim": 2.78,
+    "hl": 2
+   },
+   {
+    "texto": "da equipe DocMe,",
+    "ini": 2.78,
+    "fim": 4.04,
+    "hl": 1
+   },
+   {
+    "texto": "do simples ao grande.",
+    "ini": 4.04,
+    "fim": 5.96,
+    "hl": 1
+   }
+  ],
+  "titulo_fim": 2.1
+ },
+ {
+  "n": 15,
+  "bloco": "6. Convite",
+  "titulo": "Escolha por onde começar",
+  "fala": "[warmly] Escolha o material da etapa em que você está. A compra e a entrega são pela Kiwify. [pause] Método desenvolvido pela DocMe Comunicação.",
+  "clip": null,
+  "legendas": [
+   {
+    "texto": "Escolha o material da etapa em que você está."
+   },
+   {
+    "texto": "A compra e a entrega são pela Kiwify."
+   },
+   {
+    "texto": "Método desenvolvido pela DocMe Comunicação."
+   }
+  ],
+  "voz": "gabriel/g15.mp3",
+  "voz_dur": 8.52,
+  "pad_ini": 0.25,
+  "dur": 11.17,
+  "inicio": 82.14,
+  "transcricao": "Escolha o material da etapa em que você está. A compra e a entrega são pela Kiwi Fi. Método desenvolvido pela Doc Me Comunicação",
+  "layout": "CARD",
+  "clips": [],
+  "caps": [
+   {
+    "texto": "Escolha o material da",
+    "ini": 0.25,
+    "fim": 1.82,
+    "hl": 2
+   },
+   {
+    "texto": "etapa em que você está.",
+    "ini": 1.82,
+    "fim": 3.73,
+    "hl": 0
+   },
+   {
+    "texto": "A compra e a",
+    "ini": 3.73,
+    "fim": 5.29,
+    "hl": 1
+   },
+   {
+    "texto": "entrega são pela Kiwify.",
+    "ini": 5.29,
+    "fim": 6.86,
+    "hl": 0
+   },
+   {
+    "texto": "Método desenvolvido pela DocMe Comunicação.",
+    "ini": 6.86,
+    "fim": 11.12,
+    "hl": 1
+   }
+  ],
+  "titulo_fim": 2.2
+ }
+]
