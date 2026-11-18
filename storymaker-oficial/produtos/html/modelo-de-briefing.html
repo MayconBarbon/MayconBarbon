@@ -1,0 +1,323 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<title>Modelo de briefing | Storymaker Oficial</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>/* Diagramação dos produtos Storymaker Oficial (impressão / PDF) */
+:root {
+  --laranja: #e7570c; --laranja-esc: #c2410c; --terracota: #9a3412;
+  --texto: #2b2a30; --suave: #5d5c63; --linha: #e7e6ea; --creme: #fff4ec;
+}
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font: 400 10pt/1.55 Inter, sans-serif; color: var(--texto); }
+h1, h2, h3, h4 { font-family: Sora, Inter, sans-serif; color: var(--texto); line-height: 1.2; letter-spacing: -.01em; break-after: avoid; }
+h2 { font-size: 16pt; margin: 1.4em 0 .5em; }
+h3 { font-size: 12pt; margin: 1.3em 0 .4em; color: var(--laranja-esc); }
+h4 { font-size: 10.5pt; margin: 1.1em 0 .3em; }
+p { margin: 0 0 .7em; orphans: 3; widows: 3; }
+strong, b { font-weight: 700; }
+ul { padding-left: 1.2em; margin: 0 0 .8em; }
+ol { padding-left: 2em; margin: 0 0 .8em; }
+li { margin-bottom: .25em; }
+blockquote { margin: 1em 0; padding: .8em 1em; background: var(--creme); border-left: 4px solid var(--laranja); border-radius: 0 8px 8px 0; }
+blockquote p:last-child { margin: 0; }
+table { width: 100%; border-collapse: collapse; margin: .6em 0 1em; font-size: 8.8pt; break-inside: avoid; }
+th { background: var(--texto); color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+td { padding: 6px 8px; border-bottom: 1px solid var(--linha); vertical-align: top; }
+tr:nth-child(even) td { background: #faf9f7; }
+mark.falta { background: #fff3c4; color: #6b4f00; border: 1px dashed #d9b200; border-radius: 4px; padding: 0 .3em; font-size: .85em; }
+
+/* ---------- e-book (A5, bom para ler no celular) ---------- */
+@page { size: 148mm 210mm; margin: 16mm 14mm 18mm;
+  @bottom-center { content: counter(page); font: 600 8pt Inter, sans-serif; color: #5d5c63; }
+  @top-right { content: "Storymaker Oficial"; font: 600 7pt Inter, sans-serif; color: #c2410c; letter-spacing: .08em; text-transform: uppercase; }
+}
+.capa { page: capa; }
+@page capa { margin: 0; @bottom-center { content: none; } @top-right { content: none; } }
+.capa { height: 210mm; width: 148mm; background: radial-gradient(420px 320px at 85% 10%, rgba(255,160,90,.6), transparent 60%), var(--laranja);
+  padding: 16mm 14mm; display: flex; flex-direction: column; position: relative; overflow: hidden; break-after: page; }
+.capa__marca { font: 700 11pt Sora, sans-serif; color: var(--texto); display: flex; align-items: center; gap: 8px; }
+.capa__marca b { color: #fff; margin-left: 2px; }
+.capa__logo { width: 18px; height: 18px; border-radius: 6px; background: var(--texto); position: relative; }
+.capa__logo::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--laranja); box-shadow: inset 0 0 0 2px #fff; }
+.capa__selo { margin: 22mm 0 4mm; font: 700 8pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--texto); }
+.capa h1 { font-size: 30pt; font-weight: 800; margin: 0 0 4mm; max-width: 10ch; color: #fff; }
+.capa__sub { font-size: 11pt; max-width: 26ch; color: #1f1e24; }
+.capa__phone { position: absolute; right: -8mm; bottom: 18mm; width: 58mm; transform: rotate(-8deg); }
+.capa__assina { margin-top: auto; font: 600 8.5pt Inter, sans-serif; color: #1f1e24; }
+
+h2.quebra { break-before: page; margin-top: 0; }
+.capitulo { break-before: page; background: var(--creme); margin: 0 -14mm 6mm; padding: 8mm 14mm 9mm; border-bottom: 4px solid var(--laranja); }
+.cap__num { font: 800 54pt/1 Sora, sans-serif; color: var(--laranja); }
+.cap__rot { font: 700 8pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--suave); margin: 4mm 0 1mm; }
+.capitulo h2 { margin: 0; font-size: 19pt; }
+
+.ilustra { margin: 1em 0 1.2em; break-inside: avoid; }
+.ilustra svg { width: 100%; height: auto; display: block; }
+.ilustra figcaption { font-size: 8pt; color: var(--suave); margin-top: 6px; padding-left: 8px; border-left: 3px solid var(--laranja); }
+
+.reservado { display: flex; gap: 10px; align-items: center; border: 2px dashed #e0a27f; background: var(--creme); border-radius: 10px;
+  padding: 14px; margin: 1em 0; font-size: 8.5pt; color: var(--terracota); min-height: 34mm; break-inside: avoid; }
+.reservado__ico { flex: none; width: 34px; height: 26px; border-radius: 6px; background: var(--laranja); position: relative; }
+.reservado__ico::after { content: ""; position: absolute; left: 11px; top: 7px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; }
+
+/* ---------- fichas: checklist, briefing, contrato (A4, para imprimir) ---------- */
+@page ficha { size: A4; margin: 14mm 16mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); font: 600 8pt Inter, sans-serif; color: #5d5c63; }
+  @top-right { content: none; } }
+.fmt-ficha { page: ficha; font-size: 9.6pt; }
+.ficha__topo { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; background: var(--laranja);
+  margin: 0 0 6mm; padding: 9mm 8mm 7mm; border-radius: 0 0 14px 14px; }
+.ficha__topo h1 { margin: 0; font-size: 22pt; font-weight: 800; color: #fff; }
+.ficha__selo { margin: 0 0 2mm; font: 700 7.5pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #1f1e24; }
+.ficha__assina { margin: 0; font: 600 8pt Inter, sans-serif; color: #1f1e24; max-width: 34ch; text-align: right; }
+.fmt-ficha h2 { font-size: 12.5pt; margin: 1.1em 0 .4em; padding-bottom: 3px; border-bottom: 2px solid var(--laranja); }
+.fmt-ficha h3 { font-size: 10.5pt; }
+.fmt-ficha ul { list-style: none; padding-left: 0; }
+li.check { display: flex; gap: 8px; align-items: flex-start; break-inside: avoid; }
+.box { flex: none; width: 11px; height: 11px; border: 1.6px solid var(--texto); border-radius: 3px; margin-top: 3px; }
+.opt { display: inline-block; width: 9px; height: 9px; border: 1.4px solid var(--texto); border-radius: 50%; margin: 0 3px 0 6px; vertical-align: -1px; }
+</style></head>
+<body class="fmt-ficha"><header class="ficha__topo"><div><p class="ficha__selo">Modelo · Storymaker Oficial</p><h1>Modelo de briefing</h1></div><p class="ficha__assina">Método desenvolvido pela DocMe Comunicação.</p></header><main><h2>1. Dados básicos</h2>
+<p><strong>Cliente / empresa:</strong> _____________________________________________</p>
+<p><strong>Contato principal (nome e telefone):</strong> _____________________________________________</p>
+<p><strong>Nome do evento:</strong> _____________________________________________</p>
+<p><strong>Data:</strong> <strong><em>/</em></strong>/_____  <strong>Horário de início:</strong> _______  <strong>Horário de término:</strong> _______</p>
+<p><strong>Endereço:</strong> _____________________________________________</p>
+<p><strong>Tipo de evento:</strong> <span class="opt" aria-hidden="true"></span> corporativo <span class="opt" aria-hidden="true"></span> congresso <span class="opt" aria-hidden="true"></span> casamento <span class="opt" aria-hidden="true"></span> 15 anos <span class="opt" aria-hidden="true"></span> festa infantil <span class="opt" aria-hidden="true"></span> gastronômico <span class="opt" aria-hidden="true"></span> comunitário <span class="opt" aria-hidden="true"></span> outro: ___________</p>
+
+<h2>2. Objetivo</h2>
+<p><strong>Por que você quer storymaker neste evento?</strong></p>
+
+
+<p><strong>O evento serve para:</strong>
+<span class="opt" aria-hidden="true"></span> promover a instituição
+<span class="opt" aria-hidden="true"></span> promover um serviço
+<span class="opt" aria-hidden="true"></span> promover um produto
+<span class="opt" aria-hidden="true"></span> promover um profissional
+<span class="opt" aria-hidden="true"></span> comemoração / registro</p>
+<p><strong>O que você quer que as pessoas sintam ou entendam ao ver os stories?</strong></p>
+
+
+
+<h2>3. Público e espaço</h2>
+<p><strong>Quantas pessoas são esperadas?</strong> _______</p>
+<p><strong>Como é o espaço? (salão, área aberta, vários ambientes...)</strong></p>
+
+<p><strong>Metragem aproximada:</strong> _______</p>
+<p><strong>Quem é o público? (idade, perfil, se é ativo nas redes)</strong></p>
+
+<p><strong>O público está mais em:</strong> <span class="opt" aria-hidden="true"></span> Instagram <span class="opt" aria-hidden="true"></span> TikTok <span class="opt" aria-hidden="true"></span> LinkedIn <span class="opt" aria-hidden="true"></span> YouTube <span class="opt" aria-hidden="true"></span> Facebook <span class="opt" aria-hidden="true"></span> não sei</p>
+
+<h2>4. Publicação</h2>
+<p><strong>O evento tem potencial de as pessoas compartilharem?</strong> <span class="opt" aria-hidden="true"></span> sim <span class="opt" aria-hidden="true"></span> não <span class="opt" aria-hidden="true"></span> talvez</p>
+<p><strong>Canais onde o conteúdo vai sair:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Canal</th>
+<th>Vai usar?</th>
+<th>Tempo real ou depois?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instagram</td>
+<td><span class="opt" aria-hidden="true"></span> sim <span class="opt" aria-hidden="true"></span> não</td>
+<td><span class="opt" aria-hidden="true"></span> tempo real <span class="opt" aria-hidden="true"></span> depois</td>
+</tr>
+<tr>
+<td>TikTok</td>
+<td><span class="opt" aria-hidden="true"></span> sim <span class="opt" aria-hidden="true"></span> não</td>
+<td><span class="opt" aria-hidden="true"></span> tempo real <span class="opt" aria-hidden="true"></span> depois</td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td><span class="opt" aria-hidden="true"></span> sim <span class="opt" aria-hidden="true"></span> não</td>
+<td><span class="opt" aria-hidden="true"></span> tempo real <span class="opt" aria-hidden="true"></span> depois</td>
+</tr>
+<tr>
+<td>YouTube</td>
+<td><span class="opt" aria-hidden="true"></span> sim <span class="opt" aria-hidden="true"></span> não</td>
+<td><span class="opt" aria-hidden="true"></span> tempo real <span class="opt" aria-hidden="true"></span> depois</td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><span class="opt" aria-hidden="true"></span> sim <span class="opt" aria-hidden="true"></span> não</td>
+<td><span class="opt" aria-hidden="true"></span> tempo real <span class="opt" aria-hidden="true"></span> depois</td>
+</tr>
+</tbody>
+</table>
+<p><em>Referência do método: Instagram e TikTok pedem tempo real. LinkedIn, YouTube e Facebook não precisam ser na hora.</em></p>
+<p><strong>Quem publica?</strong>
+<span class="opt" aria-hidden="true"></span> O storymaker publica: o cliente loga as redes no aparelho da equipe
+<span class="opt" aria-hidden="true"></span> O storymaker publica: o cliente entrega o próprio celular
+<span class="opt" aria-hidden="true"></span> O storymaker envia para o grupo e o responsável pela página escolhe e posta</p>
+<p><strong>Nome e contato de quem aprova / posta:</strong> _____________________________________________</p>
+<p><strong>Grupo de WhatsApp para envio:</strong> <span class="opt" aria-hidden="true"></span> já existe <span class="opt" aria-hidden="true"></span> criar — nome: ___________</p>
+<p><strong>Contas e @ que devem ser marcadas:</strong></p>
+
+
+<h2>5. Programação</h2>
+<p><strong>Programação do evento (cole ou escreva):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Horário</th>
+<th>Momento</th>
+<th>Prioridade (alta/média/baixa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Há momentos em que não pode filmar?</strong> _____________________________________________</p>
+
+<h2>6. Pessoas importantes — lista A/B/C</h2>
+<p><em>Até 10 pessoas. A = não pode faltar de jeito nenhum. B = muito importante. C = importante se der.</em></p>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>Nome</th>
+<th>Quem é (cargo/relação)</th>
+<th>Como reconhecer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Alguém precisa dar uma fala gravada?</strong> <span class="opt" aria-hidden="true"></span> sim <span class="opt" aria-hidden="true"></span> não</p>
+<p><strong>Quem e sobre o quê:</strong> _____________________________________________</p>
+
+<h2>7. O que não pode faltar</h2>
+<p><strong>Em que vocês mais investiram? (estrutura, decoração, cenografia...)</strong></p>
+
+<p><strong>Atrações (banda, comidas, bebidas, brinquedos, ativações...):</strong></p>
+
+
+<p><strong>Marcas, patrocinadores ou produtos que precisam aparecer:</strong></p>
+
+<p><strong>Algo que você NÃO quer que apareça?</strong></p>
+
+<p><strong>O que você gosta / não gosta em vídeos e stories? Tem alguma referência?</strong></p>
+
+
+<h2>8. Mudanças e imprevistos</h2>
+<p><strong>Quem confirma mudanças de programação no dia?</strong> _____________________________________________</p>
+<p><strong>Telefone:</strong> _____________________________________________</p>
+<p><strong>Quem é o organizador do evento?</strong> _____________________________________________</p>
+<p><strong>Quem está contratando o serviço (se for outra pessoa)?</strong> _____________________________________________</p>
+<p><strong>Se a programação mudar e não der para entregar no prazo combinado, quem aprova o novo prazo?</strong></p>
+
+
+<h2>9. Entrega</h2>
+<p><strong>Volume combinado de stories:</strong> _______</p>
+<p><strong>Vai ter Reels final / aftermovie?</strong> <span class="opt" aria-hidden="true"></span> sim <span class="opt" aria-hidden="true"></span> não</p>
+<p><strong>Prazo do Reels final / aftermovie:</strong> _____________________________________________</p>
+<p><strong>Forma de entrega dos arquivos:</strong> <span class="opt" aria-hidden="true"></span> Drive <span class="opt" aria-hidden="true"></span> WhatsApp <span class="opt" aria-hidden="true"></span> outro: ___________</p>
+<p><strong>Sugestão de legenda no final:</strong> <span class="opt" aria-hidden="true"></span> sim, o storymaker envia <span class="opt" aria-hidden="true"></span> o cliente escreve</p>
+<p><strong>Tom da legenda (formal, descontraído, emocional...):</strong> _____________________________________________</p>
+
+<h2>10. Estrutura (preenchimento do storymaker)</h2>
+<p><strong>Quantas pessoas na equipe:</strong> _______  <strong>Quantos celulares:</strong> _______  <strong>Power banks:</strong> _______</p>
+<p><strong>Há tomada / lugar para carregar no local?</strong> <span class="opt" aria-hidden="true"></span> sim <span class="opt" aria-hidden="true"></span> não <span class="opt" aria-hidden="true"></span> verificar</p>
+<p><strong>Tempo de deslocamento estimado:</strong> _______  <strong>Alimentação:</strong> _____________________________________________</p>
+<p><strong>Horário de chegada da equipe:</strong> _______</p>
+
+<h2>Anotações livres</h2>
+
+
+
+
+
+<p><em>Storymaker Oficial · Método desenvolvido pela DocMe Comunicação.</em></p></main></body></html>

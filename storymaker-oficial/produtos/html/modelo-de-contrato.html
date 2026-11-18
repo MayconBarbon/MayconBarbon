@@ -1,0 +1,166 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<title>Modelo de contrato | Storymaker Oficial</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>/* Diagramação dos produtos Storymaker Oficial (impressão / PDF) */
+:root {
+  --laranja: #e7570c; --laranja-esc: #c2410c; --terracota: #9a3412;
+  --texto: #2b2a30; --suave: #5d5c63; --linha: #e7e6ea; --creme: #fff4ec;
+}
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font: 400 10pt/1.55 Inter, sans-serif; color: var(--texto); }
+h1, h2, h3, h4 { font-family: Sora, Inter, sans-serif; color: var(--texto); line-height: 1.2; letter-spacing: -.01em; break-after: avoid; }
+h2 { font-size: 16pt; margin: 1.4em 0 .5em; }
+h3 { font-size: 12pt; margin: 1.3em 0 .4em; color: var(--laranja-esc); }
+h4 { font-size: 10.5pt; margin: 1.1em 0 .3em; }
+p { margin: 0 0 .7em; orphans: 3; widows: 3; }
+strong, b { font-weight: 700; }
+ul { padding-left: 1.2em; margin: 0 0 .8em; }
+ol { padding-left: 2em; margin: 0 0 .8em; }
+li { margin-bottom: .25em; }
+blockquote { margin: 1em 0; padding: .8em 1em; background: var(--creme); border-left: 4px solid var(--laranja); border-radius: 0 8px 8px 0; }
+blockquote p:last-child { margin: 0; }
+table { width: 100%; border-collapse: collapse; margin: .6em 0 1em; font-size: 8.8pt; break-inside: avoid; }
+th { background: var(--texto); color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+td { padding: 6px 8px; border-bottom: 1px solid var(--linha); vertical-align: top; }
+tr:nth-child(even) td { background: #faf9f7; }
+mark.falta { background: #fff3c4; color: #6b4f00; border: 1px dashed #d9b200; border-radius: 4px; padding: 0 .3em; font-size: .85em; }
+
+/* ---------- e-book (A5, bom para ler no celular) ---------- */
+@page { size: 148mm 210mm; margin: 16mm 14mm 18mm;
+  @bottom-center { content: counter(page); font: 600 8pt Inter, sans-serif; color: #5d5c63; }
+  @top-right { content: "Storymaker Oficial"; font: 600 7pt Inter, sans-serif; color: #c2410c; letter-spacing: .08em; text-transform: uppercase; }
+}
+.capa { page: capa; }
+@page capa { margin: 0; @bottom-center { content: none; } @top-right { content: none; } }
+.capa { height: 210mm; width: 148mm; background: radial-gradient(420px 320px at 85% 10%, rgba(255,160,90,.6), transparent 60%), var(--laranja);
+  padding: 16mm 14mm; display: flex; flex-direction: column; position: relative; overflow: hidden; break-after: page; }
+.capa__marca { font: 700 11pt Sora, sans-serif; color: var(--texto); display: flex; align-items: center; gap: 8px; }
+.capa__marca b { color: #fff; margin-left: 2px; }
+.capa__logo { width: 18px; height: 18px; border-radius: 6px; background: var(--texto); position: relative; }
+.capa__logo::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--laranja); box-shadow: inset 0 0 0 2px #fff; }
+.capa__selo { margin: 22mm 0 4mm; font: 700 8pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--texto); }
+.capa h1 { font-size: 30pt; font-weight: 800; margin: 0 0 4mm; max-width: 10ch; color: #fff; }
+.capa__sub { font-size: 11pt; max-width: 26ch; color: #1f1e24; }
+.capa__phone { position: absolute; right: -8mm; bottom: 18mm; width: 58mm; transform: rotate(-8deg); }
+.capa__assina { margin-top: auto; font: 600 8.5pt Inter, sans-serif; color: #1f1e24; }
+
+h2.quebra { break-before: page; margin-top: 0; }
+.capitulo { break-before: page; background: var(--creme); margin: 0 -14mm 6mm; padding: 8mm 14mm 9mm; border-bottom: 4px solid var(--laranja); }
+.cap__num { font: 800 54pt/1 Sora, sans-serif; color: var(--laranja); }
+.cap__rot { font: 700 8pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--suave); margin: 4mm 0 1mm; }
+.capitulo h2 { margin: 0; font-size: 19pt; }
+
+.ilustra { margin: 1em 0 1.2em; break-inside: avoid; }
+.ilustra svg { width: 100%; height: auto; display: block; }
+.ilustra figcaption { font-size: 8pt; color: var(--suave); margin-top: 6px; padding-left: 8px; border-left: 3px solid var(--laranja); }
+
+.reservado { display: flex; gap: 10px; align-items: center; border: 2px dashed #e0a27f; background: var(--creme); border-radius: 10px;
+  padding: 14px; margin: 1em 0; font-size: 8.5pt; color: var(--terracota); min-height: 34mm; break-inside: avoid; }
+.reservado__ico { flex: none; width: 34px; height: 26px; border-radius: 6px; background: var(--laranja); position: relative; }
+.reservado__ico::after { content: ""; position: absolute; left: 11px; top: 7px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; }
+
+/* ---------- fichas: checklist, briefing, contrato (A4, para imprimir) ---------- */
+@page ficha { size: A4; margin: 14mm 16mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); font: 600 8pt Inter, sans-serif; color: #5d5c63; }
+  @top-right { content: none; } }
+.fmt-ficha { page: ficha; font-size: 9.6pt; }
+.ficha__topo { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; background: var(--laranja);
+  margin: 0 0 6mm; padding: 9mm 8mm 7mm; border-radius: 0 0 14px 14px; }
+.ficha__topo h1 { margin: 0; font-size: 22pt; font-weight: 800; color: #fff; }
+.ficha__selo { margin: 0 0 2mm; font: 700 7.5pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #1f1e24; }
+.ficha__assina { margin: 0; font: 600 8pt Inter, sans-serif; color: #1f1e24; max-width: 34ch; text-align: right; }
+.fmt-ficha h2 { font-size: 12.5pt; margin: 1.1em 0 .4em; padding-bottom: 3px; border-bottom: 2px solid var(--laranja); }
+.fmt-ficha h3 { font-size: 10.5pt; }
+.fmt-ficha ul { list-style: none; padding-left: 0; }
+li.check { display: flex; gap: 8px; align-items: flex-start; break-inside: avoid; }
+.box { flex: none; width: 11px; height: 11px; border: 1.6px solid var(--texto); border-radius: 3px; margin-top: 3px; }
+.opt { display: inline-block; width: 9px; height: 9px; border: 1.4px solid var(--texto); border-radius: 50%; margin: 0 3px 0 6px; vertical-align: -1px; }
+</style></head>
+<body class="fmt-ficha"><header class="ficha__topo"><div><p class="ficha__selo">Contrato · Storymaker Oficial</p><h1>Modelo de contrato</h1></div><p class="ficha__assina">Método desenvolvido pela DocMe Comunicação.</p></header><main><h2>CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE STORYMAKER PARA EVENTO</h2>
+<p><strong>CONTRATANTE:</strong> [NOME COMPLETO OU RAZÃO SOCIAL], inscrito(a) no CPF/CNPJ sob nº [CPF/CNPJ DO CONTRATANTE], com endereço em [ENDEREÇO COMPLETO DO CONTRATANTE], telefone [TELEFONE], e-mail [E-MAIL], neste ato representado(a) por [NOME DO REPRESENTANTE, SE EMPRESA].</p>
+<p><strong>CONTRATADO(A):</strong> [NOME COMPLETO OU RAZÃO SOCIAL DO STORYMAKER], inscrito(a) no CPF/CNPJ sob nº [CPF/CNPJ DO CONTRATADO], com endereço em [ENDEREÇO COMPLETO DO CONTRATADO], telefone [TELEFONE], e-mail [E-MAIL].</p>
+<p>As partes firmam este contrato, que se rege pelas cláusulas a seguir.</p>
+<h2>Cláusula 1 — Do objeto</h2>
+<p>1.1. Prestação de serviço de storymaker no evento [NOME DO EVENTO], a ser realizado em [DATA DO EVENTO], das [HORÁRIO DE INÍCIO] às [HORÁRIO DE TÉRMINO], no endereço [LOCAL DO EVENTO].</p>
+<p>1.2. O serviço consiste em captar, editar e entregar conteúdo para redes sociais durante e após o evento: stories em tempo real, vídeo final (Reels ou aftermovie) e, se contratado, fotos.</p>
+<p>1.3. Este contrato prevalece sobre propostas, orçamentos e conversas anteriores. O que não estiver escrito aqui não faz parte do serviço.</p>
+<h2>Cláusula 2 — Do escopo e das quantidades</h2>
+<p>2.1. Estão incluídos:</p>
+<ul>
+<li><strong>Horas de cobertura no evento:</strong> [Nº DE HORAS] horas, contadas a partir do horário de início da Cláusula 1.1;</li>
+<li><strong>Stories:</strong> até [Nº DE STORIES] stories (vídeo ou foto), com duração de até [DURAÇÃO] segundos cada;</li>
+<li><strong>Vídeo final:</strong> [Nº] Reels/aftermovie com duração aproximada de [DURAÇÃO DO REELS], no formato [VERTICAL 9:16 / HORIZONTAL 16:9];</li>
+<li><strong>Fotos (se houver):</strong> até [Nº DE FOTOS] fotos tratadas;</li>
+<li><strong>Sugestão de legenda</strong> para o vídeo final e, quando combinado, para os stories;</li>
+<li><strong>Reunião de briefing</strong> antes do evento, com duração aproximada de [DURAÇÃO DA REUNIÃO].</li>
+</ul>
+<p>2.2. <strong>Não estão incluídos</strong>, salvo acordo por escrito com orçamento à parte: gestão das redes sociais após o evento; tráfego pago ou impulsionamento; resposta a comentários e mensagens; vídeos extras além dos listados; entrega de todo o material bruto; drone, iluminação ou equipe adicional; cobertura de outros dias ou locais; versões para outros formatos ou plataformas além de [PLATAFORMAS COMBINADAS].</p>
+<p>2.3. O CONTRATADO(A) tem liberdade criativa para escolher planos, ordem e edição, seguindo o briefing. Cada entrega final admite [Nº] rodada(s) de ajustes simples (corte, troca de trecho, texto ou música), pedida(s) em até [PRAZO, EX.: 48 HORAS] após o envio. Se o CONTRATANTE não se manifestar nesse prazo, a entrega será considerada aprovada.</p>
+<h2>Cláusula 3 — Do briefing e das informações do evento</h2>
+<p>3.1. O CONTRATANTE participará da reunião de briefing e informará: objetivo do evento, programação com horários, convidados e personalidades prioritários, atrações e pontos que não podem faltar, restrições (pessoas ou áreas que não devem aparecer) e o nome de quem decide no dia.</p>
+<p>3.2. O CONTRATANTE enviará a programação final até [PRAZO, EX.: 3 DIAS] antes do evento e indicará um <strong>responsável no local</strong>: [NOME E TELEFONE DO RESPONSÁVEL NO DIA], com autoridade para confirmar mudanças e aprovar novos prazos.</p>
+<p>3.3. Cabe ao CONTRATANTE avisar o CONTRATADO(A) de qualquer mudança de horário, local ou programação assim que souber. O CONTRATADO(A) não responde por momentos perdidos por falta de aviso.</p>
+<p>3.4. O CONTRATANTE garantirá o acesso do CONTRATADO(A) ao local, às áreas de cobertura e, se combinado, a credencial e a rede Wi-Fi do evento.</p>
+<h2>Cláusula 4 — Do fluxo de publicação</h2>
+<p>4.1. A forma de publicação escolhida pelo CONTRATANTE é (marque uma):</p>
+<p><span class="opt" aria-hidden="true"></span> <strong>Opção A — o CONTRATADO(A) publica.</strong> O CONTRATANTE autoriza o acesso às contas [PERFIS / REDES] ou entrega um aparelho já conectado. O CONTRATADO(A) publica os stories em tempo real, conforme o briefing.</p>
+<p><span class="opt" aria-hidden="true"></span> <strong>Opção B — o CONTRATANTE publica.</strong> O CONTRATADO(A) envia os conteúdos prontos para [NOME OU GRUPO DE WHATSAPP DO RESPONSÁVEL], e o CONTRATANTE aprova e publica. O prazo de publicação passa a ser responsabilidade do CONTRATANTE.</p>
+<p>4.2. O CONTRATADO(A) enviará sugestão de legenda junto com o vídeo final. A decisão final sobre texto, marcações e horário de postagem é do CONTRATANTE.</p>
+<p>4.3. <strong>Confidencialidade e acessos:</strong> na Opção A, o CONTRATADO(A) usará os acessos somente para as publicações deste contrato, não alterará senhas, configurações ou conteúdos antigos e não lerá nem responderá mensagens privadas sem autorização. Ao final do evento, encerrará as sessões nos seus aparelhos e devolverá qualquer aparelho recebido. Recomenda-se que o CONTRATANTE troque a senha após o evento.</p>
+<p>4.4. O CONTRATADO(A) manterá em sigilo informações internas do CONTRATANTE e do evento a que tiver acesso, inclusive dados de convidados.</p>
+<h2>Cláusula 5 — Mudança de programação, atrasos e horas extras</h2>
+<p>5.1. Se o evento atrasar ou a programação mudar por motivo alheio ao CONTRATADO(A), ele(a) seguirá produzindo conteúdo do que estiver acontecendo (decoração, convidados, detalhes) e combinará com o responsável no local as prioridades e o novo prazo de entrega.</p>
+<p>5.2. O tempo de atraso conta dentro das horas contratadas. Passado o horário de término previsto, a permanência do CONTRATADO(A) depende de aprovação do responsável no local, por mensagem ou por escrito.</p>
+<p>5.3. Cada <strong>hora extra</strong>, ou fração acima de [MINUTOS DE TOLERÂNCIA] minutos, custará [VALOR DA HORA EXTRA], a ser paga em até [PRAZO] após o evento.</p>
+<p>5.4. Pedidos fora do escopo da Cláusula 2 (outro dia, vídeo extra, novo local) só serão feitos após orçamento aprovado por escrito.</p>
+<h2>Cláusula 6 — Dos prazos e da forma de entrega</h2>
+<p>6.1. <strong>Stories:</strong> entregues ou publicados durante o evento, no ritmo combinado no briefing.</p>
+<p>6.2. <strong>Vídeo final (Reels/aftermovie):</strong> até [PRAZO DE ENTREGA DO REELS, EX.: 24 HORAS / 3 DIAS ÚTEIS] após o evento.</p>
+<p>6.3. <strong>Fotos (se houver):</strong> até [PRAZO DE ENTREGA DAS FOTOS].</p>
+<p>6.4. A entrega será feita por <span class="opt" aria-hidden="true"></span> WhatsApp <span class="opt" aria-hidden="true"></span> link do Google Drive <span class="opt" aria-hidden="true"></span> outro: [MEIO DE ENTREGA]. Os arquivos ficarão disponíveis no link por [Nº DE DIAS] dias. Depois desse prazo, o CONTRATADO(A) não tem obrigação de guardá-los.</p>
+<p>6.5. Se a programação mudar (Cláusula 5) ou o CONTRATANTE atrasar o envio de informações, os prazos poderão ser renegociados com o responsável no local.</p>
+<h2>Cláusula 7 — Do valor e da forma de pagamento</h2>
+<p>7.1. Pelo serviço, o CONTRATANTE pagará o valor total de [VALOR TOTAL] ([VALOR POR EXTENSO]).</p>
+<p>7.2. <strong>Sinal e reserva de data:</strong> [PERCENTUAL OU VALOR DO SINAL] na assinatura deste contrato. A data só fica reservada após o pagamento do sinal.</p>
+<p>7.3. <strong>Saldo:</strong> [VALOR DO SALDO] até [DATA OU CONDIÇÃO, EX.: O DIA DO EVENTO / A ENTREGA DO REELS].</p>
+<p>7.4. Forma de pagamento: <span class="opt" aria-hidden="true"></span> PIX — chave [CHAVE PIX] <span class="opt" aria-hidden="true"></span> transferência bancária <span class="opt" aria-hidden="true"></span> outro: [FORMA DE PAGAMENTO].</p>
+<p>7.5. <strong>Deslocamento e alimentação:</strong> para eventos fora de [CIDADE DO CONTRATADO], o CONTRATANTE arcará com <span class="opt" aria-hidden="true"></span> transporte <span class="opt" aria-hidden="true"></span> hospedagem <span class="opt" aria-hidden="true"></span> alimentação, no valor de [VALOR OU "CONFORME COMPROVANTES"], a ser pago até [PRAZO]. Em eventos com mais de [Nº] horas, o CONTRATANTE oferecerá alimentação no local ou [VALOR DE AJUDA DE CUSTO].</p>
+<p>7.6. Em caso de atraso no pagamento, incidirá multa de [PERCENTUAL, EX.: 2%] sobre o valor devido e juros de [PERCENTUAL, EX.: 1%] ao mês. Enquanto houver valor vencido, o CONTRATADO(A) poderá suspender a entrega do material ainda não enviado.</p>
+<p>7.7. Se o CONTRATADO(A) tolerar um atraso ou um pedido fora do contrato, isso não altera as demais regras deste contrato nem cria obrigação para eventos futuros.</p>
+<h2>Cláusula 8 — Do cancelamento e da remarcação</h2>
+<p>8.1. <strong>Cancelamento pelo CONTRATANTE:</strong></p>
+<ul>
+<li>com mais de [Nº] dias de antecedência: o sinal fica retido como pagamento pela reserva da data;</li>
+<li>com [Nº] dias ou menos de antecedência: será devido [PERCENTUAL]% do valor total;</li>
+<li>após o deslocamento do CONTRATADO(A): será devido o valor total, mais as despesas de deslocamento já feitas.</li>
+</ul>
+<p>8.2. <strong>Remarcação:</strong> pode ser pedida uma vez, com pelo menos [Nº] dias de antecedência, sem custo, desde que o CONTRATADO(A) tenha a nova data livre. O sinal é aproveitado na nova data. Sem data livre, aplica-se a regra de cancelamento.</p>
+<p>8.3. <strong>Cancelamento pelo CONTRATADO(A):</strong> devolução integral dos valores pagos em até [PRAZO]. O CONTRATADO(A) poderá, com concordância do CONTRATANTE, indicar outro profissional de nível equivalente.</p>
+<p>8.4. <strong>Força maior:</strong> se o evento não puder acontecer por motivo que nenhuma das partes possa evitar (doença grave comprovada, acidente, interdição do local, fenômeno climático, determinação de autoridade), as partes remarcam a data sem multa. Se a remarcação não for possível, os valores pagos serão devolvidos, descontadas as despesas já comprovadas.</p>
+<h2>Cláusula 9 — Do direito de imagem e do uso em portfólio</h2>
+<p>9.1. O CONTRATANTE poderá usar o material entregue em suas redes sociais, site e materiais de divulgação próprios, sem prazo. A revenda ou a cessão a terceiros dependem de autorização do CONTRATADO(A).</p>
+<p>9.2. O CONTRATANTE declara que o evento e seus convidados estão cientes de que haverá captação de imagens para redes sociais e se compromete a informar ao CONTRATADO(A) as pessoas que não autorizam aparecer.</p>
+<p>9.3. <strong>Portfólio:</strong> o CONTRATADO(A) poderá usar trechos do material em seu portfólio e em suas redes profissionais, <span class="opt" aria-hidden="true"></span> <strong>autorizado</strong> <span class="opt" aria-hidden="true"></span> <strong>não autorizado</strong> pelo CONTRATANTE. Se autorizado, o CONTRATANTE pode pedir a retirada de qualquer conteúdo a qualquer tempo, por mensagem.</p>
+<p>9.4. O CONTRATADO(A) não usará imagens de crianças, de momentos íntimos ou de pessoas que pediram para não aparecer fora das publicações do próprio CONTRATANTE.</p>
+<h2>Cláusula 10 — Do equipamento e das limitações técnicas</h2>
+<p>10.1. O CONTRATADO(A) levará o equipamento próprio necessário ([CELULAR(ES), ESTABILIZADOR, MICROFONE, POWER BANKS]) e é responsável por sua manutenção e carga.</p>
+<p>10.2. O CONTRATANTE reconhece que a publicação em tempo real depende de sinal de internet no local. Sem sinal ou Wi-Fi estável, os stories serão publicados ou enviados assim que houver conexão, sem que isso configure descumprimento.</p>
+<p>10.3. O CONTRATANTE indicará, se possível, um ponto de tomada para recarga dos aparelhos.</p>
+<p>10.4. O CONTRATADO(A) não responde por falhas de plataformas de terceiros (Instagram, TikTok, WhatsApp, Google Drive), por restrições de uso de música impostas por essas plataformas ou por limitações do local (iluminação, acesso restrito, áreas proibidas para captação).</p>
+<h2>Cláusula 11 — Do foro</h2>
+<p>11.1. As partes tentarão resolver qualquer divergência por conversa direta. Não havendo acordo, fica eleito o foro da comarca de [CIDADE/ESTADO].</p>
+
+<p>E, por estarem de acordo, as partes assinam este contrato em duas vias de igual teor, ou eletronicamente.</p>
+<p>[CIDADE], [DIA] de [MÊS] de [ANO].</p>
+<p><strong>CONTRATANTE</strong>
+Nome: [NOME DO CONTRATANTE]
+CPF/CNPJ: [CPF/CNPJ DO CONTRATANTE]
+Assinatura: ______________________________</p>
+<p><strong>CONTRATADO(A)</strong>
+Nome: [NOME DO CONTRATADO]
+CPF/CNPJ: [CPF/CNPJ DO CONTRATADO]
+Assinatura: ______________________________</p>
+<p><strong>Testemunhas (opcional)</strong>
+1. Nome: [NOME] — CPF: [CPF] — Assinatura: ____________________
+2. Nome: [NOME] — CPF: [CPF] — Assinatura: ____________________</p></main></body></html>

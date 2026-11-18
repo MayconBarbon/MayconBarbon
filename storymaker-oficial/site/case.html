@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case | Storymaker Oficial</title>
+  <meta name="description" content="Case do portfólio DocMe: planejamento, cobertura, imprevistos e aprendizados.">
+  <meta name="theme-color" content="#e7570c">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo rolou" id="topo">
+    <div class="wrap topo__in">
+      <a class="logo" href="index.html" aria-label="Storymaker Oficial, início">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__txt">Storymaker<b>Oficial</b></span>
+      </a>
+      <nav class="menu" aria-label="Principal" style="transform:none;position:static;background:none;box-shadow:none;padding:0;flex-direction:row">
+        <a class="btn btn--sm" href="index.html#aprenda">Aprenda com a DocMe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="case-hero">
+      <div class="wrap">
+        <a class="voltar" href="index.html#portfolio">← Voltar ao portfólio</a>
+        <p class="eyebrow" id="c-cat"></p>
+        <h1 id="c-titulo">Case</h1>
+        <p class="lead" id="c-chamada"></p>
+        <div class="fatos" id="c-fatos"></div>
+      </div>
+    </section>
+    <section class="sec">
+      <div class="wrap" id="c-corpo"></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="wrap rodape__in">
+      <div>
+        <a class="logo" href="index.html"><span class="logo__mark" aria-hidden="true"></span><span class="logo__txt">Storymaker<b>Oficial</b></span></a>
+        <p class="assinatura" data-assinatura></p>
+      </div>
+      <p class="rodape__mini">© <span data-ano></span> Storymaker Oficial. Conteúdos e portfólio DocMe Comunicação.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/cases.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+  (function () {
+    var S = window.SM, id = new URLSearchParams(location.search).get("id");
+    var c = (window.CASES || []).filter(function (x) { return x.id === id; })[0];
+    var corpo = document.getElementById("c-corpo");
+    if (!c) {
+      document.getElementById("c-titulo").textContent = "Case não encontrado";
+      corpo.innerHTML = '<p><a class="link-seta" href="index.html#portfolio">Ver todos os trabalhos</a></p>';
+      return;
+    }
+    document.title = c.titulo + " | Storymaker Oficial";
+    document.getElementById("c-cat").textContent = c.categoria;
+    document.getElementById("c-titulo").textContent = c.titulo;
+    document.getElementById("c-chamada").innerHTML = c.chamada ? S.txt(c.chamada) : "";
+    var fatos = [];
+    if (c.local) fatos.push(S.esc(c.local.replace(/\s*\[.*\]/, "")));
+    if (c.ano) fatos.push(S.esc(String(c.ano).replace(/\s*\[.*\]/, "")));
+    if (c.desafio) fatos.push("Desafio que virou aprendizado");
+    document.getElementById("c-fatos").innerHTML = fatos.map(function (f) { return "<span>" + f + "</span>"; }).join("");
+
+    function bloco(t, v, falta) { return '<div class="bloco"><h2>' + t + "</h2><p>" + S.txt(v, falta) + "</p></div>"; }
+    function midia(t, v) {
+      var link = /^https?:\/\//.test(v || "") || /\.(mp4|webm)$/i.test(v || "");
+      var conteudo = !v ? S.txt("", "link ou vídeo")
+        : /\.(mp4|webm)$/i.test(v) ? '<video controls preload="none" playsinline src="' + S.esc(v) + '"></video>'
+        : link ? '<a class="link-seta" href="' + S.esc(v) + '" target="_blank" rel="noopener">Assistir</a>'
+        : S.txt(v);
+      return '<div class="midia"><h3>' + t + "</h3>" + conteudo + "</div>";
+    }
+    function instagram(lista) {
+      if (!lista || !lista.length) return "";
+      return '<h2 class="h2" style="margin-top:40px">No Instagram do cliente</h2>' +
+        '<p class="ig-aviso">Os posts abrem direto do Instagram. Ao clicar em "Carregar post", o Instagram pode usar cookies no seu navegador.</p>' +
+        '<div class="ig-lista">' + lista.map(function (p, i) {
+          return '<div class="ig-item" data-url="' + S.esc(p.url) + '"><h3>' + S.esc(p.rotulo) + "</h3>" +
+            '<button type="button" class="btn ig-carregar" data-i="' + i + '">Carregar post</button> ' +
+            '<a class="link-seta" href="' + S.esc(p.url) + '" target="_blank" rel="noopener">Ver no Instagram</a></div>';
+        }).join("") + "</div>";
+    }
+    corpo.innerHTML =
+      '<div class="case-corpo">' +
+        bloco("Objetivo do cliente", c.objetivo, "objetivo") +
+        bloco("Público e canais", c.publico, "público e canais") +
+        bloco("Equipe", c.equipe, "equipe") +
+        bloco("Briefing e planejamento", c.planejamento, "planejamento") +
+        bloco("O que mudou no evento", c.mudou, "imprevistos") +
+        bloco("Como a equipe reagiu", c.reacao, "reação da equipe") +
+        '<div class="bloco bloco--destaque"><h2>Aprendizado</h2><p>' + S.txt(c.aprendizado, "aprendizado") + "</p></div>" +
+      "</div>" +
+      '<h2 class="h2" style="margin-top:40px">No dia e depois</h2>' +
+      '<div class="midias">' + midia("Publicado no dia", c.noDia) + midia("Aftermovie / entrega posterior", c.aftermovie) + "</div>" +
+      instagram(c.instagram) +
+      '<div class="case-corpo" style="margin-top:28px">' + bloco("Resultado e retorno", c.resultado, "resultados e prints") + "</div>" +
+      '<p style="margin-top:32px"><a class="btn" href="index.html#aprenda">Aprenda o método da DocMe</a></p>';
+    corpo.addEventListener("click", function (e) {
+      var b = e.target.closest(".ig-carregar"); if (!b) return;
+      var item = b.closest(".ig-item"), url = item.getAttribute("data-url");
+      var q = document.createElement("blockquote");
+      q.className = "instagram-media"; q.setAttribute("data-instgrm-permalink", url); q.setAttribute("data-instgrm-version", "14");
+      q.innerHTML = '<a href="' + S.esc(url) + '" target="_blank" rel="noopener">Ver este post no Instagram</a>';
+      b.replaceWith(q);
+      if (window.instgrm) { window.instgrm.Embeds.process(); return; }
+      if (!document.getElementById("ig-js")) {
+        var sc = document.createElement("script"); sc.id = "ig-js"; sc.async = true; sc.src = "https://www.instagram.com/embed.js";
+        document.body.appendChild(sc);
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

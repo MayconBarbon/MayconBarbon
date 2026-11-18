@@ -1,0 +1,78 @@
+/* Diagramação dos produtos Storymaker Oficial (impressão / PDF) */
+:root {
+  --laranja: #e7570c; --laranja-esc: #c2410c; --terracota: #9a3412;
+  --texto: #2b2a30; --suave: #5d5c63; --linha: #e7e6ea; --creme: #fff4ec;
+}
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font: 400 10pt/1.55 Inter, sans-serif; color: var(--texto); }
+h1, h2, h3, h4 { font-family: Sora, Inter, sans-serif; color: var(--texto); line-height: 1.2; letter-spacing: -.01em; break-after: avoid; }
+h2 { font-size: 16pt; margin: 1.4em 0 .5em; }
+h3 { font-size: 12pt; margin: 1.3em 0 .4em; color: var(--laranja-esc); }
+h4 { font-size: 10.5pt; margin: 1.1em 0 .3em; }
+p { margin: 0 0 .7em; orphans: 3; widows: 3; }
+strong, b { font-weight: 700; }
+ul { padding-left: 1.2em; margin: 0 0 .8em; }
+ol { padding-left: 2em; margin: 0 0 .8em; }
+li { margin-bottom: .25em; }
+blockquote { margin: 1em 0; padding: .8em 1em; background: var(--creme); border-left: 4px solid var(--laranja); border-radius: 0 8px 8px 0; }
+blockquote p:last-child { margin: 0; }
+table { width: 100%; border-collapse: collapse; margin: .6em 0 1em; font-size: 8.8pt; break-inside: avoid; }
+th { background: var(--texto); color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+td { padding: 6px 8px; border-bottom: 1px solid var(--linha); vertical-align: top; }
+tr:nth-child(even) td { background: #faf9f7; }
+mark.falta { background: #fff3c4; color: #6b4f00; border: 1px dashed #d9b200; border-radius: 4px; padding: 0 .3em; font-size: .85em; }
+
+/* ---------- e-book (A5, bom para ler no celular) ---------- */
+@page { size: 148mm 210mm; margin: 16mm 14mm 18mm;
+  @bottom-center { content: counter(page); font: 600 8pt Inter, sans-serif; color: #5d5c63; }
+  @top-right { content: "Storymaker Oficial"; font: 600 7pt Inter, sans-serif; color: #c2410c; letter-spacing: .08em; text-transform: uppercase; }
+}
+.capa { page: capa; }
+@page capa { margin: 0; @bottom-center { content: none; } @top-right { content: none; } }
+.capa { height: 210mm; width: 148mm; background: radial-gradient(420px 320px at 85% 10%, rgba(255,160,90,.6), transparent 60%), var(--laranja);
+  padding: 16mm 14mm; display: flex; flex-direction: column; position: relative; overflow: hidden; break-after: page; }
+.capa__marca { font: 700 11pt Sora, sans-serif; color: var(--texto); display: flex; align-items: center; gap: 8px; }
+.capa__marca b { color: #fff; margin-left: 2px; }
+.capa__logo { width: 18px; height: 18px; border-radius: 6px; background: var(--texto); position: relative; }
+.capa__logo::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--laranja); box-shadow: inset 0 0 0 2px #fff; }
+.capa__selo { margin: 22mm 0 4mm; font: 700 8pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--texto); }
+.capa h1 { font-size: 30pt; font-weight: 800; margin: 0 0 4mm; max-width: 10ch; color: #fff; }
+.capa__sub { font-size: 11pt; max-width: 26ch; color: #1f1e24; }
+.capa__phone { position: absolute; right: -8mm; bottom: 18mm; width: 58mm; transform: rotate(-8deg); }
+.capa__assina { margin-top: auto; font: 600 8.5pt Inter, sans-serif; color: #1f1e24; }
+
+h2.quebra { break-before: page; margin-top: 0; }
+.capitulo { break-before: page; background: var(--creme); margin: 0 -14mm 6mm; padding: 8mm 14mm 9mm; border-bottom: 4px solid var(--laranja); }
+.cap__num { font: 800 54pt/1 Sora, sans-serif; color: var(--laranja); }
+.cap__rot { font: 700 8pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--suave); margin: 4mm 0 1mm; }
+.capitulo h2 { margin: 0; font-size: 19pt; }
+
+.ilustra { margin: 1em 0 1.2em; break-inside: avoid; }
+.ilustra svg { width: 100%; height: auto; display: block; }
+.ilustra figcaption { font-size: 8pt; color: var(--suave); margin-top: 6px; padding-left: 8px; border-left: 3px solid var(--laranja); }
+
+.reservado { display: flex; gap: 10px; align-items: center; border: 2px dashed #e0a27f; background: var(--creme); border-radius: 10px;
+  padding: 14px; margin: 1em 0; font-size: 8.5pt; color: var(--terracota); min-height: 34mm; break-inside: avoid; }
+.reservado__ico { flex: none; width: 34px; height: 26px; border-radius: 6px; background: var(--laranja); position: relative; }
+.reservado__ico::after { content: ""; position: absolute; left: 11px; top: 7px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; }
+
+/* ---------- fichas: checklist, briefing, contrato (A4, para imprimir) ---------- */
+@page ficha { size: A4; margin: 14mm 16mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); font: 600 8pt Inter, sans-serif; color: #5d5c63; }
+  @top-right { content: none; } }
+.fmt-ficha { page: ficha; font-size: 9.6pt; }
+.ficha__topo { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; background: var(--laranja);
+  margin: 0 0 6mm; padding: 9mm 8mm 7mm; border-radius: 0 0 14px 14px; }
+.ficha__topo h1 { margin: 0; font-size: 22pt; font-weight: 800; color: #fff; }
+.ficha__selo { margin: 0 0 2mm; font: 700 7.5pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #1f1e24; }
+.ficha__assina { margin: 0; font: 600 8pt Inter, sans-serif; color: #1f1e24; max-width: 34ch; text-align: right; }
+.fmt-ficha h2 { font-size: 12.5pt; margin: 1.1em 0 .4em; padding-bottom: 3px; border-bottom: 2px solid var(--laranja); }
+.fmt-ficha h3 { font-size: 10.5pt; }
+.fmt-ficha ul { list-style: none; padding-left: 0; }
+li.check { display: flex; gap: 8px; align-items: flex-start; break-inside: avoid; }
+.box { flex: none; width: 11px; height: 11px; border: 1.6px solid var(--texto); border-radius: 3px; margin-top: 3px; }
+.opt { display: inline-block; width: 9px; height: 9px; border: 1.4px solid var(--texto); border-radius: 50%; margin: 0 3px 0 6px; vertical-align: -1px; }
+
+.foto-fundador img { width: 62%; margin: 0 auto; display: block; border-radius: 12px; border-bottom: 4px solid var(--laranja); }
+.foto-fundador figcaption { width: 62%; margin: 6px auto 0; }

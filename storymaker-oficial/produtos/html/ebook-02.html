@@ -1,0 +1,974 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<title>Do briefing à história | Storymaker Oficial</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>/* Diagramação dos produtos Storymaker Oficial (impressão / PDF) */
+:root {
+  --laranja: #e7570c; --laranja-esc: #c2410c; --terracota: #9a3412;
+  --texto: #2b2a30; --suave: #5d5c63; --linha: #e7e6ea; --creme: #fff4ec;
+}
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font: 400 10pt/1.55 Inter, sans-serif; color: var(--texto); }
+h1, h2, h3, h4 { font-family: Sora, Inter, sans-serif; color: var(--texto); line-height: 1.2; letter-spacing: -.01em; break-after: avoid; }
+h2 { font-size: 16pt; margin: 1.4em 0 .5em; }
+h3 { font-size: 12pt; margin: 1.3em 0 .4em; color: var(--laranja-esc); }
+h4 { font-size: 10.5pt; margin: 1.1em 0 .3em; }
+p { margin: 0 0 .7em; orphans: 3; widows: 3; }
+strong, b { font-weight: 700; }
+ul { padding-left: 1.2em; margin: 0 0 .8em; }
+ol { padding-left: 2em; margin: 0 0 .8em; }
+li { margin-bottom: .25em; }
+blockquote { margin: 1em 0; padding: .8em 1em; background: var(--creme); border-left: 4px solid var(--laranja); border-radius: 0 8px 8px 0; }
+blockquote p:last-child { margin: 0; }
+table { width: 100%; border-collapse: collapse; margin: .6em 0 1em; font-size: 8.8pt; break-inside: avoid; }
+th { background: var(--texto); color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+td { padding: 6px 8px; border-bottom: 1px solid var(--linha); vertical-align: top; }
+tr:nth-child(even) td { background: #faf9f7; }
+mark.falta { background: #fff3c4; color: #6b4f00; border: 1px dashed #d9b200; border-radius: 4px; padding: 0 .3em; font-size: .85em; }
+
+/* ---------- e-book (A5, bom para ler no celular) ---------- */
+@page { size: 148mm 210mm; margin: 16mm 14mm 18mm;
+  @bottom-center { content: counter(page); font: 600 8pt Inter, sans-serif; color: #5d5c63; }
+  @top-right { content: "Storymaker Oficial"; font: 600 7pt Inter, sans-serif; color: #c2410c; letter-spacing: .08em; text-transform: uppercase; }
+}
+.capa { page: capa; }
+@page capa { margin: 0; @bottom-center { content: none; } @top-right { content: none; } }
+.capa { height: 210mm; width: 148mm; background: radial-gradient(420px 320px at 85% 10%, rgba(255,160,90,.6), transparent 60%), var(--laranja);
+  padding: 16mm 14mm; display: flex; flex-direction: column; position: relative; overflow: hidden; break-after: page; }
+.capa__marca { font: 700 11pt Sora, sans-serif; color: var(--texto); display: flex; align-items: center; gap: 8px; }
+.capa__marca b { color: #fff; margin-left: 2px; }
+.capa__logo { width: 18px; height: 18px; border-radius: 6px; background: var(--texto); position: relative; }
+.capa__logo::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--laranja); box-shadow: inset 0 0 0 2px #fff; }
+.capa__selo { margin: 22mm 0 4mm; font: 700 8pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--texto); }
+.capa h1 { font-size: 30pt; font-weight: 800; margin: 0 0 4mm; max-width: 10ch; color: #fff; }
+.capa__sub { font-size: 11pt; max-width: 26ch; color: #1f1e24; }
+.capa__phone { position: absolute; right: -8mm; bottom: 18mm; width: 58mm; transform: rotate(-8deg); }
+.capa__assina { margin-top: auto; font: 600 8.5pt Inter, sans-serif; color: #1f1e24; }
+
+h2.quebra { break-before: page; margin-top: 0; }
+.capitulo { break-before: page; background: var(--creme); margin: 0 -14mm 6mm; padding: 8mm 14mm 9mm; border-bottom: 4px solid var(--laranja); }
+.cap__num { font: 800 54pt/1 Sora, sans-serif; color: var(--laranja); }
+.cap__rot { font: 700 8pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--suave); margin: 4mm 0 1mm; }
+.capitulo h2 { margin: 0; font-size: 19pt; }
+
+.ilustra { margin: 1em 0 1.2em; break-inside: avoid; }
+.ilustra svg { width: 100%; height: auto; display: block; }
+.ilustra figcaption { font-size: 8pt; color: var(--suave); margin-top: 6px; padding-left: 8px; border-left: 3px solid var(--laranja); }
+
+.reservado { display: flex; gap: 10px; align-items: center; border: 2px dashed #e0a27f; background: var(--creme); border-radius: 10px;
+  padding: 14px; margin: 1em 0; font-size: 8.5pt; color: var(--terracota); min-height: 34mm; break-inside: avoid; }
+.reservado__ico { flex: none; width: 34px; height: 26px; border-radius: 6px; background: var(--laranja); position: relative; }
+.reservado__ico::after { content: ""; position: absolute; left: 11px; top: 7px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; }
+
+/* ---------- fichas: checklist, briefing, contrato (A4, para imprimir) ---------- */
+@page ficha { size: A4; margin: 14mm 16mm 16mm;
+  @bottom-center { content: counter(page) " / " counter(pages); font: 600 8pt Inter, sans-serif; color: #5d5c63; }
+  @top-right { content: none; } }
+.fmt-ficha { page: ficha; font-size: 9.6pt; }
+.ficha__topo { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; background: var(--laranja);
+  margin: 0 0 6mm; padding: 9mm 8mm 7mm; border-radius: 0 0 14px 14px; }
+.ficha__topo h1 { margin: 0; font-size: 22pt; font-weight: 800; color: #fff; }
+.ficha__selo { margin: 0 0 2mm; font: 700 7.5pt Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #1f1e24; }
+.ficha__assina { margin: 0; font: 600 8pt Inter, sans-serif; color: #1f1e24; max-width: 34ch; text-align: right; }
+.fmt-ficha h2 { font-size: 12.5pt; margin: 1.1em 0 .4em; padding-bottom: 3px; border-bottom: 2px solid var(--laranja); }
+.fmt-ficha h3 { font-size: 10.5pt; }
+.fmt-ficha ul { list-style: none; padding-left: 0; }
+li.check { display: flex; gap: 8px; align-items: flex-start; break-inside: avoid; }
+.box { flex: none; width: 11px; height: 11px; border: 1.6px solid var(--texto); border-radius: 3px; margin-top: 3px; }
+.opt { display: inline-block; width: 9px; height: 9px; border: 1.4px solid var(--texto); border-radius: 50%; margin: 0 3px 0 6px; vertical-align: -1px; }
+
+.foto-fundador img { width: 62%; margin: 0 auto; display: block; border-radius: 12px; border-bottom: 4px solid var(--laranja); }
+.foto-fundador figcaption { width: 62%; margin: 6px auto 0; }
+</style></head>
+<body class="fmt-ebook"><section class="capa"><div class="capa__marca"><span class="capa__logo"></span>Storymaker<b>Oficial</b></div><p class="capa__selo">E-book 2</p><h1>Do briefing à história</h1><p class="capa__sub">Como planejar uma cobertura de Storymaker antes de ligar a câmera</p><svg class="capa__phone" viewBox="0 0 200 360" aria-hidden="true">
+<rect x="6" y="6" width="188" height="348" rx="30" fill="#2b2a30"/>
+<rect x="16" y="16" width="168" height="328" rx="22" fill="#3a393f"/>
+<g fill="#fff"><rect x="28" y="30" width="34" height="3" rx="1.5"/><rect x="66" y="30" width="34" height="3" rx="1.5"/><rect x="104" y="30" width="16" height="3" rx="1.5"/></g>
+<rect x="104" y="30" width="34" height="3" rx="1.5" fill="#fff" opacity=".35"/><rect x="142" y="30" width="30" height="3" rx="1.5" fill="#fff" opacity=".35"/>
+<rect x="28" y="44" width="44" height="14" rx="3" fill="#fff"/><text x="50" y="54.5" font-size="8" font-weight="800" fill="#c2410c" text-anchor="middle" style="font-family:Inter">AO VIVO</text>
+<rect x="28" y="230" width="120" height="10" rx="5" fill="#fff" opacity=".9"/><rect x="28" y="248" width="86" height="10" rx="5" fill="#fff" opacity=".6"/>
+<circle cx="100" cy="140" r="38" fill="none" stroke="#e7570c" stroke-width="10"/><circle cx="100" cy="140" r="14" fill="#e7570c"/>
+</svg><p class="capa__assina">Método desenvolvido pela DocMe Comunicação.</p></section><main><h2 class="quebra">Para quem é este e-book</h2>
+<p>Este e-book é para você que:</p>
+<ul>
+<li>é <strong>fotógrafo</strong> e começou a ser chamado para "fazer os stories" do evento;</li>
+<li>é <strong>videomaker</strong>, domina a câmera, mas ainda pensa em "editar depois";</li>
+<li>está <strong>começando</strong> e quer saber como chegar a um evento sem se perder.</li>
+</ul>
+<p>Você não precisa de equipamento caro para usar o que está aqui. Precisa de um celular, de um caderno (ou do bloco de notas) e de vontade de fazer as perguntas certas.</p>
+<p><strong>O que você vai conseguir fazer ao terminar:</strong></p>
+<ul>
+<li>conduzir uma reunião de briefing com o cliente;</li>
+<li>decidir se o conteúdo precisa sair em tempo real e em qual canal;</li>
+<li>montar a lista A/B/C de pessoas e a lista do que não pode faltar;</li>
+<li>transformar o briefing em um roteiro previsto de stories;</li>
+<li>combinar com o cliente quem publica e quem aprova;</li>
+<li>ter um protocolo pronto para quando a programação mudar;</li>
+<li>planejar bateria, equipamento e entrega.</li>
+</ul>
+
+<h2 class="quebra">Antes de começar: de onde vem este método</h2><figure class="ilustra"><svg viewBox="0 0 430 240" role="img" aria-label="Os seis passos do Método DocMe"><rect x="10" y="14" width="124" height="92" rx="14" fill="#2b2a30"/><text x="30" y="44" font-size="20" fill="#ffffff" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">01</text><text x="30" y="62" font-size="9" fill="#ffffff" font-weight="700" text-anchor="start" style="font-family:Sora,Inter,sans-serif">ANTES</text><text x="30" y="82" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Entender o</text><text x="30" y="97" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">cliente</text><path d="M138 60 l8 0" stroke="#5d5c63" stroke-width="2"/><path d="M144 56 l4 4 l-4 4" fill="none" stroke="#5d5c63" stroke-width="2"/><rect x="150" y="14" width="124" height="92" rx="14" fill="#2b2a30"/><text x="170" y="44" font-size="20" fill="#ffffff" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">02</text><text x="170" y="62" font-size="9" fill="#ffffff" font-weight="700" text-anchor="start" style="font-family:Sora,Inter,sans-serif">ANTES</text><text x="170" y="82" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Decidir a</text><text x="170" y="97" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">publicação</text><path d="M278 60 l8 0" stroke="#5d5c63" stroke-width="2"/><path d="M284 56 l4 4 l-4 4" fill="none" stroke="#5d5c63" stroke-width="2"/><rect x="290" y="14" width="124" height="92" rx="14" fill="#c2410c"/><text x="310" y="44" font-size="20" fill="#ffffff" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">03</text><text x="310" y="62" font-size="9" fill="#ffffff" font-weight="700" text-anchor="start" style="font-family:Sora,Inter,sans-serif">DURANTE</text><text x="310" y="82" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Mapear o</text><text x="310" y="97" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">evento</text><rect x="10" y="124" width="124" height="92" rx="14" fill="#c2410c"/><text x="30" y="154" font-size="20" fill="#ffffff" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">04</text><text x="30" y="172" font-size="9" fill="#ffffff" font-weight="700" text-anchor="start" style="font-family:Sora,Inter,sans-serif">DURANTE</text><text x="30" y="192" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Captar com</text><text x="30" y="207" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">intenção</text><path d="M138 170 l8 0" stroke="#5d5c63" stroke-width="2"/><path d="M144 166 l4 4 l-4 4" fill="none" stroke="#5d5c63" stroke-width="2"/><rect x="150" y="124" width="124" height="92" rx="14" fill="#c2410c"/><text x="170" y="154" font-size="20" fill="#ffffff" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">05</text><text x="170" y="172" font-size="9" fill="#ffffff" font-weight="700" text-anchor="start" style="font-family:Sora,Inter,sans-serif">DURANTE</text><text x="170" y="192" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Editar e</text><text x="170" y="207" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">publicar</text><path d="M278 170 l8 0" stroke="#5d5c63" stroke-width="2"/><path d="M284 166 l4 4 l-4 4" fill="none" stroke="#5d5c63" stroke-width="2"/><rect x="290" y="124" width="124" height="92" rx="14" fill="#9a3412"/><text x="310" y="154" font-size="20" fill="#ffffff" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">06</text><text x="310" y="172" font-size="9" fill="#ffffff" font-weight="700" text-anchor="start" style="font-family:Sora,Inter,sans-serif">DEPOIS</text><text x="310" y="192" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Fechar a</text><text x="310" y="207" font-size="12" fill="#ffffff" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">história</text></svg><figcaption>O Método DocMe em seis passos: dois antes do evento, três durante e um depois.</figcaption></figure>
+<p>A DocMe Comunicação cobre eventos com storymaker: congressos, casamentos, festas, eventos corporativos e comunitários. Coberturas como congressos em São Paulo e no interior, uma confraternização de fim de ano, casamentos, um circuito gastronômico, eventos nacionais e um evento infantil com 13 mil pessoas fazem parte desse repertório.</p>
+<p>Em todas elas, o raciocínio é o mesmo:</p>
+<ol>
+<li>entender o cliente;</li>
+<li>planejar;</li>
+<li>executar;</li>
+<li>improvisar quando algo muda;</li>
+<li>conduzir a entrega com conversa e clareza.</li>
+</ol>
+<p>Este e-book cobre as duas primeiras etapas. É ali que começa o diferencial: <strong>o trabalho do storymaker começa antes de ligar a câmera.</strong></p>
+<p>Os casos que você vai ler aqui são reais. Quando algo deu errado, contamos o que aconteceu e o que a equipe aprendeu, sem culpar ninguém.</p>
+
+<figure class="ilustra foto-fundador"><img src="../../site/assets/img/fundador.jpg" alt="Fundador da DocMe Comunicação de headset, com o estúdio da produtora ao fundo"><figcaption>Fundador da DocMe Comunicação, no estúdio da produtora. O método nasceu das coberturas que a equipe faz toda semana.</figcaption></figure>
+
+<h2 class="quebra">Sumário</h2>
+<ol>
+<li>Por que tudo começa antes do evento</li>
+<li>A reunião de briefing</li>
+<li>Vale publicar em tempo real?</li>
+<li>A lista A/B/C de pessoas</li>
+<li>O que não pode faltar</li>
+<li>Do briefing ao roteiro previsto</li>
+<li>Quem publica e quem aprova</li>
+<li>Quando a programação muda: o caso do congresso de negócios</li>
+<li>Atrasos e esperas: o caso do casamento</li>
+<li>"No dia" e "depois": o caso do evento infantil</li>
+<li>Bateria e equipamento no planejamento</li>
+<li>Equipe, escala e grade de horários</li>
+<li>Exercício prático</li>
+<li>Checklist resumido</li>
+<li>Glossário</li>
+<li>Resumo e próximo passo</li>
+</ol>
+
+<section class="capitulo"><div class="cap__num">01</div><p class="cap__rot">Capítulo 1</p><h2>Por que tudo começa antes do evento</h2></section>
+<h3>O que o cliente quer de verdade</h3>
+<p>Quando alguém contrata storymaker, quase nunca está comprando "vídeos". Está comprando outra coisa:</p>
+<ul>
+<li>que o evento <strong>seja visto</strong>;</li>
+<li>que seja <strong>contado da melhor forma</strong>;</li>
+<li>que as pessoas <strong>consigam replicar</strong> esse conteúdo.</li>
+</ul>
+<p>E a internet hoje pede que isso aconteça <strong>na hora</strong>: rápido, prático, dinâmico e com uma boa narrativa.</p>
+<p>Você só consegue entregar isso se souber, antes de chegar, o que aquele cliente quer mostrar.</p>
+<h3>Planejamento não engessa, orienta</h3>
+<p>Muita coisa muda no meio do caminho. A decoração atrasa, a programação muda, alguém importante não chega.</p>
+<p>Mas se você já tem um norte e já combinou com o cliente, vai dar certo.</p>
+<p>O caminho é este:</p>
+<ol>
+<li><strong>Antes:</strong> uma boa produção. Entender o cliente, ter um bom checklist e um roteiro do que você quer alcançar.</li>
+<li><strong>Durante:</strong> transformar aquele roteiro no que o evento permite.</li>
+<li><strong>Depois:</strong> uma edição bonita e uma entrega completa.</li>
+</ol>
+<h3>Postura: onde o preço começa a mudar</h3>
+<p>Pense na pergunta:</p>
+<blockquote>
+<p><strong>O que muda entre cobrar R$300 e apresentar uma proposta de R$1.500?</strong></p>
+</blockquote>
+<p>Não existe resposta mágica, e ninguém pode garantir esse valor. Mas, na experiência da DocMe, a diferença começa aqui:</p>
+<ul>
+<li>na <strong>postura</strong> quando o cliente pede um orçamento;</li>
+<li>nas <strong>perguntas certas</strong>;</li>
+<li>em um <strong>briefing bem elaborado</strong>;</li>
+<li>em <strong>entender o cliente por dentro</strong>.</li>
+</ul>
+<p>Quem chega com perguntas mostra que sabe o que está fazendo. Quem só pergunta "qual a data e o endereço?" vira fornecedor de imagem.</p>
+<h3>Quando o cliente não sabe responder</h3>
+<p>Isso é comum. Muitas vezes o cliente não tem as informações do próprio evento.</p>
+<p>Seu papel não é desistir da pergunta. É <strong>estimular</strong>:</p>
+<ul>
+<li>"Quantas pessoas vocês esperam, mais ou menos?"</li>
+<li>"É num salão só ou tem vários ambientes?"</li>
+<li>"Quem são as pessoas que você mais quer que apareçam?"</li>
+</ul>
+<p>Cada resposta ajuda o cliente a enxergar o próprio evento. E ajuda você a planejar.</p>
+<p><strong>Ponto-chave:</strong> o briefing não é burocracia. É a primeira entrega de valor para o cliente.</p>
+
+<section class="capitulo"><div class="cap__num">02</div><p class="cap__rot">Capítulo 2</p><h2>A reunião de briefing</h2></section>
+<h3>Quanto tempo reservar</h3>
+<p>Na DocMe, a reunião de briefing leva <strong>cerca de 1 hora</strong>.</p>
+<p>Parece muito? Essa hora evita horas de retrabalho, cenas perdidas e cliente frustrado.</p>
+<blockquote>
+<p><strong>Dica de bastidor:</strong> essa hora é trabalho. Você não precisa anunciar ao cliente que está contando o tempo, mas ela entra no seu orçamento. (A lógica completa de custos está no e-book 5 e na planilha de custos e horas.)</p>
+</blockquote>
+<h3>Como conduzir</h3>
+<ul>
+<li>Comece pelo <strong>porquê</strong>, não pela logística.</li>
+<li>Anote tudo. Use o <strong>modelo de briefing</strong> (material complementar desta coleção).</li>
+<li>Faça uma pergunta por vez.</li>
+<li>Se a resposta for vaga, peça um exemplo.</li>
+<li>No fim, repita o que entendeu e confirme com o cliente.</li>
+</ul>
+<h3>O roteiro de perguntas</h3><figure class="ilustra"><svg viewBox="0 0 430 205" role="img" aria-label="Os nove blocos do roteiro de briefing"><rect x="10" y="10" width="128" height="52" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2"/><circle cx="32" cy="36" r="13" fill="#c2410c"/><text x="32" y="41" font-size="13" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">1</text><text x="52" y="41" font-size="11.5" fill="#2b2a30" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Objetivo</text><rect x="150" y="10" width="128" height="52" rx="12" fill="#fff4ec" stroke="#c2410c" stroke-width="2"/><circle cx="172" cy="36" r="13" fill="#c2410c"/><text x="172" y="41" font-size="13" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">2</text><text x="192" y="41" font-size="11.5" fill="#2b2a30" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Público e espaço</text><rect x="290" y="10" width="128" height="52" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2"/><circle cx="312" cy="36" r="13" fill="#c2410c"/><text x="312" y="41" font-size="13" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">3</text><text x="332" y="41" font-size="11.5" fill="#2b2a30" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Publicação</text><rect x="10" y="74" width="128" height="52" rx="12" fill="#fff4ec" stroke="#c2410c" stroke-width="2"/><circle cx="32" cy="100" r="13" fill="#c2410c"/><text x="32" y="105" font-size="13" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">4</text><text x="52" y="105" font-size="11.5" fill="#2b2a30" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Programação</text><rect x="150" y="74" width="128" height="52" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2"/><circle cx="172" cy="100" r="13" fill="#c2410c"/><text x="172" y="105" font-size="13" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">5</text><text x="192" y="105" font-size="11.5" fill="#2b2a30" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Pessoas</text><rect x="290" y="74" width="128" height="52" rx="12" fill="#fff4ec" stroke="#c2410c" stroke-width="2"/><circle cx="312" cy="100" r="13" fill="#c2410c"/><text x="312" y="105" font-size="13" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">6</text><text x="332" y="105" font-size="11.5" fill="#2b2a30" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Não pode faltar</text><rect x="10" y="138" width="128" height="52" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2"/><circle cx="32" cy="164" r="13" fill="#c2410c"/><text x="32" y="169" font-size="13" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">7</text><text x="52" y="169" font-size="11.5" fill="#2b2a30" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Gosto e referências</text><rect x="150" y="138" width="128" height="52" rx="12" fill="#fff4ec" stroke="#c2410c" stroke-width="2"/><circle cx="172" cy="164" r="13" fill="#c2410c"/><text x="172" y="169" font-size="13" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">8</text><text x="192" y="169" font-size="11.5" fill="#2b2a30" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Mudanças e prazos</text><rect x="290" y="138" width="128" height="52" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2"/><circle cx="312" cy="164" r="13" fill="#c2410c"/><text x="312" y="169" font-size="13" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">9</text><text x="332" y="169" font-size="11.5" fill="#2b2a30" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Entrega</text></svg><figcaption>O roteiro de briefing em nove blocos. Siga a ordem: cada bloco prepara o seguinte.</figcaption></figure>
+<p>Organize a reunião em blocos. Você não precisa seguir a ordem à risca, mas precisa sair com todas as respostas.</p>
+<h4>Bloco 1 — Objetivo</h4>
+<ol>
+<li>Por que você quer storymaker neste evento?</li>
+<li>O evento é para promover a <strong>instituição</strong>, um <strong>serviço</strong>, um <strong>produto</strong> ou um <strong>profissional</strong>? Ou é uma <strong>comemoração</strong>, um registro?</li>
+<li>O que você quer que as pessoas sintam ou entendam ao ver os stories?</li>
+</ol>
+<blockquote>
+<p>A resposta à pergunta 2 muda tudo. Um evento para promover uma marca pede conteúdo pensado para compartilhamento. Uma comemoração íntima pode pedir outro ritmo.</p>
+</blockquote>
+<h4>Bloco 2 — Público e espaço</h4>
+<ol start="4">
+<li>Quantas pessoas são esperadas?</li>
+<li>Como é o espaço? Qual a metragem?</li>
+<li>Quem é o público? Que idade, que perfil?</li>
+<li>Esse público é ativo nas redes sociais? Em quais?</li>
+</ol>
+<h4>Bloco 3 — Publicação</h4>
+<ol start="8">
+<li>Em quais canais o conteúdo vai sair?</li>
+<li>Precisa sair na hora ou pode sair depois?</li>
+<li>Quem vai publicar? Quem aprova antes?</li>
+</ol>
+<p>(O capítulo 3 e o capítulo 7 aprofundam esse bloco.)</p>
+<h4>Bloco 4 — Programação e momentos</h4>
+<ol start="11">
+<li>Qual é a programação, com horários?</li>
+<li>Quais são os momentos mais importantes?</li>
+<li>Tem algum momento em que não pode filmar?</li>
+</ol>
+<h4>Bloco 5 — Pessoas</h4>
+<ol start="14">
+<li>Quem são as ~10 pessoas mais importantes do evento?</li>
+<li>Delas, quem não pode faltar de jeito nenhum (A), quem é muito importante (B) e quem é importante se der (C)?</li>
+<li>Alguém precisa dar uma fala gravada?</li>
+</ol>
+<p>(Capítulo 4.)</p>
+<h4>Bloco 6 — O que não pode faltar</h4>
+<ol start="17">
+<li>Em que vocês mais investiram? Estrutura, decoração, cenografia?</li>
+<li>Quais são as atrações? Banda, comida, bebida, brinquedos?</li>
+<li>Tem marca, patrocinador ou produto que precisa aparecer?</li>
+<li>Tem algo que você <strong>não</strong> quer que apareça?</li>
+</ol>
+<p>(Capítulo 5.)</p>
+<h4>Bloco 7 — Gosto e referências</h4>
+<ol start="21">
+<li>O que você gosta e o que não gosta em vídeos e stories?</li>
+<li>Tem alguma referência que você admira?</li>
+</ol>
+<blockquote>
+<p>Na preparação do congresso de negócios, a equipe DocMe levantou com cada cliente <strong>o que ele gostava, o que não gostava, o que a equipe poderia fazer e o que ia entregar</strong>. Esse nível de detalhe é o que deixa a cobertura personalizada.</p>
+</blockquote>
+<h4>Bloco 8 — Mudanças e prazos</h4>
+<ol start="23">
+<li>No dia, quem confirma mudanças de programação?</li>
+<li>Quem é o organizador do evento? E quem está contratando o serviço, se for outra pessoa?</li>
+<li>Se a programação mudar e o prazo combinado ficar inviável, quem aprova um novo prazo?</li>
+</ol>
+<p>(Capítulo 8.)</p>
+<h4>Bloco 9 — Entrega</h4>
+<ol start="26">
+<li>Quantos stories fazem sentido?</li>
+<li>Vai ter Reels final ou aftermovie? Para quando?</li>
+<li>Como vocês querem receber os arquivos? Drive, WhatsApp?</li>
+<li>Quer que a gente envie uma sugestão de legenda?</li>
+</ol>
+<h3>Depois da reunião</h3>
+<p>Antes do evento, faça a sua parte da pesquisa:</p>
+<ul>
+<li><strong>Pesquise a página e as redes do cliente.</strong> Veja o que ele já posta, o tom, o que dá resposta.</li>
+<li><strong>Busque referências</strong> para o tipo de evento.</li>
+<li><strong>Selecione trilhas e efeitos</strong> que você vai usar.</li>
+</ul>
+<p>Na conta da DocMe, briefing, pesquisa, referências e seleção de trilhas e efeitos já somam <strong>cerca de 3 horas</strong> antes mesmo de sair de casa. Isso é trabalho e precisa estar no seu preço.</p>
+<p><strong>Ponto-chave:</strong> saia da reunião com respostas, não com suposições.</p>
+
+<section class="capitulo"><div class="cap__num">03</div><p class="cap__rot">Capítulo 3</p><h2>Vale publicar em tempo real?</h2></section>
+<p>Nem todo evento precisa de conteúdo na hora. Decidir isso no briefing evita esforço no lugar errado.</p>
+<h3>As três perguntas</h3>
+<p><strong>1. O evento tem potencial de compartilhamento?</strong>
+É um evento em que as pessoas vão querer repostar, marcar, comentar? Ele pode dar visibilidade para a marca, o serviço ou o profissional?</p>
+<p><strong>2. O público é ativo nas redes?</strong>
+Se sim, tempo real faz sentido. Se não, talvez não haja motivo.</p>
+<p>Exemplo: em muitos eventos o público é de pessoas mais velhas, que estão no Facebook e não no Instagram ou no TikTok. Nesse caso, o conteúdo não precisa necessariamente sair na hora.</p>
+<p><strong>3. Para qual canal vai?</strong></p>
+<h3>Decisão por canal</h3><figure class="ilustra"><svg viewBox="0 0 430 210" role="img" aria-label="Canais que pedem tempo real e canais que aceitam publicação depois"><rect x="10" y="10" width="200" height="190" rx="14" fill="#c2410c"/><rect x="220" y="10" width="200" height="190" rx="14" fill="#fff4ec" stroke="#5d5c63" stroke-width="2"/><text x="110" y="42" font-size="15" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">NA HORA</text><text x="110" y="62" font-size="11" fill="#ffffff" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">tempo real</text><text x="320" y="42" font-size="15" fill="#2b2a30" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">PODE SER DEPOIS</text><text x="320" y="62" font-size="11" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">conteúdo mais elaborado</text><rect x="30" y="84" width="160" height="36" rx="18" fill="#ffffff"/><circle cx="52" cy="102" r="6" fill="#c2410c"/><text x="118" y="107" font-size="13" fill="#2b2a30" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Instagram</text><rect x="30" y="132" width="160" height="36" rx="18" fill="#ffffff"/><circle cx="52" cy="150" r="6" fill="#c2410c"/><text x="118" y="155" font-size="13" fill="#2b2a30" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">TikTok</text><rect x="240" y="78" width="160" height="32" rx="16" fill="#ffffff" stroke="#e7e6ea" stroke-width="2"/><text x="320" y="99" font-size="12.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">LinkedIn</text><rect x="240" y="118" width="160" height="32" rx="16" fill="#ffffff" stroke="#e7e6ea" stroke-width="2"/><text x="320" y="139" font-size="12.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">YouTube</text><rect x="240" y="158" width="160" height="32" rx="16" fill="#ffffff" stroke="#e7e6ea" stroke-width="2"/><text x="320" y="179" font-size="12.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Facebook</text></svg><figcaption>Decisão por canal. Mas a regra só vale se o público do evento estiver nesse canal.</figcaption></figure>
+<table>
+<thead>
+<tr>
+<th>Canal</th>
+<th>Precisa ser na hora?</th>
+<th>Por quê</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram</strong></td>
+<td>Sim</td>
+<td>Stories vivem do agora; o público acompanha enquanto acontece</td>
+</tr>
+<tr>
+<td><strong>TikTok</strong></td>
+<td>Sim</td>
+<td>Conteúdo rápido, dinâmico, ligado ao momento</td>
+</tr>
+<tr>
+<td><strong>LinkedIn</strong></td>
+<td>Muitas vezes não</td>
+<td>Canal mais profissional; aceita um conteúdo mais elaborado depois</td>
+</tr>
+<tr>
+<td><strong>YouTube</strong></td>
+<td>Não</td>
+<td>Bom para o vídeo mais completo, publicado depois</td>
+</tr>
+<tr>
+<td><strong>Facebook</strong></td>
+<td>Não</td>
+<td>Não exige a pressa do Instagram e do TikTok</td>
+</tr>
+</tbody>
+</table>
+<h3>Exemplos reais de tempo real</h3>
+<p>Na experiência da DocMe, coberturas como <strong>um evento nacional</strong>, <strong>um congresso empresarial regional</strong> e <strong>um congresso em São Paulo</strong> foram feitas com publicação em tempo real.</p>
+<div class="reservado"><span class="reservado__ico" aria-hidden="true"></span><div><b>Espaço para material DocMe</b><br>PREENCHER COM MATERIAL DA DOCME: objetivo, público e canais do evento nacional, do congresso empresarial regional e do congresso em São Paulo, e por que o tempo real foi escolhido em cada um</div></div>
+<h3>O que muda no seu planejamento</h3>
+<ul>
+<li><strong>Tempo real:</strong> você precisa de fluxo de publicação combinado, acesso às contas ou ao grupo, bateria planejada e edições curtas ao longo do evento.</li>
+<li><strong>Depois:</strong> você pode captar com mais calma e concentrar o esforço na edição final.</li>
+<li><strong>Os dois:</strong> é o mais comum em eventos com público ativo. Stories no dia e Reels final ou aftermovie depois (veja o capítulo 10).</li>
+</ul>
+<p><strong>Ponto-chave:</strong> público e canal decidem o ritmo. Não é a sua vontade de postar rápido.</p>
+
+<section class="capitulo"><div class="cap__num">04</div><p class="cap__rot">Capítulo 4</p><h2>A lista A/B/C de pessoas</h2></section><figure class="ilustra"><svg viewBox="0 0 430 212" role="img" aria-label="Lista A, B e C de pessoas"><rect x="140.0" y="12" width="150" height="56" rx="12" fill="#c2410c"/><text x="215" y="38" font-size="22" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">A</text><text x="215" y="57" font-size="10.5" fill="#ffffff" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Entram no roteiro, com momento definido</text><rect x="90.0" y="78" width="250" height="56" rx="12" fill="#9a3412"/><text x="215" y="104" font-size="22" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">B</text><text x="215" y="123" font-size="10.5" fill="#ffffff" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Você busca durante a cobertura</text><rect x="40.0" y="144" width="350" height="56" rx="12" fill="#5d5c63"/><text x="215" y="170" font-size="22" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">C</text><text x="215" y="189" font-size="10.5" fill="#ffffff" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Você aproveita quando aparecem</text></svg><figcaption>Lista A/B/C: as cerca de dez pessoas mais importantes do evento, por prioridade.</figcaption></figure>
+<h3>Por que ter uma lista</h3>
+<p>Num evento cheio, todo mundo parece importante. Sem lista, você grava quem está perto, não quem importa.</p>
+<p>Peça ao cliente as <strong>cerca de 10 pessoas mais importantes</strong> do evento e organize em três níveis:</p>
+<ul>
+<li><strong>A — não pode faltar.</strong> Se essa pessoa não aparecer, o cliente vai sentir falta. Ex.: anfitrião, homenageado, palestrante principal, noivos, aniversariante.</li>
+<li><strong>B — muito importante.</strong> Convidados de destaque, parceiros, patrocinadores, família próxima.</li>
+<li><strong>C — importante se der.</strong> Pessoas que valorizam a cobertura, mas não comprometem se ficarem de fora.</li>
+</ul>
+<h3>Como montar a lista</h3>
+<p>Para cada nome, anote:</p>
+<ul>
+<li><strong>quem é</strong> (cargo, relação com o cliente);</li>
+<li><strong>como reconhecer</strong> (peça uma foto, se possível);</li>
+<li><strong>se precisa dar uma fala</strong>.</li>
+</ul>
+<h3>Como usar no dia</h3>
+<ul>
+<li>As pessoas <strong>A</strong> entram no roteiro previsto, com momento definido.</li>
+<li>As <strong>B</strong> você busca ativamente durante a cobertura.</li>
+<li>As <strong>C</strong> você aproveita quando aparecem.</li>
+</ul>
+<h3>Exemplo real</h3>
+<p>No evento infantil coberto pela DocMe, havia <strong>13 mil pessoas</strong> e <strong>10 personalidades</strong>. A equipe precisava mostrar brincadeiras, crianças e interação, e também garantir essas personalidades.</p>
+<p>Sem uma lista clara, dez pessoas se perdem fácil no meio de treze mil.</p>
+<h3>As falas</h3>
+<p>Alguns stories precisam da fala de alguém. Na DocMe, essas falas são <strong>gravadas antecipadamente</strong>, já sabendo o que se quer e <strong>onde ela vai encaixar no vídeo</strong>.</p>
+<p>Planeje no briefing:</p>
+<ul>
+<li>quem fala;</li>
+<li>sobre o quê;</li>
+<li>em que momento do evento dá para gravar;</li>
+<li>em qual story ou vídeo a fala vai entrar.</li>
+</ul>
+<p>Com falas em mãos, você também consegue estender o vídeo. Na experiência da DocMe, o vídeo geralmente varia de <strong>1 a 2 minutos</strong>, e <strong>1min30 é o mais adequado</strong>.</p>
+<p><strong>Ponto-chave:</strong> dez nomes bem escolhidos valem mais do que cem cenas aleatórias.</p>
+
+<section class="capitulo"><div class="cap__num">05</div><p class="cap__rot">Capítulo 5</p><h2>O que não pode faltar</h2></section>
+<h3>Onde o cliente investiu</h3>
+<p>Muitas vezes o cliente gastou muito com <strong>estrutura e decoração</strong>. Isso não pode faltar na cobertura.</p>
+<p>Pergunte diretamente: "Em que vocês mais investiram?"</p>
+<p>A resposta vira prioridade no roteiro.</p>
+<h3>A lista do que não pode faltar</h3>
+<p>Monte com o cliente uma lista com:</p>
+<ul>
+<li><strong>estrutura e decoração</strong> (fachada, cenografia, ambientação);</li>
+<li><strong>atrações</strong> (banda, comidas, bebidas, brinquedos, ativações);</li>
+<li><strong>marcas e patrocinadores</strong> que precisam aparecer;</li>
+<li><strong>momentos-chave</strong> da programação.</li>
+</ul>
+<p>E pergunte também o contrário: <strong>o que o cliente não quer que apareça.</strong></p>
+<h3>Exemplo real: confraternização de fim de ano</h3>
+<p>Na confraternização de fim de ano, a cobertura da DocMe mostrou um conjunto de atrações: <strong>banda, espelho mágico, chope, sorvete, um coquetel e bebidas</strong>.</p>
+<p>Cada um desses itens é algo em que o cliente investiu. Cada um vira cena, e às vezes um story inteiro.</p>
+<h3>Um story pode ser só uma foto</h3>
+<p>Nem tudo precisa ser vídeo. Um story pode ser <strong>uma foto</strong>: a pamonha servida no final, o caldo de cana.</p>
+<p>Se o item está na lista do que não pode faltar, ele merece aparecer, mesmo que em uma imagem só.</p>
+<h3>E se não estiver pronto quando você chegar?</h3>
+<p>Acontece de a decoração não estar montada na chegada. O planejamento já deve prever a alternativa:</p>
+<ul>
+<li>captar a decoração <strong>depois que os convidados chegarem</strong>; ou</li>
+<li><strong>integrar</strong> a decoração às cenas com os convidados.</li>
+</ul>
+<p>(O e-book 3 aprofunda como fazer isso na captação.)</p>
+<p><strong>Ponto-chave:</strong> o que custou caro para o cliente precisa aparecer no conteúdo.</p>
+
+<section class="capitulo"><div class="cap__num">06</div><p class="cap__rot">Capítulo 6</p><h2>Do briefing ao roteiro previsto</h2></section>
+<p>Com as respostas do briefing, você monta um <strong>roteiro previsto</strong>: o plano de stories que você pretende entregar.</p>
+<p>Ele não é uma prisão. É o norte.</p>
+<h3>A sequência que funciona</h3><figure class="ilustra"><svg viewBox="0 0 430 232" role="img" aria-label="Sequência de quatro stories"><rect x="8" y="8" width="92" height="164" rx="16" fill="#2b2a30"/><rect x="14" y="14" width="80" height="152" rx="12" fill="#c2410c"/><rect x="20" y="22" width="68" height="3" rx="1.5" fill="#ffffff"/><text x="54" y="80" font-size="34" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">1</text><text x="54" y="108" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">O lugar</text><text x="54" y="150" font-size="10" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">~30 s</text><text x="54" y="190" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">fachada</text><text x="54" y="203" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">decoração</text><text x="54" y="216" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">localização</text><rect x="114" y="8" width="92" height="164" rx="16" fill="#2b2a30"/><rect x="120" y="14" width="80" height="152" rx="12" fill="#9a3412"/><rect x="126" y="22" width="68" height="3" rx="1.5" fill="#ffffff"/><text x="160" y="80" font-size="34" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">2</text><text x="160" y="108" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">As pessoas</text><text x="160" y="150" font-size="10" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">~30 s</text><text x="160" y="190" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">recepção</text><text x="160" y="203" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">personalidades</text><rect x="220" y="8" width="92" height="164" rx="16" fill="#2b2a30"/><rect x="226" y="14" width="80" height="152" rx="12" fill="#c2410c"/><rect x="232" y="22" width="68" height="3" rx="1.5" fill="#ffffff"/><text x="266" y="80" font-size="34" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">3</text><text x="266" y="108" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">As atrações</text><text x="266" y="150" font-size="10" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">~30 s</text><text x="266" y="190" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">banda</text><text x="266" y="203" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">comida</text><text x="266" y="216" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">bebida</text><rect x="326" y="8" width="92" height="164" rx="16" fill="#2b2a30"/><rect x="332" y="14" width="80" height="152" rx="12" fill="#9a3412"/><rect x="338" y="22" width="27.200000000000003" height="3" rx="1.5" fill="#ffffff"/><text x="372" y="80" font-size="34" fill="#ffffff" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">4</text><text x="372" y="108" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Os momentos</text><text x="372" y="150" font-size="10" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">~30 s</text><text x="372" y="190" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">abertura</text><text x="372" y="203" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">fala</text><text x="372" y="216" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">homenagem</text></svg><figcaption>A sequência que funciona: do espaço para as pessoas, das pessoas para as experiências.</figcaption></figure>
+<p>Na confraternização de fim de ano, a equipe DocMe chegou, mapeou o evento e olhou os pontos importantes. A partir disso, fez <strong>quatro stories de cerca de 30 segundos</strong>, organizados assim:</p>
+<ol>
+<li><strong>O lugar:</strong> fachada, decoração e localização. Onde o evento está acontecendo.</li>
+<li><strong>As pessoas:</strong> um vídeo só da recepção, mostrando as personalidades. Quem é o público.</li>
+<li><strong>As atrações:</strong> tudo o que tinha de entretenimento. Banda, espelho mágico, chope, sorvete, coquetel, bebidas.</li>
+</ol>
+<p>O resultado agradou: o cliente elogiou com mensagens como <strong>"arrasou"</strong> e <strong>"tá demais"</strong>.</p>
+<div class="reservado"><span class="reservado__ico" aria-hidden="true"></span><div><b>Espaço para material DocMe</b><br>PREENCHER COM MATERIAL DA DOCME: prints dos elogios do cliente da confraternização de fim de ano e frames dos stories</div></div>
+<h3>Use a sequência como modelo de planejamento</h3>
+<p>Antes do evento, preencha esta estrutura com as respostas do briefing:</p>
+<table>
+<thead>
+<tr>
+<th>Bloco</th>
+<th>O que mostrar</th>
+<th>Itens do briefing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. O lugar</td>
+<td>Fachada, decoração, localização</td>
+<td>"O que não pode faltar": estrutura e decoração</td>
+</tr>
+<tr>
+<td>2. As pessoas</td>
+<td>Recepção, convidados, personalidades</td>
+<td>Lista A/B/C</td>
+</tr>
+<tr>
+<td>3. As atrações</td>
+<td>Entretenimento, comida, bebida</td>
+<td>"O que não pode faltar": atrações</td>
+</tr>
+<tr>
+<td>4. Os momentos</td>
+<td>Momentos-chave da programação, falas</td>
+<td>Programação e falas planejadas</td>
+</tr>
+</tbody>
+</table>
+<p>O quarto bloco depende do evento: abertura, palestra, homenagem, entrada dos noivos, parabéns.</p>
+<h3>Quanto entregar</h3>
+<p>O volume varia com o evento. Algumas referências da experiência DocMe:</p>
+<ul>
+<li><strong>15 anos:</strong> pode funcionar com <strong>5 stories de vídeo e 5 de foto</strong> (feitas pelo fotógrafo do evento ou por você, com o celular, tratadas e diagramadas).</li>
+<li><strong>Na maioria dos eventos:</strong> a DocMe trabalha com <strong>cerca de 10 stories</strong>.</li>
+<li><strong>Um casamento grande:</strong> com <strong>mais de 30 atrações ou itens</strong>, a entrega passou de <strong>30 stories</strong>.</li>
+</ul>
+<div class="reservado"><span class="reservado__ico" aria-hidden="true"></span><div><b>Espaço para material DocMe</b><br>PREENCHER COM MATERIAL DA DOCME: detalhes do planejamento do casamento com mais de 30 atrações — como a equipe organizou mais de 30 itens</div></div>
+<p>Defina o volume <strong>no briefing</strong> e deixe combinado. Isso protege você e o cliente.</p>
+<h3>Experiente ou novato: quanto detalhar o roteiro</h3>
+<p>Na DocMe, o roteiro também depende de quem vai executar.</p>
+<ul>
+<li>Com um <strong>profissional experiente</strong>, a equipe consegue programar o timing com mais precisão.</li>
+<li>Com um <strong>profissional novato</strong>, que só sabe fazer imagens com o celular, é preciso dar <strong>mais instruções</strong> para montar o vídeo: evitar sequência repetida, trocar a imagem do jeito certo.</li>
+</ul>
+<p>Se você está começando, detalhe mais o seu próprio roteiro. Escreva as cenas de cada bloco.</p>
+<p><strong>Ponto-chave:</strong> o roteiro previsto transforma o briefing em cenas. Sem ele, o briefing fica na gaveta.</p>
+
+<section class="capitulo"><div class="cap__num">07</div><p class="cap__rot">Capítulo 7</p><h2>Quem publica e quem aprova</h2></section><figure class="ilustra"><svg viewBox="0 0 450 170" role="img" aria-label="Dois fluxos de publicação"><text x="10" y="14" font-size="12" fill="#c2410c" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">FLUXO A — o storymaker publica</text><rect x="10" y="24" width="78" height="44" rx="10" fill="#ffffff" stroke="#d9d8dd" stroke-width="2"/><text x="49.0" y="44" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Capta</text><path d="M90 46 l6 0" stroke="#5d5c63" stroke-width="2"/><rect x="98" y="24" width="78" height="44" rx="10" fill="#ffffff" stroke="#d9d8dd" stroke-width="2"/><text x="137.0" y="38" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Edita no</text><text x="137.0" y="51" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">celular</text><path d="M178 46 l6 0" stroke="#5d5c63" stroke-width="2"/><rect x="186" y="24" width="78" height="44" rx="10" fill="#c2410c"/><text x="225.0" y="38" font-size="10.5" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Publica no</text><text x="225.0" y="51" font-size="10.5" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">perfil do cliente</text><text x="10" y="96" font-size="12" fill="#9a3412" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">FLUXO B — o cliente aprova e publica</text><rect x="10" y="106" width="78" height="44" rx="10" fill="#ffffff" stroke="#d9d8dd" stroke-width="2"/><text x="49.0" y="126" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Capta</text><path d="M90 128 l6 0" stroke="#5d5c63" stroke-width="2"/><rect x="98" y="106" width="78" height="44" rx="10" fill="#ffffff" stroke="#d9d8dd" stroke-width="2"/><text x="137.0" y="120" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Edita no</text><text x="137.0" y="133" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">celular</text><path d="M178 128 l6 0" stroke="#5d5c63" stroke-width="2"/><rect x="186" y="106" width="78" height="44" rx="10" fill="#ffffff" stroke="#d9d8dd" stroke-width="2"/><text x="225.0" y="120" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Envia ao</text><text x="225.0" y="133" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">grupo</text><path d="M266 128 l6 0" stroke="#5d5c63" stroke-width="2"/><rect x="274" y="106" width="78" height="44" rx="10" fill="#ffffff" stroke="#d9d8dd" stroke-width="2"/><text x="313.0" y="120" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Cliente</text><text x="313.0" y="133" font-size="10.5" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">aprova</text><path d="M354 128 l6 0" stroke="#5d5c63" stroke-width="2"/><rect x="362" y="106" width="78" height="44" rx="10" fill="#9a3412"/><text x="401.0" y="120" font-size="10.5" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Cliente</text><text x="401.0" y="133" font-size="10.5" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">publica</text></svg><figcaption>Os dois fluxos de publicação. Quem escolhe é sempre o cliente; os dois funcionam.</figcaption></figure>
+<h3>A escolha é sempre do cliente</h3>
+<p>Na DocMe, <strong>quem decide como a publicação acontece é o cliente</strong>. O storymaker precisa estar preparado para qualquer uma das opções.</p>
+<p>Combine isso no briefing. Nunca deixe para o dia.</p>
+<h3>Fluxo A — O storymaker publica</h3>
+<p>O cliente dá acesso às redes. Há duas formas:</p>
+<ul>
+<li>o cliente <strong>loga as redes nos aparelhos da equipe</strong>; ou</li>
+<li>o cliente <strong>entrega o próprio celular</strong>.</li>
+</ul>
+<p><strong>Exemplo real: os celulares dos noivos.</strong> Em um casamento coberto pela DocMe, a noiva deixou o celular dela com a equipe, e o noivo também. A equipe tinha acesso às redes do casal, com a confiança deles.</p>
+<p>O processo era:</p>
+<ol>
+<li>montar o vídeo no <strong>celular da empresa</strong>;</li>
+<li>passar por <strong>AirDrop ou WhatsApp</strong> para o celular da noiva;</li>
+<li><strong>postar em tempo real</strong>.</li>
+</ol>
+<p>Quando o casamento terminou, foi aí que a noiva viu todos os detalhes que teve no próprio casamento.</p>
+<h3>Fluxo B — O cliente aprova e publica</h3>
+<p>Alguns clientes preferem manter a privacidade das contas.</p>
+<p><strong>Exemplo real: circuito gastronômico.</strong> A equipe DocMe preparava o conteúdo e <strong>mandava no grupo</strong>. Quem administrava a página fazia a curadoria: escolhia o que gostava e já subia.</p>
+<h3>Os dois funcionam</h3>
+<p>Tanto um fluxo quanto o outro são bons. O importante é saber <strong>antes</strong> qual será.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Fluxo A — storymaker publica</th>
+<th>Fluxo B — cliente publica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quem posta</td>
+<td>Storymaker</td>
+<td>Responsável pela página</td>
+</tr>
+<tr>
+<td>Acesso</td>
+<td>Login no aparelho da equipe ou celular do cliente</td>
+<td>Grupo de WhatsApp</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Máxima</td>
+<td>Depende de quem faz a curadoria</td>
+</tr>
+<tr>
+<td>Controle do cliente</td>
+<td>Por confiança</td>
+<td>Total</td>
+</tr>
+<tr>
+<td>O que testar antes</td>
+<td>Login, AirDrop/WhatsApp entre aparelhos</td>
+<td>Grupo criado, pessoa responsável disponível no dia</td>
+</tr>
+</tbody>
+</table>
+<h3>O que combinar no briefing</h3>
+<ul>
+<li>Qual fluxo será usado.</li>
+<li>Nome e telefone de quem aprova ou posta.</li>
+<li>Se for fluxo A: quais contas, quais aparelhos, como será o login.</li>
+<li>Se for fluxo B: qual grupo, quem está nele, quem posta.</li>
+<li>Quais <strong>@</strong> marcar.</li>
+<li>Se há algo que <strong>precisa</strong> de aprovação antes, mesmo no fluxo A.</li>
+</ul>
+<h3>A legenda sugerida</h3>
+<p>No final de todos os eventos, a DocMe propõe ao cliente <strong>uma legenda</strong> do que foi aquele dia. O cliente pode mudar ou fazer a dele.</p>
+<p>Por que isso importa? Porque tem evento em que o cliente está curtindo a festa e não vai ter condição de escrever uma legenda.</p>
+<p>O profissional precisa estar ali e entregar o <strong>conteúdo completo</strong>: o Reels completo para aprovar, já com sugestão de legenda.</p>
+<p>E é por isso que é importante <strong>conhecer o cliente antes</strong>. A legenda boa tem o jeito do cliente, e esse jeito você descobre no briefing.</p>
+<p><strong>Ponto-chave:</strong> publicação não se improvisa. Combine o fluxo, teste o acesso e leve a legenda pronta.</p>
+
+<section class="capitulo"><div class="cap__num">08</div><p class="cap__rot">Capítulo 8</p><h2>Quando a programação muda: o caso do congresso de negócios</h2></section>
+<p>Este é o caso que mais ensina sobre planejamento. Porque o planejamento estava bem-feito, e mesmo assim tudo mudou.</p>
+<h3>O contexto</h3>
+<p>Num <strong>congresso de negócios</strong> no litoral paulista, a DocMe tinha <strong>cinco clientes de storymaker</strong>: palestrantes do evento. A equipe tinha quatro a cinco pessoas: <strong>Matheus Beisman, Eric e Vanessa no vídeo</strong> (com mais um integrante) e <strong>Igor na foto</strong>.</p>
+<p>O evento durou <strong>dois dias</strong>: sábado e domingo.</p>
+<div class="reservado"><span class="reservado__ico" aria-hidden="true"></span><div><b>Espaço para material DocMe</b><br>PREENCHER COM MATERIAL DA DOCME: ano do evento e objetivo dos palestrantes com a cobertura</div></div>
+<h3>O planejamento</h3>
+<p>A equipe fez:</p>
+<ul>
+<li><strong>reunião de briefing individual</strong> com cada cliente;</li>
+<li>levantamento do que cada um gostava, do que não gostava, do que a equipe poderia fazer;</li>
+<li>definição das entregas: <strong>sessão de fotos, vídeos e registro da palestra</strong>;</li>
+<li>uma <strong>grade de horários</strong> organizada a partir da programação.</li>
+</ul>
+<p>A grade funcionava assim. Cada palestrante falava por cerca de 15 minutos, mas a equipe ficava com ele por <strong>duas horas</strong>, incluindo a palestra.</p>
+<ul>
+<li>Palestra às <strong>11h</strong> → equipe com o palestrante das <strong>9h às 11h</strong>.</li>
+<li>Palestra às <strong>13h30</strong> → equipe com o palestrante das <strong>11h30 às 13h30</strong>.</li>
+<li>E assim por diante.</li>
+</ul>
+<p>Briefing organizado, grade organizada, entregas combinadas.</p>
+<h3>O que aconteceu</h3><figure class="ilustra"><svg viewBox="0 0 430 206" role="img" aria-label="Grade planejada e grade real no congresso de negócios"><line x1="70.0" y1="26" x2="70.0" y2="196" stroke="#e7e6ea"/><text x="70.0" y="18" font-size="10" fill="#5d5c63" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">9h</text><line x1="157.5" y1="26" x2="157.5" y2="196" stroke="#e7e6ea"/><text x="157.5" y="18" font-size="10" fill="#5d5c63" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">11h</text><line x1="245.0" y1="26" x2="245.0" y2="196" stroke="#e7e6ea"/><text x="245.0" y="18" font-size="10" fill="#5d5c63" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">13h</text><line x1="332.5" y1="26" x2="332.5" y2="196" stroke="#e7e6ea"/><text x="332.5" y="18" font-size="10" fill="#5d5c63" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">15h</text><line x1="420.0" y1="26" x2="420.0" y2="196" stroke="#e7e6ea"/><text x="420.0" y="18" font-size="10" fill="#5d5c63" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">17h</text><text x="8" y="58" font-size="10" fill="#2b2a30" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">PLANEJADO</text><text x="8" y="150" font-size="10" fill="#9a3412" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">NO DIA</text><rect x="70.0" y="32" width="87.5" height="18" rx="6" fill="#2b2a30"/><text x="113.75" y="45" font-size="9.5" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Palestrante 1</text><rect x="179.375" y="54" width="87.5" height="18" rx="6" fill="#2b2a30"/><text x="223.125" y="67" font-size="9.5" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Palestrante 2</text><rect x="288.75" y="76" width="87.5" height="18" rx="6" fill="#2b2a30"/><text x="332.5" y="89" font-size="9.5" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Palestrante 3</text><rect x="70.0" y="118" width="87.5" height="16" rx="6" fill="#2b2a30"/><text x="113.75" y="130" font-size="9" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Palestrante 1</text><rect x="179.375" y="140" width="87.5" height="16" rx="6" fill="#bdbcc2"/><text x="223.125" y="152" font-size="9" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Palestrante 2 ?</text><rect x="288.75" y="162" width="87.5" height="16" rx="6" fill="#2b2a30"/><text x="332.5" y="174" font-size="9" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Palestrante 3</text><rect x="288.75" y="182" width="87.5" height="16" rx="6" fill="#c2410c"/><text x="332.5" y="194" font-size="9" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Palestrante 2</text><path d="M271.25 148 C 332.5 150, 297.5 170, 315.0 182" fill="none" stroke="#c2410c" stroke-width="2" stroke-dasharray="4 3"/><text x="380.62500000000006" y="194" font-size="10" fill="#c2410c" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">conflito</text></svg><figcaption>Esquema ilustrativo do congresso de negócios: a palestra mudou de horário sem aviso e caiu em cima da grade de outro palestrante.</figcaption></figure>
+<p>A organização do evento <strong>mudou os horários das palestras e não avisou a equipe</strong>.</p>
+<p>Na prática:</p>
+<ul>
+<li>a equipe procurava o palestrante para começar o trabalho, mas ainda não era a hora dele;</li>
+<li>o palestrante das 11h30 passou para as 16h, só que às 16h já havia outro palestrante;</li>
+<li>o cronograma de ensaio com o cliente 1, o cliente 2, o cliente 3 foi bagunçando, um horário empurrando o outro.</li>
+</ul>
+<p>Foi assim nos dois dias.</p>
+<h3>Como a equipe resolveu</h3>
+<p>A equipe foi até o <strong>contratante</strong>. Detalhe importante: o contratante <strong>não era o dono do evento</strong>. Era um dos palestrantes.</p>
+<p>A conversa foi direta, mais ou menos assim:</p>
+<blockquote>
+<p>"Olha, todo o cronograma mudou, ninguém passou para a gente. Mas a gente vai continuar com os trabalhos. A diferença é que a gente não vai conseguir entregar todos os materiais no fim das palestras, como combinado. Posso pegar o WhatsApp de todo mundo e mandar tudo no dia seguinte?"</p>
+</blockquote>
+<p>A resposta foi sim.</p>
+<p>O novo combinado:</p>
+<ul>
+<li><strong>Sábado:</strong> a equipe captava e fotografava todo mundo, <strong>editava no final do evento</strong>, subia no <strong>Drive</strong> e entregava aos palestrantes <strong>no domingo</strong>.</li>
+<li><strong>Domingo:</strong> também houve atraso de horários, e não deu para entregar no dia. A equipe prometeu a cada palestrante a entrega <strong>ao longo da semana seguinte</strong>.</li>
+</ul>
+<p>Todos aprovaram. Todos aceitaram. Deu tudo certo.</p>
+<div class="reservado"><span class="reservado__ico" aria-hidden="true"></span><div><b>Espaço para material DocMe</b><br>PREENCHER COM MATERIAL DA DOCME: retorno dos palestrantes após a entrega, prints de mensagens, se houver autorização</div></div>
+<h3>O que esse caso ensina</h3>
+<p>O erro foi <strong>externo</strong>. A equipe estava preparada.</p>
+<p>Mas a solução não estava combinada antes. Ela foi negociada no meio do evento. Deu certo porque a equipe:</p>
+<ul>
+<li><strong>continuou trabalhando</strong> mesmo com o plano desmontado;</li>
+<li><strong>explicou o impacto com clareza</strong>;</li>
+<li><strong>propôs uma alternativa</strong> antes de prometer algo impossível;</li>
+<li><strong>renegociou o prazo</strong> com quem podia aprovar.</li>
+</ul>
+<p>O aprendizado para qualquer storymaker:</p>
+<blockquote>
+<p>Além do briefing, é preciso saber <strong>quem confirma mudanças de programação</strong>, <strong>como você será avisado</strong> e <strong>quem pode aprovar uma mudança no prazo de entrega</strong>.</p>
+</blockquote>
+<h3>O protocolo de mudança de programação</h3>
+<p>Leve este protocolo para todo evento. Ele tem duas partes: o que combinar antes e o que fazer na hora.</p>
+<h4>Antes do evento (no briefing)</h4>
+<ol>
+<li><strong>Identifique os papéis.</strong> Quem é o <strong>organizador</strong> (quem controla a programação)? Quem é o <strong>contratante</strong> (quem paga e aprova a sua entrega)? Às vezes são pessoas diferentes, como no congresso de negócios.</li>
+<li><strong>Defina quem confirma mudanças.</strong> Nome e telefone da pessoa que pode dizer, no dia, "sim, o horário mudou".</li>
+<li><strong>Defina como você será avisado.</strong> Grupo, ligação, mensagem direta.</li>
+<li><strong>Defina quem aprova um novo prazo.</strong> Se a entrega ficar inviável, com quem você negocia?</li>
+<li><strong>Deixe uma alternativa pré-combinada.</strong> Por exemplo: "Se a programação mudar e não der para entregar no dia, a entrega vai pelo Drive no dia seguinte." Assim você não precisa negociar do zero no meio do caos.</li>
+</ol>
+<h4>Durante o evento (quando algo muda)</h4>
+<ol>
+<li><strong>Confirme a mudança</strong> com quem pode confirmar. Não trabalhe em cima de boato.</li>
+<li><strong>Avalie o impacto.</strong> O que do roteiro ainda dá para cumprir? O que não dá?</li>
+<li><strong>Fale com o contratante cedo.</strong> Não espere o fim do evento. Na DocMe, a fala costuma ser algo como: "Olha, nosso roteiro foi pensado nisso, nisso e nisso, porém isso não está de acordo."</li>
+<li><strong>Proponha uma alternativa concreta.</strong> Novo prazo, nova forma de entrega, o que sai agora e o que sai depois.</li>
+<li><strong>Obtenha o sim</strong> de quem pode aprovar.</li>
+<li><strong>Continue trabalhando.</strong> A mudança muda a ordem, não para a cobertura.</li>
+<li><strong>Cumpra o novo combinado.</strong></li>
+</ol>
+<blockquote>
+<p>Sugestão prática: confirme o novo combinado por mensagem escrita, para que todos tenham a mesma referência depois.</p>
+</blockquote>
+<p><strong>Ponto-chave:</strong> planejamento bom não é o que nunca muda. É o que já sabe com quem falar quando muda.</p>
+
+<section class="capitulo"><div class="cap__num">09</div><p class="cap__rot">Capítulo 9</p><h2>Atrasos e esperas: o caso do casamento</h2></section>
+<h3>O atraso que segura tudo</h3>
+<p>Em casamento, acontece de uma madrinha atrasar. E muitas vezes essa madrinha é a <strong>mãe da noiva</strong>, e a noiva não quer começar sem ela.</p>
+<p>Numa situação assim vivida pela DocMe, a equipe ficou esperando <strong>cerca de uma hora</strong>.</p>
+<div class="reservado"><span class="reservado__ico" aria-hidden="true"></span><div><b>Espaço para material DocMe</b><br>PREENCHER COM MATERIAL DA DOCME: qual casamento foi (se puder ser citado) e data</div></div>
+<h3>O que fazer com uma hora de espera</h3>
+<p>Uma hora parada é uma hora sem conteúdo. A DocMe usou esse tempo para <strong>seguir criando</strong>:</p>
+<ul>
+<li>mostrar os <strong>padrinhos</strong>;</li>
+<li>mostrar os <strong>convidados</strong>;</li>
+<li><strong>conversar com a noiva</strong>;</li>
+<li><strong>interagir com o noivo</strong>;</li>
+<li>registrar <strong>detalhes</strong>;</li>
+<li>e, às vezes, até <strong>postar</strong>.</li>
+</ul>
+<p>Tudo isso gera conteúdo que não depende do momento atrasado.</p>
+<h3>Como planejar para o atraso</h3>
+<p>Você não sabe se vai haver atraso. Mas pode deixar preparado, no roteiro previsto, uma <strong>lista de conteúdos de espera</strong>: coisas que podem ser gravadas a qualquer momento.</p>
+<p>Exemplos:</p>
+<ul>
+<li>detalhes da decoração;</li>
+<li>pessoas B e C da lista;</li>
+<li>convidados interagindo;</li>
+<li>bastidores (sempre com o consentimento do cliente);</li>
+<li>atrações que já estão funcionando.</li>
+</ul>
+<p>O atraso <strong>muda a ordem</strong> da história. Não precisa <strong>interromper</strong> a cobertura.</p>
+<p><strong>Ponto-chave:</strong> tenha sempre um "plano de espera" no bolso.</p>
+
+<section class="capitulo"><div class="cap__num">10</div><p class="cap__rot">Capítulo 10</p><h2>"No dia" e "depois": o caso do evento infantil</h2></section>
+<h3>Dois tempos, dois produtos</h3>
+<p>Uma cobertura pode ter dois tipos de entrega:</p>
+<ul>
+<li><strong>No dia:</strong> stories e vídeos rápidos, para mostrar o evento enquanto ele acontece e estimular compartilhamento.</li>
+<li><strong>Depois:</strong> o <strong>aftermovie</strong> ou Reels final, com uma edição mais completa e a visão do evento como um todo.</li>
+</ul>
+<p>Os dois precisam ser planejados no briefing.</p>
+<h3>O caso</h3><figure class="ilustra"><svg viewBox="0 0 430 180" role="img" aria-label="10 mil visualizações no dia contra 1.500 no aftermovie"><text x="10" y="20" font-size="11" fill="#5d5c63" font-weight="600" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Visualizações</text><text x="10" y="50" font-size="13" fill="#2b2a30" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">No dia</text><text x="10" y="66" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="start" style="font-family:Sora,Inter,sans-serif">vídeo publicado no fim do evento</text><rect x="10" y="74" width="300" height="18" rx="9" fill="#efeef1"/><rect x="10" y="74" width="300.0" height="18" rx="9" fill="#c2410c"/><text x="322" y="88" font-size="18" fill="#2b2a30" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">10.000</text><text x="10" y="120" font-size="13" fill="#2b2a30" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">Depois</text><text x="10" y="136" font-size="9.5" fill="#5d5c63" font-weight="500" text-anchor="start" style="font-family:Sora,Inter,sans-serif">aftermovie, uma semana depois</text><rect x="10" y="144" width="300" height="18" rx="9" fill="#efeef1"/><rect x="10" y="144" width="45.0" height="18" rx="9" fill="#5d5c63"/><text x="322" y="158" font-size="18" fill="#2b2a30" font-weight="800" text-anchor="start" style="font-family:Sora,Inter,sans-serif">1.500</text></svg><figcaption>Evento infantil: dois vídeos, duas propostas. O horário de publicação não é a única explicação para a diferença.</figcaption></figure>
+<p>No <strong>evento infantil</strong>, com <strong>13 mil pessoas</strong> e <strong>10 personalidades</strong>, a DocMe fez dois vídeos:</p>
+<table>
+<thead>
+<tr>
+<th>Vídeo</th>
+<th>Quando foi postado</th>
+<th>Visualizações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vídeo do dia</td>
+<td>No final do evento</td>
+<td>10 mil</td>
+</tr>
+<tr>
+<td>Aftermovie</td>
+<td>Uma semana depois</td>
+<td>1.500</td>
+</tr>
+</tbody>
+</table>
+<div class="reservado"><span class="reservado__ico" aria-hidden="true"></span><div><b>Espaço para material DocMe</b><br>PREENCHER COM MATERIAL DA DOCME: data do evento, canal/perfil de publicação e duração de cada vídeo</div></div>
+<h3>Como ler esses números</h3>
+<p>Cuidado: esses números são de <strong>um caso</strong>. Eles não garantem que todo vídeo do dia terá mais visualizações do que todo aftermovie. Vários fatores influenciam o resultado.</p>
+<p>O que o caso mostra é o raciocínio que a DocMe aplica: a internet valoriza o que é <strong>na hora, rápido e dinâmico</strong>. Um conteúdo publicado enquanto o evento ainda está quente tem a chance de circular entre quem estava lá.</p>
+<h3>O que isso muda no planejamento</h3>
+<p>No briefing, combine:</p>
+<ul>
+<li><strong>o que sai no dia:</strong> quantos stories, se há um vídeo-resumo no encerramento;</li>
+<li><strong>o que sai depois:</strong> se há aftermovie ou Reels final, e em quanto tempo;</li>
+<li><strong>onde sai cada um</strong> (lembre da tabela de canais do capítulo 3).</li>
+</ul>
+<p>E planeje a captação pensando nos dois: as edições curtas do dia viram matéria-prima do vídeo final. Na DocMe, no fim do evento, a equipe junta essas edições mais curtas (por exemplo, cinco de 30 segundos), refina no CapCut e tira as cenas que perderam importância.</p>
+<p>(O e-book 4 mostra esse fechamento passo a passo.)</p>
+<p><strong>Ponto-chave:</strong> planeje o "no dia" e o "depois" juntos. Um alimenta o outro.</p>
+
+<section class="capitulo"><div class="cap__num">11</div><p class="cap__rot">Capítulo 11</p><h2>Bateria e equipamento no planejamento</h2></section>
+<h3>Equipamento para começar</h3>
+<p>Para começar, <strong>qualquer celular</strong> serve. Um <strong>estabilizador</strong> e um <strong>microfone</strong> ajudam, e são baratos (dá para encontrar na Shopee, por exemplo).</p>
+<p>O que mais pesa no resultado não é o equipamento. É o <strong>olhar</strong> e a <strong>leitura do evento</strong>.</p>
+<h3>A estrutura de uma equipe</h3><figure class="ilustra"><svg viewBox="0 0 430 170" role="img" aria-label="Estrutura de equipe e de quem trabalha sozinho"><rect x="10" y="10" width="200" height="150" rx="14" fill="#fff4ec"/><rect x="220" y="10" width="200" height="150" rx="14" fill="#ffffff" stroke="#e7e6ea" stroke-width="2"/><text x="110" y="36" font-size="11" fill="#9a3412" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">EQUIPE DOCME</text><text x="320" y="36" font-size="11" fill="#2b2a30" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">STORYMAKER SOLO</text><rect x="28" y="54" width="24" height="44" rx="5" fill="#2b2a30"/><rect x="31" y="58" width="18" height="36" rx="3" fill="#c2410c"/><rect x="62" y="54" width="24" height="44" rx="5" fill="#2b2a30"/><rect x="65" y="58" width="18" height="36" rx="3" fill="#c2410c"/><rect x="96" y="54" width="24" height="44" rx="5" fill="#2b2a30"/><rect x="99" y="58" width="18" height="36" rx="3" fill="#c2410c"/><rect x="130" y="54" width="24" height="44" rx="5" fill="#2b2a30"/><rect x="133" y="58" width="18" height="36" rx="3" fill="#c2410c"/><rect x="164" y="54" width="24" height="44" rx="5" fill="#2b2a30"/><rect x="167" y="58" width="18" height="36" rx="3" fill="#c2410c"/><rect x="50" y="112" width="30" height="18" rx="4" fill="#5d5c63"/><rect x="80" y="117" width="3" height="8" rx="1" fill="#5d5c63"/><rect x="90" y="112" width="30" height="18" rx="4" fill="#5d5c63"/><rect x="120" y="117" width="3" height="8" rx="1" fill="#5d5c63"/><rect x="130" y="112" width="30" height="18" rx="4" fill="#5d5c63"/><rect x="160" y="117" width="3" height="8" rx="1" fill="#5d5c63"/><text x="110" y="148" font-size="10" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">até 5 celulares e 3 power banks</text><rect x="304" y="54" width="30" height="54" rx="6" fill="#2b2a30"/><rect x="308" y="59" width="22" height="44" rx="4" fill="#c2410c"/><text x="320" y="130" font-size="10" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">1 celular: planeje</text><text x="320" y="144" font-size="10" fill="#2b2a30" font-weight="600" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">bateria e recargas</text></svg><figcaption>A estrutura muda, o método não: quem trabalha sozinho compensa com planejamento.</figcaption></figure>
+<p>Como referência: a DocMe leva <strong>até cinco celulares</strong> para um evento, <strong>três power banks</strong> e os carregadores, para não perder nenhuma cena.</p>
+<p>Isso é possível porque é uma equipe focada nesse tipo de serviço. Você não precisa começar assim.</p>
+<h3>Trabalhando com um celular só</h3>
+<p>Se você tem um aparelho só, a bateria vira parte do planejamento. Você precisa:</p>
+<ul>
+<li>ter noção de <strong>quanto tempo sua bateria dura</strong> gravando e editando;</li>
+<li>saber os <strong>momentos do evento em que a captação não é necessária</strong>;</li>
+<li>usar esses momentos para <strong>colocar o celular para carregar</strong>, principalmente se você não tiver power bank.</li>
+</ul>
+<h3>Como planejar a bateria</h3><figure class="ilustra"><svg viewBox="0 0 430 190" role="img" aria-label="Planejamento de bateria ao longo do evento"><text x="30.0" y="176" font-size="9.5" fill="#2b2a30" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Chegada</text><text x="106.0" y="176" font-size="9.5" fill="#2b2a30" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Recepção</text><text x="182.0" y="176" font-size="9.5" fill="#2b2a30" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Momento-chave</text><text x="258.0" y="176" font-size="9.5" fill="#c2410c" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Intervalo</text><text x="334.0" y="176" font-size="9.5" fill="#2b2a30" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Encerramento</text><text x="410.0" y="176" font-size="9.5" fill="#2b2a30" font-weight="700" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">Edição</text><line x1="30" y1="150" x2="410" y2="150" stroke="#d9d8dd"/><line x1="30" y1="128.0" x2="410" y2="128.0" stroke="#9a3412" stroke-dasharray="4 4"/><text x="410" y="122.0" font-size="9" fill="#9a3412" font-weight="600" text-anchor="end" style="font-family:Sora,Inter,sans-serif">zona de risco (20%)</text><path d="M30 40 L106 71 L182 106 L258 56 L334 90 L410 112" fill="none" stroke="#2b2a30" stroke-width="3" stroke-linejoin="round"/><circle cx="30" cy="40" r="5" fill="#2b2a30"/><circle cx="106" cy="71" r="5" fill="#2b2a30"/><circle cx="182" cy="106" r="5" fill="#2b2a30"/><circle cx="258" cy="56" r="5" fill="#c2410c"/><circle cx="334" cy="90" r="5" fill="#2b2a30"/><circle cx="410" cy="112" r="5" fill="#2b2a30"/><text x="258.0" y="44.499999999999986" font-size="10" fill="#c2410c" font-weight="800" text-anchor="middle" style="font-family:Sora,Inter,sans-serif">recarregar</text></svg><figcaption>Esquema ilustrativo: use os momentos de menor movimento para recarregar antes da zona de risco.</figcaption></figure>
+<p>Pegue a programação do evento e marque:</p>
+<table>
+<thead>
+<tr>
+<th>Horário</th>
+<th>Momento</th>
+<th>Captação</th>
+<th>Bateria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Chegada e mapeamento</td>
+<td>Média</td>
+<td>Celular cheio</td>
+</tr>
+<tr>
+<td></td>
+<td>Recepção e pessoas</td>
+<td>Alta</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Momento-chave</td>
+<td>Alta</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Intervalo / momento de menor movimento</td>
+<td>Baixa</td>
+<td><strong>Recarregar</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Encerramento</td>
+<td>Alta</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Edição final</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>E na sua mochila:</p>
+<ul>
+<li>celular(es) com carga completa;</li>
+<li>power bank(s) carregados;</li>
+<li>carregadores e cabos;</li>
+<li>espaço livre na memória;</li>
+<li>app de edição atualizado;</li>
+<li>estabilizador e microfone testados (se for usar).</li>
+</ul>
+<h3>Outros itens de logística</h3>
+<ul>
+<li><strong>Deslocamento:</strong> conte pelo menos <strong>30 minutos</strong>, mesmo que o evento seja perto. Você precisa se arrumar, e às vezes está vindo de outro trabalho.</li>
+<li><strong>Alimentação:</strong> às vezes é preciso comer fora para chegar no horário. Planeje.</li>
+<li><strong>Duração:</strong> eventos variam muito. A DocMe já cobriu evento de <strong>meia hora</strong> e casamento de <strong>16 horas</strong>. A bateria e o seu corpo precisam aguentar o tempo combinado.</li>
+</ul>
+<p><strong>Ponto-chave:</strong> cena perdida por falta de bateria é erro de planejamento, não azar.</p>
+
+<section class="capitulo"><div class="cap__num">12</div><p class="cap__rot">Capítulo 12</p><h2>Equipe, escala e grade de horários</h2></section>
+<h3>Pequeno ou grande: o que muda</h3>
+<p>Na experiência da DocMe, <strong>a captação em si não muda</strong> entre um evento pequeno e um grande.</p>
+<p>O que muda:</p>
+<ul>
+<li>a <strong>quantidade de entrega</strong>;</li>
+<li>o que é <strong>prioritário</strong>;</li>
+<li>o que a equipe <strong>consegue executar</strong>.</li>
+</ul>
+<h3>Grade de horários por profissional</h3>
+<p>Quando há mais de uma pessoa (ou mais de um cliente no mesmo evento), monte uma <strong>grade de horários</strong>.</p>
+<p>No congresso de negócios, era <strong>um storymaker para cada palestrante</strong>, com duas horas de acompanhamento cada. A grade dizia quem estava com quem, em que horário.</p>
+<p>Modelo:</p>
+<table>
+<thead>
+<tr>
+<th>Horário</th>
+<th>Pessoa da equipe</th>
+<th>Cliente / área</th>
+<th>Entrega</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Divisão por área em eventos grandes</h3>
+<p>Num evento com 13 mil pessoas, como o evento infantil, não dá para estar em todos os lugares. Divida por prioridade:</p>
+<ul>
+<li>brincadeiras e atrações;</li>
+<li>crianças e interação;</li>
+<li>personalidades (lista A/B/C).</li>
+</ul>
+<div class="reservado"><span class="reservado__ico" aria-hidden="true"></span><div><b>Espaço para material DocMe</b><br>PREENCHER COM MATERIAL DA DOCME: como a equipe se dividiu no evento infantil — quantas pessoas, quem cobriu o quê</div></div>
+<h3>Quando um ajudante vira reforço</h3>
+<p>Num <strong>congresso em São Paulo</strong>, o <strong>Igor</strong> estava como assistente. Num momento em que a edição estava acontecendo e muita coisa rolava ao mesmo tempo, ele recebeu o pedido de fazer um teste: captar algumas imagens.</p>
+<p>Como é fotógrafo e tem olhar de imagem, ele fez <strong>15 cenas</strong>, montou no <strong>CapCut automático</strong> um vídeo de <strong>30 segundos</strong> e entregou. O vídeo entrou direto no vídeo principal.</p>
+<p>A lição para o planejamento: quem tem olhar aprende rápido. Se você trabalha com alguém, deixe claro no plano o que essa pessoa pode cobrir sozinha.</p>
+<p><strong>Ponto-chave:</strong> em evento grande, o planejamento é sobre prioridade. Em equipe, é sobre quem está onde, quando.</p>
+
+<section class="capitulo"><div class="cap__num">13</div><p class="cap__rot">Capítulo 13</p><h2>Exercício prático</h2></section>
+<h3>"Meu primeiro briefing"</h3>
+<p>Você vai planejar uma cobertura real, do começo ao fim, sem precisar ser contratado.</p>
+<p><strong>Passo 1 — Escolha um evento ou comércio.</strong>
+Pode ser a padaria do lado, a loja de um amigo, uma festa infantil da família, um evento da sua igreja ou escola.</p>
+<p><strong>Passo 2 — Faça a reunião.</strong>
+Sente com o responsável por 30 minutos a 1 hora. Use o roteiro de perguntas do capítulo 2 e o <strong>modelo de briefing</strong>.</p>
+<p><strong>Passo 3 — Decida a publicação.</strong>
+Responda:</p>
+<ul>
+<li>Tem potencial de compartilhamento?</li>
+<li>O público é ativo nas redes?</li>
+<li>Qual canal? Tempo real ou depois?</li>
+</ul>
+<p><strong>Passo 4 — Monte as listas.</strong></p>
+<ul>
+<li>Lista A/B/C (mesmo que tenha só 3 ou 4 pessoas).</li>
+<li>Lista do que não pode faltar.</li>
+</ul>
+<p><strong>Passo 5 — Escreva o roteiro previsto.</strong>
+Quatro stories de cerca de 30 segundos, seguindo:
+1. o lugar;
+2. as pessoas;
+3. as atrações (ou os produtos);
+4. o momento principal.</p>
+<p>Para cada story, liste de 4 a 6 cenas.</p>
+<p><strong>Passo 6 — Combine o fluxo.</strong>
+Quem publica? Quem aprova? Por onde você envia?</p>
+<p><strong>Passo 7 — Escreva o protocolo de mudança.</strong>
+Quem confirma mudanças? Quem aprova novo prazo?</p>
+<p><strong>Passo 8 — Planeje a bateria.</strong>
+Marque na programação os momentos de recarga.</p>
+<p><strong>Passo 9 — Execute e valide.</strong>
+Grave, edite, mostre ao responsável e, se ele aprovar, poste.</p>
+<p><strong>Passo 10 — Avalie.</strong>
+Responda por escrito:</p>
+<ul>
+<li>O que do briefing me ajudou mais?</li>
+<li>O que eu esqueci de perguntar?</li>
+<li>O que mudou no dia? Como eu resolvi?</li>
+<li>O que eu faria diferente?</li>
+</ul>
+<blockquote>
+<p>Esse é o caminho que a DocMe recomenda para saber se você está pronto: testar com a padaria do lado, com a loja do amigo, com a festa da família. Com checklist, editando, validando com o cliente e postando.</p>
+</blockquote>
+
+<section class="capitulo"><div class="cap__num">14</div><p class="cap__rot">Capítulo 14</p><h2>Checklist resumido</h2></section>
+<p>Use antes de toda cobertura. (A versão completa e imprimível está no <strong>checklist de pré-produção</strong>.)</p>
+<p><strong>Briefing</strong></p>
+<ul>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Reunião feita (cerca de 1h)</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Sei por que o cliente quer storymaker</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Sei o objetivo: promover ou registrar</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Sei público, número de pessoas, espaço e metragem</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Tenho a programação com horários</span></li>
+</ul>
+<p><strong>Publicação</strong></p>
+<ul>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Decidi tempo real x depois, por canal</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Combinei quem publica e quem aprova</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Testei acessos (login, grupo, AirDrop/WhatsApp)</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Vou levar sugestão de legenda</span></li>
+</ul>
+<p><strong>Prioridades</strong></p>
+<ul>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Lista A/B/C pronta</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Lista do que não pode faltar</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Falas planejadas (quem, sobre o quê, onde entra)</span></li>
+</ul>
+<p><strong>Roteiro</strong></p>
+<ul>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Roteiro previsto: lugar → pessoas → atrações → momentos</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Volume de entrega combinado</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Plano de espera para atrasos</span></li>
+</ul>
+<p><strong>Mudanças</strong></p>
+<ul>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Sei quem confirma mudanças de programação</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Sei quem aprova novo prazo</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Tenho alternativa de entrega pré-combinada</span></li>
+</ul>
+<p><strong>Estrutura</strong></p>
+<ul>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Bateria e momentos de recarga planejados</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Equipamento testado</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Deslocamento e alimentação planejados</span></li>
+<li class="check"><span class="box" aria-hidden="true"></span><span>Grade de horários (se for equipe)</span></li>
+</ul>
+
+<section class="capitulo"><div class="cap__num">15</div><p class="cap__rot">Capítulo 15</p><h2>Glossário</h2></section>
+<p><strong>Aftermovie:</strong> vídeo mais completo, editado e publicado depois do evento, com a visão do evento como um todo.</p>
+<p><strong>AirDrop:</strong> recurso de transferência de arquivos entre aparelhos Apple. Usado para passar o vídeo do celular da equipe para o celular do cliente.</p>
+<p><strong>Briefing:</strong> conversa (e o documento que resulta dela) em que o storymaker entende o cliente, o objetivo e os detalhes do evento.</p>
+<p><strong>CapCut:</strong> aplicativo de edição de vídeo. A versão paga tem edição automática e modelos prontos.</p>
+<p><strong>Contratante:</strong> quem contrata e aprova o seu serviço. Nem sempre é o organizador do evento.</p>
+<p><strong>Curadoria:</strong> escolha, feita pelo responsável pela página, de quais conteúdos serão publicados.</p>
+<p><strong>Fluxo de publicação:</strong> o combinado sobre quem publica, por qual aparelho e com qual aprovação.</p>
+<p><strong>Grade de horários:</strong> tabela que diz quem da equipe está com qual cliente ou área, em que horário.</p>
+<p><strong>Lista A/B/C:</strong> lista das cerca de 10 pessoas mais importantes do evento, dividida em três níveis de prioridade.</p>
+<p><strong>Organizador:</strong> quem controla a programação do evento.</p>
+<p><strong>Plano aberto, médio e fechado:</strong> tipos de enquadramento. Aberto mostra o ambiente; médio mostra pessoas ou grupos; fechado mostra detalhes ou rostos. (Aprofundado no e-book 3.)</p>
+<p><strong>Power bank:</strong> bateria portátil para recarregar o celular.</p>
+<p><strong>Reels:</strong> formato de vídeo vertical do Instagram. Aqui, o "Reels final" é o vídeo que fecha a cobertura.</p>
+<p><strong>Roteiro previsto:</strong> plano de stories montado a partir do briefing, antes do evento.</p>
+<p><strong>Stories:</strong> publicações verticais e temporárias do Instagram (e formatos parecidos em outras redes).</p>
+<p><strong>Storymaker:</strong> profissional que planeja, capta, edita e publica histórias em formato vertical, muitas vezes em tempo real, para marcas, eventos e profissionais.</p>
+<p><strong>Tempo real:</strong> publicação feita enquanto o evento acontece.</p>
+
+<section class="capitulo"><div class="cap__num">16</div><p class="cap__rot">Capítulo 16</p><h2>Resumo e próximo passo</h2></section>
+<h3>O que você aprendeu</h3>
+<ul>
+<li>O trabalho do storymaker <strong>começa antes de ligar a câmera</strong>.</li>
+<li>A <strong>reunião de briefing</strong> (cerca de 1h) é onde você descobre o objetivo, o público, o espaço, as pessoas e as prioridades. E é onde a sua postura começa a mudar o seu preço.</li>
+<li><strong>Público e canal</strong> decidem se o conteúdo precisa sair em tempo real.</li>
+<li>A <strong>lista A/B/C</strong> e a lista do <strong>que não pode faltar</strong> dizem onde o seu olhar precisa estar.</li>
+<li>O <strong>roteiro previsto</strong> (lugar → pessoas → atrações → momentos) transforma o briefing em cenas.</li>
+<li><strong>Quem publica e quem aprova</strong> é sempre decisão do cliente, e precisa ser combinado antes.</li>
+<li>Programação muda. Saiba <strong>quem confirma mudanças</strong> e <strong>quem aprova novo prazo</strong>. (Caso do congresso de negócios.)</li>
+<li>Atraso <strong>muda a ordem</strong>, não interrompe a cobertura. (Caso do casamento.)</li>
+<li>Planeje o <strong>"no dia"</strong> e o <strong>"depois"</strong> juntos. (Caso do evento infantil.)</li>
+<li><strong>Bateria e equipamento</strong> fazem parte do planejamento.</li>
+</ul>
+<h3>Próximo passo: o e-book 3</h3>
+<p>Agora você chega ao evento com direção. A próxima pergunta é: <strong>o que gravar, e em que ordem?</strong></p>
+<p>No <strong>e-book 3 — Olhar e narrativa</strong>, você vai aprender:</p>
+<ul>
+<li>como <strong>ler o evento</strong> e mapear os pontos importantes ao chegar;</li>
+<li>a sequência da <strong>confraternização de fim de ano</strong> em detalhes;</li>
+<li>por que a DocMe <strong>não junta cena aberta com cena aberta</strong>, e como intercalar aberto, médio e fechado;</li>
+<li>como encaixar as <strong>falas</strong> gravadas antecipadamente;</li>
+<li>o que fazer quando o cenário não está pronto.</li>
+</ul>
+<p>O briefing te diz <strong>o que importa</strong>. O olhar te mostra <strong>como contar</strong>.</p>
+<h3>Materiais complementares deste e-book</h3>
+<ul>
+<li><strong>Checklist de pré-produção:</strong> antes do evento, véspera e chegada ao local.</li>
+<li><strong>Modelo de briefing:</strong> formulário para preencher na reunião com o cliente.</li>
+<li><strong>Roteiro de cobertura:</strong> modelo para montar o roteiro previsto por blocos.</li>
+</ul>
+
+<p><strong>Storymaker Oficial</strong>
+<strong>Método desenvolvido pela DocMe Comunicação.</strong></p>
+<p><em>Os casos citados neste e-book são coberturas reais da equipe DocMe. Números de visualização e resultados se referem a casos específicos e não representam garantia de desempenho ou de renda.</em></p></main></body></html>
