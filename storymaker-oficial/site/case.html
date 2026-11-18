@@ -85,7 +85,7 @@
     }
     function videos(lista) {
       if (!lista || !lista.length) return "";
-      return '<h2 class="h2" style="margin-top:40px">Os vídeos entregues</h2>' +
+      return '<h2 class="h2" style="margin-top:40px">' + (lista.length > 1 ? "Os vídeos entregues" : "O vídeo entregue") + "</h2>" +
         '<div class="vid-lista">' + lista.map(function (v) {
           return '<figure class="vid-item"><video controls preload="none" playsinline poster="' + S.esc(v.poster || "") + '" src="' + S.esc(v.src) + '"></video>' +
             "<figcaption>" + S.esc(v.rotulo) + "</figcaption></figure>";
@@ -111,8 +111,9 @@
         bloco("Como a equipe reagiu", c.reacao, "reação da equipe") +
         '<div class="bloco bloco--destaque"><h2>Aprendizado</h2><p>' + S.txt(c.aprendizado, "aprendizado") + "</p></div>" +
       "</div>" +
-      '<h2 class="h2" style="margin-top:40px">No dia e depois</h2>' +
-      '<div class="midias">' + midia("Publicado no dia", c.noDia) + midia("Aftermovie / entrega posterior", c.aftermovie) + "</div>" +
+      (c.videos && c.videos.length ? "" :
+        '<h2 class="h2" style="margin-top:40px">No dia e depois</h2>' +
+        '<div class="midias">' + midia("Publicado no dia", c.noDia) + midia("Aftermovie / entrega posterior", c.aftermovie) + "</div>") +
       videos(c.videos) +
       instagram(c.instagram) +
       '<div class="case-corpo" style="margin-top:28px">' + bloco("Resultado e retorno", c.resultado, "resultados e prints") + "</div>" +

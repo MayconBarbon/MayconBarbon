@@ -131,7 +131,7 @@ window.CASES = [
   {
     id: "apex-brasil",
     instagram: [{"rotulo": "Conexões Produtivas Mercosul–União Europeia", "url": "https://www.instagram.com/p/DfF-6wjBo8D/"}],
-    titulo: "ApexBrasil — Conexões Produtivas Mercosul–União Europeia",
+    titulo: "ApexBrasil | Conexões Produtivas Mercosul–União Europeia",
     chamada: "Evento nacional, vídeo pedido na hora.",
     categoria: "Corporativo",
     local: "SIMESPI [CONFIRMAR]",
@@ -297,7 +297,7 @@ window.CASES = [
   {
     id: "mcdia-feliz",
     instagram: [{"rotulo": "McDia Feliz 2025", "url": "https://www.instagram.com/reel/DNt03LmYmqs/"}],
-    titulo: "McDia Feliz — Casa Ronald McDonald",
+    titulo: "McDia Feliz | Casa Ronald McDonald",
     chamada: "",
     categoria: "Ações sociais",
     local: "São Paulo (SP) [CONFIRMAR]",
@@ -383,8 +383,8 @@ window.CASES = [
   /* ---------------- PEQUENOS NEGÓCIOS ---------------- */
   {
     id: "salao-de-beleza",
-    videos: [{"rotulo": "Escova e prancha", "src": "assets/video/salao/reel-1.mp4", "poster": "assets/video/salao/reel-1.jpg"}, {"rotulo": "Limpeza de pele", "src": "assets/video/salao/reel-2.mp4", "poster": "assets/video/salao/reel-2.jpg"}, {"rotulo": "Unhas feminina e masculina", "src": "assets/video/salao/reel-3.mp4", "poster": "assets/video/salao/reel-3.jpg"}, {"rotulo": "Pedicure", "src": "assets/video/salao/reel-4.mp4", "poster": "assets/video/salao/reel-4.jpg"}, {"rotulo": "Limpeza de pele masculina", "src": "assets/video/salao/reel-5.mp4", "poster": "assets/video/salao/reel-5.jpg"}, {"rotulo": "Lavagem e escova", "src": "assets/video/salao/reel-6.mp4", "poster": "assets/video/salao/reel-6.jpg"}],
-    titulo: "Carolina Cardona — Salão de Beleza e Estética",
+    videos: [{"rotulo": "Unhas feminina e masculina", "src": "assets/video/salao/reel-3.mp4", "poster": "assets/video/salao/reel-3.jpg"}],
+    titulo: "Carolina Cardona | Salão de Beleza e Estética",
     chamada: "Uma colaboração de um dia virou conteúdo para dois ou três meses.",
     categoria: "Pequenos negócios",
     local: "",
@@ -427,7 +427,7 @@ window.CASES = [
   {
     id: "festa-da-imprensa-2026",
     instagram: [{"rotulo": "Reel no perfil do SIMESPI", "url": "https://www.instagram.com/simespi/reel/DP43ZUpjShk/"}],
-    titulo: "Festa da Imprensa 2026 — SIMESPI",
+    titulo: "Festa da Imprensa 2026 | SIMESPI",
     chamada: "",
     categoria: "Corporativo",
     local: "",
@@ -492,7 +492,7 @@ window.CASES = [
   {
     id: "corrida-esg-chelso",
     instagram: [{"rotulo": "Post da corrida", "url": "https://www.instagram.com/p/DNBFsTWu1Cp/"}],
-    titulo: "Corrida ESG — Chelso Sports",
+    titulo: "Corrida ESG | Chelso Sports",
     chamada: "",
     categoria: "Festivais e comunitários",
     local: "",
