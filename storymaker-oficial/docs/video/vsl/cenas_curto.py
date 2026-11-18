@@ -7,7 +7,7 @@ CENAS = [
  ("1. As dificuldades", "O que o cliente espera?", "O que o cliente espera, de verdade? Quem precisa aparecer?"),
  ("1. As dificuldades", "A edição que não termina", "Na edição, você se perde. E a entrega não sai."),
  ("1. As dificuldades", "O momento que não volta", "[pause] E bate aquele medo: perder a fala, a entrada, o parabéns."),
- ("1. As dificuldades", "Falta de método", "[warmly] Nada disso é falta de talento. É falta de método. E método se aprende."),
+ ("1. As dificuldades", "Falta de método", "[warmly] Não é falta de talento. Na maioria das vezes, é falta de método. E método se aprende."),
  ("2. O que muda quando você planeja", "Começa antes do evento", "Tudo começa antes de ligar a câmera: uma boa conversa com o cliente."),
  ("2. O que muda quando você planeja", "Aberto, médio, detalhe", "No evento, você alterna plano aberto, médio e detalhe. É assim que a sequência conta a história."),
  ("3. A ferramenta ajuda, a escolha é sua", "A edição não escolhe por você", "O aplicativo de edição ajuda. Mas depende das cenas que você escolheu."),

@@ -20,7 +20,7 @@ const html = `<!doctype html><html><head><style>
 .mid{position:absolute;left:80px;right:80px;top:0;bottom:0;display:flex;align-items:center;justify-content:center;text-align:center}
 .frase{font:500 104px/1.05 Inter;letter-spacing:-.04em}
 .frase b{font-weight:800}
-.mark{display:inline-block;width:20px;height:20px;background:#e7570c;position:relative;top:-1.1em;margin-left:6px;vertical-align:baseline}
+.mark{display:inline-block;width:20px;height:20px;background:#e7570c;position:relative;top:-.62em;margin-left:6px;vertical-align:baseline}
 .wheel{position:absolute;left:0;right:0;top:0;bottom:0}
 .wi{position:absolute;left:470px;white-space:nowrap;font:500 62px Inter;letter-spacing:-.03em}
 .wl{position:absolute;left:90px;font:600 52px Inter;letter-spacing:-.02em}

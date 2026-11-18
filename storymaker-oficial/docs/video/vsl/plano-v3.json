@@ -314,55 +314,55 @@
   "n": 7,
   "bloco": "1. As dificuldades",
   "titulo": "Falta de método",
-  "fala": "[warmly] Nada disso é falta de talento. É falta de método. E método se aprende.",
+  "fala": "[warmly] Não é falta de talento. Na maioria das vezes, é falta de método. E método se aprende.",
   "clip": -1,
   "legendas": [
    {
-    "texto": "Nada disso é falta de talento."
+    "texto": "Não é falta de talento."
    },
    {
-    "texto": "É falta de método."
+    "texto": "Na maioria das vezes, é falta de método."
    },
    {
     "texto": "E método se aprende."
    }
   ],
   "voz": "gabriel/g07.mp3",
-  "voz_dur": 5.8,
+  "voz_dur": 6.11,
   "pad_ini": 0.25,
-  "dur": 6.4,
+  "dur": 6.71,
   "inicio": 27.8,
-  "transcricao": "Nada disso é falta de talento, é falta de método. E método se aprende",
+  "transcricao": "Não é falta de talento. Na maioria das vezes, é falta de método. E método se aprende",
   "tipo": "SWAP",
   "rotulo": "Método",
   "frases": [
-   "Nada disso é falta de **talento.**",
-   "É falta de **método.**",
+   "Não é falta de **talento.**",
+   "Na maioria das vezes, é falta de **método.**",
    "E método **se aprende.**"
   ],
   "caps": [
    {
-    "texto": "Nada disso é falta",
+    "texto": "Não é falta de talento.",
     "ini": 0.25,
-    "fim": 1.88,
+    "fim": 2.01,
+    "hl": 4
+   },
+   {
+    "texto": "Na maioria das vezes,",
+    "ini": 2.01,
+    "fim": 3.46,
     "hl": 1
    },
    {
-    "texto": "de talento.",
-    "ini": 1.88,
-    "fim": 2.8,
-    "hl": 1
-   },
-   {
-    "texto": "É falta de método.",
-    "ini": 2.8,
-    "fim": 4.42,
+    "texto": "é falta de método.",
+    "ini": 3.46,
+    "fim": 4.91,
     "hl": 3
    },
    {
     "texto": "E método se aprende.",
-    "ini": 4.42,
-    "fim": 6.35,
+    "ini": 4.91,
+    "fim": 6.66,
     "hl": 3
    }
   ],
@@ -386,7 +386,7 @@
   "voz_dur": 4.83,
   "pad_ini": 0.25,
   "dur": 5.43,
-  "inicio": 34.2,
+  "inicio": 34.51,
   "transcricao": "Tudo começa antes de ligar a câmera: uma boa conversa com o cliente",
   "tipo": "FOOT",
   "lay": "V",
@@ -437,7 +437,7 @@
   "voz_dur": 6.27,
   "pad_ini": 0.25,
   "dur": 6.87,
-  "inicio": 39.63,
+  "inicio": 39.94,
   "transcricao": "No evento, você alterna plano aberto, médio e detalhe. É assim que a sequência conta a história",
   "tipo": "FOOT",
   "lay": "S",
@@ -513,7 +513,7 @@
   "voz_dur": 4.68,
   "pad_ini": 0.25,
   "dur": 5.28,
-  "inicio": 46.5,
+  "inicio": 46.81,
   "transcricao": "O aplicativo de edição ajuda, mas depende das cenas que você escolheu",
   "tipo": "FOOT",
   "lay": "S",
@@ -572,7 +572,7 @@
   "voz_dur": 7.97,
   "pad_ini": 0.25,
   "dur": 8.57,
-  "inicio": 51.78,
+  "inicio": 52.09,
   "transcricao": "Por isso, o Storymaker oficial organizou o método em materiais práticos para storymakers, social medias e social makers",
   "tipo": "SWAP",
   "rotulo": "Para quem é",
@@ -634,7 +634,7 @@
   "voz_dur": 9.17,
   "pad_ini": 0.25,
   "dur": 9.77,
-  "inicio": 60.35,
+  "inicio": 60.66,
   "transcricao": "Checklists, modelo de briefing, planilha de custos, contrato e o e-book Do Briefing à História. E o Kit Lançamento reúne quatro deles",
   "tipo": "LIST",
   "itens": [
@@ -712,7 +712,7 @@
   "voz_dur": 5.33,
   "pad_ini": 0.25,
   "dur": 5.93,
-  "inicio": 70.12,
+  "inicio": 70.43,
   "transcricao": "Comece pequeno. Um negócio do bairro, uma comemoração e pratique",
   "tipo": "FOOT",
   "lay": "V",
@@ -760,7 +760,7 @@
   "voz_dur": 4.36,
   "pad_ini": 0.25,
   "dur": 4.96,
-  "inicio": 76.05,
+  "inicio": 76.36,
   "transcricao": "Nesta página, você vê coberturas reais, do simples ao grande",
   "tipo": "FOOT",
   "lay": "S",
@@ -816,7 +816,7 @@
   "voz_dur": 7.31,
   "pad_ini": 0.25,
   "dur": 9.96,
-  "inicio": 81.01,
+  "inicio": 81.32,
   "transcricao": "Escolha o material da etapa em que você está. A compra e a entrega são pela Kiwify. Storymaker oficial",
   "tipo": "FINAL",
   "caps": [
