@@ -1,0 +1,74 @@
+{
+ "01": {
+  "post": [
+   {
+    "postId": "cmwukcer2011co307ve2nd205",
+    "integration": "cmwdo0joh01mop907kj22sm8j"
+   }
+  ],
+  "when": "2026-11-26T15:00:00Z"
+ },
+ "02": {
+  "post": [
+   {
+    "postId": "cmwukcfi0011do3079yifyxt4",
+    "integration": "cmwdo0joh01mop907kj22sm8j"
+   }
+  ],
+  "when": "2026-11-27T15:00:00Z"
+ },
+ "03": {
+  "post": [
+   {
+    "postId": "cmwukcg8g011eo3075tzkdeby",
+    "integration": "cmwdo0joh01mop907kj22sm8j"
+   }
+  ],
+  "when": "2026-11-28T15:00:00Z"
+ },
+ "04": {
+  "post": [
+   {
+    "postId": "cmwukch2k01cmqd07ccancbsy",
+    "integration": "cmwdo0joh01mop907kj22sm8j"
+   }
+  ],
+  "when": "2026-11-29T15:00:00Z"
+ },
+ "05": {
+  "post": [
+   {
+    "postId": "cmwukchrl01coqd07egcsq9ak",
+    "integration": "cmwdo0joh01mop907kj22sm8j"
+   }
+  ],
+  "when": "2026-11-30T15:00:00Z"
+ },
+ "06": {
+  "post": [
+   {
+    "postId": "cmwukcii101b6pj07xivebzlp",
+    "integration": "cmwdo0joh01mop907kj22sm8j"
+   }
+  ],
+  "when": "2026-12-01T15:00:00Z"
+ },
+ "07": {
+  "post": [
+   {
+    "postId": "cmwukcj8m011ho307vf4wyl6u",
+    "integration": "cmwdo0joh01mop907kj22sm8j"
+   }
+  ],
+  "when": "2026-12-02T15:00:00Z"
+ },
+ "08": {
+  "post": [
+   {
+    "postId": "cmwukcjxr01b8pj079oqzg43c",
+    "integration": "cmwdo0joh01mop907kj22sm8j"
+   }
+  ],
+  "when": "2026-12-03T15:00:00Z"
+ }
+}
