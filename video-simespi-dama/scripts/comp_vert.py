@@ -11,6 +11,7 @@ S = os.path.dirname(os.path.abspath(__file__))
 args = sys.argv[1:]
 OUT = args[0]
 PREVIEW = "--preview" in args
+SINGLE = "--single" in args
 T_FROM = float(args[args.index("--from") + 1]) if "--from" in args else 0.0
 T_TO = float(args[args.index("--to") + 1]) if "--to" in args else 58.0
 sys.argv = ['comp.py', '--x']
@@ -77,6 +78,11 @@ def L_panels(specs, n, w_, h_, grid=False):
 def render(kind, content, n, trans, nxt_whip, h_):
     g['W'], g['HH'] = W, h_
     try:
+        if kind in ("tri", "quad") and SINGLE:
+            # versão sem mosaicos: uma imagem única em tela cheia (prefere fonte vertical; entre várias, a do meio)
+            vs = [c_ for c_ in content if is_vertical(c_[0])]
+            pool = vs if vs else content
+            content = pool[len(pool) // 2] if len(pool) > 1 else pool[0]; kind = "full"
         if kind == "full":
             o = content[2] if len(content) > 2 else {}
             frs = frames(content[0], content[1], n, W, h_, o.get("speed", 1.0), o.get("zoom", (1.0, 1.04)), o.get("focus", (0.5, 0.5)))

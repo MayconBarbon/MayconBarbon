@@ -15,7 +15,7 @@ O resto é idêntico à v9: trilha, textos, demais cenas e cartela.
 ## Versão vertical para Reels
 **Arquivo:** `SIMESPI_DamaBier_lancamento_v10_Reels_9x16.mp4` · 1080×1920 · 58 s · mesmo áudio da v10.
 
-Cada cena foi recomposta para o formato em pé, com as mesmas batidas, textos e locução:
-- os mosaicos viram colunas (imagens verticais) ou linhas (imagens horizontais);
-- o painel de texto entra pelo topo;
-- a cartela tem as três logos empilhadas.
+- **Sem mosaicos:** cada cena é uma imagem única, em tela cheia. Onde a versão horizontal tinha trios ou quartetos, entra uma única imagem, de preferência a vertical.
+- **Mantidos:** as batidas, os textos (painel marinho no topo), a locução e as transições.
+- **Brinde (0:42):** as duas taças, com as logos SIMESPI e 35 anos e em câmera lenta.
+- **Cartela final:** as três logos empilhadas.
