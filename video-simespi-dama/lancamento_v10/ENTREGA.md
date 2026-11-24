@@ -11,3 +11,11 @@
 - **Locução nova (0:42,5):** "Um brinde à força de quem faz a indústria acontecer.", com a mesma voz (Gabriel, ElevenLabs) e o mesmo volume da locução original.
 
 O resto é idêntico à v9: trilha, textos, demais cenas e cartela.
+
+## Versão vertical para Reels
+**Arquivo:** `SIMESPI_DamaBier_lancamento_v10_Reels_9x16.mp4` · 1080×1920 · 58 s · mesmo áudio da v10.
+
+Cada cena foi recomposta para o formato em pé, com as mesmas batidas, textos e locução:
+- os mosaicos viram colunas (imagens verticais) ou linhas (imagens horizontais);
+- o painel de texto entra pelo topo;
+- a cartela tem as três logos empilhadas.
