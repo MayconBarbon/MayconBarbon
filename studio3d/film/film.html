@@ -1,0 +1,49 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+html,body{margin:0;background:#0b0b0d;overflow:hidden}
+#stage,#stage canvas{position:absolute;inset:0;display:block}
+.ov{position:absolute;inset:0;pointer-events:none;font-family:"Manrope",sans-serif;color:#f5f5f7}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.42) 100%)}
+#bars{position:absolute;inset:0;opacity:0}
+#bars:before,#bars:after{content:"";position:absolute;left:0;right:0;height:var(--bar,0px);background:#000}
+#bars:before{top:0}#bars:after{bottom:0}
+#brand{position:absolute;left:var(--m);top:var(--m);display:flex;align-items:center;gap:calc(var(--u)*0.7);font-weight:800;font-size:calc(var(--u)*1.15);letter-spacing:-.01em;opacity:0;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+#brand img{width:calc(var(--u)*1.9);height:auto}
+#brand small{font-weight:700;font-size:calc(var(--u)*.62);letter-spacing:.16em;color:#e2c48a;border:1px solid rgba(226,196,138,.55);border-radius:999px;padding:calc(var(--u)*.18) calc(var(--u)*.55);text-transform:uppercase}
+#level{position:absolute;right:var(--m);top:calc(var(--m) + var(--u)*.2);font-weight:700;font-size:calc(var(--u)*.72);letter-spacing:.18em;text-transform:uppercase;color:#e2c48a;opacity:0;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+#txt{position:absolute;left:var(--m);bottom:calc(var(--m) * 1.25);max-width:70%}
+#txt:before{content:"";position:absolute;left:calc(var(--m) * -1.6);right:-18%;top:-55%;bottom:-70%;background:radial-gradient(ellipse at 30% 62%,rgba(0,0,0,.62),rgba(0,0,0,0) 68%);z-index:-1}
+#txt{z-index:1}
+#txt .k{font-weight:700;font-size:calc(var(--u)*.72);letter-spacing:.2em;text-transform:uppercase;color:#e2c48a;margin-bottom:calc(var(--u)*.6);display:flex;align-items:center;gap:calc(var(--u)*.7)}
+#txt .k:before{content:"";width:calc(var(--u)*2.2);height:2px;background:#e2c48a;display:block;transform-origin:left;transform:scaleX(var(--line,1))}
+#txt .t{font-weight:800;font-size:calc(var(--u)*3.1);line-height:1.04;letter-spacing:-.03em;text-shadow:0 2px 28px rgba(0,0,0,.45)}
+#disc{position:absolute;right:var(--m);bottom:calc(var(--m)*.8);font-family:"Inter",sans-serif;font-size:calc(var(--u)*.55);color:rgba(245,245,247,.72);text-shadow:0 1px 8px rgba(0,0,0,.6);letter-spacing:.02em}
+#labels .lb{position:absolute;transform:translate(-50%,-50%);text-align:center;white-space:nowrap}
+#labels .lb b{display:block;font-weight:800;font-size:calc(var(--u)*.78);color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.7)}
+#labels .lb i{display:block;font-style:normal;font-family:"Inter",sans-serif;font-size:calc(var(--u)*.56);color:#e2c48a;margin-top:2px;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+#fade{position:absolute;inset:0;background:#000;opacity:0}
+#end{position:absolute;inset:0;background:#0b0b0d;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#end img{width:calc(var(--u)*4.4);height:auto;margin-bottom:calc(var(--u)*1.1)}
+#end .n{font-weight:800;font-size:calc(var(--u)*2.6);letter-spacing:-.03em}
+#end .s{margin-top:calc(var(--u)*.5);font-weight:700;font-size:calc(var(--u)*.78);letter-spacing:.32em;text-transform:uppercase;color:#e2c48a}
+#end .ln{width:calc(var(--u)*9);height:2px;background:linear-gradient(90deg,transparent,#e2c48a,transparent);margin:calc(var(--u)*1.2) 0;transform:scaleX(var(--el,1))}
+#end .u{font-family:"Inter",sans-serif;font-size:calc(var(--u)*.85);color:#a1a1aa;letter-spacing:.04em}
+#end .c{margin-top:calc(var(--u)*.4);font-family:"Inter",sans-serif;font-size:calc(var(--u)*.62);color:#6f6f78}
+</style></head><body>
+<div id="stage"></div>
+<div class="ov">
+  <div id="vig"></div><div id="bars"></div>
+  <div id="labels"></div>
+  <div id="brand"><img src="assets/logo-mark.png" alt="">Vídeo Imóvel <small>Studio 3D</small></div>
+  <div id="level"></div>
+  <div id="txt"><div class="k"></div><div class="t"></div></div>
+  <div id="disc">Projeto de demonstração · imagens ilustrativas</div>
+  <div id="fade"></div>
+  <div id="end"><img src="assets/logo-mark.png" alt=""><div class="n">Vídeo Imóvel</div><div class="s">Studio 3D</div><div class="ln"></div><div class="u">videoimovel.com.br/construtoras</div><div class="c">Projeto de demonstração · imagens ilustrativas</div></div>
+</div>
+<script src="lib/three.min.js"></script>
+<script src="lib/BufferGeometryUtils.js"></script><script src="lib/RoundedBoxGeometry.js"></script><script src="lib/RGBELoader.js"></script>
+<script src="lib/CopyShader.js"></script><script src="lib/BokehShader.js"></script><script src="lib/EffectComposer.js"></script><script src="lib/RenderPass.js"></script><script src="lib/ShaderPass.js"></script><script src="lib/BokehPass.js"></script>
+<script src="data.js"></script><script src="film.js"></script><script src="timelines.js"></script>
+</body></html>

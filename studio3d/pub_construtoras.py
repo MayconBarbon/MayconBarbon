@@ -6,6 +6,8 @@ s=open(SITE+'construtoras/index.body.html').read()
 tour=open('/home/user/MayconBarbon/studio3d/tour/tour.build.js').read()
 assert '&&' not in tour and '</script' not in tour
 s=s.replace('__TOUR__',tour)
+for rel in set(re.findall(r'assets/[\w/.-]+\.mp4',s)):
+    if not os.path.exists(SITE+rel): s=s.replace(rel,''); print('sem arquivo (removido):',rel)
 seo_t=re.search(r'<title>(.*?)</title>',s).group(1); seo_d=re.search(r'<meta name="description" content="([^"]*)"',s).group(1)
 for rel in sorted(set(re.findall(r'(assets/[\w/.-]+\.(?:webp|png|jpg|mp4))',s))):
     if rel in mp: continue

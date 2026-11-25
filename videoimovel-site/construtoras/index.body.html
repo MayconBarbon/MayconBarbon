@@ -80,6 +80,33 @@ body.elementor-template-canvas{margin:0;background:#fbfbfd}
 /* serviços */
 .vi-s .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
 .vi-s .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column}
+.vi-s .demo{position:relative;display:block;margin:-26px -26px 18px;border:0;padding:0;background:#000;cursor:pointer;border-radius:20px 20px 0 0;overflow:hidden}
+.vi-s .demo img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s,opacity .3s;opacity:.92}
+.vi-s .demo:hover img{transform:scale(1.04);opacity:1}
+.vi-s .demo .play{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(12,12,14,.62);border:1px solid rgba(226,196,138,.75);backdrop-filter:blur(4px)}
+.vi-s .demo .play:after{content:"";position:absolute;left:23px;top:18px;border-left:16px solid #e2c48a;border-top:11px solid transparent;border-bottom:11px solid transparent}
+.vi-s .card .wdemo{margin-top:14px;width:100%}
+.vi-s .card .tl{display:block;text-align:center;margin-top:10px;font-size:.88rem}
+.vi-s .cmpx{margin-top:34px}
+.vi-s .cmpx-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.vi-s .cmpx-tabs button{font:600 .92rem var(--d);color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:10px 18px;cursor:pointer;min-height:44px}
+.vi-s .cmpx-tabs button[aria-selected="true"]{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.vi-s .cmpx-view{position:relative;margin:16px 0 0;border-radius:22px;overflow:hidden;background:#0b0b0d;aspect-ratio:16/10;border:1px solid var(--line)}
+.vi-s .cmpx-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.vi-s .cmpx-view img.on{opacity:1}
+.vi-s .cmpx-view figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 24px 20px;background:linear-gradient(transparent,rgba(0,0,0,.78));color:#f5f5f7}
+.vi-s .cmpx-view figcaption b{display:block;font:800 1.25rem var(--d)}
+.vi-s .cmpx-view figcaption span{display:block;color:#c9c9cf;font-size:.95rem;margin-top:4px}
+.vi-s .cmpx-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:22px;padding:22px 26px;border:1px solid rgba(226,196,138,.4);border-radius:18px}
+.vi-s .cmpx-cta p{margin:0;font:700 1.2rem var(--d)}
+.vmodal{width:min(1100px,94vw);max-height:94vh;padding:0;border:1px solid rgba(226,196,138,.35);border-radius:18px;background:#0b0b0d;color:#f5f5f7;overflow:hidden}
+.vmodal::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}
+.vmodal .vm-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px 12px 20px;font:700 .95rem "Manrope",sans-serif}
+.vmodal .vm-head p{margin:0;letter-spacing:.04em}
+.vmodal .vm-x{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:999px;width:40px;height:40px;cursor:pointer;font-size:1rem}
+.vmodal video{display:block;width:100%;max-height:calc(94vh - 110px);background:#000}
+.vmodal.vert{width:min(430px,94vw)}
+.vmodal .vm-foot{margin:0;padding:10px 20px 14px;font:400 .8rem "Inter",sans-serif;color:#a1a1aa}
 .vi-s .card .lvl{font:700 .72rem var(--d);letter-spacing:.12em;text-transform:uppercase;color:var(--acc-t)}
 .vi-s .card h3{margin:8px 0 10px;font-size:1.35rem}
 .vi-s .card p{color:var(--muted);font-size:.94rem;margin:0}
@@ -253,14 +280,14 @@ body.elementor-template-canvas{margin:0;background:#fbfbfd}
     <p class="eb">Serviços</p>
     <h2 id="h-serv">Quatro níveis, conforme o momento do lançamento.</h2>
     <div class="svc">
-      <div class="card"><span class="lvl">Nível 1</span><h3>3D Essencial</h3><p>Planta 3D volumétrica para entender a distribuição dos ambientes.</p>
-        <ul><li>Modelagem a partir da planta</li><li>Paredes, portas e janelas</li><li>Cores neutras, sem mobiliário</li><li>Vistas superiores em alta</li></ul><p class="for">Ideal para aprovação de conceito e apresentação técnica.</p></div>
-      <div class="card"><span class="lvl">Nível 2</span><h3>3D com Acabamentos</h3><p>Materiais do memorial descritivo aplicados aos ambientes.</p>
-        <ul><li>Tudo do Essencial</li><li>Pisos e revestimentos definidos</li><li>Esquadrias e cores de parede</li><li>Mobiliário básico de escala</li></ul><p class="for">Ideal para material comercial e treinamento de corretores.</p></div>
-      <div class="card hl"><span class="lvl">Nível 3</span><h3>3D Decorado</h3><p>Ambientes mobiliados e decorados para gerar desejo.</p>
-        <ul><li>Tudo do nível 2</li><li>Mobiliário e decoração completos</li><li>Tour 3D navegável para o site</li><li>Imagens na altura dos olhos</li></ul><p class="for">Ideal para pré-lançamento, site e estande de vendas.</p></div>
-      <div class="card"><span class="lvl">Nível 4</span><h3>Cinematic</h3><p>Vídeo de apresentação com roteiro, movimento de câmera e trilha.</p>
-        <ul><li>Tudo do Decorado</li><li>Vídeo vertical e/ou horizontal</li><li>Lettering, trilha e assinatura da marca</li><li>Com obra pronta: captação real com drone</li></ul><p class="for">Ideal para campanhas, anúncios e lançamento.</p></div>
+      <div class="card"><button type="button" class="demo" data-demo="essencial" aria-label="Assistir demonstração: 3D Essencial"><img src="assets/studio3d/demo/capa-essencial.webp" alt="Planta 3D volumétrica do apartamento de demonstração, em branco, com os ambientes identificados" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></button><span class="lvl">Nível 1</span><h3>3D Essencial</h3><p>Compreenda a distribuição e a volumetria do seu projeto antes mesmo do início da obra.</p>
+        <ul><li>Modelagem a partir da planta</li><li>Paredes, portas e janelas</li><li>Cores neutras, sem mobiliário</li><li>Vistas superiores em alta</li></ul><p class="for">Ideal para aprovação de conceito e apresentação técnica.</p><button type="button" class="btn btn-g wdemo" data-demo="essencial">Assistir demonstração</button></div>
+      <div class="card"><button type="button" class="demo" data-demo="acabamentos" aria-label="Assistir demonstração: 3D com Acabamentos"><img src="assets/studio3d/demo/capa-acabamentos.webp" alt="O mesmo apartamento com pisos, revestimentos e mobiliário básico" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></button><span class="lvl">Nível 2</span><h3>3D com Acabamentos</h3><p>Visualize materiais, revestimentos e escolhas arquitetônicas em uma apresentação tridimensional.</p>
+        <ul><li>Tudo do Essencial</li><li>Pisos e revestimentos definidos</li><li>Esquadrias e cores de parede</li><li>Mobiliário básico de escala</li></ul><p class="for">Ideal para material comercial e treinamento de corretores.</p><button type="button" class="btn btn-g wdemo" data-demo="acabamentos">Assistir demonstração</button></div>
+      <div class="card hl"><button type="button" class="demo" data-demo="decorado" aria-label="Assistir demonstração: 3D Decorado"><img src="assets/studio3d/demo/capa-decorado.webp" alt="Estar decorado do apartamento, na altura dos olhos" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></button><span class="lvl">Nível 3</span><h3>3D Decorado</h3><p>Transforme espaços projetados em ambientes humanizados, capazes de despertar identificação e desejo.</p>
+        <ul><li>Tudo do nível 2</li><li>Mobiliário e decoração completos</li><li>Tour 3D navegável para o site</li><li>Imagens na altura dos olhos</li></ul><p class="for">Ideal para pré-lançamento, site e estande de vendas.</p><button type="button" class="btn btn-g wdemo" data-demo="decorado">Assistir demonstração</button><a class="tl" href="#tour">Explorar o tour 3D navegável</a></div>
+      <div class="card"><button type="button" class="demo" data-demo="cinematic" aria-label="Assistir demonstração: Cinematic"><img src="assets/studio3d/demo/capa-cinematic.webp" alt="Estar e jantar ao entardecer, com as luzes acesas, em cena do vídeo cinematográfico" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></button><span class="lvl">Nível 4</span><h3>Cinematic</h3><p>Apresente seu empreendimento com uma experiência audiovisual cinematográfica, desenvolvida para campanhas, lançamentos e apresentações comerciais.</p>
+        <ul><li>Tudo do Decorado</li><li>Vídeo vertical e/ou horizontal</li><li>Lettering, trilha e assinatura da marca</li><li>Com obra pronta: captação real com drone</li></ul><p class="for">Ideal para campanhas, anúncios e lançamento.</p><button type="button" class="btn btn-g wdemo" data-demo="cinematic">Assistir demonstração</button></div>
     </div>
     <p class="disc">Cada projeto recebe orçamento sob medida, que considera a área, a quantidade de ambientes, o nível escolhido e o prazo.</p>
 
@@ -278,6 +305,36 @@ body.elementor-template-canvas{margin:0;background:#fbfbfd}
       </tbody>
     </table></div>
   </div></section>
+
+  <section class="band" id="comparativo" aria-labelledby="h-comp"><div class="w">
+    <p class="eb">Da planta ao cinematic</p>
+    <h2 id="h-comp">Uma planta. Quatro possibilidades.</h2>
+    <p class="lead">Veja como um mesmo projeto arquitetônico pode evoluir de uma representação técnica para uma experiência cinematográfica, valorizando cada etapa da construção e da comercialização.</p>
+    <div class="cmpx">
+      <div class="cmpx-tabs" role="tablist" aria-label="Estágios do projeto">
+        <button type="button" role="tab" aria-selected="true" aria-controls="cmpx-view" data-st="0">Planta original</button><button type="button" role="tab" aria-selected="false" aria-controls="cmpx-view" data-st="1">3D Essencial</button><button type="button" role="tab" aria-selected="false" aria-controls="cmpx-view" data-st="2">3D com Acabamentos</button><button type="button" role="tab" aria-selected="false" aria-controls="cmpx-view" data-st="3">3D Decorado</button><button type="button" role="tab" aria-selected="false" aria-controls="cmpx-view" data-st="4">Cinematic</button>
+      </div>
+      <figure class="cmpx-view" id="cmpx-view" role="tabpanel" aria-live="polite">
+        <img data-i="0" class="on" src="assets/studio3d/comparativo/comparativo-0-planta.webp" alt="Planta técnica do apartamento de demonstração, com cotas, vista no mesmo ângulo das etapas 3D" width="1600" height="1000" loading="lazy">
+        <img data-i="1" src="assets/studio3d/comparativo/comparativo-1-essencial.webp" alt="Volumetria 3D em branco: paredes, portas e janelas da mesma planta" width="1600" height="1000" loading="lazy">
+        <img data-i="2" src="assets/studio3d/comparativo/comparativo-2-acabamentos.webp" alt="Mesma planta com pisos, revestimentos, esquadrias e mobiliário básico" width="1600" height="1000" loading="lazy">
+        <img data-i="3" src="assets/studio3d/comparativo/comparativo-3-decorado.webp" alt="Mesma planta decorada, com tapetes, cortinas, iluminação e plantas" width="1600" height="1000" loading="lazy">
+        <img data-i="4" src="assets/studio3d/comparativo/comparativo-4-cinematic.webp" alt="Mesma planta decorada ao entardecer, com as luzes acesas, como no vídeo cinematográfico" width="1600" height="1000" loading="lazy">
+        <figcaption><b data-cap>Planta original</b><span data-sub>A planta técnica é o ponto de partida: cotas, aberturas e ambientes.</span></figcaption>
+      </figure>
+      <div class="cmpx-cta">
+        <p>Transforme sua planta em uma experiência visual.</p>
+        <a class="btn btn-p" href="#briefing" data-cta="comparativo">Enviar meu projeto</a>
+      </div>
+    </div>
+    <p class="disc">Projeto de demonstração. Planta redesenhada pela Vídeo Imóvel; acabamentos, mobiliário e iluminação são conceituais e ilustrativos. Pé-direito adotado de 2,70 m (não informado na planta).</p>
+  </div></section>
+
+  <dialog class="vmodal" id="vmodal" aria-labelledby="vmodal-t">
+    <div class="vm-head"><p id="vmodal-t"></p><button type="button" class="vm-x" aria-label="Fechar">✕</button></div>
+    <video controls playsinline preload="none"></video>
+    <p class="vm-foot">Projeto de demonstração · imagens ilustrativas</p>
+  </dialog>
 
   <section id="portfolio" aria-labelledby="h-port"><div class="w">
     <p class="eb">Portfólio</p>
@@ -375,6 +432,50 @@ body.elementor-template-canvas{margin:0;background:#fbfbfd}
 
   <footer><div class="w"><span>Vídeo Imóvel · Studio 3D · Atendemos todo o Brasil</span><span><a href="/">videoimovel.com.br</a> · <a href="/blog/">Blog</a> · <a href="/politica-de-privacidade/">Política de privacidade</a></span></div></footer>
 </div>
+<script>
+/* demonstrações em vídeo (carregadas só ao clicar) e comparativo da mesma planta */
+(function () {
+  var V = {
+    essencial: {t: 'Nível 1 · 3D Essencial', h: 'assets/studio3d/video/videoimovel-studio3d-essencial-1920x1080-web.mp4', v: 'assets/studio3d/video/videoimovel-studio3d-essencial-1080x1920-web.mp4'},
+    acabamentos: {t: 'Nível 2 · 3D com Acabamentos', h: 'assets/studio3d/video/videoimovel-studio3d-acabamentos-1920x1080-web.mp4', v: 'assets/studio3d/video/videoimovel-studio3d-acabamentos-1080x1920-web.mp4'},
+    decorado: {t: 'Nível 3 · 3D Decorado', h: 'assets/studio3d/video/videoimovel-studio3d-decorado-1920x1080-web.mp4', v: 'assets/studio3d/video/videoimovel-studio3d-decorado-1080x1920-web.mp4'},
+    cinematic: {t: 'Nível 4 · Cinematic', h: 'assets/studio3d/video/videoimovel-studio3d-cinematic-1920x1080-web.mp4', v: 'assets/studio3d/video/videoimovel-studio3d-cinematic-1080x1920-web.mp4'}
+  };
+  var dlg = document.getElementById('vmodal'); if (!dlg) return;
+  var vid = dlg.querySelector('video'), last = null;
+  function open(id) {
+    var d = V[id]; if (!d) return;
+    var vert = window.innerHeight > window.innerWidth * 1.15;
+    var src = vert ? (d.v || d.h) : d.h;
+    dlg.classList.toggle('vert', vert ? !!d.v : false);
+    dlg.querySelector('#vmodal-t').textContent = d.t + ' · Projeto de demonstração';
+    if (vid.getAttribute('src') !== src) vid.setAttribute('src', src);
+    last = document.activeElement;
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    var p = vid.play(); if (p) p.catch(function () {});
+    if (window.dataLayer) window.dataLayer.push({event: 'demo_studio3d', nivel: id});
+  }
+  function close() { vid.pause(); if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); if (last) last.focus(); }
+  document.querySelectorAll('[data-demo]').forEach(function (b) { b.addEventListener('click', function () { open(b.getAttribute('data-demo')); }); });
+  dlg.querySelector('.vm-x').addEventListener('click', close);
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+  dlg.addEventListener('close', function () { vid.pause(); });
+  // comparativo
+  var caps = [['Planta original', 'A planta técnica é o ponto de partida: cotas, aberturas e ambientes.'], ['3D Essencial', 'Volumetria fiel à planta: paredes, portas e janelas em cores neutras.'], ['3D com Acabamentos', 'Pisos, revestimentos, esquadrias e mobiliário básico para dar escala.'], ['3D Decorado', 'Mobiliário completo, decoração e iluminação: o espaço vira lugar para viver.'], ['Cinematic', 'A mesma arquitetura com luz de entardecer, iluminação interna e linguagem de lançamento.']];
+  var tabs = document.querySelectorAll('.cmpx-tabs button'), imgs = document.querySelectorAll('.cmpx-view img');
+  function st(i) {
+    tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === i ? 'true' : 'false'); t.tabIndex = k === i ? 0 : -1; });
+    imgs.forEach(function (im, k) { im.classList.toggle('on', k === i); if (k === i) im.loading = 'eager'; });
+    document.querySelector('[data-cap]').textContent = caps[i][0]; document.querySelector('[data-sub]').textContent = caps[i][1];
+  }
+  tabs.forEach(function (t, k) {
+    t.addEventListener('click', function () { st(k); });
+    t.addEventListener('keydown', function (e) { var n = null; if (e.key === 'ArrowRight') n = (k + 1) % tabs.length; if (e.key === 'ArrowLeft') n = (k + tabs.length - 1) % tabs.length; if (n !== null) { e.preventDefault(); st(n); tabs[n].focus(); } });
+  });
+  var view = document.querySelector('.cmpx-view');
+  if (view) { if ('IntersectionObserver' in window) new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { o.disconnect(); imgs.forEach(function (im) { im.loading = 'eager'; }); } }, {rootMargin: '400px'}).observe(view); }
+})();
+</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[
 {"@type":"Service","name":"Vídeo Imóvel Studio 3D","serviceType":"Planta 3D, tour virtual e vídeo para lançamentos imobiliários","provider":{"@type":"Organization","name":"Vídeo Imóvel","url":"https://videoimovel.com.br/"},"areaServed":"BR","url":"https://videoimovel.com.br/construtoras/","audience":{"@type":"BusinessAudience","audienceType":"Construtoras e incorporadoras"}},
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://videoimovel.com.br/"},{"@type":"ListItem","position":2,"name":"Studio 3D para construtoras","item":"https://videoimovel.com.br/construtoras/"}]},
