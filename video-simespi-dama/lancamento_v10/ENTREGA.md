@@ -29,6 +29,7 @@ O resto é idêntico à v9: trilha, textos, demais cenas e cartela.
 | 0:18 (print 4) | suporte com rótulos | tanque DAMA |
 | 0:20–0:21 (print 5) | mestre cervejeiro e mulher de colete | close do senhor de azul com o mestre cervejeiro |
 | 0:30–0:31 | rótulo na tela do computador | linha de envase |
+| 0:31,2–0:31,7 | tela do PC desfocada | tanques DAMA em linha |
 | 0:37 | rotulagem manual | garrafas rotuladas na linha |
 | 0:38–0:39 | computador | cervejeiro na brassagem |
 | 0:44–0:46 | 2 planos do brinde | explicação ao senhor de azul e operador despejando malte (o brinde fica só em 0:42–0:43) |

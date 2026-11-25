@@ -41,6 +41,7 @@ REPL = {
     29: F_("IMG_2670", 0.5),                       # print 4 -> tanque DAMA
     33: F_("IMG_2619", 9.3),                       # print 5 -> senhor de azul com o mestre cervejeiro
     46: F_("IMG_2643", 0.5),                       # 0:31 -> linha de envase
+    47: F_("IMG_2674", 1.0),                       # 0:31 (tela do PC desfocada) -> tanques DAMA em linha
     56: F_("IMG_2661", 0.5),                       # 0:37 -> garrafas rotuladas na linha
     58: F_("IMG_2697", 1.0),                       # 0:39 -> cervejeiro na brassagem
     64: F_("IMG_2622", 0.3, focus=(0.2, 0.5)),     # brinde reduzido -> explicação ao senhor de azul
