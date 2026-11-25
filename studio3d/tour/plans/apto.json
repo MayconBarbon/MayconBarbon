@@ -33,6 +33,6 @@
   ],
   "start": {"x":3.75,"z":7.5,"yaw":3.14159},
   "orbitR": 17,
-  "planta": "planta-apto.svg",
+  "planta": "assets/studio3d/planta-apto.webp",
   "dims": {"top":[0,2.7,4.9,8.1],"right":[0,3.2,6.7],"varanda":[3.0,6.7]}
 }

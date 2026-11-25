@@ -1,0 +1,492 @@
+<title>Studio 3D para construtoras: planta 3D, tour e vídeo | Vídeo Imóvel</title>
+<meta name="description" content="Transforme a planta do seu empreendimento em planta 3D, imagens e tour navegável para vender antes da obra. Vídeo Imóvel Studio 3D para construtoras e incorporadoras.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+body.elementor-template-canvas{margin:0;background:#0a1322}
+.vi-s{--bg:#0a1322;--bg2:#0f1c30;--card:#13223a;--fg:#f4f5f8;--muted:#a7b0c0;--line:rgba(244,245,248,.12);--acc:#e2c48a;--acc-ink:#231a08;--teal:#2cc6b8;--d:"Manrope",ui-sans-serif,system-ui,sans-serif;
+  background:var(--bg);color:var(--fg);font:400 17px/1.6 "Inter",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.vi-s *{box-sizing:border-box}
+.vi-s img,.vi-s video{max-width:100%;display:block;height:auto}
+.vi-s .w{width:min(1160px,100% - 32px);margin-inline:auto}
+.vi-s h1,.vi-s h2,.vi-s h3{font-family:var(--d);letter-spacing:-.025em;line-height:1.1;margin:0;text-wrap:balance}
+.vi-s h2{font-size:clamp(1.9rem,4vw,2.9rem)}
+.vi-s h3{font-size:1.2rem}
+.vi-s .eb{font-family:var(--d);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:0 0 14px}
+.vi-s .lead{color:var(--muted);font-size:clamp(1.05rem,1.5vw,1.2rem);margin:18px 0 0;max-width:680px}
+.vi-s a{color:var(--acc)}
+.vi-s .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 26px;border-radius:999px;font:700 1rem/1 var(--d);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s,opacity .15s}
+.vi-s .btn:hover{transform:translateY(-1px)}
+.vi-s .btn:focus-visible,.vi-s button:focus-visible,.vi-s input:focus-visible,.vi-s select:focus-visible,.vi-s textarea:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.vi-s .btn-p{background:var(--acc);color:var(--acc-ink)}
+.vi-s .btn-g{border-color:var(--line);color:var(--fg);background:transparent}
+.vi-s section{padding:clamp(64px,9vw,112px) 0}
+.vi-s .band{background:var(--bg2)}
+.vi-s .top{border-bottom:1px solid var(--line)}
+.vi-s .top .w{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:16px}
+.vi-s .brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font:800 1.05rem var(--d)}
+.vi-s .brand small{font:600 .72rem var(--d);letter-spacing:.14em;color:var(--acc);text-transform:uppercase;border:1px solid rgba(226,196,138,.4);border-radius:999px;padding:3px 9px}
+.vi-s .top nav{display:flex;gap:22px;align-items:center}
+.vi-s .top nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.vi-s .top nav a.btn{color:var(--acc-ink);min-height:40px;padding:0 18px;font-size:.9rem}
+.vi-s .hero{padding-top:clamp(40px,6vw,72px)}
+.vi-s .hero .w{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center}
+.vi-s .hero h1{font-size:clamp(2.3rem,5vw,3.9rem)}
+.vi-s .hero h1 span{color:var(--acc)}
+.vi-s .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.vi-s .note{color:var(--muted);font-size:.86rem;margin-top:14px}
+.vi-s .hv{position:relative;aspect-ratio:1/1}
+.vi-s .hv img{position:absolute;border-radius:20px;box-shadow:0 30px 60px rgba(0,0,0,.35);object-fit:cover}
+.vi-s .hv .a{inset:0 22% 30% 0;width:78%;height:70%}
+.vi-s .hv .b{right:0;bottom:0;width:62%;height:50%;border:4px solid var(--bg)}
+.vi-s .tag{display:inline-block;font:700 .7rem var(--d);letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(10,19,34,.82);color:var(--acc);border:1px solid rgba(226,196,138,.35)}
+.vi-s .hv .tag{position:absolute;left:12px;top:12px;z-index:2}
+/* tour */
+.vi-s .tour-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:26px}
+#vi3d{position:relative;border-radius:22px;overflow:hidden;background:#eeeae3;border:1px solid var(--line);min-height:320px}
+#vi3d>canvas{display:block;width:100%;touch-action:none;cursor:grab}
+#vi3d .bar{position:absolute;left:12px;right:12px;top:12px;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;pointer-events:none;z-index:3}
+#vi3d .grp{display:flex;flex-wrap:wrap;gap:6px;pointer-events:auto;background:rgba(10,19,34,.78);padding:5px;border-radius:999px;backdrop-filter:blur(6px)}
+#vi3d button{font:600 .82rem var(--d);color:#e8ebf1;background:transparent;border:0;border-radius:999px;padding:8px 13px;cursor:pointer;min-height:36px}
+#vi3d button[aria-pressed="true"]{background:var(--acc);color:var(--acc-ink)}
+#vi3d button[hidden]{display:none}
+#vi3d [data-room]{position:absolute;left:14px;bottom:62px;font:700 .95rem var(--d);color:#fff;background:rgba(10,19,34,.78);padding:6px 12px;border-radius:999px;z-index:3}
+#vi3d [data-room]:empty{display:none}
+#vi3d .foot{position:absolute;left:12px;right:12px;bottom:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;z-index:3;pointer-events:none}
+#vi3d .foot>*{pointer-events:auto}
+#vi3d .light{display:flex;align-items:center;gap:8px;background:rgba(10,19,34,.78);color:#e8ebf1;font:600 .78rem var(--d);padding:7px 14px;border-radius:999px}
+#vi3d .light input{width:120px;accent-color:#e2c48a}
+#vi3d [data-hint]{font-size:.78rem;color:#33404f;background:rgba(255,255,255,.75);padding:5px 10px;border-radius:999px}
+#vi3d .vi3d-plan{position:absolute;inset:0;background:#fbfaf7;display:flex;align-items:center;justify-content:center;padding:70px 20px 60px;z-index:2}
+#vi3d .vi3d-plan[hidden],#vi3d .vi3d-walk[hidden]{display:none}
+#vi3d .vi3d-plan img{max-height:100%;width:auto;max-width:100%;object-fit:contain}
+#vi3d .vi3d-walk canvas.mini{position:absolute;right:14px;top:64px;width:170px;height:128px;border-radius:12px;z-index:3}
+#vi3d .pad{position:absolute;right:14px;bottom:56px;display:grid;grid-template-columns:repeat(3,44px);gap:6px;z-index:3}
+#vi3d .pad button{background:rgba(10,19,34,.8);font-size:1.1rem;min-height:44px;padding:0}
+#vi3d .load{position:absolute;inset:0;display:grid;place-items:center;color:#33404f;font:600 .95rem var(--d);z-index:1}
+#vi3d .load img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+#vi3d .load span{position:relative;background:rgba(255,255,255,.88);padding:10px 18px;border-radius:999px}
+.vi-s .disc{font-size:.84rem;color:var(--muted);margin-top:14px}
+/* etapas */
+.vi-s .stages{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;counter-reset:s}
+.vi-s .stage{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.vi-s .stage img{aspect-ratio:4/3;object-fit:cover;width:100%;background:#eeeae3}
+.vi-s .stage div{padding:18px 20px 22px}
+.vi-s .stage h3::before{counter-increment:s;content:counter(s) " · ";color:var(--acc)}
+.vi-s .stage p{color:var(--muted);font-size:.93rem;margin:8px 0 0}
+/* serviços */
+.vi-s .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.vi-s .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column}
+.vi-s .card .lvl{font:700 .72rem var(--d);letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.vi-s .card h3{margin:8px 0 10px;font-size:1.35rem}
+.vi-s .card p{color:var(--muted);font-size:.94rem;margin:0}
+.vi-s .card ul{margin:16px 0 0;padding:0;list-style:none;font-size:.92rem}
+.vi-s .card li{padding:7px 0 7px 24px;border-top:1px solid var(--line);position:relative}
+.vi-s .card li::before{content:"";position:absolute;left:2px;top:14px;width:10px;height:6px;border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
+.vi-s .card .for{margin-top:auto;padding-top:16px;font-size:.84rem;color:var(--muted)}
+.vi-s .card.hl{border-color:rgba(226,196,138,.55);background:linear-gradient(180deg,rgba(226,196,138,.08),transparent 40%),var(--card)}
+/* comparador */
+.vi-s .cmp{margin-top:36px;overflow-x:auto;border:1px solid var(--line);border-radius:18px}
+.vi-s table{width:100%;border-collapse:collapse;min-width:720px;font-size:.93rem}
+.vi-s th,.vi-s td{padding:13px 16px;text-align:center;border-bottom:1px solid var(--line)}
+.vi-s th:first-child,.vi-s td:first-child{text-align:left;color:var(--muted)}
+.vi-s thead th{font:700 .95rem var(--d);color:var(--fg);background:var(--card)}
+.vi-s td.y{color:var(--acc);font-weight:700}
+.vi-s td.n{color:#8792a2}
+/* portfólio */
+.vi-s .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.vi-s .tabs button{font:600 .9rem var(--d);color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer;min-height:42px}
+.vi-s .tabs button[aria-selected="true"]{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.vi-s .pf{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.vi-s .pf figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;position:relative}
+.vi-s .pf figure[hidden]{display:none}
+.vi-s .pf img,.vi-s .pf video{aspect-ratio:16/10;object-fit:cover;width:100%;background:#0f1c30}
+.vi-s .pf .tag{position:absolute;left:12px;top:12px}
+.vi-s .pf figcaption{padding:16px 18px 20px}
+.vi-s .pf figcaption b{display:block;font:700 1.02rem var(--d)}
+.vi-s .pf figcaption span{display:block;color:var(--muted);font-size:.88rem;margin-top:4px}
+.vi-s .pf .soon{aspect-ratio:16/10;display:grid;place-items:center;text-align:center;padding:20px;color:var(--muted);background:repeating-linear-gradient(135deg,#13223a 0 14px,#152741 14px 28px);font-size:.92rem}
+/* como funciona / para quem */
+.vi-s .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px;counter-reset:p}
+.vi-s .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.vi-s .step::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--acc);color:var(--acc-ink);font:800 1rem var(--d);margin-bottom:14px}
+.vi-s .step p{color:var(--muted);font-size:.9rem;margin:8px 0 0}
+.vi-s .who{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:36px}
+.vi-s .who div{border:1px solid var(--line);border-radius:18px;padding:22px}
+.vi-s .who p{color:var(--muted);font-size:.9rem;margin:8px 0 0}
+/* fidelidade */
+.vi-s .fid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px}
+.vi-s .fid ul{margin:0;padding-left:20px;color:var(--muted)}
+.vi-s .fid li{margin:8px 0}
+.vi-s .fid .box{border:1px solid rgba(226,196,138,.35);border-radius:18px;padding:24px;background:rgba(226,196,138,.05)}
+/* formulário */
+.vi-s .brief{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,4vw,56px);align-items:start}
+.vi-s .brief aside{position:sticky;top:24px}
+.vi-s .brief aside ol{color:var(--muted);padding-left:20px;font-size:.95rem}
+.vi-s .brief aside li.on{color:var(--fg);font-weight:600}
+.vi-s .fw{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,3vw,34px)}
+.vi-s .fw .prog{height:6px;background:rgba(255,255,255,.08);border-radius:9px;overflow:hidden;margin-bottom:22px}
+.vi-s .fw .prog i{display:block;height:100%;width:16%;background:var(--acc);transition:width .3s}
+.vi-s .fw .st{display:none}
+.vi-s .fw .st.on{display:block}
+.vi-s .fw .st h3{font-size:1.35rem;margin-bottom:6px}
+.vi-s .fw .st h3:focus{outline:none}
+.vi-s .fw .st h4{font:700 .78rem var(--d);letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin:22px 0 8px}
+.vi-s .fw .st .sub{color:var(--muted);font-size:.92rem;margin:0 0 14px}
+.vi-s .fw label{display:block;font-size:.9rem;font-weight:600;margin:14px 0 6px}
+.vi-s .fw .g2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.vi-s .fw input[type=text],.vi-s .fw input[type=email],.vi-s .fw input[type=tel],.vi-s .fw select,.vi-s .fw textarea{width:100%;background:#0c1729;border:1px solid rgba(244,245,248,.2);color:var(--fg);border-radius:12px;padding:12px 14px;font:400 1rem "Inter",sans-serif;min-height:48px}
+.vi-s .fw textarea{min-height:96px;resize:vertical}
+.vi-s .fw input[type=file]{width:100%;color:var(--muted);font-size:.9rem;padding:10px;border:1px dashed rgba(244,245,248,.25);border-radius:12px;background:#0c1729}
+.vi-s .fw .wpcf7-list-item{display:inline-flex;margin:0 8px 8px 0}
+.vi-s .fw .wpcf7-list-item label,.vi-s .fw .wpcf7-list-item>span{margin:0}
+.vi-s .fw .wpcf7-checkbox .wpcf7-list-item label,.vi-s .fw .wpcf7-radio .wpcf7-list-item label{display:inline-flex;align-items:center;gap:8px;font-weight:500;border:1px solid rgba(244,245,248,.2);border-radius:999px;padding:8px 14px;cursor:pointer;min-height:42px}
+.vi-s .fw .wpcf7-acceptance .wpcf7-list-item label{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.9rem;color:var(--muted)}
+.vi-s .fw .wpcf7-acceptance{display:block;margin:10px 0}
+.vi-s .fw input[type=checkbox],.vi-s .fw input[type=radio]{accent-color:#e2c48a;width:18px;height:18px}
+.vi-s .fw .nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+.vi-s .fw .nav .btn[hidden]{display:none}
+.vi-s .fw .wpcf7-submit{background:var(--acc);color:var(--acc-ink);border:0;border-radius:999px;min-height:50px;padding:0 28px;font:700 1rem var(--d);cursor:pointer}
+.vi-s .fw .wpcf7-not-valid-tip{color:#ffb4a8;font-size:.84rem;margin-top:4px}
+.vi-s .fw .wpcf7-response-output{border-radius:12px;margin:18px 0 0!important;padding:12px 16px!important;font-size:.92rem}
+.vi-s .fw .hint{font-size:.82rem;color:var(--muted);margin:6px 0 0}
+.vi-s .fw .err{color:#ffb4a8;font-size:.88rem;margin-top:12px}
+.vi-s .fw .ok{display:none;text-align:center;padding:24px 8px}
+.vi-s .fw.done form,.vi-s .fw.done .prog{display:none}
+.vi-s .fw.done .ok{display:block}
+.vi-s .fw .ok strong{display:block;font:800 1.6rem var(--d);color:var(--acc);margin:10px 0}
+.vi-s .fw .pr{display:none}
+.vi-s .fw form p{margin:0}
+.vi-s .fw .wpcf7-form-control-wrap{display:block}
+/* faq */
+.vi-s .faq{max-width:820px;margin-top:30px}
+.vi-s details{border-bottom:1px solid var(--line);padding:18px 0}
+.vi-s summary{cursor:pointer;font:700 1.06rem var(--d);list-style:none;display:flex;justify-content:space-between;gap:16px}
+.vi-s summary::after{content:"+";color:var(--acc);font-size:1.3rem;line-height:1}
+.vi-s details[open] summary::after{content:"–"}
+.vi-s details p{color:var(--muted);margin:12px 0 0}
+.vi-s .final{text-align:center}
+.vi-s .final h2{max-width:820px;margin-inline:auto}
+.vi-s .final .ctas{justify-content:center}
+.vi-s footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
+.vi-s footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.vi-s footer a{color:var(--muted)}
+@media (max-width:980px){
+  .vi-s .hero .w,.vi-s .brief,.vi-s .fid{grid-template-columns:1fr}
+  .vi-s .stages,.vi-s .svc{grid-template-columns:1fr 1fr}
+  .vi-s .steps,.vi-s .who{grid-template-columns:1fr 1fr}
+  .vi-s .pf{grid-template-columns:1fr 1fr}
+  .vi-s .brief aside{position:static}
+  .vi-s .top nav a:not(.btn){display:none}
+}
+@media (max-width:620px){
+  .vi-s .stages,.vi-s .svc,.vi-s .steps,.vi-s .who,.vi-s .pf,.vi-s .fw .g2{grid-template-columns:1fr}
+  #vi3d .bar{flex-direction:column;align-items:flex-start}
+  #vi3d .vi3d-walk canvas.mini{top:auto;bottom:112px;left:14px;right:auto;width:120px;height:90px}
+  #vi3d [data-hint]{display:none}
+}
+@media (prefers-reduced-motion:reduce){.vi-s *{transition:none!important}}
+</style>
+<div class="vi-s">
+  <div class="top"><div class="w">
+    <a class="brand" href="/"><img src="assets/logo-mark.png" alt="" width="30" height="24">Vídeo Imóvel <small>Studio 3D</small></a>
+    <nav aria-label="Seções"><a href="#tour">Tour 3D</a><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#faq">Dúvidas</a><a class="btn btn-p" href="#briefing" data-cta="topo">Solicitar apresentação 3D</a></nav>
+  </div></div>
+
+  <section class="hero"><div class="w">
+    <div>
+      <p class="eb">Vídeo Imóvel Studio 3D · Construtoras e incorporadoras</p>
+      <h1>Sua planta mostra o projeto. <span>Nós mostramos como ele pode ganhar vida.</span></h1>
+      <p class="lead">Transformamos a planta do seu empreendimento em planta 3D, imagens, tour navegável e vídeo, para que o cliente entenda os ambientes e se imagine morando ali antes da obra começar.</p>
+      <div class="ctas"><a class="btn btn-p" href="#briefing" data-cta="hero">Solicitar apresentação 3D</a><a class="btn btn-g" href="#tour" data-cta="hero-tour">Explorar o tour 3D</a></div>
+      <p class="note">As imagens desta página são projetos de demonstração criados pela Vídeo Imóvel. Não representam empreendimentos à venda.</p>
+    </div>
+    <div class="hv" aria-hidden="true">
+      <img class="a" src="assets/studio3d/apto-decorado.webp" alt="" width="1200" height="744" fetchpriority="high">
+      <img class="b" src="assets/studio3d/edificio-tarde.webp" alt="" width="1200" height="744" loading="lazy">
+      <span class="tag">Projeto de demonstração</span>
+    </div>
+  </div></section>
+
+  <section class="band" id="tour" aria-labelledby="h-tour"><div class="w">
+    <div class="tour-head">
+      <div>
+        <p class="eb">Experimente agora</p>
+        <h2 id="h-tour">Entre no apartamento antes de ele existir.</h2>
+        <p class="lead">Alterne entre a planta 2D, a estrutura 3D, o decorado e o passeio em primeira pessoa. No apartamento, veja também o edifício completo com a unidade em destaque.</p>
+      </div>
+    </div>
+    <div id="vi3d" data-plan="apto" tabindex="0" aria-label="Tour 3D interativo de projeto de demonstração. Use os botões para trocar de modo; no passeio, use as setas do teclado para andar.">
+      <canvas aria-hidden="true"></canvas>
+      <div class="load"><img src="assets/studio3d/apto-decorado.webp" alt="" width="1200" height="744" loading="lazy"><span>Carregando o tour 3D…</span></div>
+      <div class="bar">
+        <div class="grp" role="group" aria-label="Projeto"><button type="button" data-plan-set="apto" aria-pressed="true">Apartamento</button><button type="button" data-plan-set="casa" aria-pressed="false">Casa térrea</button></div>
+        <div class="grp" role="group" aria-label="Modo de visualização"><button type="button" data-set="planta" aria-pressed="false">Planta 2D</button><button type="button" data-set="estrutura" aria-pressed="false">Estrutura</button><button type="button" data-set="decorado" aria-pressed="true">Decorado</button><button type="button" data-set="passeio" aria-pressed="false">Passeio</button><button type="button" data-set="edificio" data-only="apto" aria-pressed="false">Edifício</button><button type="button" data-guided>Tour guiado ▶</button></div>
+      </div>
+      <div class="vi3d-plan" hidden><img src="assets/studio3d/planta-apto.webp" alt="Planta 2D do projeto de demonstração" width="957" height="757" loading="lazy"></div>
+      <span data-room aria-live="polite"></span>
+      <div class="vi3d-walk" hidden>
+        <canvas class="mini" width="340" height="256" aria-label="Minimapa: você está aqui"></canvas>
+        <div class="pad" role="group" aria-label="Andar"><span></span><button type="button" data-walk="1" aria-label="Andar para frente">↑</button><span></span><button type="button" data-turn="0.35" aria-label="Virar à esquerda">↺</button><button type="button" data-walk="-1" aria-label="Andar para trás">↓</button><button type="button" data-turn="-0.35" aria-label="Virar à direita">↻</button></div>
+      </div>
+      <div class="foot"><label class="light">Manhã <input type="range" min="0" max="100" value="35" aria-label="Iluminação do dia, da manhã à noite"> Noite</label><span data-hint>Arraste para girar · role ou pince para aproximar</span></div>
+    </div>
+    <p class="disc">Projetos de demonstração redesenhados pela Vídeo Imóvel a partir de plantas de referência, com fins ilustrativos. Medidas aproximadas; mobiliário e acabamentos sugeridos. Não é empreendimento à venda.</p>
+  </div></section>
+
+  <section aria-labelledby="h-etapas"><div class="w">
+    <p class="eb">Da planta à apresentação</p>
+    <h2 id="h-etapas">Cada etapa usa a mesma geometria da sua planta.</h2>
+    <p class="lead">A planta não é redesenhada a olho: os ambientes são modelados a partir das cotas e dos arquivos que você envia, e cada etapa é validada antes da seguinte.</p>
+    <div class="stages">
+      <div class="stage"><img src="assets/studio3d/planta-apto.webp" alt="Planta 2D redesenhada do apartamento de demonstração, com cotas" width="957" height="757" loading="lazy"><div><h3>Planta 2D</h3><p>Conferência de cotas, aberturas e nomes dos ambientes a partir do seu arquivo.</p></div></div>
+      <div class="stage"><img src="assets/studio3d/apto-estrutura.webp" alt="Volumetria 3D em branco do apartamento, com paredes em corte" width="1200" height="744" loading="lazy"><div><h3>Estrutura 3D</h3><p>Volumetria com paredes, portas e janelas para validar proporções e circulação.</p></div></div>
+      <div class="stage"><img src="assets/studio3d/apto-decorado.webp" alt="Planta 3D decorada do apartamento com mobiliário e pisos" width="1200" height="744" loading="lazy"><div><h3>Acabamentos e decoração</h3><p>Pisos, revestimentos e mobiliário conforme o memorial ou uma proposta conceitual.</p></div></div>
+      <div class="stage"><img src="assets/studio3d/apto-passeio.webp" alt="Vista em primeira pessoa da varanda para o estar e a cozinha integrada" width="1200" height="744" loading="lazy"><div><h3>Imagens, tour e vídeo</h3><p>Vistas na altura dos olhos, tour navegável e vídeo para site, estande e redes.</p></div></div>
+    </div>
+  </div></section>
+
+  <section class="band" id="servicos" aria-labelledby="h-serv"><div class="w">
+    <p class="eb">Serviços</p>
+    <h2 id="h-serv">Quatro níveis, conforme o momento do lançamento.</h2>
+    <div class="svc">
+      <div class="card"><span class="lvl">Nível 1</span><h3>3D Essencial</h3><p>Planta 3D volumétrica para entender a distribuição dos ambientes.</p>
+        <ul><li>Modelagem a partir da planta</li><li>Paredes, portas e janelas</li><li>Cores neutras, sem mobiliário</li><li>Vistas superiores em alta</li></ul><p class="for">Ideal para aprovação de conceito e apresentação técnica.</p></div>
+      <div class="card"><span class="lvl">Nível 2</span><h3>3D com Acabamentos</h3><p>Materiais do memorial descritivo aplicados aos ambientes.</p>
+        <ul><li>Tudo do Essencial</li><li>Pisos e revestimentos definidos</li><li>Esquadrias e cores de parede</li><li>Mobiliário básico de escala</li></ul><p class="for">Ideal para material comercial e treinamento de corretores.</p></div>
+      <div class="card hl"><span class="lvl">Nível 3</span><h3>3D Decorado</h3><p>Ambientes mobiliados e decorados para gerar desejo.</p>
+        <ul><li>Tudo do nível 2</li><li>Mobiliário e decoração completos</li><li>Tour 3D navegável para o site</li><li>Imagens na altura dos olhos</li></ul><p class="for">Ideal para pré-lançamento, site e estande de vendas.</p></div>
+      <div class="card"><span class="lvl">Nível 4</span><h3>Cinematic</h3><p>Vídeo de apresentação com roteiro, movimento de câmera e trilha.</p>
+        <ul><li>Tudo do Decorado</li><li>Vídeo vertical e/ou horizontal</li><li>Lettering, trilha e assinatura da marca</li><li>Com obra pronta: captação real com drone</li></ul><p class="for">Ideal para campanhas, anúncios e lançamento.</p></div>
+    </div>
+    <p class="disc">Cada projeto recebe orçamento sob medida, que considera a área, a quantidade de ambientes, o nível escolhido e o prazo.</p>
+
+    <div class="cmp" role="region" aria-label="Comparativo dos níveis" tabindex="0"><table>
+      <thead><tr><th scope="col">O que está incluído</th><th scope="col">Essencial</th><th scope="col">Acabamentos</th><th scope="col">Decorado</th><th scope="col">Cinematic</th></tr></thead>
+      <tbody>
+        <tr><td>Planta 3D a partir das cotas</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Rodada de validação da estrutura</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Materiais do memorial descritivo</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Mobiliário</td><td class="n">—</td><td>Básico</td><td>Completo</td><td>Completo</td></tr>
+        <tr><td>Imagens na altura dos olhos</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Tour 3D navegável para o site</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Vídeo com roteiro, trilha e lettering</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+        <tr><td>Versões vertical e horizontal</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+      </tbody>
+    </table></div>
+  </div></section>
+
+  <section id="portfolio" aria-labelledby="h-port"><div class="w">
+    <p class="eb">Portfólio</p>
+    <h2 id="h-port">O que já dá para ver.</h2>
+    <p class="lead">O Studio 3D está começando. Por isso, mostramos aqui os projetos de demonstração e os trabalhos reais de vídeo com a identificação correta de cada um.</p>
+    <div class="tabs" role="tablist" aria-label="Categorias do portfólio">
+      <button type="button" role="tab" aria-selected="true" data-cat="todos">Todos</button><button type="button" role="tab" aria-selected="false" data-cat="apto">Apartamentos</button><button type="button" role="tab" aria-selected="false" data-cat="casa">Casas</button><button type="button" role="tab" aria-selected="false" data-cat="lazer">Áreas comuns</button><button type="button" role="tab" aria-selected="false" data-cat="video">Vídeo cinematic</button>
+    </div>
+    <div class="pf">
+      <figure data-cat="apto"><img src="assets/studio3d/edificio.webp" alt="Edifício conceitual de 12 pavimentos com a unidade de demonstração destacada no 7º andar" width="1200" height="744" loading="lazy"><span class="tag">Projeto de demonstração</span><figcaption><b>Apartamento tipo 2 dormitórios</b><span>Edifício conceitual, planta 3D, decorado e passeio</span></figcaption></figure>
+      <figure data-cat="apto"><img src="assets/studio3d/apto-estar.webp" alt="Estar integrado ao jantar com TV, sofá e acesso à varanda" width="1200" height="744" loading="lazy"><span class="tag">Projeto de demonstração</span><figcaption><b>Estar e varanda</b><span>Vista na altura dos olhos</span></figcaption></figure>
+      <figure data-cat="casa"><img src="assets/studio3d/casa-decorado.webp" alt="Casa térrea de 2 dormitórios em planta 3D decorada, com área externa em deck" width="1200" height="744" loading="lazy"><span class="tag">Projeto de demonstração</span><figcaption><b>Casa térrea 2 dormitórios</b><span>Planta 3D decorada com área externa em L</span></figcaption></figure>
+      <figure data-cat="casa"><img src="assets/studio3d/casa-noite.webp" alt="A mesma casa ao entardecer, com as luminárias acesas" width="1200" height="744" loading="lazy"><span class="tag">Projeto de demonstração</span><figcaption><b>Simulação de luz</b><span>Da manhã à noite, no mesmo modelo</span></figcaption></figure>
+      <figure data-cat="lazer"><div class="soon">Em preparação<br>Áreas comuns e lazer: piscina, salão de festas e academia</div><figcaption><b>Áreas comuns</b><span>Primeiros projetos em produção</span></figcaption></figure>
+      <figure data-cat="video"><video src="assets/reels/maison-dor-hd.mp4" poster="assets/reels/maison-dor-hd.jpg" muted loop playsinline preload="none" controls aria-label="Vídeo real com drone do Maison D'or Residence, em Piracicaba"></video><span class="tag">Captação real · não é render</span><figcaption><b>Maison D'or Residence</b><span>Kraide Engenharia · Piracicaba-SP · vídeo com drone</span></figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="band" id="como-funciona" aria-labelledby="h-como"><div class="w">
+    <p class="eb">Como funciona</p>
+    <h2 id="h-como">Do briefing à entrega em cinco passos.</h2>
+    <div class="steps">
+      <div class="step"><h3>Briefing e arquivos</h3><p>Você preenche o briefing e envia a planta (PDF, DWG, imagem ou modelo 3D).</p></div>
+      <div class="step"><h3>Análise e proposta</h3><p>Conferimos os arquivos e enviamos escopo, prazo e investimento.</p></div>
+      <div class="step"><h3>Estrutura 3D</h3><p>Modelamos a planta e você valida proporções, aberturas e circulação.</p></div>
+      <div class="step"><h3>Acabamentos e decoração</h3><p>Aplicamos materiais e mobiliário, com rodada de ajustes combinada.</p></div>
+      <div class="step"><h3>Entrega</h3><p>Imagens, tour 3D e vídeo nos formatos combinados, prontos para publicar.</p></div>
+    </div>
+  </div></section>
+
+  <section aria-labelledby="h-quem"><div class="w">
+    <p class="eb">Para quem é</p>
+    <h2 id="h-quem">Para quem precisa vender o que ainda está no papel.</h2>
+    <div class="who">
+      <div><h3>Construtoras</h3><p>Apresentação de unidades e plantas antes e durante a obra.</p></div>
+      <div><h3>Incorporadoras</h3><p>Material de pré-lançamento, site e estande de vendas.</p></div>
+      <div><h3>Engenheiros civis</h3><p>Mostrar ao cliente final como o projeto vai ficar.</p></div>
+      <div><h3>Arquitetos</h3><p>Apresentação de conceito com tour navegável.</p></div>
+      <div><h3>Imobiliárias de lançamento</h3><p>Material para corretores explicarem a planta.</p></div>
+    </div>
+  </div></section>
+
+  <section class="band" aria-labelledby="h-fid"><div class="w">
+    <p class="eb">Fidelidade técnica</p>
+    <h2 id="h-fid">Bonito, mas também honesto com a planta.</h2>
+    <div class="fid">
+      <ul>
+        <li>As imagens são ilustrativas e feitas a partir dos arquivos fornecidos pelo cliente. Não substituem o projeto aprovado.</li>
+        <li>Medidas, aberturas e áreas seguem a planta enviada. Divergências encontradas são informadas antes da modelagem.</li>
+        <li>Mobiliário, decoração e paisagismo são sugestões e não fazem parte da unidade, salvo indicação no memorial.</li>
+        <li>A responsabilidade técnica do projeto (CAU/CREA) continua com o autor do projeto. A Vídeo Imóvel não assina projetos.</li>
+      </ul>
+      <div class="box"><h3>Para anúncios de lançamento</h3><p style="color:var(--muted);margin:10px 0 0">Recomendamos incluir nas peças a indicação "imagens meramente ilustrativas" e as informações legais do empreendimento, como o registro da incorporação. A conferência dessas informações é responsabilidade da incorporadora.</p></div>
+    </div>
+  </div></section>
+
+  <section id="briefing" aria-labelledby="h-brief"><div class="w brief">
+    <aside>
+      <p class="eb">Briefing</p>
+      <h2 id="h-brief">Conte sobre o projeto.</h2>
+      <p class="lead">Leva cerca de 5 minutos. Com o briefing completo, a proposta sai mais rápida e mais precisa.</p>
+      <ol id="brief-steps"><li class="on">Você e a empresa</li><li>O projeto</li><li>Arquivos</li><li>O que você precisa</li><li>Vídeo</li><li>Prazo e envio</li></ol>
+      <p class="note">Arquivos acima de 6 MB? Envie um link do Google Drive, WeTransfer ou Dropbox na etapa de arquivos.</p>
+    </aside>
+    <div class="fw" id="fw">
+      <div class="prog" aria-hidden="true"><i></i></div>
+<!--CF7-->
+      <div class="ok" role="status" aria-live="polite" tabindex="-1">
+        <p class="eb">Briefing recebido</p>
+        <strong data-proto></strong>
+        <p>Este é o número da sua solicitação. Nossa equipe vai analisar os arquivos e o escopo e retornar com a proposta pelo WhatsApp ou e-mail informados.</p>
+        <p class="note">Guarde o número para falar com a gente sobre este projeto.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="band" id="faq" aria-labelledby="h-faq"><div class="w">
+    <p class="eb">Dúvidas frequentes</p>
+    <h2 id="h-faq">Perguntas de quem está lançando.</h2>
+    <div class="faq">
+      <details><summary>Quais arquivos preciso enviar?</summary><p>A planta baixa com cotas já basta para começar: PDF, imagem, DWG ou DXF. Se houver memorial descritivo, cortes, fachadas ou modelo 3D (SKP, IFC, RVT, FBX, OBJ, GLB), o resultado fica mais fiel.</p></details>
+      <details><summary>Vocês fazem só a planta 3D ou também o vídeo?</summary><p>Os dois. Você escolhe o nível: Essencial, Acabamentos, Decorado ou Cinematic. Com o prédio pronto, também fazemos vídeo real com drone.</p></details>
+      <details><summary>Quanto tempo leva?</summary><p>Depende da área, do número de ambientes e do nível. O prazo vem na proposta, depois da análise dos arquivos.</p></details>
+      <details><summary>Quanto custa?</summary><p>O orçamento é sob medida e considera área, ambientes, nível e prazo. No briefing você pode indicar uma faixa de investimento para adaptarmos o escopo.</p></details>
+      <details><summary>O tour 3D funciona no meu site?</summary><p>Sim. O tour roda no navegador, no celular e no computador, sem aplicativo, e pode ser incorporado ao site do empreendimento.</p></details>
+      <details><summary>Meus arquivos ficam protegidos?</summary><p>Os arquivos são usados só para este projeto. Nada é publicado no nosso portfólio sem a sua autorização expressa, que você pode dar ou não no briefing.</p></details>
+      <details><summary>As imagens podem ir para anúncio?</summary><p>Sim, sempre com a indicação de imagens ilustrativas. As informações legais do empreendimento ficam a cargo da incorporadora.</p></details>
+    </div>
+  </div></section>
+
+  <section class="final" aria-labelledby="h-final"><div class="w">
+    <p class="eb">Vídeo Imóvel Studio 3D</p>
+    <h2 id="h-final">Seu próximo empreendimento merece ser apresentado antes de existir.</h2>
+    <div class="ctas"><a class="btn btn-p" href="#briefing" data-cta="final">Solicitar apresentação 3D</a><a class="btn btn-g" href="https://wa.me/5519998612626?text=Ol%C3%A1!%20Quero%20falar%20sobre%20o%20Studio%203D%20para%20um%20empreendimento." target="_blank" rel="noopener" data-cta="final-whatsapp">Falar no WhatsApp</a></div>
+  </div></section>
+
+  <footer><div class="w"><span>Vídeo Imóvel · Studio 3D · Atendemos todo o Brasil</span><span><a href="/">videoimovel.com.br</a> · <a href="/blog/">Blog</a></span></div></footer>
+</div>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"Service","name":"Vídeo Imóvel Studio 3D","serviceType":"Planta 3D, tour virtual e vídeo para lançamentos imobiliários","provider":{"@type":"Organization","name":"Vídeo Imóvel","url":"https://videoimovel.com.br/"},"areaServed":"BR","url":"https://videoimovel.com.br/construtoras/","audience":{"@type":"BusinessAudience","audienceType":"Construtoras e incorporadoras"}},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://videoimovel.com.br/"},{"@type":"ListItem","position":2,"name":"Studio 3D para construtoras","item":"https://videoimovel.com.br/construtoras/"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Quais arquivos preciso enviar?","acceptedAnswer":{"@type":"Answer","text":"A planta baixa com cotas já basta para começar: PDF, imagem, DWG ou DXF. Se houver memorial descritivo, cortes, fachadas ou modelo 3D, o resultado fica mais fiel."}},
+{"@type":"Question","name":"Vocês fazem só a planta 3D ou também o vídeo?","acceptedAnswer":{"@type":"Answer","text":"Os dois. Você escolhe o nível: Essencial, Acabamentos, Decorado ou Cinematic. Com o prédio pronto, também fazemos vídeo real com drone."}},
+{"@type":"Question","name":"Quanto tempo leva?","acceptedAnswer":{"@type":"Answer","text":"Depende da área, do número de ambientes e do nível. O prazo vem na proposta, depois da análise dos arquivos."}},
+{"@type":"Question","name":"Quanto custa?","acceptedAnswer":{"@type":"Answer","text":"O orçamento é sob medida e considera área, ambientes, nível e prazo."}},
+{"@type":"Question","name":"O tour 3D funciona no meu site?","acceptedAnswer":{"@type":"Answer","text":"Sim. O tour roda no navegador, no celular e no computador, sem aplicativo."}},
+{"@type":"Question","name":"Meus arquivos ficam protegidos?","acceptedAnswer":{"@type":"Answer","text":"Os arquivos são usados só para este projeto. Nada é publicado no portfólio sem autorização expressa."}},
+{"@type":"Question","name":"As imagens podem ir para anúncio?","acceptedAnswer":{"@type":"Answer","text":"Sim, sempre com a indicação de imagens ilustrativas. As informações legais do empreendimento ficam a cargo da incorporadora."}}]}
+]}</script>
+<script type="text/plain" id="vi3d-src">__TOUR__</script>
+<script>
+(function () {
+  var root = document.getElementById('vi3d'); if (!root) return;
+  var started = false;
+  function start() {
+    if (started) return; started = true;
+    var s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    s.onload = function () {
+      var t = document.createElement('script'); t.textContent = document.getElementById('vi3d-src').textContent; document.body.appendChild(t);
+      var l = root.querySelector('.load'); if (l) l.remove();
+    };
+    s.onerror = function () { var l = root.querySelector('.load span'); if (l) l.textContent = 'Não foi possível carregar o tour 3D agora. As imagens abaixo mostram cada etapa.'; };
+    document.head.appendChild(s);
+  }
+  if ('IntersectionObserver' in window) { new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { o.disconnect(); start(); } }, {rootMargin: '300px'}).observe(root); } else start();
+  root.addEventListener('pointerdown', start, {once: true});
+  // portfólio
+  var tabs = document.querySelectorAll('.vi-s .tabs button');
+  tabs.forEach(function (b) { b.addEventListener('click', function () {
+    var c = b.getAttribute('data-cat');
+    tabs.forEach(function (x) { x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+    document.querySelectorAll('.vi-s .pf figure').forEach(function (f) { f.hidden = c !== 'todos' ? f.getAttribute('data-cat') !== c : false; });
+  }); });
+  // eventos de CTA (se houver gtag ou dataLayer no site)
+  document.querySelectorAll('.vi-s [data-cta]').forEach(function (a) { a.addEventListener('click', function () {
+    var d = {event: 'cta_studio3d', cta: a.getAttribute('data-cta')};
+    if (window.dataLayer) window.dataLayer.push(d);
+    if (typeof window.gtag === 'function') window.gtag('event', 'cta_studio3d', {cta: d.cta});
+  }); });
+})();
+</script>
+<script>
+/* briefing em etapas sobre o Contact Form 7 */
+(function () {
+  var fw = document.getElementById('fw'); if (!fw) return;
+  var form = fw.querySelector('form'); if (!form) return;
+  var steps = [].slice.call(fw.querySelectorAll('.st')), cur = 0, MAX = 6 * 1024 * 1024;
+  var bar = fw.querySelector('.prog i'), side = document.querySelectorAll('#brief-steps li');
+  function wantsVideo() { var v = false; form.querySelectorAll('input[name="servicos[]"]').forEach(function (c) { if (c.checked) { if (c.value.indexOf('Vídeo') === 0) v = true; } }); return v; }
+  function skip(i) { return steps[i].getAttribute('data-step') === 'video' ? !wantsVideo() : false; }
+  function show(i, quiet) {
+    cur = i;
+    steps.forEach(function (s, k) { s.classList.toggle('on', k === i); });
+    side.forEach(function (li, k) { li.classList.toggle('on', k === i); });
+    bar.style.width = Math.round((i + 1) / steps.length * 100) + '%';
+    if (quiet) return;
+    var h = steps[i].querySelector('h3'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({preventScroll: true}); }
+    fw.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+  function err(st, msg) { var e = st.querySelector('.err'); if (!e) { e = document.createElement('p'); e.className = 'err'; e.setAttribute('role', 'alert'); st.querySelector('.nav').before(e); } e.textContent = msg; }
+  function valid(st) {
+    var bad = null;
+    st.querySelectorAll('[aria-required="true"]').forEach(function (f) {
+      if (bad) return;
+      if (f.type === 'checkbox') return;
+      if (!String(f.value || '').trim()) bad = f;
+      else if (f.type === 'email') { if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value)) bad = f; }
+    });
+    st.querySelectorAll('.wpcf7-checkbox').forEach(function (g) {
+      if (bad) return; var span = g.closest('.wpcf7-form-control-wrap'); if (!span) return;
+      if (g.classList.contains('wpcf7-validates-as-required')) { var any = false; g.querySelectorAll('input').forEach(function (c) { if (c.checked) any = true; }); if (!any) bad = g.querySelector('input'); }
+    });
+    st.querySelectorAll('input[type=file]').forEach(function (f) { if (bad) return; if (f.files) { if (f.files[0]) { if (f.files[0].size > MAX) { bad = f; err(st, 'O arquivo "' + f.files[0].name + '" tem mais de 6 MB. Envie um link do Drive, WeTransfer ou Dropbox no campo de link.'); } } } });
+    if (bad) { if (!st.querySelector('.err')) err(st, 'Preencha os campos obrigatórios desta etapa para continuar.'); else if (bad.type !== 'file') err(st, 'Preencha os campos obrigatórios desta etapa para continuar.'); bad.focus(); return false; }
+    var e = st.querySelector('.err'); if (e) e.remove();
+    return true;
+  }
+  fw.addEventListener('click', function (ev) {
+    var b = ev.target.closest('[data-go]'); if (!b) return; ev.preventDefault();
+    var d = parseInt(b.getAttribute('data-go'), 10), n = cur + d;
+    if (d > 0) { if (!valid(steps[cur])) return; }
+    while (n > 0) { if (n >= steps.length - 1) break; if (!skip(n)) break; n += d; }
+    if (n < 0) n = 0; if (n > steps.length - 1) n = steps.length - 1;
+    show(n);
+  });
+  form.addEventListener('submit', function () {
+    var p = form.querySelector('input[name="protocolo"]');
+    if (p) { if (!p.value) {
+      var d = new Date(), z = function (x) { return (x < 10 ? '0' : '') + x; };
+      var r = ''; var al = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; var a = new Uint8Array(4); (window.crypto || window.msCrypto).getRandomValues(a);
+      for (var i = 0; i < 4; i++) r += al[a[i] % al.length];
+      p.value = 'VI3D-' + String(d.getFullYear()).slice(2) + z(d.getMonth() + 1) + z(d.getDate()) + '-' + r;
+    } }
+  }, true);
+  document.addEventListener('wpcf7mailsent', function (e) {
+    if (!fw.contains(e.target)) return;
+    var p = form.querySelector('input[name="protocolo"]');
+    fw.querySelector('[data-proto]').textContent = p ? p.value : '';
+    fw.classList.add('done'); fw.querySelector('.ok').focus();
+    if (window.dataLayer) window.dataLayer.push({event: 'briefing_studio3d_enviado'});
+  });
+  document.addEventListener('wpcf7invalid', function (e) {
+    if (!fw.contains(e.target)) return;
+    for (var i = 0; i < steps.length; i++) { if (steps[i].querySelector('.wpcf7-not-valid')) { show(i); break; } }
+  });
+  document.addEventListener('wpcf7mailfailed', function (e) {
+    if (!fw.contains(e.target)) return;
+    var p = form.querySelector('input[name="protocolo"]'); if (p) p.value = '';
+  });
+  show(0, true);
+})();
+</script>

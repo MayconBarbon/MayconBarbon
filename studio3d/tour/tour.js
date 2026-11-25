@@ -172,7 +172,7 @@
   };
   var mode = 'decorado', orbit = {th: 0.5, ph: 0.92, r: 18}, walker = {x: 0, z: 0, yaw: 0, pitch: -0.05};
   function size() {
-    var w = root.clientWidth, h = Math.round(w * (root.clientWidth < 700 ? 1.1 : 0.62));
+    var w = root.clientWidth, h = Math.round(w * (w < 700 ? 1.4 : 0.62));
     R.setSize(w, h, false); cv.style.width = w + 'px'; cv.style.height = h + 'px'; cam.aspect = w / h; cam.updateProjectionMatrix();
     root.style.setProperty('--vi3d-h', h + 'px');
   }
