@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 730" font-family="Inter,Arial,sans-serif">
+<rect width="100%" height="100%" fill="#fbfaf7"/>
+<defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#ebe8e1" stroke-width="1"/></pattern></defs>
+<rect x="40" y="40" width="860" height="620" fill="url(#g)"/>
+<line x1="70.0" y1="70.0" x2="150.0" y2="70.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="150.0" y1="64.0" x2="470.0" y2="64.0" stroke="#3a7ca5" stroke-width="2"/>
+<line x1="150.0" y1="70.0" x2="470.0" y2="70.0" stroke="#3a7ca5" stroke-width="2"/>
+<line x1="150.0" y1="76.0" x2="470.0" y2="76.0" stroke="#3a7ca5" stroke-width="2"/>
+<line x1="470.0" y1="70.0" x2="630.0" y2="70.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="630.0" y1="64.0" x2="822.0" y2="64.0" stroke="#3a7ca5" stroke-width="2"/>
+<line x1="630.0" y1="70.0" x2="822.0" y2="70.0" stroke="#3a7ca5" stroke-width="2"/>
+<line x1="630.0" y1="76.0" x2="822.0" y2="76.0" stroke="#3a7ca5" stroke-width="2"/>
+<line x1="822.0" y1="70.0" x2="870.0" y2="70.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="870.0" y1="70.0" x2="870.0" y2="470.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="876.0" y1="470.0" x2="876.0" y2="550.0" stroke="#3a7ca5" stroke-width="2"/>
+<line x1="870.0" y1="470.0" x2="870.0" y2="550.0" stroke="#3a7ca5" stroke-width="2"/>
+<line x1="864.0" y1="470.0" x2="864.0" y2="550.0" stroke="#3a7ca5" stroke-width="2"/>
+<line x1="870.0" y1="550.0" x2="870.0" y2="630.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="870.0" y1="630.0" x2="214.0" y2="630.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="214.0" y1="630.0" x2="214.0" y2="558.0" stroke="#1d1d1f" stroke-width="2"/>
+<path d="M214.0 558.0 A72.00000000000003 72.00000000000003 0 0 1 142.0 630.0" fill="none" stroke="#9a9aa0" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="142.0" y1="630.0" x2="70.0" y2="630.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="70.0" y1="630.0" x2="70.0" y2="70.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="550.0" y1="70.0" x2="550.0" y2="278.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="550.0" y1="278.0" x2="486.0" y2="278.0" stroke="#1d1d1f" stroke-width="2"/>
+<path d="M486.0 278.0 A63.999999999999986 63.999999999999986 0 0 1 550.0 342.0" fill="none" stroke="#9a9aa0" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="550.0" y1="342.0" x2="550.0" y2="486.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="550.0" y1="486.0" x2="486.0" y2="486.0" stroke="#1d1d1f" stroke-width="2"/>
+<path d="M486.0 486.0 A63.999999999999986 63.999999999999986 0 0 1 550.0 550.0" fill="none" stroke="#9a9aa0" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="550.0" y1="550.0" x2="550.0" y2="630.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<line x1="550.0" y1="390.0" x2="870.0" y2="390.0" stroke="#1d1d1f" stroke-width="12.0" stroke-linecap="square"/>
+<text x="310.0" y="346.0" text-anchor="middle" font-size="17" font-weight="600" fill="#1d1d1f">Estar / jantar / cozinha</text>
+<text x="310.0" y="370.0" text-anchor="middle" font-size="14" fill="#6b6b73">6,00 × 7,00 m · ≈42 m²</text>
+<text x="710.0" y="226.0" text-anchor="middle" font-size="17" font-weight="600" fill="#1d1d1f">Suíte</text>
+<text x="710.0" y="250.0" text-anchor="middle" font-size="14" fill="#6b6b73">4,00 × 4,00 m · ≈16 m²</text>
+<text x="710.0" y="506.0" text-anchor="middle" font-size="17" font-weight="600" fill="#1d1d1f">Banho</text>
+<text x="710.0" y="530.0" text-anchor="middle" font-size="14" fill="#6b6b73">4,00 × 3,00 m · ≈12 m²</text>
+<line x1="70" y1="690" x2="870" y2="690" stroke="#6b6b73" stroke-width="1.2"/>
+<line x1="70" y1="682" x2="70" y2="698" stroke="#6b6b73" stroke-width="1.2"/>
+<line x1="550" y1="682" x2="550" y2="698" stroke="#6b6b73" stroke-width="1.2"/>
+<line x1="870" y1="682" x2="870" y2="698" stroke="#6b6b73" stroke-width="1.2"/>
+<text x="310" y="680" text-anchor="middle" font-size="14" fill="#6b6b73">6,00</text><text x="710" y="680" text-anchor="middle" font-size="14" fill="#6b6b73">4,00</text>
+<line x1="915" y1="70" x2="915" y2="630" stroke="#6b6b73" stroke-width="1.2"/>
+<line x1="907" y1="70" x2="923" y2="70" stroke="#6b6b73" stroke-width="1.2"/>
+<line x1="907" y1="390" x2="923" y2="390" stroke="#6b6b73" stroke-width="1.2"/>
+<line x1="907" y1="630" x2="923" y2="630" stroke="#6b6b73" stroke-width="1.2"/>
+<text x="927" y="235" font-size="14" fill="#6b6b73">4,00</text><text x="927" y="515.0" font-size="14" fill="#6b6b73">3,00</text>
+<text x="40" y="26" font-size="13" fill="#9a9aa0" letter-spacing="2">PLANTA CONCEITUAL · DEMONSTRAÇÃO · MEDIDAS EM METROS</text>
+</svg>

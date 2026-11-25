@@ -1,0 +1,78 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#f3f1ec}canvas{display:block}</style>
+<script src="three.min.js"></script><script src="plan.js"></script></head><body>
+<script>
+const RAW=(location.hash||'#clay').slice(1); const EYE=RAW==='eye'; const MODE=EYE?'final':RAW; // clay | final | eye
+const P=PLAN, W=1600, H=1200, CUT=(location.hash==='#eye')?PLAN.H:1.5; // paredes em corte a 1,50 m (convenção de planta 3D)
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+r.setSize(W,H); r.setPixelRatio(1); r.shadowMap.enabled=true; r.shadowMap.type=THREE.PCFSoftShadowMap;
+r.outputEncoding=THREE.sRGBEncoding; r.toneMapping=THREE.ACESFilmicToneMapping; r.toneMappingExposure=1.0;
+document.body.appendChild(r.domElement);
+const s=new THREE.Scene(); s.background=new THREE.Color(MODE==='final'?0xeeeae3:0xf1f1ef);
+const cam=new THREE.PerspectiveCamera(32,W/H,0.1,200);
+cam.position.set(6.6,17.5,13.8); cam.lookAt(5.0,0,3.4);
+if(EYE){cam.fov=58;cam.updateProjectionMatrix();cam.position.set(5.55,1.45,6.35);cam.lookAt(1.2,0.95,0.6);}
+s.add(new THREE.HemisphereLight(0xffffff,0xbfb8ac,MODE==="final"?0.32:0.42));
+const sun=new THREE.DirectionalLight(0xfff1dc,MODE==="final"?2.1:1.7);
+sun.position.set(-5,13,9); sun.target.position.set(5,0,3.5); s.add(sun); s.add(sun.target);
+sun.castShadow=true; sun.shadow.mapSize.set(4096,4096); const sc=sun.shadow.camera; sc.left=-10;sc.right=10;sc.top=10;sc.bottom=-10; sun.shadow.bias=-0.0004; sun.shadow.radius=4;
+const M=(c,rough=0.85)=>new THREE.MeshStandardMaterial({color:c,roughness:rough,metalness:0});
+const CLAY=M(0xf4f3f0), CLAY2=M(0xdedcd7);
+const pick=(fin,clay=CLAY)=>MODE==='final'?fin:clay;
+// coordenadas: plano x -> X, plano y -> Z
+function box(w,h,d,x,y,z,mat,shadow=true){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);m.position.set(x,y,z);m.castShadow=shadow;m.receiveShadow=true;s.add(m);return m}
+// pisos por ambiente
+function woodTex(){const c=document.createElement('canvas');c.width=512;c.height=512;const g=c.getContext('2d');
+  for(let i=0;i<16;i++){const v=150+Math.random()*30;g.fillStyle=`rgb(${v+40},${v+5},${v-35})`;g.fillRect(0,i*32,512,32);
+   g.strokeStyle='rgba(60,35,15,.25)';g.beginPath();g.moveTo(0,i*32);g.lineTo(512,i*32);g.stroke();
+   const off=Math.random()*512;g.beginPath();g.moveTo(off,i*32);g.lineTo(off,i*32+32);g.stroke();
+   for(let k=0;k<30;k++){g.strokeStyle=`rgba(90,55,25,${Math.random()*.12})`;g.beginPath();const yy=i*32+Math.random()*32;g.moveTo(0,yy);g.lineTo(512,yy+Math.random()*4-2);g.stroke();}}
+  const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(2,2);t.encoding=THREE.sRGBEncoding;return t}
+function tileTex(base,line){const c=document.createElement('canvas');c.width=256;c.height=256;const g=c.getContext('2d');g.fillStyle=base;g.fillRect(0,0,256,256);g.strokeStyle=line;g.lineWidth=2;for(let i=0;i<=256;i+=64){g.beginPath();g.moveTo(i,0);g.lineTo(i,256);g.stroke();g.beginPath();g.moveTo(0,i);g.lineTo(256,i);g.stroke()}const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(4,3);t.encoding=THREE.sRGBEncoding;return t}
+const fWood=new THREE.MeshStandardMaterial({map:woodTex(),roughness:0.6});
+const fTile=new THREE.MeshStandardMaterial({map:tileTex('#d9d6d0','#bdb8b0'),roughness:0.4});
+for(const rm of P.rooms){const mat=rm.name==='Banho'?pick(fTile,CLAY2):pick(fWood,CLAY2);
+  const f=new THREE.Mesh(new THREE.BoxGeometry(rm.w,0.04,rm.d),mat);f.position.set(rm.x+rm.w/2,-0.02,rm.y+rm.d/2);f.receiveShadow=true;s.add(f)}
+const base=box(P.W+0.6,0.3,P.D+0.6,P.W/2,-0.19,P.D/2,M(MODE==='final'?0x5b5f55:0xe6e4df));base.castShadow=false;
+// paredes com vãos
+const wallMat=pick(M(0xf6f2ea,0.9));
+P.walls.forEach((w,i)=>{const [x1,y1,x2,y2]=w;const L=Math.hypot(x2-x1,y2-y1);const ux=(x2-x1)/L,uy=(y2-y1)/L;
+  const ops=P.openings.filter(o=>o.w===i).sort((a,b)=>a.a-b.a);
+  const seg=(a,b,y0,h)=>{if(b-a<0.01||h<=0)return;const mx=x1+ux*(a+b)/2,mz=y1+uy*(a+b)/2;const horiz=Math.abs(ux)>0.5;
+    box(horiz?(b-a):P.T,h,horiz?P.T:(b-a),mx,y0+h/2,mz,wallMat)};
+  let cur=0;for(const o of ops){seg(cur,o.a,0,CUT);
+    if(o.type==='window'){seg(o.a,o.b,0,Math.min(o.sill,CUT));if(CUT>o.sill+o.h)seg(o.a,o.b,o.sill+o.h,CUT-o.sill-o.h);
+      if(MODE==='final'){const mx=x1+ux*(o.a+o.b)/2,mz=y1+uy*(o.a+o.b)/2,horiz=Math.abs(ux)>0.5;
+        const g=new THREE.Mesh(new THREE.BoxGeometry(horiz?o.b-o.a:0.03,o.h,horiz?0.03:o.b-o.a),new THREE.MeshStandardMaterial({color:0xbfd6e4,transparent:true,opacity:0.35,roughness:0.05}));g.scale.y=Math.max(0.01,(CUT-o.sill)/o.h);g.position.set(mx,(o.sill+CUT)/2,mz);if(o.sill<CUT)s.add(g);
+        if(o.sill<CUT)box(horiz?o.b-o.a:0.06,0.05,horiz?0.06:o.b-o.a,mx,o.sill,mz,M(0x2b2b2b,0.5),false);}}
+    else{if(CUT>2.1)seg(o.a,o.b,2.1,CUT-2.1)}
+    cur=o.b}
+  seg(cur,L,0,CUT)});
+// mobiliário (só na versão final; na estrutura fica a volumetria sem móveis)
+if(MODE==='final'){
+  const fab=M(0x8a9a8c,0.95), fab2=M(0xc9b8a0,0.95), oak=M(0x9a6b43,0.6), dark=M(0x2d2d2d,0.5), white=M(0xf2f2f0,0.5), stone=M(0xe6e2da,0.3), green=M(0x5f7d4f,0.9), rug=M(0xd8cdbb,1);
+  // sala
+  box(2.6,0.02,1.9,2.2,0.01,2.2,rug,false);
+  box(2.4,0.42,0.9,2.2,0.21,0.85,fab); box(2.4,0.45,0.2,2.2,0.62,0.48,fab);   // sofá
+  box(0.9,0.38,0.9,0.75,0.19,2.4,fab2);                                       // poltrona
+  box(1.1,0.35,0.6,2.2,0.18,2.2,oak);                                         // mesa de centro
+  box(1.8,0.5,0.4,2.2,0.25,3.6,dark); box(1.6,0.9,0.05,2.2,0.95,3.78,M(0x111111,0.3)); // rack + TV
+  // jantar
+  box(1.6,0.05,0.9,4.4,0.75,2.0,oak); [[3.8,1.4],[5.0,1.4],[3.8,2.6],[5.0,2.6]].forEach(([x,z])=>{box(0.45,0.45,0.45,x,0.22,z,fab2)});
+  box(0.08,0.72,0.08,3.7,0.36,1.65,oak);box(0.08,0.72,0.08,5.1,0.36,1.65,oak);box(0.08,0.72,0.08,3.7,0.36,2.35,oak);box(0.08,0.72,0.08,5.1,0.36,2.35,oak);
+  // cozinha
+  box(3.2,0.9,0.62,4.2,0.45,6.6,white); box(3.2,0.04,0.64,4.2,0.92,6.6,stone); box(1.8,0.9,0.9,4.4,0.45,5.2,white); box(1.9,0.04,1.0,4.4,0.92,5.2,stone);
+  // suíte
+  box(1.7,0.45,2.1,8.0,0.23,2.1,white); box(1.7,0.12,2.05,8.0,0.5,2.12,fab2); box(1.8,1.0,0.1,8.0,0.5,3.2,oak);
+  box(0.5,0.5,0.4,6.9,0.25,3.0,oak); box(0.5,0.5,0.4,9.1,0.25,3.0,oak); box(0.6,2.2,2.2,9.65,1.1,1.6,oak);
+  // banho
+  box(1.4,0.85,0.5,6.9,0.43,6.7,oak); box(1.4,0.04,0.52,6.9,0.87,6.7,stone); box(0.4,0.4,0.6,8.3,0.2,6.65,white);
+  box(1.2,0.02,1.2,9.3,0.01,4.75,M(0xbfc4c4,0.2),false); box(0.02,2.0,1.2,8.7,1.0,4.75,new THREE.MeshStandardMaterial({color:0xcfe0e6,transparent:true,opacity:0.3}),false);
+  // plantas
+  [[0.5,0.5],[5.5,0.45],[9.6,3.6]].forEach(([x,z])=>{box(0.35,0.4,0.35,x,0.2,z,M(0xd9d2c5));const p=new THREE.Mesh(new THREE.SphereGeometry(0.38,16,12),green);p.position.set(x,0.75,z);p.castShadow=true;s.add(p)});
+}
+if(EYE){const c=new THREE.Mesh(new THREE.BoxGeometry(P.W,0.1,P.D),M(0xf8f6f1));c.position.set(P.W/2,P.H+0.05,P.D/2);c.receiveShadow=true;s.add(c);
+ const ins=new THREE.PointLight(0xffe4c4,0.7,9);ins.position.set(3,2.4,3.5);s.add(ins);
+ const out=new THREE.RectAreaLight?null:null; s.background=new THREE.Color(0xdfe9f0);}
+r.render(s,cam); window.DONE=true;
+</script></body></html>
