@@ -46,7 +46,7 @@ REPL = {
     58: F_("IMG_2697", 1.0),                       # 0:39 -> cervejeiro na brassagem
     64: F_("IMG_2622", 0.3, focus=(0.2, 0.5)),     # brinde reduzido -> explicação ao senhor de azul
     65: F_("IMG_2678", 1.0),                       # brinde reduzido -> operador despejando malte
-    73: F_("S26_fachada", 0.0, zoom=(1.0, 1.08)),  # 0:53 -> SIMESPI visto do alto
+    73: F_("S26_fachada", 0.7, zoom=(1.15, 1.25), focus=(0.63, 0.15)),  # 0:53 -> SIMESPI visto do alto
 }
 if SINGLE:
     for k_, sp in REPL.items():
