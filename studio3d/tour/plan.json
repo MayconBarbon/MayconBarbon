@@ -1,0 +1,32 @@
+{
+  "nome": "Casa térrea 2 dormitórios · demonstração",
+  "W": 10.5, "D": 7.5, "T": 0.15, "H": 2.8,
+  "casa": [0, 0, 8, 6],
+  "walls": [
+    [0,0,8,0],[8,0,8,6],[8,6,0,6],[0,6,0,0],
+    [3,0,3,3],[0,3,4,3],[4,3,4,6],[4.5,0,4.5,2],[3,2,4.5,2]
+  ],
+  "openings": [
+    {"w":3,"a":3.8,"b":5.0,"type":"window","sill":1.0,"h":1.2},
+    {"w":3,"a":0.9,"b":2.1,"type":"window","sill":1.0,"h":1.2},
+    {"w":2,"a":5.4,"b":6.6,"type":"window","sill":1.0,"h":1.2},
+    {"w":2,"a":1.6,"b":3.0,"type":"window","sill":0.5,"h":1.7},
+    {"w":0,"a":3.5,"b":4.0,"type":"window","sill":1.6,"h":0.5},
+    {"w":0,"a":5.8,"b":7.2,"type":"window","sill":1.1,"h":1.0},
+    {"w":1,"a":4.1,"b":5.1,"type":"door"},
+    {"w":2,"a":0.3,"b":1.2,"type":"door"},
+    {"w":4,"a":2.1,"b":2.9,"type":"door"},
+    {"w":6,"a":0.2,"b":1.0,"type":"door"},
+    {"w":8,"a":0.4,"b":1.1,"type":"door"}
+  ],
+  "rooms": [
+    {"name":"Dormitório","x":0,"y":0,"w":3,"d":3,"floor":"wood"},
+    {"name":"Banheiro","x":3,"y":0,"w":1.5,"d":2,"floor":"tile"},
+    {"name":"Circulação","x":3,"y":2,"w":1.5,"d":1,"floor":"wood","nolabel":true},
+    {"name":"Cozinha","x":4.5,"y":0,"w":3.5,"d":3,"floor":"stone"},
+    {"name":"Dormitório casal","x":0,"y":3,"w":4,"d":3,"floor":"wood"},
+    {"name":"Sala","x":4,"y":3,"w":4,"d":3,"floor":"wood"},
+    {"name":"Área","x":8,"y":2.5,"w":2.5,"d":5,"floor":"deck","ext":true},
+    {"name":"Área","x":4,"y":6,"w":4,"d":1.5,"floor":"deck","ext":true,"nolabel":true}
+  ]
+}
