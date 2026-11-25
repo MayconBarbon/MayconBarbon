@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 P=../../portfolio/construtoras
 declare -A DIR=([essencial]=01-essencial [acabamentos]=02-acabamentos [decorado]=03-decorado [cinematic]=04-cinematic)
 for id in "$@"; do
-  for o in h v; do
+  for o in ${ORIENT:-h v}; do
     F=frames/${id}_$o; [ -d $F ] || continue
     n=$(ls $F | wc -l); dur=$(python3 -c "print({'essencial':25,'acabamentos':30,'decorado':40,'cinematic':60}['$id'])")
     [ "$n" -ge $((dur*24)) ] || { echo "incompleto $id $o: $n"; continue; }
