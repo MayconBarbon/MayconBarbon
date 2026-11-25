@@ -19,7 +19,7 @@ left=re.findall(r'assets/[\w/.-]+\.(?:webp|png|jpg|mp4)',b); print('não mapeado
 a,c=b.split('<!--CF7-->')
 content='<!-- wp:html -->\n'+a+'\n<!-- /wp:html -->\n<!-- wp:shortcode -->\n[contact-form-7 id="%d" html_class="vi3d-form"]\n<!-- /wp:shortcode -->\n<!-- wp:html -->\n'%st['cf7_id']+c+'\n<!-- /wp:html -->'
 pid=st.get('page_id')
-data={'title':'Studio 3D para construtoras','slug':'construtoras','status':'draft','template':'elementor_canvas','content':content}
+data={'title':'Studio 3D para construtoras','slug':'construtoras','status':os.environ.get('STATUS','draft'),'template':'elementor_canvas','content':content}
 r=ss.post(B+'/wp-json/wp/v2/pages'+(f'/{pid}' if pid else ''),json=data,timeout=120); j=r.json(); print(r.status_code,j.get('id'),j.get('status'),j.get('link'))
 st['page_id']=j['id']; json.dump(st,open(W+'/studio3d.json','w'))
 r=ss.put(B+f'/wp-json/seopress/v1/posts/{j["id"]}/title-description-metas',json={'title':seo_t,'description':seo_d}); print('seo',r.status_code)

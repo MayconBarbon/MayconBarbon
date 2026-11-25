@@ -1,6 +1,6 @@
 # Vídeo Imóvel Studio 3D · relatório e proposta de operação
 
-Status: **rascunho**. A página /construtoras (ID 625) não está publicada.
+Status: **publicada** em 25/11/2026 em https://videoimovel.com.br/construtoras/ (página 625). Política de privacidade publicada em /politica-de-privacidade/ (página 632).
 
 ## 1. O que foi entregue
 
@@ -26,19 +26,23 @@ As plantas que você enviou foram **redesenhadas** e não publicadas como imagem
 | Formulário: avança da etapa 1 para a 2 depois de preenchida | ✅ | ✅ |
 | Erros de JavaScript na página | nenhum | nenhum |
 | Contraste dos textos (WCAG AA) | ✅ menor razão 5,4:1 | — |
-| Envio real do formulário (e-mail para o admin) | ⏳ não feito, porque envia e-mail | ⏳ |
-| Upload real de arquivo de 6 MB | ⏳ | ⏳ |
+| Envio real do formulário no site publicado (visitante, com PDF anexado) | ✅ protocolo VI3D-261125-WEHH, salvo no Flamingo | — |
+| Etapa de vídeo pulada quando o Cinematic não é marcado | ✅ | — |
 | Lighthouse (performance) na página publicada | ⏳ depende da publicação | ⏳ |
 
 Observação: com o administrador logado, o widget de suporte da Hostinger cobre a tela no celular. Visitantes não veem esse widget.
 
-## 3. Pendências que dependem de você
+## 3. Feito após a autorização (25/11/2026)
+- Página /construtoras publicada, com SEO (title, description, canonical) conferido na versão pública.
+- Flamingo instalado e ativo: cada briefing fica em Flamingo › Mensagens recebidas, com nome, e-mail e o assunto "Briefing [protocolo] · empresa · tipo".
+- Política de privacidade publicada e ligada no aceite do formulário, no rodapé da página e no rodapé da home.
+- Home: botão "Ainda na planta? Conheça o Studio 3D" na seção de construtoras e link no rodapé. Cache do LiteSpeed limpo.
+- Correção encontrada no teste: o CF7 tratava as perguntas de escolha única como obrigatórias. Elas viraram caixas de escolha única opcionais.
 
-1. **Aprovar a publicação** da página 625. Depois disso: incluir no sitemap (automático no SEOPress), limpar o cache do LiteSpeed e criar links internos (home, seção Vídeo premium e blog).
-2. **Instalar o Flamingo** (plugin gratuito do mesmo autor do CF7). Ele guarda cada briefing no painel do WordPress. Hoje o briefing chega só por e-mail.
-3. **Ativar uma proteção anti-spam** (Cloudflare Turnstile ou reCAPTCHA v3 na integração do CF7). Depois disso pode ser ligado o e-mail de confirmação ao solicitante, que já está escrito e desativado.
-4. **Página de política de privacidade**: o aceite do formulário cita a LGPD, então convém ter a página revisada antes de publicar.
-5. **Teste de envio real**: me autorize e eu envio um briefing marcado como TESTE.
+## Pendente
+- **Anti-spam:** criar um widget gratuito do Cloudflare Turnstile (site key + secret key) e colar as chaves em WordPress › Contato › Integração › Cloudflare Turnstile. As chaves não devem ser enviadas pelo chat. Depois disso, ativar o e-mail de confirmação ao solicitante (mail_2, já escrito).
+- Revisão jurídica da política de privacidade (o texto é uma versão inicial).
+- Lighthouse da página publicada.
 
 ## 4. Proposta de operação
 
