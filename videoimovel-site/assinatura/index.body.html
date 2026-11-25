@@ -57,7 +57,9 @@ body.elementor-template-canvas{margin:0;background:#fbfbfd}
 .vi-a .rules{margin-top:22px;color:var(--muted);font-size:.9rem;text-align:center}
 .vi-a .founder{margin-top:18px;border:1px dashed var(--acc);border-radius:18px;padding:16px 20px;text-align:center;color:var(--fg)}
 .vi-a .founder b{color:var(--acc)}
-.vi-a .kit{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,4vw,48px)}
+.vi-a .kit{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr) auto;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,4vw,48px)}
+.vi-a .kit .mock{margin:-12px 0 -12px -12px}
+.vi-a .kit .mock img{width:100%;height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.25))}
 .vi-a .kit h2{font-size:clamp(1.7rem,3vw,2.4rem)}
 .vi-a .kit p{color:var(--muted);margin:12px 0 0}
 .vi-a .kit p.eb{color:var(--acc);margin:0 0 14px}
@@ -80,7 +82,7 @@ body.elementor-template-canvas{margin:0;background:#fbfbfd}
 .vi-a footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .vi-a footer a{color:var(--muted)}
 .vi-a :focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:10px}
-@media (max-width:900px){.vi-a .hero .w,.vi-a .steps,.vi-a .plans,.vi-a .kit{grid-template-columns:1fr}.vi-a .plan.hi{order:-1}.vi-a .kit .pr{text-align:left}}
+@media (max-width:900px){.vi-a .hero .w,.vi-a .steps,.vi-a .plans,.vi-a .kit{grid-template-columns:1fr}.vi-a .plan.hi{order:-1}.vi-a .kit .pr{text-align:left}.vi-a .kit .mock{margin:0;max-width:440px}}
 @media (prefers-reduced-motion:reduce){.vi-a .btn{transition:none}}
 </style>
 <div class="vi-a">
@@ -146,6 +148,7 @@ body.elementor-template-canvas{margin:0;background:#fbfbfd}
 
   <section class="band"><div class="w">
     <div class="kit">
+      <a class="mock" href="/kit/"><img src="assets/kit-ebook-mockup.webp" alt="E-book Kit Corretor que Filma: capa e páginas internas com roteiros e checklist" width="1000" height="793" loading="lazy"></a>
       <div>
         <p class="eb">Porta de entrada</p>
         <h2>Kit Corretor que Filma</h2>
