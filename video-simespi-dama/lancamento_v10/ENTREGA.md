@@ -19,3 +19,17 @@ O resto é idêntico à v9: trilha, textos, demais cenas e cartela.
 - **Mantidos:** as batidas, os textos (painel marinho no topo), a locução e as transições.
 - **Brinde (0:42):** as duas taças, com as logos SIMESPI e 35 anos e em câmera lenta.
 - **Cartela final:** as três logos empilhadas.
+
+### Ajustes no Reels (foco no senhor de óculos e camiseta azul, mais processo da Dama, menos brinde)
+| Tempo | Antes | Agora |
+|---|---|---|
+| 0:02–0:03 (print 1) | garrafa saindo da caixa | garrafas na linha de envase |
+| 0:03–0:04 (print 2) | caixa vazia | tanques DAMA |
+| 0:08 (print 3) | homem de preto entrando | senhor de azul entrando, recebido pelo mestre cervejeiro |
+| 0:18 (print 4) | suporte com rótulos | tanque DAMA |
+| 0:20–0:21 (print 5) | mestre cervejeiro e mulher de colete | close do senhor de azul com o mestre cervejeiro |
+| 0:30–0:31 | rótulo na tela do computador | linha de envase |
+| 0:37 | rotulagem manual | garrafas rotuladas na linha |
+| 0:38–0:39 | computador | cervejeiro na brassagem |
+| 0:44–0:46 | 2 planos do brinde | explicação ao senhor de azul e operador despejando malte (o brinde fica só em 0:42–0:43) |
+| 0:53 | rolo de rótulos | SIMESPI visto do alto |

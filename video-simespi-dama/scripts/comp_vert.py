@@ -33,6 +33,23 @@ SEQ[i0:i1] = [
     ("tri", 3, [F_("BRS_2806", 3.60), F_("BRS_2808", 3.20), F_("BRS_2805", 4.40)], "cut"),
     ("tri", 2, [F_("BRS_2805", 5.60), F_("BRS_2806", 4.40), F_("BRS_2808", 4.80)], "cut"),
 ]
+# ---- Reels: trocas pedidas (foco no senhor de óculos e camiseta azul, mais processo da Dama, menos brinde)
+REPL = {
+    4:  F_("IMG_2658", 1.0),                       # print 1 -> garrafas na linha de envase
+    5:  F_("IMG_2689", 0.5),                       # print 2 -> tanques DAMA
+    10: F_("IMG_2609", 7.0),                       # print 3 -> senhor de azul entrando
+    29: F_("IMG_2670", 0.5),                       # print 4 -> tanque DAMA
+    33: F_("IMG_2619", 9.3),                       # print 5 -> senhor de azul com o mestre cervejeiro
+    46: F_("IMG_2643", 0.5),                       # 0:31 -> linha de envase
+    56: F_("IMG_2661", 0.5),                       # 0:37 -> garrafas rotuladas na linha
+    58: F_("IMG_2697", 1.0),                       # 0:39 -> cervejeiro na brassagem
+    64: F_("IMG_2622", 0.3, focus=(0.2, 0.5)),     # brinde reduzido -> explicação ao senhor de azul
+    65: F_("IMG_2678", 1.0),                       # brinde reduzido -> operador despejando malte
+    73: F_("S26_fachada", 0.0, zoom=(1.0, 1.08)),  # 0:53 -> SIMESPI visto do alto
+}
+if SINGLE:
+    for k_, sp in REPL.items():
+        it = SEQ[k_]; SEQ[k_] = ("full", it[1], sp, it[3])
 _orig_src = g['src_path']
 def src_path(name):
     if name.startswith("BRS_"): return f"{S}/v_br/{name}.mp4"
