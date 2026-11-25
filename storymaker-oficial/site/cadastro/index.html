@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR" data-tema="laranja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faça parte da rede de Storymakers | Storymaker Oficial</title>
+  <meta name="description" content="Cadastre seu portfólio de Storymaker ou Socialmaker. A DocMe Comunicação está formando uma rede de profissionais de diferentes cidades. O cadastro passa por análise interna.">
+  <!-- Fase 1 (minuta da política em revisão): não indexar até a publicação oficial. -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#e7570c">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo rolou" id="topo">
+    <div class="wrap topo__in">
+      <a class="logo" href="../index.html" aria-label="Storymaker Oficial, página inicial">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__txt">Storymaker<b>Oficial</b></span>
+      </a>
+      <a class="btn btn--sm topo__volta" href="../index.html">Conhecer o site</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="case-hero cad-hero">
+      <div class="wrap">
+        <p class="eyebrow">Rede Storymaker Oficial · Cadastro de portfólios</p>
+        <h1>Faça parte da rede de Storymakers.</h1>
+        <p class="lead">A DocMe Comunicação está formando uma rede de profissionais de Storymaker e Socialmaker de diferentes cidades. Envie seus dados profissionais, sua região de atuação e o link do seu portfólio para análise.</p>
+        <a class="btn cad-hero__btn" href="#formulario">Cadastrar meu portfólio</a>
+      </div>
+    </section>
+
+    <section class="sec cad-info" aria-labelledby="t-como">
+      <div class="wrap">
+        <h2 class="h2" id="t-como">Como funciona</h2>
+        <ol class="cad-passos">
+          <li><b>Você envia</b><span>Dados profissionais, região em que atende e o link do portfólio. Leva poucos minutos e dá para fazer pelo celular.</span></li>
+          <li><b>A equipe analisa</b><span>Uma análise interna da DocMe olha o portfólio e as áreas de atuação. Não é certificação nem avaliação formal.</span></li>
+          <li><b>Podemos entrar em contato</b><span>Se precisarmos de algum detalhe ou se surgir uma oportunidade compatível com o seu perfil.</span></li>
+        </ol>
+
+        <div class="cad-aviso" role="note">
+          <h3>Antes de começar, é importante saber</h3>
+          <ul>
+            <li>Preencher o formulário <b>não garante</b> contratação, indicação nem inclusão automática no diretório.</li>
+            <li>Todo cadastro é <b>analisado pela equipe</b>. Nenhum perfil é publicado automaticamente.</li>
+            <li>Aparecer publicamente no diretório é <b>opcional</b> e depende de uma autorização específica sua.</li>
+            <li>Oportunidades futuras poderão ser divulgadas para a rede, sem promessa de quantidade de trabalhos.</li>
+            <li>Nesta fase não há área de membros, login, painel pessoal nem aplicativo para baixar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec--alt" id="formulario" aria-labelledby="t-form">
+      <div class="wrap cad-wrap">
+        <h2 class="h2" id="t-form">Cadastre seu portfólio</h2>
+        <p class="sub">Campos com <span aria-hidden="true">*</span><span class="sr">asterisco</span> são obrigatórios. Prefira um link de portfólio (Instagram, Google Drive, YouTube, Behance ou site): não é preciso enviar arquivos.</p>
+
+        <div class="cad-progresso" aria-hidden="true"><span id="barra"></span></div>
+        <p class="cad-etapa-n" id="etapa-n" aria-live="polite"></p>
+
+        <form id="form" class="cad-form" action="enviar.php" method="post" novalidate>
+          <input type="hidden" name="t" id="t" value="">
+          <div class="cad-hp" aria-hidden="true"><label>Não preencha <input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>
+
+          <fieldset class="etapa" data-titulo="Sobre você">
+            <legend>1. Sobre você</legend>
+            <label class="campo">Nome profissional *
+              <input name="nome_profissional" required maxlength="120" autocomplete="name">
+              <small>Como você assina seu trabalho.</small></label>
+            <div class="linha">
+              <label class="campo">Cidade *
+                <input name="cidade" required maxlength="80" autocomplete="address-level2"></label>
+              <label class="campo campo--uf">Estado *
+                <select name="uf" required autocomplete="address-level1">
+                  <option value="">UF</option>
+                  <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+                </select></label>
+            </div>
+            <label class="campo">Regiões ou cidades em que aceita trabalhar *
+              <input name="regioes" required maxlength="300" placeholder="Ex.: minha cidade e região, capital do estado">
+            </label>
+          </fieldset>
+
+          <fieldset class="etapa" data-titulo="Seu trabalho">
+            <legend>2. Seu trabalho</legend>
+            <div class="campo" role="group" aria-labelledby="l-areas">
+              <span id="l-areas">Áreas de atuação * <small>(marque todas que se aplicam)</small></span>
+              <div class="chips">
+                <label><input type="checkbox" name="areas[]" value="corporativos"><span>Eventos corporativos</span></label>
+                <label><input type="checkbox" name="areas[]" value="casamentos"><span>Casamentos</span></label>
+                <label><input type="checkbox" name="areas[]" value="festas"><span>Festas e eventos sociais</span></label>
+                <label><input type="checkbox" name="areas[]" value="pequenos"><span>Pequenos negócios</span></label>
+                <label><input type="checkbox" name="areas[]" value="marcas"><span>Conteúdo para marcas</span></label>
+                <label><input type="checkbox" name="areas[]" value="tempo_real"><span>Cobertura mobile em tempo real</span></label>
+                <label><input type="checkbox" name="areas[]" value="edicao"><span>Edição de vídeos curtos</span></label>
+              </div>
+            </div>
+            <label class="campo">Link do portfólio *
+              <input name="portfolio" type="url" inputmode="url" required maxlength="300" placeholder="https://">
+              <small>Uma pasta, um perfil ou uma página com seus trabalhos.</small></label>
+            <label class="campo">Instagram profissional *
+              <input name="instagram" required maxlength="200" placeholder="@seuperfil" autocapitalize="none" autocorrect="off"></label>
+            <label class="campo">LinkedIn, site ou outra rede profissional <small>(opcional)</small>
+              <input name="outra_rede" type="url" inputmode="url" maxlength="300" placeholder="https://"></label>
+            <label class="campo">Breve apresentação profissional *
+              <textarea name="apresentacao" required maxlength="800" rows="4" placeholder="Há quanto tempo trabalha com imagem, que tipo de evento ou negócio atende, o que gosta de fazer."></textarea>
+              <small><span data-conta="apresentacao">0</span>/800</small></label>
+          </fieldset>
+
+          <fieldset class="etapa" data-titulo="Contato">
+            <legend>3. Contato</legend>
+            <p class="dica">Informe pelo menos um: e-mail ou WhatsApp.</p>
+            <label class="campo">E-mail
+              <input name="contato_email" type="email" inputmode="email" maxlength="160" autocomplete="email"></label>
+            <label class="campo">WhatsApp com DDD
+              <input name="contato_whatsapp" type="tel" inputmode="tel" maxlength="20" autocomplete="tel" placeholder="(00) 00000-0000"></label>
+            <label class="campo">Observações <small>(opcional)</small>
+              <textarea name="observacoes" maxlength="800" rows="3"></textarea></label>
+          </fieldset>
+
+          <fieldset class="etapa" data-titulo="Autorizações">
+            <legend>4. Autorizações</legend>
+            <p class="dica">Cada autorização é separada. Só a primeira é necessária para analisarmos o cadastro; as outras são opcionais e você pode pedir para mudar depois.</p>
+
+            <label class="consent">
+              <input type="checkbox" name="consent_analise" value="sim" required>
+              <span><b>A. Análise do cadastro (necessária)</b> Autorizo a DocMe Comunicação a utilizar as informações enviadas para analisar meu perfil profissional e entrar em contato sobre este cadastro.</span>
+            </label>
+
+            <label class="consent">
+              <input type="checkbox" name="consent_publicacao" value="sim" data-abre="campos-pub">
+              <span><b>B. Publicação futura no diretório (opcional)</b> Se meu perfil for aprovado e eu for convidado(a) para o diretório Storymaker Oficial, autorizo a publicação dos campos profissionais que eu selecionar, como nome profissional, cidade, áreas de atuação, redes e portfólio.</span>
+            </label>
+            <div class="sub-opcoes" id="campos-pub" hidden>
+              <p>Quais campos podem aparecer? <small>Seu e-mail e seu WhatsApp nunca são publicados.</small></p>
+              <div class="chips chips--sm">
+                <label><input type="checkbox" name="campos_publicaveis[]" value="nome_profissional"><span>Nome profissional</span></label>
+                <label><input type="checkbox" name="campos_publicaveis[]" value="cidade"><span>Cidade e estado</span></label>
+                <label><input type="checkbox" name="campos_publicaveis[]" value="regioes"><span>Regiões em que atende</span></label>
+                <label><input type="checkbox" name="campos_publicaveis[]" value="areas"><span>Áreas de atuação</span></label>
+                <label><input type="checkbox" name="campos_publicaveis[]" value="apresentacao"><span>Apresentação</span></label>
+                <label><input type="checkbox" name="campos_publicaveis[]" value="instagram"><span>Instagram</span></label>
+                <label><input type="checkbox" name="campos_publicaveis[]" value="outra_rede"><span>LinkedIn, site ou outra rede</span></label>
+                <label><input type="checkbox" name="campos_publicaveis[]" value="portfolio"><span>Link do portfólio</span></label>
+              </div>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" name="consent_compartilhar_contato" value="sim">
+              <span><b>C. Compartilhar meu contato (opcional)</b> Autorizo que a DocMe compartilhe meu contato profissional com uma pessoa ou empresa interessada em contratar meus serviços, caso eu seja incluído(a) no diretório.</span>
+            </label>
+
+            <label class="consent">
+              <input type="checkbox" name="consent_novidades" value="sim" data-abre="canal">
+              <span><b>D. Novidades da rede (opcional)</b> Quero receber comunicados e novidades da rede Storymaker Oficial. A análise do cadastro não depende desta opção.</span>
+            </label>
+            <div class="sub-opcoes" id="canal" hidden>
+              <p>Por onde?</p>
+              <div class="chips chips--sm">
+                <label><input type="radio" name="canal_novidades" value="email"><span>E-mail</span></label>
+                <label><input type="radio" name="canal_novidades" value="whatsapp"><span>WhatsApp</span></label>
+              </div>
+            </div>
+
+            <p class="privacidade">Antes de enviar, leia a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade do cadastro</a>: quem é responsável pelos dados, para que são usados, quem acessa e como pedir alteração ou exclusão.</p>
+          </fieldset>
+
+          <div class="cad-erros" id="erros" role="alert" hidden></div>
+
+          <div class="cad-nav">
+            <button type="button" class="btn btn--ghost" id="voltar">Voltar</button>
+            <button type="button" class="btn" id="avancar">Continuar</button>
+            <button type="submit" class="btn" id="enviar">Enviar cadastro</button>
+          </div>
+        </form>
+
+        <div class="cad-ok" id="ok" tabindex="-1" hidden>
+          <h3>Recebemos seu portfólio.</h3>
+          <p>A equipe da DocMe vai analisar as informações e poderá entrar em contato caso precise de algum detalhe. O cadastro não garante contratação nem publicação no diretório.</p>
+          <a class="link-seta" href="../index.html">Conhecer o Storymaker Oficial</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="wrap rodape__in">
+      <div>
+        <a class="logo logo--claro" href="../index.html"><span class="logo__mark" aria-hidden="true"></span><span class="logo__txt">Storymaker<b>Oficial</b></span></a>
+        <p class="assinatura">Método desenvolvido pela DocMe Comunicação.</p>
+      </div>
+      <nav class="rodape__nav" aria-label="Rodapé"><a href="privacidade.html">Privacidade do cadastro</a><a href="../index.html">Site Storymaker Oficial</a></nav>
+    </div>
+  </footer>
+  <script src="cadastro.js"></script>
+</body>
+</html>

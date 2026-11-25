@@ -1,0 +1,79 @@
+/* Cadastro de portfólios — complementa ../assets/css/style.css (mesma identidade, sem alterar o site). */
+.topo__volta { margin-left: auto; }
+.cad-hero { padding-bottom: 64px; }
+.cad-hero .lead { max-width: 60ch; }
+.cad-hero__btn { margin-top: 26px; }
+[data-tema="laranja"] .cad-hero .btn { background: var(--grafite); border-color: var(--grafite); color: #fff; }
+[data-tema="laranja"] .cad-hero .btn:hover { background: var(--texto); border-color: var(--texto); }
+
+.cad-passos { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: p; }
+.cad-passos li { counter-increment: p; background: var(--fundo-alt); border-radius: var(--raio); padding: 22px; display: grid; gap: 8px; }
+.cad-passos li::before { content: counter(p); width: 34px; height: 34px; border-radius: 50%; background: var(--laranja-escuro, #c2410c); color: #fff; font: 700 1rem/34px var(--display); text-align: center; }
+.cad-passos b { font-family: var(--display); font-size: 1.1rem; }
+.cad-passos span { color: var(--suave); }
+
+.cad-aviso { margin-top: 28px; border: 1px solid var(--linha); border-left: 4px solid var(--laranja); border-radius: var(--raio-sm); padding: 20px 22px; }
+.cad-aviso h3 { font-size: 1.05rem; margin-bottom: 10px; }
+.cad-aviso ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+
+.cad-wrap { max-width: 720px; }
+.cad-progresso { height: 6px; background: var(--linha); border-radius: 99px; margin-top: 24px; overflow: hidden; }
+.cad-progresso span { display: block; height: 100%; width: 25%; background: var(--laranja); transition: width .3s; }
+.cad-etapa-n { font-size: .9rem; color: var(--suave); margin: 10px 0 0; }
+
+.cad-form { margin-top: 12px; }
+.etapa { border: 0; margin: 0; padding: 0; display: grid; gap: 18px; }
+.etapa + .etapa { margin-top: 36px; }
+.js .etapa:not(.ativa) { display: none; }
+.js .etapa + .etapa { margin-top: 0; }
+.etapa legend { font: 700 1.35rem var(--display); margin-bottom: 18px; padding: 0; }
+.campo { display: grid; gap: 8px; font-weight: 600; }
+.campo small, .sub-opcoes small, .campo > span small { font-weight: 400; color: var(--suave); }
+.campo input, .campo select, .campo textarea { font: 400 1rem/1.4 var(--corpo); color: var(--texto); background: #fff; border: 1.5px solid #cfcdd5; border-radius: var(--raio-sm); padding: 13px 14px; width: 100%; min-height: 50px; }
+.campo textarea { resize: vertical; }
+.campo input:focus, .campo select:focus, .campo textarea:focus { outline: 3px solid rgba(231, 87, 12, .35); border-color: var(--laranja); }
+.campo [aria-invalid="true"] { border-color: #b42318; }
+.linha { display: grid; grid-template-columns: 1fr 120px; gap: 12px; }
+.dica { margin: 0; color: var(--suave); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chips label { position: relative; }
+.chips input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.chips span { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 16px; border: 1.5px solid #cfcdd5; border-radius: 999px; background: #fff; font-weight: 500; }
+.chips input:checked + span { background: var(--grafite); border-color: var(--grafite); color: #fff; }
+.chips input:checked + span::before { content: "✓"; margin-right: 8px; color: var(--laranja); font-weight: 700; }
+.chips input:focus-visible + span { outline: 3px solid var(--laranja); outline-offset: 2px; }
+.chips--sm span { min-height: 40px; font-size: .95rem; }
+
+.consent { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; background: #fff; border: 1.5px solid var(--linha); border-radius: var(--raio-sm); padding: 16px; cursor: pointer; }
+.consent input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--laranja-escuro, #c2410c); }
+.consent b { display: block; margin-bottom: 4px; }
+.consent:has(input:checked) { border-color: var(--laranja); }
+.sub-opcoes { margin: -6px 0 0 40px; display: grid; gap: 10px; }
+.sub-opcoes p { margin: 0; font-weight: 600; }
+.privacidade { font-size: .95rem; margin: 6px 0 0; }
+.privacidade a { color: var(--laranja-escuro, #c2410c); font-weight: 600; }
+
+.cad-erros { margin-top: 22px; background: #fef3f2; border: 1px solid #f4c7c3; color: #7a271a; border-radius: var(--raio-sm); padding: 14px 18px; }
+.cad-erros ul { margin: 6px 0 0; padding-left: 18px; }
+.cad-nav { display: flex; gap: 12px; justify-content: space-between; margin-top: 28px; }
+.cad-nav .btn { min-width: 140px; }
+.js #enviar, .js #voltar[hidden], .js #avancar[hidden] { display: none; }
+.js #enviar.mostra { display: inline-flex; }
+.cad-ok { margin-top: 24px; background: #fff; border-radius: var(--raio); border: 1px solid var(--linha); border-top: 6px solid var(--laranja); padding: 28px; }
+.cad-ok h3 { font-size: 1.5rem; }
+.cad-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (max-width: 760px) {
+  .cad-passos { grid-template-columns: 1fr; }
+  .cad-nav .btn { flex: 1; min-width: 0; }
+  .sub-opcoes { margin-left: 0; }
+  .topo__volta { padding: 0 12px; }
+}
+
+/* botão secundário e rodapé */
+[data-tema="laranja"] .cad-nav .btn--ghost { background: transparent; color: var(--texto); border-color: #cfcdd5; }
+[data-tema="laranja"] .cad-nav .btn--ghost:hover { background: #fff; border-color: var(--grafite); }
+
+.rodape .logo__txt { color: #fff; }
+.rodape .logo__txt b { color: var(--laranja); }

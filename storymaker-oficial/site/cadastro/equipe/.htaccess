@@ -1,0 +1,5 @@
+# Área da equipe: nunca indexar nem listar. (Opcional na Hostinger: ativar também "Proteger diretório" no hPanel.)
+Options -Indexes
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
