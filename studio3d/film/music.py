@@ -209,5 +209,14 @@ def b4(buf):
     endcard(buf, 55.0, 60, 0.24)
 track_list.append(('cinematic', 60, b4))
 
+# ---------- teste de estilo · 12 s
+def b5(buf):
+    buf += pad(16, [(0, 6, [45, 52, 57, 61, 64]), (6, 12, [50, 57, 62, 66, 69])], 0.14, 2200)
+    place(buf, riser(3.0), 2.8, 0.4); place(buf, impact(3.5), 5.8, 0.55)
+    arpeggio(buf, 5.8, 10.5, 0.045, 0.5, 1.3)
+    drums(buf, 5.8, 10.4, 0.4, 0.06)
+    endcard(buf, 10.5, 12, 0.2)
+track_list.append(('referencia', 12, b5))
+
 if __name__ == '__main__':
     for name, dur, b in track_list: track(name, dur, b)

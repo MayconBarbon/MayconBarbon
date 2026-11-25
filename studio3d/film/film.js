@@ -381,10 +381,17 @@
   })();
 
   // ---------- céu de entardecer (vistas externas do edifício)
-  var skyU = {top: {value: new T.Color(0x1d2a44)}, mid: {value: new T.Color(0xc98d63)}, bot: {value: new T.Color(0x2b2622)}, k: {value: 0}};
+  var skyU = {top: {value: new T.Color(0x1d2a44)}, mid: {value: new T.Color(0xc98d63)}, bot: {value: new T.Color(0x2b2622)}, k: {value: 0}, cloud: {value: 0}};
   var sky = new T.Mesh(new T.SphereGeometry(600, 32, 16), new T.ShaderMaterial({side: T.BackSide, depthWrite: false, uniforms: skyU,
     vertexShader: 'varying vec3 vp; void main(){ vp = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
-    fragmentShader: 'uniform vec3 top; uniform vec3 mid; uniform vec3 bot; varying vec3 vp; void main(){ float y = vp.y; vec3 c = y > 0.0 ? mix(mid, top, pow(clamp(y*2.2,0.0,1.0),0.7)) : mix(mid, bot, clamp(-y*6.0,0.0,1.0)); gl_FragColor = vec4(c,1.0); }'}));
+    fragmentShader: [
+      'uniform vec3 top; uniform vec3 mid; uniform vec3 bot; uniform float cloud; varying vec3 vp;',
+      'float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }',
+      'float n(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f); return mix(mix(h(i), h(i+vec2(1.0,0.0)), f.x), mix(h(i+vec2(0.0,1.0)), h(i+vec2(1.0,1.0)), f.x), f.y); }',
+      'float fbm(vec2 p){ float v = 0.0, a = 0.5; for (int i = 0; i < 5; i++) { v += a * n(p); p *= 2.03; a *= 0.5; } return v; }',
+      'void main(){ float y = vp.y; vec3 c = y > 0.0 ? mix(mid, top, pow(clamp(y*2.2,0.0,1.0),0.7)) : mix(mid, bot, clamp(-y*6.0,0.0,1.0));',
+      ' if (cloud > 0.0 && y > 0.02) { vec2 q = vp.xz / (y + 0.12) * 2.6; float d = fbm(q + vec2(3.1, 7.7)) * 0.75 + fbm(q * 3.0) * 0.25; float m = smoothstep(0.5, 0.66, d) * smoothstep(0.02, 0.25, y) * cloud; vec3 cc = mix(vec3(0.82,0.86,0.88), vec3(1.0), smoothstep(0.55, 0.9, d)); c = mix(c, cc, m); }',
+      ' gl_FragColor = vec4(c,1.0); }'].join('\n')}));
   sky.visible = false; S.add(sky);
   var fogGold = new T.Fog(0xb98a68, 90, 420), fogDusk = new T.Fog(0x4a4256, 80, 380);
   // ---------- ambiente HDRI (luz e vista pelas janelas)
@@ -478,8 +485,12 @@
       lightCur = name;
       S.traverse(function (o) { if (o.isMesh) { var ms = Array.isArray(o.material) ? o.material : [o.material]; ms.forEach(function (m) { if (m.isMeshStandardMaterial) { if (m.userData.baseEnv === undefined) m.userData.baseEnv = m.envMapIntensity; m.envMapIntensity = m.userData.baseEnv * L.envI; } }); } });
     }
-    sky.visible = bg === 'sky'; S.fog = null;
-    if (bg === 'sky') {
+    sky.visible = bg === 'sky' || bg === 'skyday'; S.fog = null; skyU.cloud.value = 0;
+    towerGlass.forEach(function (m, i) { var day = bg === 'skyday'; m.color.setHex(day ? (i ? 0x24414c : 0x2b4c58) : (i ? 0x5d717d : 0x52646f)).convertSRGBToLinear(); m.metalness = day ? 0.85 : 0.5; m.roughness = day ? 0.04 : 0.08; });
+    if (bg === 'skyday') {
+      skyU.top.value.setHex(0x1f93a6).convertSRGBToLinear(); skyU.mid.value.setHex(0xbfe4e8).convertSRGBToLinear(); skyU.bot.value.setHex(0x6d7a78).convertSRGBToLinear();
+      skyU.cloud.value = 1; S.background = null;
+    } else if (bg === 'sky') {
       var dusk = name === 'dusk';
       skyU.top.value.setHex(dusk ? 0x141c33 : 0x2c3d5e); skyU.mid.value.setHex(dusk ? 0x8a5a5a : 0xe0a173); skyU.bot.value.setHex(dusk ? 0x1a1820 : 0x3a332c);
       S.fog = dusk ? fogDusk : fogGold; S.background = null;

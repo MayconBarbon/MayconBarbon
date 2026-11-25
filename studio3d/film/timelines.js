@@ -130,6 +130,18 @@
       end: E(seg(t, 55, 55.9)), brand: E(seg(t, 0.4, 1.3)) * (1 - E(seg(t, 55, 55.6))), fade: Math.max(0, f)};
   }};
 
+  // ===================== TESTE DE REFERÊNCIA · Reel vertical em contra-plongée (12 s)
+  V.referencia = {dur: 12, level: 'Studio 3D · Teste de estilo', native: true, frame: function (t) {
+    var s = {light: 'day', bg: 'skyday', tower: true, ceiling: true, shadowFar: true, rise: 1, finishFloor: 1, finishWall: 1, basic: 1, decor: 1, lampsOn: 0, exposure: 1.0};
+    var c = path([
+      {t: 0, p: [21, 1.6, -12.5], l: [6.0, 22, 1.0], fov: 72},
+      {t: 5, p: [19, 2.6, -14.5], l: [4.0, 30, 2.0], fov: 70},
+      {t: 10.6, p: [16.5, 4.2, -16.0], l: [2.0, 40, 3.0], fov: 66}], t);
+    c.roll = lerp(0.1, -0.04, E(seg(t, 0, 10.6)));
+    return {s: s, c: c, disc: 'Edifício conceitual · imagem ilustrativa',
+      txt: txt(t, [[0.8, 5.2, 'Edifício conceitual', 'Olhe para cima.'], [5.8, 10.2, 'Vídeo Imóvel Studio 3D', 'Arquitetura que olha para o alto.']]),
+      end: E(seg(t, 10.5, 11.2)), brand: E(seg(t, 0.2, 1.0)) * (1 - E(seg(t, 10.5, 11.0)))};
+  }};
   // ===================== aplicação de um quadro
   var D = document, el = function (id) { return D.getElementById(id); };
   var labelEls = [];
@@ -154,7 +166,7 @@
     var v = V[id], r = v.frame(t);
     F.setState(r.s);
     var interior = !!(r.s.ceiling);
-    var cam = adapt(r.c, interior);
+    var cam = v.native ? r.c : adapt(r.c, interior);
     if (cam.dof) cam.dof = [dist(cam), cam.dof[1], cam.dof[2]];
     F.frame(cam);
     // textos
