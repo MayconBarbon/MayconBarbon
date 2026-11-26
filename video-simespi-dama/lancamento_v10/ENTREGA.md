@@ -33,4 +33,5 @@ O resto é idêntico à v9: trilha, textos, demais cenas e cartela.
 | 0:37 | rotulagem manual | garrafas rotuladas na linha |
 | 0:38–0:39 | computador | cervejeiro na brassagem |
 | 0:44–0:46 | 2 planos do brinde | explicação ao senhor de azul e operador despejando malte (o brinde fica só em 0:42–0:43) |
+| 0:46–0:47 ("Porque somos a indústria!") | mockup da garrafa | foto real do kit (taça SIMESPI + garrafa) |
 | 0:53 | rolo de rótulos | SIMESPI visto do alto, com o prédio enquadrado no centro |

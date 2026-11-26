@@ -49,6 +49,7 @@ REPL = {
     73: F_("S26_fachada", 0.7, zoom=(1.15, 1.25), focus=(0.63, 0.15)),  # 0:53 -> SIMESPI visto do alto
 }
 if SINGLE:
+    SEQ[66] = ("full", SEQ[66][1], F_("FOTO_kit", 0, focus=(0.5, 0.62)), SEQ[66][3])   # mockup -> foto real do kit (taça + garrafa)
     for k_, sp in REPL.items():
         it = SEQ[k_]; SEQ[k_] = ("full", it[1], sp, it[3])
 _orig_src = g['src_path']
