@@ -12,25 +12,43 @@ SUB = int(os.environ.get('SUB', 3))          # motion-blur sub-frames
 
 # file, t0, t1, cx0, cx1, cy0, cy1, z0, z1, dolly0, dolly1, px0, px1, py0, py1, ease, out_transition, label
 # dolly = depth-dependent magnification (near grows faster than far);  px/py = parallax shift in output px
+RL = lambda a, b: {"roll": (a, b)}
+DF = lambda a, b: {"dof": (a, b)}
 SHOTS = [
-    ("0483", 0.0, 3.0, .58, .56, .53, .47, 1.00, 1.40, 0, .20, 0, -30, 0, 0, "ramp", "whipR", "Gancho: fachada - dolly-in rápido pelo caminho + paralaxe"),
-    ("0489", 3.0, 4.5, .22, .60, .56, .56, 1.12, 1.12, 0, .04, 0, -110, 0, 0, "smooth", "cut", "Pátio - travelling lateral com paralaxe"),
-    ("0742", 4.5, 6.0, .47, .41, .52, .48, 1.00, 1.52, 0, .26, 0, 0, 0, 0, "accel", "cut", "Hall - dolly-in acelerando até a porta"),
-    ("0492", 6.0, 8.0, .54, .80, .46, .46, 1.02, 1.10, 0, .05, 0, 70, 0, 0, "smooth", "zoom", "Logo - travelling lateral sobre o painel"),
-    ("0501", 8.0, 10.0, .70, .22, .55, .55, 1.14, 1.14, 0, .05, 0, 120, 0, 0, "ramp", "whipL", "Recepção - travelling lateral rápido + paralaxe"),
-    ("0543", 10.0, 11.5, .55, .57, .56, .54, 1.00, 1.48, 0, .26, 0, 0, 0, 0, "accel", "zoom", "Corredor - dolly-in acelerando (zoom-through)"),
-    ("0507", 11.5, 13.5, .38, .70, .56, .56, 1.12, 1.12, 0, .05, 0, -120, 0, 0, "ramp", "cut", "Sala de espera - travelling lateral + paralaxe"),
-    ("0555", 13.5, 15.5, .46, .46, .33, .54, 1.34, 1.04, .10, -.06, 0, 0, 60, -40, "ramp", "cut", "Sala de reunião - crane down + afastamento"),
-    ("0549", 15.5, 17.5, .26, .66, .60, .60, 1.12, 1.12, 0, .04, 0, -120, 0, 0, "smooth", "whipR", "Sala de atendimento - travelling lateral + paralaxe"),
-    ("0526", 17.5, 19.0, .46, .55, .55, .52, 1.00, 1.40, 0, .22, 0, 0, 0, 0, "ramp", "cut", "Sala pedagógica - dolly-in rápido"),
-    ("0606", 19.0, 20.5, .26, .62, .52, .52, 1.12, 1.12, 0, .04, 0, -120, 0, 0, "smooth", "cut", "Sala psicomotora - travelling lateral + paralaxe"),
-    ("0702", 20.5, 22.0, .44, .44, .64, .38, 1.30, 1.36, 0, .06, 0, 0, -70, 60, "accel", "zoom", "Escada de cordas - tilt up com paralaxe"),
-    ("0585", 22.0, 24.5, .62, .50, .70, .55, 1.55, 1.00, .14, -.04, 0, 0, 0, 0, "ramp", "whipL", "Virada: sala sensorial - pull-out explosivo"),
-    ("0717", 24.5, 27.0, .70, .40, .58, .56, 1.12, 1.12, 0, .05, 0, 130, 0, 0, "smooth", "cut", "Sala sensorial 2 - travelling lateral + paralaxe"),
-    ("0603", 27.0, 30.0, .50, .50, .50, .50, 1.00, 1.50, 0, .24, 0, 0, 0, 0, "accel", "zoom", "Chamada: ginásio rumo ao jardim - dolly-in"),
-    ("0642", 30.0, 32.0, .50, .50, .57, .53, 1.00, 1.38, 0, .20, 0, 0, 0, 0, "ramp", "whipR", "Jardim sensorial - dolly-in rápido"),
-    ("0711", 32.0, 34.5, .24, .60, .60, .60, 1.06, 1.06, 0, .04, 0, -120, 0, 0, "smooth", "xfade", "Piscina - travelling lateral + paralaxe"),
-    ("TL", 34.5, 42.5, .31, .35, .52, .49, 1.00, 1.18, 0, .07, 0, -30, 0, 0, "smooth", "end", "Jardim (0648) - timelapse dia > noite"),
+    # GANCHO 0-3: facade, then FPV burst "through" the house
+    ("0483", 0.00, 1.60, .58, .56, .53, .48, 1.00, 1.30, 0, .18, 0, -30, 0, 0, "ramp", "zoomfast", "Gancho: fachada - push-in rápido", {}),
+    ("0742", 1.60, 2.00, .45, .41, .52, .48, 1.05, 1.70, 0, .30, 0, 0, 0, 0, "accel", "zoomfast", "Voo FPV: hall", {}),
+    ("0543", 2.00, 2.35, .56, .57, .55, .54, 1.05, 1.75, 0, .30, 0, 0, 0, 0, "accel", "zoomfast", "Voo FPV: corredor", {}),
+    ("0603", 2.35, 2.70, .50, .50, .50, .50, 1.05, 1.75, 0, .30, 0, 0, 0, 0, "accel", "zoomfast", "Voo FPV: ginásio", {}),
+    ("0585", 2.70, 3.00, .56, .53, .62, .58, 1.10, 1.70, 0, .30, 0, 0, 0, 0, "accel", "leak", "Voo FPV: sala sensorial", {}),
+    # CONTEXTO 3-8
+    ("0492", 3.00, 4.50, .54, .80, .46, .46, 1.02, 1.10, 0, .05, 0, 70, 0, 0, "ramp", "whipL", "Logo do centro - lateral", {}),
+    ("0501", 4.50, 5.75, .70, .24, .55, .55, 1.14, 1.14, 0, .05, 0, 120, 0, 0, "ramp", "cut", "Recepção - lateral + paralaxe", RL(-1.5, 1.5)),
+    ("0507", 5.75, 7.00, .38, .70, .56, .56, 1.12, 1.12, 0, .05, 0, -120, 0, 0, "ramp", "cut", "Sala de espera - lateral + paralaxe", {}),
+    ("0555", 7.00, 8.00, .46, .46, .33, .52, 1.36, 1.08, .10, -.06, 0, 0, 60, -40, "accel", "zoom", "Sala de reunião - crane down", {}),
+    # TOUR 8-22
+    ("0564", 8.00, 9.00, .47, .47, .62, .60, 1.20, 1.42, 0, .10, 0, 30, 0, 0, "ramp", "glitch", "Detalhe orquídea - rack focus", DF(.35, .9)),
+    ("0549", 9.00, 10.50, .26, .66, .60, .60, 1.12, 1.12, 0, .04, 0, -120, 0, 0, "smooth", "whipR", "Sala de atendimento - lateral", {}),
+    ("0526", 10.50, 11.50, .46, .55, .55, .52, 1.00, 1.40, 0, .22, 0, 0, 0, 0, "ramp", "cut", "Sala pedagógica - push-in", {}),
+    ("0699", 11.50, 12.50, .45, .48, .56, .54, 1.15, 1.35, 0, .10, 0, -25, 0, 0, "smooth", "leak", "Detalhe livros - rack focus", DF(.3, .92)),
+    ("0513", 12.50, 13.75, .30, .64, .55, .55, 1.12, 1.12, 0, .05, 0, -120, 0, 0, "ramp", "cut", "Sala de estimulação - lateral", RL(1.5, -1.5)),
+    ("0606", 13.75, 15.00, .33, .62, .52, .52, 1.12, 1.12, 0, .04, 0, -120, 0, 0, "smooth", "whipR", "Sala psicomotora - lateral", {}),
+    ("0702", 15.00, 16.50, .44, .44, .64, .38, 1.30, 1.36, 0, .06, 0, 0, -70, 60, "smooth", "cut", "Escada de cordas - tilt up + roll", RL(3.5, -3.5)),
+    ("0681", 16.50, 17.75, .30, .50, .56, .55, 1.08, 1.30, 0, .15, 0, 0, 0, 0, "ramp", "cut", "Quarto de descanso - push-in", {}),
+    ("0615", 17.75, 19.00, .30, .52, .55, .55, 1.10, 1.22, 0, .10, 0, -80, 0, 0, "smooth", "glitch", "Painel sensorial - lateral", {}),
+    ("0730", 19.00, 20.50, .62, .40, .56, .56, 1.12, 1.12, 0, .05, 0, 110, 0, 0, "ramp", "cut", "Brinquedoteca - lateral", {}),
+    ("0621", 20.50, 22.00, .34, .26, .52, .50, 1.00, 1.45, 0, .25, 0, 0, 0, 0, "accel", "zoom", "Ginásio - dolly-in", {}),
+    # VIRADA 22-27
+    ("0585", 22.00, 23.75, .62, .50, .70, .55, 1.60, 1.00, .14, -.04, 0, 0, 0, 0, "ramp", "glitch", "Virada: sala sensorial - pull-out explosivo", {}),
+    ("0717", 23.75, 25.25, .70, .40, .58, .56, 1.12, 1.12, 0, .05, 0, 130, 0, 0, "smooth", "whipL", "Sala sensorial 2 - lateral", RL(-2, 2)),
+    ("0582", 25.25, 27.00, .58, .66, .62, .58, 1.05, 1.40, 0, .22, 0, 0, 0, 0, "ramp", "leak", "Sala sensorial 3 - push-in + roll", RL(2.5, -1.5)),
+    # CHAMADA 27-30
+    ("0603", 27.00, 30.00, .50, .50, .50, .50, 1.00, 1.50, 0, .24, 0, 0, 0, 0, "accel", "zoom", "Chamada: ginásio rumo ao jardim", {}),
+    # FECHAMENTO
+    ("0642", 30.00, 31.25, .50, .50, .57, .53, 1.00, 1.38, 0, .20, 0, 0, 0, 0, "ramp", "whipR", "Jardim sensorial - dolly-in", {}),
+    ("0634", 31.25, 32.50, .36, .62, .55, .55, 1.10, 1.10, 0, .05, 0, -120, 0, 0, "smooth", "leak", "Pergolado - lateral + roll", RL(-3, 2)),
+    ("0711", 32.50, 34.50, .24, .60, .60, .60, 1.06, 1.06, 0, .04, 0, -120, 0, 0, "smooth", "xfade", "Piscina - lateral", {}),
+    ("TL", 34.50, 42.50, .31, .35, .52, .49, 1.00, 1.18, 0, .07, 0, -30, 0, 0, "smooth", "end", "Jardim (0648) - timelapse dia > noite", {}),
 ]
 TOTAL = SHOTS[-1][2]
 FADE_OUT = (41.85, 42.5)
@@ -46,6 +64,11 @@ def grade(img, wb=True):
     f = np.clip(f, 0, 1)
     f = 0.82 * f + 0.18 * f * f * (3 - 2 * f)
     f = np.minimum(f, 0.97 + 0.03 * f)
+    # matte film look: lifted blacks, soft teal shadows / warm highlights
+    l2 = (f * np.array([0.114, 0.587, 0.299], np.float32)).sum(2, keepdims=True)
+    f = f + (1 - l2) * np.array([0.020, 0.010, -0.006], np.float32) * (1 - l2) \
+          + l2 * l2 * np.array([-0.022, 0.0, 0.020], np.float32)
+    f = 0.035 + f * 0.95
     return np.clip(f * 255, 0, 255).astype(np.uint8)
 
 
@@ -65,7 +88,7 @@ def sm(x):
 
 
 # ---------- sources + depth ----------
-src, disp = {}, {}
+src, disp, blur = {}, {}, {}
 for sh in SHOTS:
     k = sh[0]
     if k == "TL" or k in src:
@@ -74,6 +97,8 @@ for sh in SHOTS:
     lo = cv2.resize(hi, (3000, 2000), interpolation=cv2.INTER_AREA)
     d = np.load(f"{S}/depth/IMG_{k}.npy").astype(np.float32)
     src[k] = (hi, lo)
+    if any(x[0] == k and x[18].get("dof") for x in SHOTS):
+        blur[k] = (cv2.GaussianBlur(hi, (0, 0), 16), cv2.GaussianBlur(lo, (0, 0), 11.5))
     disp[k] = (cv2.resize(d, (hi.shape[1], hi.shape[0]), interpolation=cv2.INTER_LINEAR), d)
 
 G = S + "/gen/"
@@ -114,6 +139,7 @@ UU, VV = np.meshgrid(np.arange(W, dtype=np.float32) - W / 2, np.arange(H, dtype=
 
 def shot_frame(i, t, extra_zoom=1.0, shift=(0.0, 0.0)):
     k, a, b, cx0, cx1, cy0, cy1, z0, z1, d0, d1, px0, px1, py0, py1, ek = SHOTS[i][:16]
+    ex = SHOTS[i][18]
     p = ease((t - a) / (b - a), ek)
     L = lambda u0, u1: u0 + (u1 - u0) * p
     z = L(z0, z1) * extra_zoom
@@ -126,8 +152,16 @@ def shot_frame(i, t, extra_zoom=1.0, shift=(0.0, 0.0)):
     cx = min(max(L(cx0, cx1) * sw_, ww / 2), sw_ - ww / 2)
     cy = min(max(L(cy0, cy1) * sh_, wh / 2), sh_ - wh / 2)
     s = H / wh
-    X = cx + (UU - shift[0]) / s
-    Y = cy + (VV - shift[1]) / s
+    ro = np.radians(L(*ex["roll"])) if "roll" in ex else 0.0
+    U0, V0 = UU - shift[0], VV - shift[1]
+    if ro:
+        z = z * (1 + 0.6 * abs(np.sin(ro)))           # cover the corners while rolled
+        wh = sh_ / z; s = H / wh
+        cr, sr = np.cos(ro), np.sin(ro)
+        cr, sr = np.float32(cr), np.float32(sr)
+        U0, V0 = cr * U0 - sr * V0, sr * U0 + cr * V0
+    X = (cx + U0 / s).astype(np.float32)
+    Y = (cy + V0 / s).astype(np.float32)
     dol, px, py = L(d0, d1), L(px0, px1), L(py0, py1)
     if abs(dol) > 1e-4 or abs(px) > 0.05 or abs(py) > 0.05:
         dc = float(dm[int(cy), int(cx)])          # focus plane = frame centre stays put
@@ -135,10 +169,18 @@ def shot_frame(i, t, extra_zoom=1.0, shift=(0.0, 0.0)):
         for _ in range(2):                         # fixed-point: sample depth where we land
             dd = cv2.remap(dm, Xs, Ys, cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT) - dc
             mag = 1 + dol * dd
-            Xs = cx + (X - cx) / mag + px * dd / s
-            Ys = cy + (Y - cy) / mag + py * dd / s
+            Xs = (cx + (X - cx) / mag + px * dd / s).astype(np.float32)
+            Ys = (cy + (Y - cy) / mag + py * dd / s).astype(np.float32)
         X, Y = Xs, Ys
-    return cv2.remap(img, X, Y, cv2.INTER_CUBIC, borderMode=cv2.BORDER_REFLECT)
+    out = cv2.remap(img, X, Y, cv2.INTER_CUBIC, borderMode=cv2.BORDER_REFLECT)
+    if "dof" in ex:                                   # rack focus from far to near
+        f0, f1 = ex["dof"]
+        fz = f0 + (f1 - f0) * sm((t - a) / (b - a) * 1.4)
+        dd = cv2.remap(dm, X, Y, cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+        wgt = np.clip(np.abs(dd - fz) * 3.2 - 0.15, 0, 1)[..., None]
+        bl = cv2.remap(blur[k][lvl], X, Y, cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+        out = (out * (1 - wgt) + bl * wgt).astype(np.uint8)
+    return out
 
 
 # ---------- transitions ----------
@@ -171,16 +213,43 @@ def shot_index(t):
     return len(SHOTS) - 1
 
 
+LEAKS = [sh[2] for sh in SHOTS if sh[16] == "leak"]
+
+
+def light_leak(fr, t):
+    for c in LEAKS:
+        d = t - c
+        if -0.25 < d < 0.35:
+            u = np.exp(-((d - 0.02) / 0.13) ** 2)
+            cxl = W * (0.15 + 0.7 * (d + 0.25) / 0.6)
+            g = np.exp(-(((xx - cxl) / (W * 0.38)) ** 2 + ((yy - H * 0.30) / (H * 0.32)) ** 2))[..., None]
+            add = g * u * np.array([30, 95, 190], np.float32)
+            fr = np.clip(fr.astype(np.float32) + add, 0, 255).astype(np.uint8)
+    return fr
+
+
 def raw_frame(t):
     i = shot_index(t)
     # zoom-through around a cut
     for j, sh in enumerate(SHOTS[:-1]):
         c, tr = sh[2], sh[16]
-        if tr == "zoom" and -RT < t - c < RT:
-            d = t - c
-            u = (d + RT) / RT if d < 0 else 1 - d / RT
-            fr = shot_frame(i, t, 1 + 0.22 * u ** 2)
-            return radial_blur(fr, 0.20 * u ** 2)
+        if tr in ("zoom", "zoomfast"):
+            rt = RT if tr == "zoom" else 0.13
+            if -rt < t - c < rt:
+                d = t - c
+                u = (d + rt) / rt if d < 0 else 1 - d / rt
+                fr = shot_frame(i, t, 1 + 0.25 * u ** 2)
+                return radial_blur(fr, (0.20 if tr == "zoom" else 0.28) * u ** 2)
+        if tr == "glitch" and -0.07 < t - c < 0.10:
+            u = 1 - abs(t - c) / 0.10
+            fr = shot_frame(i, t, 1 + 0.04 * u)
+            sft = int(18 * u)
+            b_, g_, r_ = cv2.split(fr)
+            r_ = np.roll(r_, sft, axis=1); b_ = np.roll(b_, -sft, axis=1)
+            fr = cv2.merge([b_, g_, r_])
+            band = int((t * 997) % H)
+            fr[band:band + 90] = np.roll(fr[band:band + 90], int(40 * u), axis=1)
+            return fr
         if tr in ("whipL", "whipR") and -WT < t - c < WT:
             d = t - c
             sg = 1 if tr == "whipR" else -1         # direction content travels
@@ -257,6 +326,7 @@ def finish(f, t):
         A = a[:hh, :ww, None] * o
         reg *= (1 - shd[:hh, :ww, None] * o * 0.55)
         reg[:] = reg * (1 - A) + 250 * A
+    f += np.random.default_rng(int(t * 1000)).normal(0, 3.2, (H // 2, W // 2, 1)).astype(np.float32).repeat(2, 0).repeat(2, 1)
     if t > FADE_OUT[0]:
         f *= max(0.0, 1 - (t - FADE_OUT[0]) / (FADE_OUT[1] - FADE_OUT[0]))
     return np.clip(f, 0, 255).astype(np.uint8)
@@ -267,7 +337,8 @@ def frame(n):
     acc = np.zeros((H, W, 3), np.float32)
     for k in range(SUB):                       # 180-degree shutter
         ts = t + ((k + 0.5) / SUB - 0.5) * 0.5 / FPS
-        acc += raw_frame(min(ts, TOTAL - 1e-3))
+        tt = min(ts, TOTAL - 1e-3)
+        acc += light_leak(raw_frame(tt), tt)
     return finish(acc / SUB * VIG, t)
 
 
