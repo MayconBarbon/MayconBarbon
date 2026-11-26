@@ -9,30 +9,34 @@ AR = W / H
 # (file, start, end, cx0, cx1, cy0, cy1, z0, z1, label)
 # cx/cy = normalized window centre in source; z = zoom (1 = full source height)
 SHOTS = [
-    ("0483", 0.0, 3.0, .58, .56, .52, .46, 1.00, 1.18, "Fachada/jardim de entrada - push-in pelo caminho"),
-    ("0489", 3.0, 5.0, .26, .66, .56, .56, 1.06, 1.06, "Pátio inferior - travelling lateral E->D"),
-    ("0742", 5.0, 8.0, .42, .36, .52, .48, 1.00, 1.26, "Hall de entrada - dolly-in até a porta"),
-    ("0501", 8.0, 10.0, .68, .22, .55, .55, 1.06, 1.06, "Recepção - travelling lateral D->E"),
-    ("0492", 10.0, 12.0, .54, .79, .46, .46, 1.00, 1.04, "Painel/logo - travelling lateral sobre o logo"),
-    ("0543", 12.0, 13.5, .55, .57, .56, .54, 1.00, 1.20, "Corredor - dolly-in"),
-    ("0507", 13.5, 15.5, .40, .68, .56, .56, 1.06, 1.06, "Sala de espera - travelling lateral"),
-    ("0555", 15.5, 18.0, .46, .46, .36, .52, 1.22, 1.02, "Sala de reunião - tilt down + afastamento"),
-    ("0564", 18.0, 19.5, .47, .47, .62, .62, 1.10, 1.30, "Detalhe orquídea - aproximação"),
-    ("0549", 19.5, 21.5, .28, .64, .60, .60, 1.06, 1.06, "Sala de atendimento - travelling lateral"),
-    ("0526", 21.5, 23.0, .46, .54, .55, .53, 1.00, 1.16, "Sala pedagógica - push-in"),
-    ("0699", 23.0, 24.0, .45, .47, .56, .54, 1.12, 1.26, "Detalhe livros - push-in rápido"),
-    ("0585", 24.0, 26.5, .62, .50, .68, .55, 1.30, 1.00, "Sala sensorial - pull-out revelando"),
-    ("0603", 26.5, 28.5, .50, .50, .50, .50, 1.00, 1.24, "Ginásio - dolly-in no eixo"),
-    ("0606", 28.5, 30.0, .28, .60, .52, .52, 1.06, 1.06, "Sala psicomotora - travelling lateral"),
-    ("0702", 30.0, 31.5, .44, .44, .60, .40, 1.25, 1.25, "Escada de cordas - tilt up"),
-    ("0681", 31.5, 33.0, .30, .52, .56, .56, 1.06, 1.06, "Quarto de descanso - travelling lateral"),
-    ("0621", 33.0, 34.0, .34, .24, .52, .50, 1.00, 1.20, "Ginásio -> abertura para o jardim - push-in"),
-    ("0642", 34.0, 36.0, .50, .50, .56, .54, 1.00, 1.16, "Jardim sensorial - dolly-in"),
-    ("0711", 36.0, 38.5, .26, .58, .60, .60, 1.02, 1.02, "Piscina - travelling lateral contemplativo"),
-    ("0648", 38.5, 42.5, .38, .41, .50, .50, 1.26, 1.00, "Jardim e casa - pull-out final"),
+    # GANCHO 0-3
+    ("0483", 0.0, 3.0, .58, .56, .52, .46, 1.00, 1.18, "Gancho: fachada/jardim - push-in pelo caminho"),
+    # CONTEXTO 3-8
+    ("0489", 3.0, 4.5, .26, .60, .56, .56, 1.06, 1.06, "Pátio de acesso - travelling lateral"),
+    ("0742", 4.5, 6.0, .42, .37, .52, .49, 1.00, 1.20, "Hall de entrada - dolly-in até a porta"),
+    ("0492", 6.0, 8.0, .54, .79, .46, .46, 1.00, 1.04, "Logo do centro - travelling sobre o painel"),
+    # TOUR 8-22
+    ("0501", 8.0, 10.0, .68, .22, .55, .55, 1.06, 1.06, "Recepção - travelling lateral"),
+    ("0543", 10.0, 11.5, .55, .57, .56, .54, 1.00, 1.20, "Corredor - dolly-in"),
+    ("0507", 11.5, 13.5, .40, .68, .56, .56, 1.06, 1.06, "Sala de espera - travelling lateral"),
+    ("0555", 13.5, 15.5, .46, .46, .36, .52, 1.22, 1.02, "Sala de reunião - tilt down + afastamento"),
+    ("0549", 15.5, 17.5, .28, .64, .60, .60, 1.06, 1.06, "Sala de atendimento - travelling lateral"),
+    ("0526", 17.5, 19.0, .46, .54, .55, .53, 1.00, 1.16, "Sala pedagógica - push-in"),
+    ("0606", 19.0, 20.5, .28, .60, .52, .52, 1.06, 1.06, "Sala psicomotora - travelling lateral"),
+    ("0702", 20.5, 22.0, .44, .44, .60, .40, 1.25, 1.25, "Escada de cordas - tilt up"),
+    # VIRADA 22-27
+    ("0585", 22.0, 24.5, .62, .50, .68, .55, 1.30, 1.00, "Virada: sala sensorial - pull-out revelando"),
+    ("0717", 24.5, 27.0, .66, .42, .58, .56, 1.04, 1.04, "Sala sensorial (2º ângulo) - lateral + afastamento"),
+    # CHAMADA 27-30
+    ("0603", 27.0, 30.0, .50, .50, .50, .50, 1.00, 1.22, "Chamada: ginásio rumo ao jardim - dolly-in"),
+    # FECHAMENTO EXTERNO 30-42.5
+    ("0642", 30.0, 32.0, .50, .50, .56, .54, 1.00, 1.16, "Jardim sensorial - dolly-in"),
+    ("0711", 32.0, 34.5, .26, .58, .60, .60, 1.02, 1.02, "Piscina - travelling lateral"),
+    ("0634", 34.5, 36.5, .42, .62, .55, .55, 1.04, 1.04, "Pergolado e quadra - travelling lateral"),
+    ("0648", 36.5, 42.5, .38, .41, .50, .50, 1.26, 1.00, "Jardim e casa - pull-out final + assinatura"),
 ]
-RADIAL = [8.0, 24.0, 34.0]   # zoom-radial transitions (block changes)
-XFADE = {19: 0.5}            # dissolve into shot index 20 (pool -> final)
+RADIAL = [8.0, 22.0, 30.0]
+XFADE = {16: 0.5}            # dissolve piscina -> pergolado
 FADE_OUT = (41.4, 42.5)
 TOTAL = SHOTS[-1][2]
 
@@ -122,6 +126,74 @@ if os.environ.get('STILLS'):
         cv2.imwrite(f"{OUT}_{k}.jpg", rw)
     sys.exit()
 
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+FD = S + '/fonts/PlayfairItalic.ttf'
+INTER_L = '/usr/share/fonts/opentype/inter/Inter-Light.otf'
+INTER_SB = '/usr/share/fonts/opentype/inter/Inter-SemiBold.otf'
+
+
+def text_patch(txt, font, size, track=0):
+    f = ImageFont.truetype(font, size)
+    pad = 40
+    if track:
+        w = sum(f.getlength(c) + track for c in txt) - track
+    else:
+        w = f.getlength(txt)
+    asc, desc = f.getmetrics()
+    im = Image.new('L', (int(w) + 2 * pad, asc + desc + 2 * pad), 0)
+    d = ImageDraw.Draw(im)
+    if track:
+        x = pad
+        for c in txt:
+            d.text((x, pad), c, font=f, fill=255); x += f.getlength(c) + track
+    else:
+        d.text((pad, pad), txt, font=f, fill=255)
+    a = np.asarray(im, np.float32) / 255
+    sh = np.asarray(im.filter(ImageFilter.GaussianBlur(10)), np.float32) / 255
+    return a, sh, pad
+
+
+# (text, font, size, tracking, x, y_baseline_top, t_in, t_out)
+TEXTS = [
+    ("Parece só uma casa…", FD, 96, 0, 90, 1150, 0.25, 2.80),
+    ("até você entrar.", FD, 96, 0, 90, 1270, 1.05, 2.80),
+    ("AURORA TEHABILITAR", INTER_SB, 30, 6, 94, 1130, 27.25, 29.80),
+    ("Conheça", FD, 112, 0, 90, 1180, 27.45, 29.80),
+    ("nosso espaço.", FD, 112, 0, 90, 1310, 27.75, 29.80),
+    ("Aurora TeHabilitar", FD, 92, 0, 90, 1200, 38.6, 42.5),
+    ("CENTRO DE NEURODESENVOLVIMENTO", INTER_L, 30, 5, 94, 1330, 39.0, 42.5),
+]
+TP = [text_patch(t[0], t[1], t[2], t[3]) for t in TEXTS]
+TEXT_WINDOWS = [(0.25, 2.8), (27.25, 29.8), (38.6, 42.5)]
+GY = np.clip((np.arange(H, dtype=np.float32) / H - 0.45) / 0.30, 0, 1)
+GY = (GY * GY * (3 - 2 * GY))[:, None, None]
+
+
+def draw_texts(f, t):
+    # readability gradient
+    g = 0.0
+    for a, b in TEXT_WINDOWS:
+        if a - 0.3 <= t <= b + 0.3:
+            g = max(g, min(1, (t - (a - 0.3)) / 0.5, (b + 0.3 - t) / 0.4))
+    if g > 0:
+        f *= (1 - 0.42 * g * GY)
+    for (txt, font, size, tr, x, y, ti, to), (a, sh, pad) in zip(TEXTS, TP):
+        if not (ti <= t <= to):
+            continue
+        u = min(1, (t - ti) / 0.55)
+        u = u * u * (3 - 2 * u)
+        o = u * min(1, (to - t) / 0.3)
+        yy0 = int(y + 26 * (1 - u)) - pad
+        xx0 = x - pad
+        h_, w_ = a.shape
+        reg = f[yy0:yy0 + h_, xx0:xx0 + w_]
+        hh, ww = reg.shape[:2]
+        A = a[:hh, :ww, None] * o; SH = sh[:hh, :ww, None] * o * 0.55
+        reg *= (1 - SH)
+        reg[:] = reg * (1 - A) + 250 * A
+    return f
+
+
 RT = 0.30  # half-length of radial transition (s)
 ff = subprocess.Popen(
     ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS),
@@ -153,6 +225,7 @@ for n in range(N):
             fr = cv2.addWeighted(fa, 1 - a, fb, a, 0)
     fr = radial_blur(fr, blur)
     f = fr.astype(np.float32) * VIG
+    f = draw_texts(f, t)
     if t > FADE_OUT[0]:
         f *= max(0.0, 1 - (t - FADE_OUT[0]) / (FADE_OUT[1] - FADE_OUT[0]))
     ff.stdin.write(np.clip(f, 0, 255).astype(np.uint8).tobytes())
