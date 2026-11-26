@@ -32,21 +32,21 @@ SHOTS = [
     # FECHAMENTO EXTERNO 30-42.5
     ("0642", 30.0, 32.0, .50, .50, .56, .54, 1.00, 1.16, "Jardim sensorial - dolly-in"),
     ("0711", 32.0, 34.5, .26, .58, .60, .60, 1.02, 1.02, "Piscina - travelling lateral"),
-    ("0634", 34.5, 36.5, .42, .62, .55, .55, 1.04, 1.04, "Pergolado e quadra - travelling lateral"),
-    ("0648", 36.5, 42.5, .38, .41, .50, .50, 1.26, 1.00, "Jardim e casa - pull-out final + assinatura"),
+    ("TL", 34.5, 42.5, .31, .34, .52, .50, 1.00, 1.12, "Jardim e casa (0648) - timelapse dia > pôr do sol > noite, push-in lento"),
 ]
 RADIAL = [8.0, 22.0, 30.0]
-XFADE = {16: 0.5}            # dissolve piscina -> pergolado
-FADE_OUT = (41.4, 42.5)
+XFADE = {16: 0.5}            # dissolve piscina -> timelapse
+FADE_OUT = (41.85, 42.5)
 TOTAL = SHOTS[-1][2]
 
 
-def grade(img):
+def grade(img, wb=True):
     f = img.astype(np.float32) / 255.0
     # partial gray-world white balance (harmonise, keep real look)
-    m = f.reshape(-1, 3).mean(0)
-    g = m.mean()
-    f = f * (1 + 0.18 * (g / m - 1))
+    if wb:
+        m = f.reshape(-1, 3).mean(0)
+        g = m.mean()
+        f = f * (1 + 0.18 * (g / m - 1))
     # gentle saturation reduction (sources are punchy HDR)
     lum = (f * np.array([0.114, 0.587, 0.299], np.float32)).sum(2, keepdims=True)
     f = lum + (f - lum) * 0.90
@@ -65,9 +65,49 @@ def ease(t):
     return 0.45 * t + 0.55 * sm
 
 
+G = S + '/gen/'
+TLD = grade(cv2.imread(G + 'day_al.jpg')).astype(np.float32)
+TLG = grade(cv2.imread(G + 'golden.jpg'), wb=False).astype(np.float32)
+TLN = grade(cv2.imread(G + 'night_al.jpg'), wb=False).astype(np.float32)
+_lm = cv2.imread(G + 'lightmask.png', 0)
+_nl, _lab, _st, _cent = cv2.connectedComponentsWithStats((_lm > 0).astype(np.uint8))
+# group lights left->right into 7 groups; each switches on at its own moment
+_order = sorted(range(1, _nl), key=lambda i: _cent[i][0])
+NG = 7
+LGROUPS, LT = [], []
+for gi in range(NG):
+    ids = _order[gi * len(_order) // NG:(gi + 1) * len(_order) // NG]
+    mk = np.isin(_lab, ids).astype(np.float32)
+    LGROUPS.append(cv2.GaussianBlur(mk, (0, 0), 6)[..., None])
+    LT.append(4.35 + [0.0, 0.5, 0.15, 0.65, 0.3, 0.8, 0.95][gi])
+MALL = np.clip(sum(LGROUPS), 0, 1)
+TLN_OFF = TLN * (1 - 0.72 * MALL)
+
+
+def sm(x):
+    x = min(max(x, 0.0), 1.0)
+    return x * x * (3 - 2 * x)
+
+
+def tl_frame(t):
+    u = t - SHOTS[-1][1]
+    a1 = sm((u - 0.9) / 2.3)   # day -> golden
+    a2 = sm((u - 3.1) / 2.2)   # golden -> night (lights off)
+    f = TLD * (1 - a1) + TLG * a1
+    f = f * (1 - a2) + TLN_OFF * a2
+    if a2 > 0:
+        for mk, ts in zip(LGROUPS, LT):
+            on = sm((u - ts) / 0.18)
+            if on > 0:
+                f += (TLN - TLN_OFF) * (mk * (on * a2))
+    return np.clip(f, 0, 255).astype(np.uint8)
+
+
 src = {}
 for sh in SHOTS:
     k = sh[0]
+    if k == 'TL':
+        continue
     if k not in src:
         im = cv2.imread(f"{S}/img/IMG_{k}.jpg")
         src[k] = grade(im)
@@ -79,7 +119,7 @@ VIG = (1 - 0.16 * np.clip(r - 0.55, 0, 1) ** 1.6)[..., None].astype(np.float32)
 
 def shot_frame(i, t, extra_zoom=1.0):
     k, a, b, cx0, cx1, cy0, cy1, z0, z1, _ = SHOTS[i]
-    img = src[k]
+    img = tl_frame(t) if k == 'TL' else src[k]
     sh_, sw_ = img.shape[:2]
     p = ease((t - a) / (b - a))
     z = (z0 + (z1 - z0) * p) * extra_zoom
@@ -160,11 +200,11 @@ TEXTS = [
     ("AURORA TEHABILITAR", INTER_SB, 30, 6, 94, 1130, 27.25, 29.80),
     ("Conheça", FD, 112, 0, 90, 1180, 27.45, 29.80),
     ("nosso espaço.", FD, 112, 0, 90, 1310, 27.75, 29.80),
-    ("Aurora TeHabilitar", FD, 92, 0, 90, 1200, 38.6, 42.5),
-    ("CENTRO DE NEURODESENVOLVIMENTO", INTER_L, 30, 5, 94, 1330, 39.0, 42.5),
+    ("Aurora TeHabilitar", FD, 92, 0, 90, 1200, 39.9, 42.5),
+    ("CENTRO DE NEURODESENVOLVIMENTO", INTER_L, 30, 5, 94, 1330, 40.25, 42.5),
 ]
 TP = [text_patch(t[0], t[1], t[2], t[3]) for t in TEXTS]
-TEXT_WINDOWS = [(0.25, 2.8), (27.25, 29.8), (38.6, 42.5)]
+TEXT_WINDOWS = [(0.25, 2.8), (27.25, 29.8), (39.9, 42.5)]
 GY = np.clip((np.arange(H, dtype=np.float32) / H - 0.45) / 0.30, 0, 1)
 GY = (GY * GY * (3 - 2 * GY))[:, None, None]
 
