@@ -68,12 +68,22 @@ Informar:
 
 # Referências obrigatórias (manter nos 3 dias)
 
-Os metadados das 4 páginas foram lidos em 27/11. Os vídeos 2, 3 e 4 foram baixados e analisados quadro a quadro (detecção de cortes, folhas de contato e curva de volume). O vídeo 1 ficou bloqueado pelo Instagram, que exigiu login.
+As 4 referências foram baixadas e analisadas quadro a quadro em 27/11 (detecção de cortes, folhas de contato, curva de volume e medição de cor).
 
 ### 1. https://www.instagram.com/reel/Ddr60iMRWfz/?bqrl=MW43djV6NHNtbzZ4aA==
-**Status: REFERÊNCIA PENDENTE DE ANÁLISE.** O download foi bloqueado com redirecionamento para login (limite de acesso anônimo).
-- O que deu para ler na página: conta @builtbydoma (CASA DOMA®), aftermovie e fotos em tempo real do Datafrete Summit, com áudio original. A miniatura é em preto e branco.
-- Conteúdo do vídeo: **não analisado**. Valem só as orientações do briefing: abertura cinematográfica, alternância pontual entre P&B e cor, retratos e reações, detalhes de mãos, copos e objetos, sequências rápidas na batida, e planos de identidade e sinalização.
+**Status: analisada em 27/11** (o download foi liberado na segunda tentativa). @builtbydoma (CASA DOMA®), aftermovie do Datafrete Summit.
+- **Duração:** 69,7 s, vertical 720×1280, **24 fps**. São 123 cortes, com plano médio de cerca de 0,57 s.
+- **Linguagem:**
+  - alternância frequente e pontual entre P&B e cor (pernas andando, retratos, aplausos);
+  - retratos de perfil com fundo desfocado;
+  - silhuetas da plateia contra o telão;
+  - detalhes de mãos (assinaturas, caneta, celular, copos de chope);
+  - planos de identidade com o telão da marca.
+- **Transições:** whip pan com motion blur e **estouros de luz** (flare) como passagem.
+- **Final:** aplauso em P&B câmera lenta, depois estouro de luz e a marca sobre preto.
+- **Cor (medida):** pretos densos (p2 = 0,01) e meio-tom baixo (luma 0,18). Altas luzes descem suave (p98 = 0,86). Sombra fria, meio-tom quente (R 1,16, B 0,89) e saturação contida (0,37).
+- **Áudio:** trilha contínua, com volume estável.
+- **Para o PiraBeer:** tratamento de cor (aplicado desde a V03 do teste), alternância P&B pontual, retratos em câmera lenta, estouros de luz nas viradas e na entrada da cartela.
 
 ### 2. https://www.instagram.com/reel/DKZxMtMxGWU/?cnvx=MWltc3R0dGV0a2JzZg==
 **Status: analisada.** @gamilego, aftermovie de carros clássicos na Granja Olga. Trilha: Bryan Adams, "Run To You".
@@ -153,7 +163,7 @@ Arquivo local: `referencias/REF_PIRABEER_26-11_identidade.mp4` (fica fora do git
 2. ~~Logo da Secretaria de Turismo~~: **recebido em 27/11**, em PNG com transparência, 1600×558, nas versões branca e colorida.
 3. ~~Vídeo de referência do PiraBeer~~: **recebido em 27/11**.
 4. Trilha: **o Maycon definiu em 27/11 que eu escolho depois da edição.** Monto o corte primeiro, proponho a trilha e ajusto os cortes na batida.
-5. Referência 1: mandar o arquivo do vídeo, se der (o Instagram bloqueou o acesso).
+5. ~~Referência 1~~: analisada em 27/11.
 
 ## Logos no projeto (`logos/`)
 | Arquivo | Uso |
