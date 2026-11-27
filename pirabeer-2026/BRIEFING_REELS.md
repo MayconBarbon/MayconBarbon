@@ -144,12 +144,12 @@ Arquivo local: `referencias/REF_PIRABEER_26-11_identidade.mp4` (fica fora do git
 **Encerramento da referência**
 - 41,3 a 43,6 s: logo da Secretaria em branco sobre o último plano de drone escurecido, no terço inferior, com cerca de 45% de largura.
 - 43,7 a 46,1 s: logo do PiraBeer na **versão branca**, centralizado sobre preto, com cerca de 64% de largura.
-- **Os dois logos aparecem em sequência, não juntos.** O briefing dos reels pede os dois na mesma cartela (2,5 a 3 s). Vou seguir o briefing: os dois juntos sobre fundo preto, com a versão branca do PiraBeer para casar com a referência.
+- **Os dois logos aparecem em sequência, não juntos.** O briefing dos reels pede os dois na mesma cartela (2,5 a 3 s). Vou seguir o briefing: os dois juntos na mesma cartela. **Atualizado em 27/11 (Maycon):** o PiraBeer vai chegar em PNG transparente. Então a cartela pode ficar sobre um plano final do dia, escurecido para garantir leitura, como a Secretaria aparece na referência. O plano precisa ser calmo (drone, céu, palco desfocado), sem rosto atrás dos logos. Se nenhum plano do dia der leitura, a cartela fica sobre preto.
 
 ---
 
 # Pendências para o Maycon
-1. ~~Logo do PiraBeer~~: **recebido em 27/11**, em duas versões (dourado e branco). Os arquivos são JPG, 904×1280, com fundo preto e sem transparência. Só funcionam sobre fundo preto, então valem para a cartela, mas não para sobrepor ao vídeo.
+1. Logo do PiraBeer: **PNG transparente a caminho** (a versão JPG recebida em 27/11 fica como reserva, em duas versões (dourado e branco). Os arquivos são JPG, 904×1280, com fundo preto e sem transparência. Só funcionam sobre fundo preto, então valem para a cartela, mas não para sobrepor ao vídeo).
 2. ~~Logo da Secretaria de Turismo~~: **recebido em 27/11**, em PNG com transparência, 1600×558, nas versões branca e colorida.
 3. ~~Vídeo de referência do PiraBeer~~: **recebido em 27/11**.
 4. **Trilha** autorizada para cada dia (uma por reel, ou a mesma nos três).
