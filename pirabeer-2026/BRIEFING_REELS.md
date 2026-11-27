@@ -38,7 +38,7 @@ Ritmo: sequências rápidas de 0,3 a 0,8 s, planos principais de 1,5 a 3 s, cort
 
 ## Marca-d'água
 Logo oficial da Secretaria de Turismo durante todo o conteúdo, na mesma região, proporção e transparência do vídeo de referência. Fica dentro da área segura do Reels e não cobre rostos nem textos.
-Posição e tamanho exatos: **pendentes**, a medir no vídeo de referência quando ele estiver no projeto.
+Posição e tamanho: ver "Marca-d'água (medida...)" na seção de referências.
 
 ## Exportação
 9:16 · 1080×1920 · H.264 · MP4 · 30 fps · AAC 48 kHz · alta qualidade · área segura do Reels.
@@ -119,15 +119,39 @@ Os metadados das 4 páginas foram lidos em 27/11. Os vídeos 2, 3 e 4 foram baix
 - **Áudio:** batida contínua com volume estável.
 - **Para o PiraBeer:** abertura de entrada no parque (pórtico e chaminé), passagem do dia para a noite no Dia 1 e no Dia 2, zoom-blur como transição principal (um dos 2 ou 3 recursos do reel), hyperlapse do público.
 
-### Vídeo de referência do PiraBeer (anexado em outra conversa)
-**Status: AINDA NÃO ESTÁ NESTE PROJETO.** Precisa ser reenviado para definir a linguagem de drone e FPV, a paleta, a posição exata da marca-d'água e a cartela final. **Não será usado como fonte de imagens** sem a frase de autorização.
+### Vídeo de referência do PiraBeer (recebido em 27/11, gravado em 26/11)
+Arquivo local: `referencias/REF_PIRABEER_26-11_identidade.mp4` (fica fora do git). 46,1 s, 576×1024, 30 fps, áudio AAC 44,1 kHz.
+**Serve só como referência de identidade. Não é fonte de imagens** sem a frase `AUTORIZO USAR O VÍDEO DE REFERÊNCIA`. Não pertence a nenhum dos três dias.
+
+- **Linguagem:**
+  - 0 a 4 s: abertura com drone saindo das nuvens e revelando o parque e a cidade, com uma inserção curta de tela "loading data".
+  - 4 a 23 s: FPV fluido atravessando a estrutura (pórtico, tendas com toldos amarelos, palco, treliças), com passagens rentes ao chão e por baixo da cobertura.
+  - 23 a 31 s: drone aéreo sobre o rio e as tendas.
+  - 32 a 36 s: closes da arte do evento (canecas, logo).
+  - 37 a 41 s: drone ao entardecer sobre o rio, chegando ao pôr do sol.
+- **Ritmo:** 15 cortes em 46 s. Os planos são longos e contínuos, de 2 a 9 s, e a fluidez vem do movimento, não do corte.
+- **Paleta:** verde da mata, amarelo e mostarda dos toldos, laranja e âmbar da arte, céu azul. No fim, contraluz dourado.
+- **Áudio:** trilha contínua com volume estável (cerca de −13 dB RMS) e queda no fim (−24 dB).
+
+**Marca-d'água (medida pelas bordas estáticas do vídeo inteiro)**
+- Logo da Secretaria de Turismo + Prefeitura Pira, completo, **branco**, no **canto superior direito**.
+- Na referência ocupa x de 330 a 540 e y de 55 a 125 em 576×1024. A largura é de cerca de 36% do quadro, com margem direita de cerca de 6% e topo a cerca de 5,5%.
+- **Em 1080×1920:** cerca de 390 px de largura, canto direito em x ≈ 1012 e topo em y ≈ 105.
+- Está dentro da área segura: o Reels cobre aproximadamente os 220 px de cima com a interface e o logo começa logo abaixo. Isso precisa ser conferido no teste. Se colidir, desço até y ≈ 230, sem mudar o tamanho.
+- Fica aplicada do início até a cartela, com transparência discreta. Opacidade a calibrar no primeiro teste: ponto de partida de 80%.
+- Arquivo: `logos/secretaria-turismo_branco.png`.
+
+**Encerramento da referência**
+- 41,3 a 43,6 s: logo da Secretaria em branco sobre o último plano de drone escurecido, no terço inferior, com cerca de 45% de largura.
+- 43,7 a 46,1 s: logo do PiraBeer na **versão branca**, centralizado sobre preto, com cerca de 64% de largura.
+- **Os dois logos aparecem em sequência, não juntos.** O briefing dos reels pede os dois na mesma cartela (2,5 a 3 s). Vou seguir o briefing: os dois juntos sobre fundo preto, com a versão branca do PiraBeer para casar com a referência.
 
 ---
 
 # Pendências para o Maycon
 1. ~~Logo do PiraBeer~~: **recebido em 27/11**, em duas versões (dourado e branco). Os arquivos são JPG, 904×1280, com fundo preto e sem transparência. Só funcionam sobre fundo preto, então valem para a cartela, mas não para sobrepor ao vídeo.
 2. ~~Logo da Secretaria de Turismo~~: **recebido em 27/11**, em PNG com transparência, 1600×558, nas versões branca e colorida.
-3. **Vídeo de referência do PiraBeer** (para medir a marca-d'água e a cartela).
+3. ~~Vídeo de referência do PiraBeer~~: **recebido em 27/11**.
 4. **Trilha** autorizada para cada dia (uma por reel, ou a mesma nos três).
 5. Referência 1: mandar o arquivo do vídeo, se der (o Instagram bloqueou o acesso).
 
