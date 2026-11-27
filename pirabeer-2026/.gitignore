@@ -1,0 +1,7 @@
+*.mp4
+*.mov
+*.MOV
+*.m4a
+*.wav
+*.mp3
+!logos/*.png
