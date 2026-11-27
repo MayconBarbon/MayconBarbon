@@ -176,3 +176,9 @@ Comparado com o JPG oficial, **o desenho é diferente**:
 - proporção mais larga.
 
 O arquivo parece ter sido redesenhado ou passado por IA, e não apenas recortado. O briefing proíbe alterar a marca, então ele só entra no reel se o Maycon confirmar que é o oficial.
+
+### Logo do PiraBeer branco transparente v2 (recebido em 27/11) — **EM USO NA CARTELA**
+Arquivos: `logos/pirabeer_4ed_branco_transparente.png` (a partir do `_original.webp`), RGBA, 1206×1305, com fundo transparente de verdade.
+- Na comparação com o JPG branco oficial, a estrutura, a tipografia, o "4" com o percurso, o pin, as cores do texto e a proporção (1,148 contra 1,136) estão iguais.
+- Diferenças pequenas: as folhas estão um pouco mais estilizadas, as bolhas mudaram de posição e o dourado das canecas está levemente mais vivo.
+- Substitui a versão A CONFIRMAR, que fica descartada.
