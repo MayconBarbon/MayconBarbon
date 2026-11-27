@@ -65,7 +65,7 @@ EDL = [
     ("T03", 72.22, 1.00, 1.0, ""),        # casal
     ("T02", 54.65, 1.50, 1.0, ""),        # selfie
     ("T03", 17.68, 1.50, 1.0, ""),        # braços para cima
-    ("T01", 29.25, 1.00, 1.0, ""),        # dança
+    ("T03", 19.75, 1.00, 1.0, ""),        # amigas dançando
     ("T03", 22.08, 2.00, 1.0, ""),        # artista cumprimentando o público
     ("T01", 81.82, 1.00, 1.0, ""),        # dança
     ("T03", 61.68, 1.00, 1.0, ""),        # celular filmando o show
@@ -74,7 +74,7 @@ EDL = [
     ("T01", 30.72, 1.50, 1.0, ""),        # guitarrista
     ("T01", 22.32, 1.00, 1.0, ""),        # bateria com fumaça
     ("T02", 48.50, 1.00, 1.0, ""),        # guitarrista
-    ("T01", 75.52, 1.00, 1.0, ""),        # baixo em close
+    ("T02", 38.60, 1.00, 1.0, ""),        # guitarrista no palco
     # RESPIRO 68,5 a 76,5 (pausa da trilha, P&B em câmera lenta)
     ("T01", 21.42, 1.50, 0.5, "bw"),
     ("T02", 27.48, 1.50, 0.5, "bw"),
@@ -93,7 +93,7 @@ EDL = [
     ("T01", 84.00, 1.50, 1.0, ""),
     ("T01", 63.38, 1.00, 1.0, ""),        # guitarra no vermelho
 ]
-CARTELA = ("T02", 89.40, 2.95, 0.5)       # drone noturno, escurecido
+CARTELA = ("T01", 86.15, 2.95, 0.28)      # drone noturno sobre a catedral, escurecido (plano limpo, antes da transição do CapCut)
 
 GRADE = "eq=contrast=1.06:saturation=1.08:gamma=0.98,colorbalance=rs=0.03:gs=0.0:bs=-0.03:rm=0.02:bm=-0.02"
 ZB = 0.2  # duração de cada metade do zoom-blur (s)
