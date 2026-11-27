@@ -125,8 +125,18 @@ Os metadados das 4 páginas foram lidos em 27/11. Os vídeos 2, 3 e 4 foram baix
 ---
 
 # Pendências para o Maycon
-1. PNG oficial do **logo do PiraBeer**.
-2. PNG oficial do **logo da Secretaria de Turismo**.
+1. ~~Logo do PiraBeer~~: **recebido em 27/11**, em duas versões (dourado e branco). Os arquivos são JPG, 904×1280, com fundo preto e sem transparência. Só funcionam sobre fundo preto, então valem para a cartela, mas não para sobrepor ao vídeo.
+2. ~~Logo da Secretaria de Turismo~~: **recebido em 27/11**, em PNG com transparência, 1600×558, nas versões branca e colorida.
 3. **Vídeo de referência do PiraBeer** (para medir a marca-d'água e a cartela).
 4. **Trilha** autorizada para cada dia (uma por reel, ou a mesma nos três).
 5. Referência 1: mandar o arquivo do vídeo, se der (o Instagram bloqueou o acesso).
+
+## Logos no projeto (`logos/`)
+| Arquivo | Uso |
+|---|---|
+| `pirabeer_4ed_dourado_fundo-preto.jpg` | Cartela final (versão principal) |
+| `pirabeer_4ed_branco_fundo-preto.jpg` | Cartela final (alternativa) |
+| `secretaria-turismo_branco.png` | Marca-d'água sobre o vídeo e cartela sobre fundo preto |
+| `secretaria-turismo_cor.png` | Uso sobre fundo claro (não se aplica à cartela preta) |
+
+**Cartela base:** fundo preto 1080×1920, logo do PiraBeer dourado com 700 px de largura (área útil recortada sem distorção), logo da Secretaria branco com 560 px abaixo e cerca de 170 px de respiro entre os dois. Entrada e saída em fade de 0,4 s.
