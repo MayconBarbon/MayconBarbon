@@ -28,11 +28,11 @@ EDL = [
     ("T01", 51.15, 2.50, 1.0, ""),        # tenda vista de cima, público
     ("T02", 5.55, 1.50, 1.0, ""),         # palco aberto com público
     ("T02", 18.00, 1.50, 1.0, ""),        # multidão sob a tenda
-    ("T01", 13.75, 1.00, 1.0, ""),        # teto da tenda iluminado
+    ("T01", 14.10, 1.00, 1.0, ""),        # balcão com telões
     # EXPERIÊNCIAS 16,5 a 40,5
-    ("T03", 29.75, 1.50, 1.0, ""),        # copo de cerveja em close
+    ("T03", 29.92, 1.50, 1.0, ""),        # público com copo na mão
     ("T01", 4.70, 1.00, 1.0, ""),         # balcão com copos
-    ("T02", 23.70, 1.50, 1.0, ""),        # cerveja passando de mão em mão
+    ("T02", 23.95, 1.50, 1.0, ""),        # cerveja servida no balcão
     ("T01", 38.95, 2.50, 0.75, ""),       # fogo na grelha, lento
     ("T01", 42.55, 1.00, 1.0, ""),        # corte da carne
     ("T03", 25.45, 1.00, 1.0, ""),        # carne fatiada
@@ -54,7 +54,7 @@ EDL = [
     # PESSOAS 40,5 a 62,5
     ("T02", 6.98, 1.50, 1.0, ""),         # abraço cantando
     ("T03", 14.18, 1.50, 1.0, ""),        # pai dançando com a filha
-    ("T01", 20.72, 0.50, 1.0, ""),        # brinde
+    ("T01", 21.42, 0.50, 1.0, ""),        # brinde das amigas
     ("T03", 6.35, 1.00, 1.0, ""),         # amigas dançando
     ("T02", 41.95, 1.50, 1.0, ""),        # risada dançando
     ("T01", 28.18, 1.00, 1.0, ""),        # dança
@@ -72,11 +72,11 @@ EDL = [
     # PALCO 62,5 a 68,5
     ("T02", 3.05, 1.50, 1.0, ""),         # cantora
     ("T01", 30.72, 1.50, 1.0, ""),        # guitarrista
-    ("T01", 22.32, 1.00, 1.0, ""),        # bateria com fumaça
+    ("T01", 25.70, 1.00, 1.0, ""),        # baterista
     ("T02", 48.50, 1.00, 1.0, ""),        # guitarrista
     ("T02", 38.60, 1.00, 1.0, ""),        # guitarrista no palco
     # RESPIRO 68,5 a 76,5 (pausa da trilha, P&B em câmera lenta)
-    ("T01", 21.42, 1.50, 0.5, "bw"),
+    ("T01", 7.20, 1.50, 0.5, "bw"),       # cantora (P&B)
     ("T02", 27.48, 1.50, 0.5, "bw"),
     ("T02", 40.78, 1.50, 0.5, "bw"),
     ("T03", 70.32, 1.50, 0.5, "bw"),
@@ -151,23 +151,34 @@ jobs.append((len(EDL), src, tin, dur, sp, "", cart_frames,
 TOTAL = t + dur
 print(f"conteúdo {CONTENT_END:.2f}s, total {TOTAL:.2f}s, {len(jobs)} segmentos")
 
-with ThreadPoolExecutor(max_workers=6) as ex:
-    outs = list(ex.map(lambda j: render(*j), jobs))
-with open(os.path.join(WORK, "lista.txt"), "w") as fh:
-    fh.writelines(f"file '{o}'\n" for o in outs)
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i",
-                os.path.join(WORK, "lista.txt"), "-c", "copy", os.path.join(WORK, "video.mp4")], check=True)
+if "--so-final" not in sys.argv:
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        outs = list(ex.map(lambda j: render(*j), jobs))
+    with open(os.path.join(WORK, "lista.txt"), "w") as fh:
+        fh.writelines(f"file '{o}'\n" for o in outs)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i",
+                    os.path.join(WORK, "lista.txt"), "-c", "copy", os.path.join(WORK, "video.mp4")], check=True)
 
 # trilha: [11,55 a 88,05] + [16,05 a 26,05] (virada de novo no clímax) + [88,05 a 91,0] (acorde final)
 D = 0.012
 aud = os.path.join(WORK, "trilha.wav")
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", TRILHA, "-filter_complex",
-    f"[0]atrim={11.55}:{88.05 + D},asetpts=PTS-STARTPTS[a];"
-    f"[0]atrim={16.05}:{26.05 + D},asetpts=PTS-STARTPTS[b];"
-    f"[0]atrim={88.05}:{91.0},asetpts=PTS-STARTPTS[c];"
-    f"[a][b]acrossfade=d={D}:c1=tri:c2=tri[ab];[ab][c]acrossfade=d={D}:c1=tri:c2=tri,"
-    f"aresample=48000,loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=out:st={TOTAL - 0.6:.2f}:d=0.6,"
-    f"atrim=0:{TOTAL:.3f}[o]", "-map", "[o]", "-c:a", "pcm_s16le", aud], check=True)
+full = os.path.join(WORK, "trilha_full.wav")
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", TRILHA, "-ar", "48000", full], check=True)
+pecas = []
+for nome, a, b in (("a", 11.55, 88.05 + D), ("b", 16.05, 26.05 + D), ("c", 88.05, 91.0)):
+    pp = os.path.join(WORK, f"trilha_{nome}.wav"); pecas.append(pp)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", full, "-af",
+                    f"atrim={a}:{b},asetpts=PTS-STARTPTS", pp], check=True)
+# cada peça entra separada no filtro (o atrim repetido sobre a mesma entrada corta a trilha)
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", pecas[0], "-i", pecas[1], "-i", pecas[2],
+    "-filter_complex",
+    f"[0][1]acrossfade=d={D}:c1=tri:c2=tri[ab];[ab][2]acrossfade=d={D}:c1=tri:c2=tri,"
+    f"loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000,asetpts=N/SR/TB,"
+    f"afade=t=out:st={TOTAL - 0.6:.2f}:d=0.6,atrim=0:{TOTAL:.3f}[o]",
+    "-map", "[o]", "-c:a", "pcm_s16le", aud], check=True)
+dur_aud = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                                "-of", "csv=p=0", aud], capture_output=True, text=True).stdout)
+assert abs(dur_aud - TOTAL) < 0.05, f"trilha com {dur_aud:.2f}s, esperado {TOTAL:.2f}s"
 
 # logos
 from PIL import Image
