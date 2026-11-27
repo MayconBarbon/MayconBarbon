@@ -152,7 +152,7 @@ Arquivo local: `referencias/REF_PIRABEER_26-11_identidade.mp4` (fica fora do git
 1. Logo do PiraBeer: **PNG transparente a caminho** (a versão JPG recebida em 27/11 fica como reserva, em duas versões (dourado e branco). Os arquivos são JPG, 904×1280, com fundo preto e sem transparência. Só funcionam sobre fundo preto, então valem para a cartela, mas não para sobrepor ao vídeo).
 2. ~~Logo da Secretaria de Turismo~~: **recebido em 27/11**, em PNG com transparência, 1600×558, nas versões branca e colorida.
 3. ~~Vídeo de referência do PiraBeer~~: **recebido em 27/11**.
-4. **Trilha** autorizada para cada dia (uma por reel, ou a mesma nos três).
+4. Trilha: **o Maycon definiu em 27/11 que eu escolho depois da edição.** Monto o corte primeiro, proponho a trilha e ajusto os cortes na batida.
 5. Referência 1: mandar o arquivo do vídeo, se der (o Instagram bloqueou o acesso).
 
 ## Logos no projeto (`logos/`)
@@ -164,3 +164,15 @@ Arquivo local: `referencias/REF_PIRABEER_26-11_identidade.mp4` (fica fora do git
 | `secretaria-turismo_cor.png` | Uso sobre fundo claro (não se aplica à cartela preta) |
 
 **Cartela base:** fundo preto 1080×1920, logo do PiraBeer dourado com 700 px de largura (área útil recortada sem distorção), logo da Secretaria branco com 560 px abaixo e cerca de 170 px de respiro entre os dois. Entrada e saída em fade de 0,4 s.
+
+### Logo do PiraBeer transparente (recebido em 27/11) — A CONFIRMAR
+Arquivo: `logos/pirabeer_4ed_transparente_A-CONFIRMAR.webp`, WEBP RGBA, 1536×1024.
+Comparado com o JPG oficial, **o desenho é diferente**:
+- contorno preto grosso em todos os elementos;
+- folhas redesenhadas, com nervuras;
+- canecas e espuma redesenhadas;
+- dourado mais saturado;
+- uma folha encostada no último "R" de PIRABEER;
+- proporção mais larga.
+
+O arquivo parece ter sido redesenhado ou passado por IA, e não apenas recortado. O briefing proíbe alterar a marca, então ele só entra no reel se o Maycon confirmar que é o oficial.
